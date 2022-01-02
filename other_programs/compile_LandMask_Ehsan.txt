@@ -1,0 +1,8 @@
+how compile LandMask.c
+
+
+gcc -I/home/mare/Ehsan_lab/Ehsan_Mtk_root/Mtk-1.4.5/include -I/home/mare/Ehsan_lab/Ehsan_Mtk_root/hdfeoslibs/include -L/home/mare/Ehsan_lab/Ehsan_Mtk_root/Mtk-1.4.5/lib -o TOA_exe_Ehsan TOA_final_update.c -lMisrToolkit  -lm -lfftw3
+
+
+gcc -I/home/mare/Ehsan_lab/Ehsan_Mtk_root/Mtk-1.4.5/include -I/home/mare/Ehsan_lab/Ehsan_Mtk_root/hdfeoslibs/include -L/home/mare/Ehsan_lab/Ehsan_Mtk_root/Mtk-1.4.5/lib -o LandMask_Ehsan LandMask.c -lMisrToolkit  -lm -lfftw3 -lpng
+

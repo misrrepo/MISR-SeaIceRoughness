@@ -1,0 +1,6 @@
+gcc -I/home/mare/Ehsan_lab/misr_include_dir -L/home/mare/Projects/MISR/Mtk/Mtk-1.2.3/lib -lMisrToolkit -o TOAexe TOA_new_updated_2.c -lm 
+
+gcc -I/home/mare/Ehsan_lab/Ehsan_Mtk_root/Mtk-1.4.5/include -I/home/mare/Ehsan_lab/Ehsan_Mtk_root/hdfeoslibs/include -L/home/mare/Ehsan_lab/Ehsan_Mtk_root/Mtk-1.4.5/lib -o TOAexe TOA_new_updated_2.c -lMisrToolkit  -lm -lfftw3
+
+
+gcc -I/home/mare/Ehsan_lab/Ehsan_Mtk_root/Mtk-1.4.5/include -I/home/mare/Ehsan_lab/Ehsan_Mtk_root/hdfeoslibs/include -L/home/mare/Ehsan_lab/Ehsan_Mtk_root/Mtk-1.4.5/lib -o TOA_exe_Ehsan TOA_final_update.c -lMisrToolkit  -lm -lfftw3
