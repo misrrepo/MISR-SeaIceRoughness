@@ -16,11 +16,11 @@ output???
 
 
 // these inside /usr/include
+#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include "fftw3.h"
 #include <png.h>
-// these two ???
 #include <MisrToolkit.h>
 #include <MisrError.h>
 
@@ -39,6 +39,9 @@ output???
 
 
 // Global variables 
+char* command = "date";
+
+
 
 // setting for running for BRF conversion or toa radiance output- turn on (= 1) the option you need
 int TOARadianceOut = 0; // Ehsan: turns on TOAradiance, outputs TOA radiance
@@ -1334,6 +1337,10 @@ return data2;
 //############################################### main ######################################################
 
 int main(int argc, char* argv[]) { // return 0= success, return 1= error
+
+	// printf("date/time is ...\n");
+	system(command);
+
 
 	int i, j, i2, j2;
 	char s[256];

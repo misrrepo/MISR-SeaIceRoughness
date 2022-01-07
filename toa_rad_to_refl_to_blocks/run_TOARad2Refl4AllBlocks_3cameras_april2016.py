@@ -39,20 +39,20 @@ import MisrToolkit as MTK
 #~ input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
 
 # path to dir that hdf files are stored in
-input_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016"
+input_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files"
 output_path = input_dir_fullpath  																# writes out processed data inside same input dir
 
-exe_dir = '/home/ehsan/misr_lab/MISR-roughness/exe_dir'
-exe_name = 'TOARad2Refl4AllBlocks'
+exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
+exe_name = "TOARad2Refl4AllBlocks_3Cameras"
 
 year = 2016
 month = 4
-day_range = [1,16]		# this code checks day-range and skips files w/days that are not in this range
+day_range = [1,30]		# this code checks day-range and skips files w/days that are not in this range
 block_range = [1,46] 	# [start, stop]; should match with block range in downloading step
 
 #~ output file labling- rename them based on your project
 month_label = 'april2016_3cams'
-num_of_days = 'day1_16'
+num_of_days = 'day1_30'
 num_of_paths = 'p1to233'
 num_of_blocks = 'b1to46'
 
@@ -140,10 +140,10 @@ def check_day_from_orbit(hdf_file_fp):
 def check_TOA_file_availability(infile):
 
 	if (os.path.isfile(infile)):
-		print("-> EXIST-STATUS: TOA file exists on disc.: %s" % infile)
+		print("EXIST-STATUS: TOA file exists on disc.: %s" % infile)
 		return True
 	else:
-		print("-> EXIST-STATUS: TOA file NOT exist on disc.")
+		print("EXIST-STATUS: TOA file NOT exist on disc.")
 		return False
 
 ########################################################################################################################
@@ -151,23 +151,22 @@ def check_TOA_file_availability(infile):
 def define_toa_file(path, orbit, block_num, camera, output_dir_name, file_label, hdf_counter, total_hdf_files):
 
 	block_num = str(block_num).rjust(3, '0') # added 3 to right-adjust for 3-zero digits for all range of blocks
-	print('\nprocessing (block/HDF-File/totalHDF-File/cam): (%s/%s/%s/%s) (w/rjust performed) \n' % (block_num, hdf_counter, total_hdf_files, camera))
-
+	print('processing (block/HDF-File/totalHDF-File/cam): (%s/%s/%s/%s) (w/rjust performed) \n' % (block_num, hdf_counter, total_hdf_files, camera))
 
 	# toa output file names to CMD command --> to do: make function for this section
 	toa_file_pattern = (file_label+'_%s_%s_B%s_%s.dat' %(path, orbit, block_num, camera)) # will be written by TOA
 		
 	if (camera == 'an'):
 		toa_file_fullpath = os.path.join(output_dir_name, 'An', toa_file_pattern)
-		print('TOA file will be= %s' % (toa_file_fullpath))
+		print('TOA file: %s' % (toa_file_fullpath))
 
 	if (camera == 'ca'):
 		toa_file_fullpath = os.path.join(output_dir_name, 'Ca', toa_file_pattern)
-		print('TOA file will be= %s' % (toa_file_fullpath))
+		print('TOA file: %s' % (toa_file_fullpath))
 
 	if (camera == 'cf'):
 		toa_file_fullpath = os.path.join(output_dir_name, 'Cf', toa_file_pattern)
-		print('TOA file will be= %s' % (toa_file_fullpath))
+		print('TOA file: %s' % (toa_file_fullpath))
 
 	return toa_file_fullpath
 
@@ -181,12 +180,13 @@ def run_from_cmd(exe_fullpath, hdf_file_fullpath, block_num, band_num, minnaert,
 	#~ run the C-cmd program
 	#cmd = 'TOA3 "%s" %s %s %s \"%s\" \"%s\"' %(hdf_file_fullpath, block_num, band_num, minnaert, toa_file_fullpath, toa_image_file) # old version
 	print(" ")
-	print('python= <program-name> <Ellipsoid-file> <block> <band> <minnaert>	<toa-file>')
+	# print('python= <program-name> <Ellipsoid-file> <block> <band> <minnaert><toa-file>')
 	print(exe_fullpath)
 	print(hdf_file_fullpath)
-	print('\n')
+	print("\n")
+
 	cmd = (' "%s" "%s" %s %s %s \"%s\"' %(exe_fullpath, hdf_file_fullpath, block_num, band_num, minnaert, toa_file_fullpath))  # TOA writes data into toa_file_fullpath
-	print('to cmd= %s \n' % (cmd))	# run the cmd command.
+	# print('to cmd= %s \n' % (cmd))	# run the cmd command.
 
 	# return_value_of_cmd = 0 # for debug 
 
@@ -214,7 +214,7 @@ def in_n_out_dir_setup(input_dir_fullpath, output_path, output_dir, band_list, m
 
 	# check if directories exist
 	if not (os.path.isdir(input_dir_fullpath)): # needs fullpath
-		print('-> input/download directory NOT exist! check the input path')
+		print('input/download directory NOT exist! check the input path')
 		raise SystemExit()
 
 	if not (os.path.isdir(output_dir_fullpath)):

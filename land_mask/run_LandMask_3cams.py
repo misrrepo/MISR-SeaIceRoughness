@@ -9,13 +9,14 @@ import datetime as dt
 from platform import python_version
 
 ########################################################################################################################
-#~ input dir- <toa_refl> data should be in 3 different directories in here (An/Ca/Cf)
-toa_dir_fullpath = '/data/gpfs/assoc/misr_roughness/2016/july_2016/ellipsoid_files/toa_refl_julyl2016_day1_25_p1to233_b1to46' ;  # //  "/home3/mare/Nolin/2016/Surface3/Jul/";
-#~ landmask dir
-lsmask_dir_fullpath = '/data/gpfs/assoc/misr_roughness/landseamask_blocks_1to46' ;  									# Ehsan: mask file, output from <ArcticTileToGrid.c> // at: /Volumes/easystore/from_home/Nolin_except_dataFolder/SeaIce/LWData/MISR_LandSeaMask on easystore drive
+#~ input dir: <toa_refl> data should be in 3 different directories in here (An/Ca/Cf)
+toa_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files/toa_refl_april2016_3cams_day1_30_p1to233_b1to46"
 
-exe_dir = '/data/gpfs/home/emosadegh/MISR-roughness/exe_dir'	
-exe_name = "LandMask" # should be set in $PATH
+#~ landmask dir
+lsmask_dir_fullpath = "/home/ehsan/misr_lab/landseamask_blocks_1to46"									
+
+exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
+exe_name = "LandMask_3cams" # should be set in $PATH
 
 #~ output dir for masked_toa_refl file
 output_path = toa_dir_fullpath  # we will create output dir inside input dir

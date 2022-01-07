@@ -1,6 +1,6 @@
-exe_path=/home/ehsan/misr_lab/MISR-roughness/exe_dir
-src_name=LandMask_allCameras.c
-exe_name=LandMask_allCameras
+exe_path=/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir
+src_name=LandMask_3cams.c
+exe_name=LandMask_3cams
 
 all:
 	gcc -I/home/ehsan/misr_lab/mtk_src/Mtk-1.5.1/include	\
