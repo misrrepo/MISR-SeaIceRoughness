@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3.6
 '''
 by: Ehsan Mosadegh 20 August 2020
 this script runs LandMask.c 

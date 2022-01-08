@@ -32,7 +32,11 @@ int max_nfiles = 0;
 int nlines = 512;
 int nsamples = 2048;
 double* data = 0; // %lf
- 
+
+// to printf date-time to stdout
+char* command = "date";
+
+
 png_structp png_ptr = 0;
 png_infop info_ptr = 0;
 
@@ -360,6 +364,8 @@ char *strsub(char *s, char *a, char *b)
 int main(int argc, char* argv[]) 
 {
 
+	system(command);
+	
 	// input dir
 	char input_toa_home[256] = ""; //  empty string
 	char lsmask_files_fullpath[256] = ""; // empty string
@@ -447,8 +453,12 @@ int main(int argc, char* argv[])
 		//misr_total_files_found = 40; //E-i added to test it
 		for (j=0; j < misr_total_files_found; j++) { // loop over all misr_total_files_found == num of TOA refl in AN dir
 
+			// print date-time
+			printf("\n");
+			system(command);
+
 			sprintf(misr_file_fullpath, "%s%s", input_home_dir, misr_file_list[j]); // copies surf_file name into misr_file_fullpath
-			printf("\nprocessing file (%d/%d/%s) \n" , j+1, misr_total_files_found, cam_name); // E
+			printf("processing file (%d/%d/%s) \n" , j+1, misr_total_files_found, cam_name); // E
 			printf("%s \n" , misr_file_fullpath);
 
 			if (!read_data(misr_file_fullpath, &data, nlines, nsamples)) {
