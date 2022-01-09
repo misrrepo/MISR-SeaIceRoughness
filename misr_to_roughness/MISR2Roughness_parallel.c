@@ -15,6 +15,13 @@ by: Ehsan Mosadegh, 29 August 2020
 #include <MisrError.h>
 #include <dirent.h>
 
+
+
+// E- number of threads/CPU cores to use
+#define total_threads 32         // Q- how many CPU cores on your machine? max number of CPUs on a board. how many logical processors?
+
+
+
 // E- declarations
 #define NO_DATA -999999.0
 #define BACKGROUND -999998.0
@@ -24,8 +31,7 @@ by: Ehsan Mosadegh, 29 August 2020
 #define LMASKED -999994.0
 #define VERBOSE 0
 
-// E- number of threads/CPU cores to use
-#define total_threads 10         // Q- how many CPU cores on your machine? max number of CPUs on a board. how many logical processors?
+
 
 // global variables
 

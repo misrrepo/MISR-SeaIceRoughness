@@ -14,14 +14,20 @@ from platform import python_version
 ########################################################################################################################
 #-- setup paths
 #-- inputs
-masked_toa_An_dir = '/home/ehsan/misr_lab/orders/14528_apr2016/toa_refl_april2016_day1_30_p1to233_b1to46/masked_toa_refl_april2016_day1_30_p1to233_b1to46/An/' 	# note: should set to masked/AN/ dir= should have An/ at the end of path
-atmmodel_dir = '/home/ehsan/misr_lab/april_2016/models'
+
+#-- note: should set to masked/AN/ dir= should have An/ at the end of path
+masked_toa_An_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46/An"
+#-- dir where the model.csv is in it
+atmmodel_dir = "/data/gpfs/assoc/misr_roughness/atmmodels"
+#-- name of the model
 atmmodel_csvfile_label = 'MisrAtmCalibratedModel_april_2016.csv'
+
 #-- output
-predicted_roughness_dir = '/home/ehsan/misr_lab/roughness_2016_April_1to16_p1to233_b1to46'
+predicted_roughness_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/roughness_predicted"
+
 #-- executable
-exe_dir = '/home/ehsan/misr_lab/MISR-roughness/exe_dir'
-exe_name = 'MISR2Roughness_parallel_checkFileExist'
+exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
+exe_name = "MISR2Roughness_parallel"
 ########################################################################################################################
 def main():
 	'''
