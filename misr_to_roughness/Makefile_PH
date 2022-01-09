@@ -1,5 +1,5 @@
+exe_path=/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
 src_name=MISR2Roughness_parallel.c
-exe_path=/data/gpfs/home/emosadegh/MISR-roughness/exe_dir
 exe_name=MISR2Roughness_parallel
 
 all:
