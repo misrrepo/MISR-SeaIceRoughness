@@ -39,8 +39,8 @@ import MisrToolkit as MTK
 #~ input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
 
 # path to dir that hdf files are stored in
-input_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files"
-output_path = input_dir_fullpath  																# writes out processed data inside same input dir
+input_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files/misr_ellipsoid_files"
+output_path = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files/"  																# writes out processed data inside same input dir
 
 exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
 exe_name = "TOARad2Refl4AllBlocks_3Cameras"
@@ -102,6 +102,7 @@ def main():
 		if (camera != 'an') and (camera != 'cf') and (camera != 'ca'):
 			print("but camera is not one of 3, we continue to the next hdf file...")
 			continue
+
 		#-- 9 camera run-mode-- for later// just check camera matches one of 9 cameras available- QA check of camera name
 
 		for block_num in range(block_range[0], block_range[1], 1):
@@ -158,15 +159,15 @@ def define_toa_file(path, orbit, block_num, camera, output_dir_name, file_label,
 		
 	if (camera == 'an'):
 		toa_file_fullpath = os.path.join(output_dir_name, 'An', toa_file_pattern)
-		print('TOA file: %s' % (toa_file_fullpath))
+		print('TOA file will be: %s' % (toa_file_fullpath))
 
 	if (camera == 'ca'):
 		toa_file_fullpath = os.path.join(output_dir_name, 'Ca', toa_file_pattern)
-		print('TOA file: %s' % (toa_file_fullpath))
+		print('TOA file will be: %s' % (toa_file_fullpath))
 
 	if (camera == 'cf'):
 		toa_file_fullpath = os.path.join(output_dir_name, 'Cf', toa_file_pattern)
-		print('TOA file: %s' % (toa_file_fullpath))
+		print('TOA file will be: %s' % (toa_file_fullpath))
 
 	return toa_file_fullpath
 
@@ -289,6 +290,8 @@ def parse_file_names(hdf_file_fullpath, total_hdf_files, hdf_counter):
 		camera = 'ca'
 	elif hdf_file_fullpath.find('_AN') != -1 :
 		camera = 'an'
+
+
 
 	#~ other cameras, but we don't need them
 	elif hdf_file_fullpath.find('_AF') != -1 :

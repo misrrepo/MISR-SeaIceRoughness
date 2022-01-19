@@ -17,8 +17,12 @@ by: Ehsan Mosadegh, 29 August 2020
 
 
 
+
+
 // E- number of threads/CPU cores to use
-#define total_threads 32         // Q- how many CPU cores on your machine? max number of CPUs on a board. how many logical processors?
+#define total_threads 10         // Q- how many CPU cores on your machine? max number of CPUs on a board. how many logical processors?
+
+
 
 
 

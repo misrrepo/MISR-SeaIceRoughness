@@ -1,6 +1,6 @@
-exe_path=/home/ehsan/misr_lab/MISR-roughness/exe_dir
-src_name=MISR2Roughness_parallel_checkFileExist.c
-exe_name=MISR2Roughness_parallel_checkFileExist
+exe_path=/home/ehsan/misr_lab/MISR-SeaIceRoughness
+src_name=MISR2Roughness_parallel.c
+exe_name=MISR2Roughness_parallel
 
 all:
 	gcc -I/home/ehsan/misr_lab/mtk_src/Mtk-1.5.1/include	\
