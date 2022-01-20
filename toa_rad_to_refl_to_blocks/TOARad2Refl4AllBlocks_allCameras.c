@@ -38,7 +38,10 @@ output???
 // #define ZOOM 64
 
 
-// Global variables 
+// Global variables
+char* command = "date";
+
+
 
 // setting for running for BRF conversion or toa radiance output- turn on (= 1) the option you need
 int TOARadianceOut = 0; // Ehsan: turns on TOAradiance, outputs TOA radiance
@@ -1336,6 +1339,11 @@ return data2;
 //############################################### main ######################################################
 
 int main(int argc, char* argv[]) { // return 0= success, return 1= error
+
+	// printf("date/time is ...\n");
+	system(command);
+
+
 
 	int i, j, i2, j2;
 	char s[256];

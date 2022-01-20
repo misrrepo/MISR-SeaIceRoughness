@@ -20,10 +20,7 @@ to do:
 	- writes data to 3 differenct directories for each camera?? --> done
 
 notes: 
-	user provides labling tags
-	this code and the next code needs img data from 3 cameras/hdf_files, so input shoud include at least those 3 files.
-	output dir: writes out processed data inside same input dir
-
+	create a project folder and write everything isnide that specific folder
 '''
 ########################################################################################################################
 
@@ -33,15 +30,16 @@ from platform import python_version
 import MisrToolkit as MTK
 
 ########################################################################################################################
-#~ directory path setting (>>> set by USER <<<)
+#-- directory path setting (>>> set by USER <<<)
 
 #===== input directory #=====
-#~ input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
+#-- input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
+#-- where MISR ellipsoid files are
+input_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/misr_hdf_files/misr_ellipsoid_files"
+#-- where toa-refl.dat files go
+output_path = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands"
 
-input_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016"
-output_path = input_dir_fullpath												# writes out processed data inside same input dir
-
-exe_dir = '/home/ehsan/misr_lab/MISR-roughness/exe_dir'
+exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
 exe_name = 'TOARad2Refl4AllBlocks_allCameras'
 
 year = 2016
@@ -50,7 +48,7 @@ day_range = [1,30]		# this code checks day-range and skips files w/days that are
 block_range = [1,46] 	# [start, stop]; should match with block range in downloading step
 
 #~ output file labling- rename them based on your project
-month_label = 'april_2016_9cam4bands'
+month_label = "april_2016_9cam4bands"
 num_of_days = 'day1_30'
 num_of_paths = 'p1_233'
 num_of_blocks = 'b1_46'
