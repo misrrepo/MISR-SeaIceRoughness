@@ -33,8 +33,8 @@ masked_toa_home = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3b
 atm_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/ATM_apr2016_5days"
 
 ##- output
-atmmodel_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
-output_final_ds_label = "april_2016_9cam3bands_final_merged_dataset.csv"
+trainingDS_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
+# output_final_ds_label = "april_2016_9cam3bands_final_merged_dataset.csv"
 
 
 ##- setup pattern- do not change
@@ -87,7 +87,7 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 	print("output csv: %s" %output_ds_label)
 
 
-	output_file_fp = os.path.join(atmmodel_dir, output_ds_label)
+	output_file_fp = os.path.join(trainingDS_dir, output_ds_label)
 	if (os.path.isfile(output_file_fp)):
 		print("CSV file exists on disk, continue to next ATM file")
 		continue
@@ -297,7 +297,7 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 		# final_df = pd.DataFrame(columns=column_names)
 		# final_df = final_df.append(final_ds_list, ignore_index=True) # add list to existing dataframe; True: preserve the DataFrame indices; 
 
-		# out_DS  = os.path.join(atmmodel_dir, output_ds_label)
+		# out_DS  = os.path.join(trainingDS_dir, output_ds_label)
 		# final_df.to_csv(out_DS)
 		# print(out_DS)
 		# final_df=None
@@ -331,18 +331,18 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 
 
 #########################################################################################################################################################
-## now merge all csv files into a single dataframe and write the output
-print("\n")
-print("now merging all CSV files...")
-csv_file_pattern = "april_2016_9cam_4bands_ILATM2*"+".csv"
-csv_files_list = glob.glob(os.path.join(atmmodel_dir, csv_file_pattern))
-print(len(csv_files_list))
-## join files
-final_df = pd.concat(map(pd.read_csv, csv_files_list), ignore_index=False, axis=0)  # true: assigns a continuous index numbers for the merged DF; axis=0 along the rows
-out_DS  = os.path.join(atmmodel_dir, output_final_ds_label)
-final_df.to_csv(out_DS, index=False) # do not include index column in output csv
-print(out_DS)
-print('successfully finished writing final DataFrame!')
+# ## now merge all csv files into a single dataframe and write the output
+# print("\n")
+# print("now merging all CSV files...")
+# csv_file_pattern = "april_2016_9cam_4bands_ILATM2*"+".csv"
+# csv_files_list = glob.glob(os.path.join(trainingDS_dir, csv_file_pattern))
+# print(len(csv_files_list))
+# ## join files
+# final_df = pd.concat(map(pd.read_csv, csv_files_list), ignore_index=False, axis=0)  # true: assigns a continuous index numbers for the merged DF; axis=0 along the rows
+# out_DS  = os.path.join(trainingDS_dir, output_final_ds_label)
+# final_df.to_csv(out_DS, index=False) # do not include index column in output csv
+# print(out_DS)
+# print('successfully finished writing final DataFrame!')
 
 #########################################################################################################################################################
 
