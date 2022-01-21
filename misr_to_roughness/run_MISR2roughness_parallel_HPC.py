@@ -2,7 +2,7 @@
 '''
 by: Ehsan Mosadegh 26 November 2020
 
-	this script runs MISR2roughness.c parallel code
+	this script runs MISR2roughness.c-parallel code
 
 
 '''
@@ -17,8 +17,10 @@ from platform import python_version
 
 #-- note: should set to masked/AN/ dir= should have An/ at the end of path
 masked_toa_An_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46/An"
-#-- dir where the model.csv is in it
+
+#-- dir where the model.csv will be written in
 atmmodel_dir = "/data/gpfs/assoc/misr_roughness/atmmodels"
+
 #-- name of the model
 atmmodel_csvfile_label = 'MisrAtmCalibratedModel_april_2016.csv'
 
