@@ -22,7 +22,7 @@ masked_toa_An_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_
 atmmodel_dir = "/data/gpfs/assoc/misr_roughness/atmmodels"
 
 #-- name of the model
-atmmodel_csvfile_label = 'MisrAtmCalibratedModel_april_2016.csv'
+atmmodel_csvfile_label = 'misr_training_dataset.csv'
 
 #-- output
 predicted_roughness_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/roughness_predicted"
