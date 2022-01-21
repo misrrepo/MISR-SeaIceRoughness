@@ -4,7 +4,7 @@
 calibrate MISR dataset with ATM measurement data
 
 input: dir path to home to masked_toa_refl + ATM data
-output: single datasets.csv and then we will merge all together
+output: single datasets.csv; and then we will merge all together
 '''
 import MisrToolkit as mtk
 import pandas as pd
