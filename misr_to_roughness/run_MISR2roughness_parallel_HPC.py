@@ -2,7 +2,7 @@
 '''
 by: Ehsan Mosadegh 26 November 2020
 
-	this script runs MISR2roughness.c-parallel code
+	this script runs MISR2roughness.c parallel code
 
 
 '''
