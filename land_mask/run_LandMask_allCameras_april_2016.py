@@ -12,16 +12,16 @@ from platform import python_version
 # change the following section
 ########################################################################################################################
 #-- input dir- <toa_refl_P-O-B> NOTE: data should be in 3 [or 9] different directories at this path: (An/Ca/Cf)
-toa_refl_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46"         
+toa_refl_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46"     
 
 #-- landmask dir # Ehsan: mask file, output from <ArcticTileToGrid.c>
 lsmask_dir_fullpath = "/home/ehsan/misr_lab/landseamask_blocks_1to46"				
 
-exe_dir = "/home/ehsan/misr_lab/MISR-roughness/exe_dir"
+exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
 exe_name = "LandMask_allCameras" 		# should be set in $PATH
 
-#-- output dir for masked_toa_refl file
-output_path = toa_refl_dir_fullpath  # we will create output dir inside input dir
+#-- output dir for masked_toa_refl file; we will create an output dir at this path
+output_path = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands"  
 
 exe_dir_fullpath = os.path.join(exe_dir, exe_name)
 ########################################################################################################################
