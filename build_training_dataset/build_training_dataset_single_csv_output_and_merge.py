@@ -3,8 +3,8 @@
 '''
 calibrate MISR dataset with ATM measurement data
 
-input: dir path to home to masked_toa_refl + ATM data
-output: single datasets.csv; and then we will merge all together
+input: dir path home to masked_toa_refl + ATM data
+output: single datasets.csv for each ATM.csv; and then we will merge all together in the end
 '''
 import MisrToolkit as mtk
 import pandas as pd
@@ -28,18 +28,18 @@ note: -999.0 represents no MISR toa file
 '''
 
 ##- set up paths
-##- input 
-masked_toa_home = "/media/ehsan/Gdrive_18TB/all_masked_toa_refl_2010_2014_2019"  # should include 9 dir
-atm_dir = "/home/ehsan/misr_lab/ATM_2010_2014_2019"
+##- input dir should include 9 dir
+masked_toa_home = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/masked_toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46"  
+atm_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/ATM_apr2016_5days"
 
 ##- output
-atmmodel_dir = "/home/ehsan/misr_lab/atmmodels/april_may_2010_14_19"
-output_final_ds_label = "april_may_2010_14_19_9cam_4bands_final_merged_dataset.csv"
+atmmodel_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
+output_final_ds_label = "april_2016_9cam3bands_final_merged_dataset.csv"
 
 
 ##- setup pattern- do not change
 atm_file_pattern = 'ILATM2*'+'.csv'
-csv_ds_label = "aprilmay_2010_14_19_9cam_4bands"
+single_csv_ds_label = "april_2016_9cam3bands"
 
 
 # atm_file_sample = 'ILATM2_20160420_175457_smooth_nadir3seg_50pt.csv'
@@ -83,7 +83,7 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 	atm_filelabel = ATMfile.split('/')[-1]
 	atm_filelabel_date_list = atm_filelabel.split('_')[0:3]
 	atm_filelabel_date = atm_filelabel_date_list[0]+"_"+atm_filelabel_date_list[1]+"_"+atm_filelabel_date_list[2]
-	output_ds_label = csv_ds_label+'_'+atm_filelabel_date+'.csv'
+	output_ds_label = single_csv_ds_label+'_'+atm_filelabel_date+'.csv'
 	print("output csv: %s" %output_ds_label)
 
 

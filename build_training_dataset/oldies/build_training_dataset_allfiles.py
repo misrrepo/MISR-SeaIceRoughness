@@ -2,6 +2,8 @@
 # coding: utf-8
 '''
 calibrate MISR dataset with ATM measurement data
+
+note: this code is not efficient with large data sets
 '''
 import MisrToolkit as mtk
 import pandas as pd
