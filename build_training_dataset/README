@@ -1,5 +1,5 @@
 ORDER OF RUNNING CODES
 
 1- build_trainingDS_single_csv_output.py
-2- merge_single_trainingDS_files.py.py.py
-3- average_merged_trainingDS_forML.py
+2- merge_single_trainingDS_files.py
+3- average_merged_trainingDS_forML_pandas.py
