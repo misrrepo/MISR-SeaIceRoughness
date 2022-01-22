@@ -10,7 +10,8 @@ from platform import python_version
 # home where inout and output is/will be
 home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
 # input csv that will be filtered
-in_file = "merged_april_2016_9cam3bands.csv"
+in_file = "merged_april_2016_9cam3bands_smallDSfortest.csv"
+
 # name of output filtered csv
 output_csv_label = "april_2016_9cam3bands_finalDS_forML_pandas_method.csv"
 

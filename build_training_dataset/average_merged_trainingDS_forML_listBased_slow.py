@@ -13,7 +13,7 @@ t1=dt.datetime.now()
 
 
 home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
-input_csv_file = "merged_april_2016_9cam3bands.csv"
+input_csv_file = "merged_april_2016_9cam3bands_smallDSfortest.csv"
 
 
 output_csv_name = "april_2016_9cam3bands_finalDS_forML_list_method.csv"
