@@ -9,15 +9,22 @@ output: single datasets.csv for each ATM.csv; and then will merge all output sin
 import MisrToolkit as mtk
 import pandas as pd
 import numpy as np
-import sys, glob, os
-import csv
+import sys, glob, os, csv
+from platform import python_version
+import datetime as dt
 
 # !pip uninstall jedi --yes
 
 # check python version be 3.6 cuz MTK works with 3.6
-py_version = sys.version
-py_ver = py_version[0:3]
-if (py_ver != str(3.6)):
+
+# py_version = sys.version
+# py_ver = py_version[0:3]
+# if (py_ver != str(3.6)):
+
+# another way to get verion. note: this f() returns py version as str dtype, we change it to float
+py_ver = float(python_version()[0:3])
+print(py_ver)
+if (py_ver != 3.6):
 	print('python version is NOT 3.6- MTK does not work')
 	raise SystemExit()
 else:
@@ -47,6 +54,9 @@ single_csv_ds_label = "april_2016_9cam3bands"
 # check ATM file exists
 # print(os.path.isfile(atm_file_fp))
 # print(atm_file_fp)
+
+# check runtime
+t1 = dt.datetime.now()
 
 
 #### create datadet table
@@ -328,6 +338,11 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 		print("after empty the list...")
 		print(len(final_ds_list))
 
+# check runtime
+t2 = dt.datetime.now()
+runtime = t2-t1
+print("\nruntime: %s" %runtime)
+print("\nFINISHED SUCCESSFULLY: we processed %d csv files. In next step we should use another code to merge all single csv files..." %atm_cntr)
 
 
 #########################################################################################################################################################
