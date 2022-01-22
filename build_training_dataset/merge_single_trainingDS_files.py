@@ -3,10 +3,11 @@
 import pandas as pd
 import glob, os, csv
 ####################################
-trainingDS_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
+trainingDS_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
 ####################################
-output_final_ds_label = "april_2016_9cam3bands_finalMergedDS.csv"
+output_final_ds_label = "merged_april_2016_9cam3bands.csv"
 ####################################
+
 ## now merge all csv files into a single dataframe and write the output
 print("\n")
 print("now merging all CSV files...")

@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
+#!/usr/bin/python3
 
 
 import csv, os
@@ -9,11 +8,11 @@ import datetime as dt
 from platform import python_version
 
 # home where inout and output is/will be
-home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/prepare_input_dataset"
+home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
 # input csv that will be filtered
-in_file = "april_2016_9cam3bands_finalMergedDS_sample.csv"
+in_file = "merged_april_2016_9cam3bands.csv"
 # name of output filtered csv
-output_csv_label = 'april_2016_averagedDataSet_2.csv'
+output_csv_label = "april_2016_9cam3bands_finalDS_forML_pandas_method.csv"
 
 # path to input dir
 in_ds = os.path.join(home_dir, in_file)

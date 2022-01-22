@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
+#!/usr/bin/python3
 """
 usage:
 
@@ -8,12 +6,17 @@ usage:
 import pandas as pd
 import numpy as np
 import csv, os
+import datetime as dt
 
-home_dir = "/home/ehsan/misr_lab/atmmodels/april_2016/"
-input_csv_file = "merged_april_2016_9cam_4bands_final_dataset_2.csv"
+t1=dt.datetime.now()
 
 
-output_csv_name = "final_dataset_filtered_for_ML_2.csv"
+
+home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
+input_csv_file = "merged_april_2016_9cam3bands.csv"
+
+
+output_csv_name = "april_2016_9cam3bands_finalDS_forML_list_method.csv"
 input_csv = os.path.join(home_dir, input_csv_file)
 
 with open (input_csv, 'r') as inCSV:
@@ -219,6 +222,14 @@ with open (output_csv_file_fp, "w") as output_file:
 
 print("final output file:")
 print(output_csv_file_fp)
+
+# check shape final csv
+df2 = pd.read_csv(output_csv_file_fp)
+print("df2 final shape: (%s, %s)" %df2.shape)
+
+t2=dt.datetime.now()
+runtime=t2-t1
+print("runtime: %s" %runtime)
 ##########################################################################
 
 
