@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 """
-usage:
+usage: average taining dataset fields- note: this code is not fully finished; needs to be modified, use pandas instead
 
 """
 import pandas as pd
@@ -12,13 +12,14 @@ t1=dt.datetime.now()
 
 
 
-# home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
-home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/training_dataset"
+home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
+# home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/training_dataset"
 
-input_csv_file = "merged_april_2016_9cam3bands_smallDSfortest.csv"
-
+input_csv_file = "merged_april_2016_9cam3bands.csv"
 
 output_csv_name = "april_2016_9cam3bands_finalDS_forML_list_method.csv"
+
+
 input_csv = os.path.join(home_dir, input_csv_file)
 
 with open (input_csv, 'r') as inCSV:
