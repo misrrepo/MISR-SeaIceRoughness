@@ -8,14 +8,14 @@ import datetime as dt
 from platform import python_version
 
 # home where inout and output is/will be
-home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
+home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
 # home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/training_dataset"
 
 # input csv that will be filtered
 in_file = "merged_april_2016_9cam3bands.csv"
 
 # name of output filtered csv
-output_csv_label = "april_2016_9cam3bands_finalDS_forML_pandas_method.csv"
+output_csv_label = "averaged_april_2016_9cam3bands_finalDS_forML_pandas_method.csv"
 
 # path to input dir
 in_ds = os.path.join(home_dir, in_file)
@@ -99,7 +99,7 @@ for irow in range(df1.shape[0]):
     # check if POBLS exists in df2... 
     # https://stackoverflow.com/questions/17071871/how-do-i-select-rows-from-a-dataframe-based-on-column-values 
     row_in_df2 = df2.loc[(df2['path']==path_num) & (df2['orbit']==orbit_num) & (df2['block']==block_num) & (df2['line']==line_num) & (df2['sample']==sample_num)] # HOW DOES IT FILTER?
-    print(len(row_in_df2))
+    # print(len(row_in_df2))
 
     if (len(row_in_df2 != 0 )):
         print('POBLS found inside df2, continue...')

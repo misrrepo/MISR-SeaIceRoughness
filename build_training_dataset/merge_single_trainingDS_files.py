@@ -3,7 +3,7 @@
 import pandas as pd
 import glob, os, csv
 ####################################
-trainingDS_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
+trainingDS_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
 ####################################
 output_final_ds_label = "merged_april_2016_9cam3bands.csv"
 ####################################
