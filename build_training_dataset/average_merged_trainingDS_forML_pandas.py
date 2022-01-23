@@ -8,14 +8,14 @@ import datetime as dt
 from platform import python_version
 
 # home where inout and output is/will be
-# home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
-home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/training_dataset"
+home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
+# home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/training_dataset"
 
-# input csv that will be filtered
-in_file = "merged_april_2016_9cam3bands_2000lines.csv"
+# input merged.csv that will be filtered
+in_file = "merged_april_2016_9cam3bands.csv"
 
-# name of output filtered csv
-output_csv_label = "averaged_april_2016_9cam3bands_2000lines_pandas_method.csv"
+# name of output averaged csv
+output_csv_label = "averaged_april_2016_9cam3bands_pandas_method_withcount.csv"
 
 # path to input dir
 in_ds = os.path.join(home_dir, in_file)
