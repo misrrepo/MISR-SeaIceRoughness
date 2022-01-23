@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 """
 usage:
 
@@ -12,7 +12,9 @@ t1=dt.datetime.now()
 
 
 
-home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
+# home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
+home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/training_dataset"
+
 input_csv_file = "merged_april_2016_9cam3bands_smallDSfortest.csv"
 
 

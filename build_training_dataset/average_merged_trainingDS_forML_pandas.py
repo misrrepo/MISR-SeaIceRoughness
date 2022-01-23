@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 
 import csv, os
@@ -8,7 +8,9 @@ import datetime as dt
 from platform import python_version
 
 # home where inout and output is/will be
-home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
+# home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset/test_runtime_averaging"
+home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/training_dataset"
+
 # input csv that will be filtered
 in_file = "merged_april_2016_9cam3bands_smallDSfortest.csv"
 
@@ -38,34 +40,72 @@ print(t1)
 # for irow in range(1000): #range(in_df.shape[0]):
 for irow in range(df1.shape[0]):
     
-    print('row: %d' %irow)
+    print('\nrow: %d' %irow)
     path_num = df1['path'][irow]
     orbit_num = df1['orbit'][irow]
     block_num = df1['block'][irow]
     line_num = df1['line'][irow]
     sample_num = df1['sample'][irow]
     
-#     print(path_num)
-#     print(orbit_num)
-#     print(block_num)
-#     print(line_num)
-#     print(sample_num)
+    # print(path_num)
+    # print(orbit_num)
+    # print(block_num)
+    # print(line_num)
+    # print(sample_num)
+
+    ####################################################################    
+    # check if POBLS exists in df2... 
+    # wroooooooooong
+    # path_found_in_df2 = df2[df2['path']==path_num].index
+    # print(path_found_in_df2)
+    # orbit_found_in_df2 = df2[df2['orbit']==orbit_num].index
+    # block_found_in_df2 = df2[df2['block']==block_num].index
+    # line_found_in_df2 = df2[df2['line']==line_num].index
+    # sample_found_in_df2 = df2[df2['sample']==sample_num].index
+
+    ####################################################################
+    # WROOOOOOOOOOOOOOOOOOOOOOONG!
+    # path_found_in_df2 = len(df2.loc[df2['path']==path_num])
+    # print(path_found_in_df2)
+    # orbit_found = len(df2.loc[df2['orbit']==orbit_num])
+    # print(orbit_found)
+    # block_found = len(df2.loc[df2['block']==block_num])
+    # print(block_found)
+    # line_found = len(df2.loc[df2['line']==line_num])
+    # print(line_found)
+    # sample_found = len(df2.loc[df2['sample']==sample_num])
+    # print(sample_found)
+
+    # if ((path_found!=0) & (orbit_found!=0) & (block_found!=0) & (line_found!=0) & (sample_found!=0)): # maybe issue here? why takes 104-2046 as found?
+    #     print('POBLS found inside df2, continue...')
+    #     continue
+
+    ####################################################################
+    # WROOOOOOOOOOOOONG
+    # path_found_in_df2 = df2.loc[df2['path']==path_num]
+    # if (len(path_found_in_df2) != 0):
+    #     orbit_found_in_df2 = path_found_in_df2.loc[path_found_in_df2['orbit']==orbit_num]
+    #     if(len(orbit_found_in_df2 != 0)):
+    #         block_found_in_df2 = orbit_found_in_df2.loc[orbit_found_in_df2['block']==block_num]
+    #         if (len(block_found_in_df2 != 0 )):
+    #             line_found_in_df2 = block_found_in_df2.loc[block_found_in_df2['line']==line_num]
+    #             if(len(line_found_in_df2 != 0)):
+    #                 sample_found_in_df2 = line_found_in_df2.loc[line_found_in_df2['sample']==sample_num]
+    #                 if (len(sample_found_in_df2) !=0):
+    #                     print('POBLS found inside df2, continue...')
+    #                     continue
+    ####################################################################
     
-    # check if POBLS exists in df2
-    path_found = len(df2.loc[df2['path']==path_num])
-    orbit_found = len(df2.loc[df2['orbit']==orbit_num])
-    block_found = len(df2.loc[df2['block']==block_num])
-    line_found = len(df2.loc[df2['line']==line_num])
-    sample_found = len(df2.loc[df2['sample']==sample_num])
-    
-    if ((path_found!=0) & 
-        (orbit_found!=0) & 
-        (block_found!=0) & 
-        (line_found!=0) & 
-        (sample_found!=0)):
+    # check if POBLS exists in df2... 
+    # https://stackoverflow.com/questions/17071871/how-do-i-select-rows-from-a-dataframe-based-on-column-values 
+    row_in_df2 = df2.loc[(df2['path']==path_num) & (df2['orbit']==orbit_num) & (df2['block']==block_num) & (df2['line']==line_num) & (df2['sample']==sample_num)] # HOW DOES IT FILTER?
+    print(len(row_in_df2))
+
+    if (len(row_in_df2 != 0 )):
         print('POBLS found inside df2, continue...')
         continue
-    
+
+
     else: # filter df1 for POBLS and average the block and join it to df2
         print('new-row is not in df2...')
         # filter df1 for POBLS
