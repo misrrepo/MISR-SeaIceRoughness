@@ -15,7 +15,7 @@ home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/tr
 in_file = "merged_april_2016_9cam3bands.csv"
 
 # name of output averaged csv
-output_csv_label = "averaged_april_2016_9cam3bands_pandas_method_withcount.csv"
+output_csv_label = "averaged_april_2016_9cam3bands_pandasMethod_finalDS_forML_withCount.csv"
 
 # path to input dir
 in_ds = os.path.join(home_dir, in_file)

@@ -4,9 +4,10 @@
 
 '''
 input: directory to raster.tif files
-output: intermediate VRT file, and then final mosaic.tif file at the same directory
+output: intermediate VRT file, and then final mosaic.tif file in the same directory. Then, we will plot that mosaic later in QGIS.
 
-note: before running thsi script, we have to build raster.tif files forst
+note: before running this script, we have to build raster.tif files first
+note: change the date also: day/month/year
 '''
 import glob, os
 from osgeo import gdal
@@ -24,11 +25,10 @@ def main():
 
 	print('-> start main(): ')
 
-	raster_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46/toa_files_in_range_2016_4_28/rasters_noDataNeg99_TiffFileFloat64_max"
-	
+	raster_dir_fullpath = "/media/ehsan/6TB_part2/roughness2raster_2016/july/2016_7_9_rasters_noDataNeg99_TiffFileFloat64_max"
 	#~~ day label
-	day='28'
-	month='april'
+	day='9'
+	month='july'
 	year='2016'
 	#~~ forl date-tag from 3 parameters
 	date_tag = day+'-'+month+'-'+year

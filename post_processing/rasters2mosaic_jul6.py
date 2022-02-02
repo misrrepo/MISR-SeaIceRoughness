@@ -25,9 +25,9 @@ def main():
 
 	print('-> start main(): ')
 
-	raster_dir_fullpath = "/media/ehsan/6TB_part2/roughness2raster_2016/july/2016_7_1_rasters_noDataNeg99_TiffFileFloat64_max"
+	raster_dir_fullpath = "/media/ehsan/6TB_part2/roughness2raster_2016/july/2016_7_6_rasters_noDataNeg99_TiffFileFloat64_max"
 	#~~ day label
-	day='1'
+	day='6'
 	month='july'
 	year='2016'
 	#~~ forl date-tag from 3 parameters

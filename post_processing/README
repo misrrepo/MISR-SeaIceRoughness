@@ -1,0 +1,7 @@
+These are the steps to create the final mosaic.tif from roughness.dat files:
+
+1- move_roughness_misr_files_from_POB2day.ipynb => to create subfolders for each day and move roughness files to each subfolder
+
+2- roughness_array2raster_georefrencing.py
+
+3- raster2mosaic.py

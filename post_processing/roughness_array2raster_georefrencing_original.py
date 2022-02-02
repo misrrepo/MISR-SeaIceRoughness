@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 # coding: utf-8
 '''
 notes:
@@ -22,11 +22,15 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 ########################################################################################################################
 # dir path setup by user
 ########################################################################################################################
-#~ setup dir w/ roughness files
-rough_dir_fullpath =  "/media/ehsan/6T_part1/14528_apr2016/toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46/toa_files_in_range_2016_4_24"
-
-#~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
+#
+# setup dir w/ roughness files
+#
+rough_dir_fullpath =  "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/roughness_predicted_from_PH"
+#
+# tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
+#
 georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
+#
 ########################################################################################################################
 #~ global IDfiers
 ########################################################################################################################

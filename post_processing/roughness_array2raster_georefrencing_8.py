@@ -23,10 +23,16 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files
-rough_dir_fullpath =  "/media/ehsan/6T_part1/14528_apr2016/toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46/toa_files_in_range_2016_4_28"
+rough_dir_fullpath =  "/media/ehsan/6T_part1/2016/july_2016/roughness_2016_july1to16_p1to233_b1to46/all_roughness_subdirs_1_to_16_july2016/roughness_subdir_2016_7_8"
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
-georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
+# georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
+
+roughness_date = "2016_7_8"
+output_dir = "/media/ehsan/6TB_part2/roughness2raster_2016/july"
+georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max'
+
+
 ########################################################################################################################
 #~ global IDfiers
 ########################################################################################################################
@@ -49,7 +55,8 @@ def main():
 	rough_files_fullpath_list, tot_found_rough_files = make_roughness_list_from_dir(rough_dir_fullpath)
 	# ## build a dir where images from arr2img will go to
 
-	image_dir = img_dir_setup(rough_dir_fullpath, georefRaster_dir_name)
+	# image_dir = img_dir_setup(rough_dir_fullpath, georefRaster_dir_name)
+	image_dir = img_dir_setup(output_dir, georefRaster_dir_name)
 
 	#~ reading roughness files in loop & process each at a time
 	for file_count, rough_fname in enumerate(rough_files_fullpath_list):
