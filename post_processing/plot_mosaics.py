@@ -1,5 +1,10 @@
 #!/usr/bin/python2.7
+'''
+input: mosaic.tif files, each in a seperate directory
+output: 
 
+note: in the next step we will create an animation 
+'''
 import numpy as np
 import os, glob
 from osgeo import gdal 		# built w/python2.7 - installed in: /usr/local/Cellar/gdal

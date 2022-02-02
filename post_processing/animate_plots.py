@@ -1,5 +1,24 @@
 #!/usr/bin/env python
 
+
+# installed and tried ImageMagic, and was able to create a gif with command line:
+
+#	convert -delay 150 -loop 0 *.jpg  -scale 2000x2000 animate_april_1_16_2013_test1.gif
+
+#	convert -delay 150 -loop 0 *.jpg  -scale 2000x2000 animate_july_1_16_2016_test1.gif
+
+#	convert -delay 150 -loop 0 *.jpg  -scale 2000x2000 animate_april_2016.gif
+
+
+
+
+
+
+
+
+#==========================================================
+# old methods 
+#==========================================================
 # import cv2
 # import os
 
