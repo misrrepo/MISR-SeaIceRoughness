@@ -1,7 +1,8 @@
 #!/usr/bin/python2.7
+
 '''
 input: mosaic.tif files, each in a seperate directory
-output: 
+output: JPG map
 
 note: in the next step we will create an animation 
 '''
@@ -22,7 +23,8 @@ print(matplotlib.__version__)
 print(gdal.VersionInfo())
 
 ########################################################################################################################
-raster_dir = "/media/ehsan/6T_part1/14528_apr2016/toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46/toa_files_in_range_2016_4_25/rasters_noDataNeg99_TiffFileFloat64_max"
+raster_dir = "/Users/ehsanmos/MLP_dataset/mosaic_tiffs/mosaics_LinuxMachine/july02"
+
 
 #~~ file pattern that we will look for
 raster_pattern='mosaic_*'+'.tif'
@@ -229,7 +231,7 @@ else:
 
 		#~ axis
 		# ax = plt.gca();  # get-current-axis
-		ax.ticklabel_format(useOffset=False, style='plain', size=10); # do not use scientific notation 
+		ax.ticklabel_format(useOffset=False, style='plain')#, size=10); # do not use scientific notation 
 		rotatexlabels = plt.setp(ax.get_xticklabels(), rotation=90); # rotate x tick labels 90 degrees
 
 		#~ axis limits
