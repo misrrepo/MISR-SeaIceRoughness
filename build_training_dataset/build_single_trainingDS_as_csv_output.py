@@ -1,9 +1,9 @@
 #!/usr/bin/python3.6
 # coding: utf-8
 '''
-calibrate MISR dataset with ATM measurement data
+calibrate MISR dataset with ATM measurement data and returns the training dataset
 
-input: dir path home to masked_toa_refl + ATM data
+input: dir path where is home to masked_toa_refl & ATM data
 output: single datasets.csv for each ATM.csv; and then will merge all output single datasets together in the end and will return a final merged dataset for filtering 
 '''
 import MisrToolkit as mtk
@@ -36,17 +36,17 @@ note: -999.0 represents no MISR toa file
 
 ##- set up paths
 ##- input dir should include 9 dir
-masked_toa_home = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/masked_toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46"  
-atm_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/ATM_apr2016_5days"
+masked_toa_home = "/media/ehsan/Gdrive_18TB/all_masked_toa_refl_2010_2014_2019"
+atm_dir = "/home/ehsan/misr_lab/ATM_2010_2014_2019"
 
 ##- output
-trainingDS_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
+trainingDS_dir = "/media/ehsan/Gdrive_18TB/training_DS_2010_2014_2019"
 # output_final_ds_label = "april_2016_9cam3bands_final_merged_dataset.csv"
 
 
 ##- setup pattern- do not change
 atm_file_pattern = 'ILATM2*'+'.csv'
-single_csv_ds_label = "april_2016_9cam3bands"
+single_csv_ds_label = "9cam3bands"
 
 
 # atm_file_sample = 'ILATM2_20160420_175457_smooth_nadir3seg_50pt.csv'
