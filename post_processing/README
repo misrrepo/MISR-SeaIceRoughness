@@ -5,3 +5,5 @@ These are the steps to create the final mosaic.tif from roughness.dat files:
 2- roughness_array2raster_georefrencing.py
 
 3- raster2mosaic.py
+
+4- plot the final mosaic.tif later

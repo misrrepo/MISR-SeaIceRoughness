@@ -4,7 +4,7 @@
 
 '''
 input: directory to raster.tif files
-output: intermediate VRT file, and then final mosaic.tif file in the same directory. Then, we will plot that mosaic later in QGIS.
+output: intermediate VRT file, and then final mosaic.tif file in the same directory where raster.tif files are. Then, we will plot that mosaic later in QGIS.
 
 note: before running this script, we have to build raster.tif files first
 note: change the date also: day/month/year
@@ -25,7 +25,7 @@ def main():
 
 	print('-> start main(): ')
 
-	raster_dir_fullpath = "/media/ehsan/6TB_part2/roughness2raster_2016/july/2016_7_1_rasters_noDataNeg99_TiffFileFloat64_max"
+	raster_dir_fullpath = "/media/ehsan/6TB_part2/roughness2raster_2016/april/2016_4_24_rasters_noDataNeg99_TiffFileFloat64_max"
 	#~~ day label
 	day='1'
 	month='july'

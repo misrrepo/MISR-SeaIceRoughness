@@ -23,13 +23,15 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files
-rough_dir_fullpath =  "/media/ehsan/6T_part1/2016/july_2016/roughness_2016_july1to16_p1to233_b1to46/all_roughness_subdirs_1_to_16_july2016/roughness_subdir_2016_7_12"
+rough_dir_fullpath =  "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/roughness_predicted_from_PH/roughness_subdir_2016_4_24"
+
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
 # georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
 
-roughness_date = "2016_7_12"
-output_dir = "/media/ehsan/6TB_part2/roughness2raster_2016/july"
+roughness_date = "2016_4_24"
+output_dir = "/media/ehsan/6TB_part2/roughness2raster_2016/april"
+# output_dir = rough_dir_fullpath
 georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max'
 
 
@@ -110,67 +112,131 @@ def main():
 ########################################################################################################################
 '''this func'''
 def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
-		
-	if (in_arr_2d.max() < 1):
-		print('-> PlotImgFunc(.): image is dark! We skip it.')
-		return 'skipThisImg'
+
+	# if (in_arr_2d.max() < 1):
+	# 	print('-> PlotImgFunc(.): image is dark! We skip it.')
+	# 	return 'skipThisImg'
 	
+	# else:
+
+	# img_format = ".jpg"  # does this format support saving neg- values?
+	# img_format = ".png"
+	img_format = ".tif"  # this image format supports saving neg- values in image
+
+
+	print('\n')
+	print('-> image array min= %d' % np.nanmin(in_arr_2d))
+	print('-> image array max= %d' % np.nanmax(in_arr_2d))
+
+	#~ now replace negative pixelValues w/ zero ---> (why???)
+	# in_arr_2d[in_arr_2d<0] = 0 # masks any element of np.array that has value < zero
+	# print('-> img array min= %d' % in_arr_2d.min())
+	# print('-> img array max= %d' % in_arr_2d.max())
+
+
+	out_img_label = path_label+'_'+block_label+img_format
+	# print(img_dir)
+	# print(out_img_label)
+
+	out_img_fullpath = os.path.join(img_dir, out_img_label)
+
+	if (os.path.isfile(out_img_fullpath)):
+		print('-> image EXISTS, we will skip this path!')
+		return 'skipThisImg' 
+
 	else:
+		print('\n-> image is NOT on disc, so we will go on with this path!')
+		print("-> saving output image as:")
+		print(out_img_fullpath)
 
-		# img_format = ".jpg"  # does this format support saving neg- values?
-		# img_format = ".png"
-		img_format = ".tif"  # this image format supports saving neg- values in image
-
-
-		print('\n')
-		print('-> image array min= %d' % np.nanmin(in_arr_2d))
-		print('-> image array max= %d' % np.nanmax(in_arr_2d))
-
-		#~ now replace negative pixelValues w/ zero ---> (why???)
-		# in_arr_2d[in_arr_2d<0] = 0 # masks any element of np.array that has value < zero
-		# print('-> img array min= %d' % in_arr_2d.min())
-		# print('-> img array max= %d' % in_arr_2d.max())
-
-
-		out_img_label = path_label+'_'+block_label+img_format
-		# print(img_dir)
-		# print(out_img_label)
-
-		out_img_fullpath = os.path.join(img_dir, out_img_label)
-
-		if (os.path.isfile(out_img_fullpath)):
-			print('-> image EXISTS, we will skip this path!')
-			return 'skipThisImg' 
-
-		else:
-			print('\n-> image is NOT on disc, so we will go on with this path!')
-			print("-> saving output image as:")
-			print(out_img_fullpath)
-
-			# NOTE: plt.imsave() can not save neg. pixel values in an image!
-			# plt.imsave(out_img_fullpath, in_arr_2d, cmap='gray', vmin=0, vmax=in_arr_2d.max())  # note: vmin=in_arr_2d.min() is wrong in this case (why???), cuz roughness array has many fill values with ranges in -99999, so vmin=0 to plot images in range [0,max)
-			# plt.imsave(out_img_fullpath, in_arr_2d, cmap='gray', vmin=in_arr_2d.min(), vmax=in_arr_2d.max())  # note: vmin=in_arr_2d.min() might be right, cuz roughness array has many fill values with ranges in -99999, and we need these fillValues to plot background == [min,max]
+		# NOTE: plt.imsave() can not save neg. pixel values in an image!
+		# plt.imsave(out_img_fullpath, in_arr_2d, cmap='gray', vmin=0, vmax=in_arr_2d.max())  # note: vmin=in_arr_2d.min() is wrong in this case (why???), cuz roughness array has many fill values with ranges in -99999, so vmin=0 to plot images in range [0,max)
+		# plt.imsave(out_img_fullpath, in_arr_2d, cmap='gray', vmin=in_arr_2d.min(), vmax=in_arr_2d.max())  # note: vmin=in_arr_2d.min() might be right, cuz roughness array has many fill values with ranges in -99999, and we need these fillValues to plot background == [min,max]
 
 
 
-			# #~ create PIL image from roughness array 2D w/ negative values
-			# rough_img = Image.fromarray(in_arr_2d)
-			# print('-> image mode: %s' % rough_img.mode)
-			# #~ save roughness PIL image on disc; 
-			# rough_img.save(out_img_fullpath)  # note: PIL is able to save neg. pixel values in .tif file
-			# # rgb_rough_img.save(out_img_fullpath)
+		# #~ create PIL image from roughness array 2D w/ negative values
+		# rough_img = Image.fromarray(in_arr_2d)
+		# print('-> image mode: %s' % rough_img.mode)
+		# #~ save roughness PIL image on disc; 
+		# rough_img.save(out_img_fullpath)  # note: PIL is able to save neg. pixel values in .tif file
+		# # rgb_rough_img.save(out_img_fullpath)
 
 
-			#~ new way to write tif image w/negative values; 
-			tifffile.imwrite(
-							out_img_fullpath, 
-							in_arr_2d,
-							dtype='float64', 
-							bigtiff=True,  # why bigTiff? we use bigTiff to be able to store large roughness values as float64 dtype in our rasters
-							# compress='jpeg'
-							)
+		#~ new way to write tif image w/negative values; 
+		tifffile.imwrite(
+						out_img_fullpath, 
+						in_arr_2d,
+						dtype='float64', 
+						bigtiff=True,  # why bigTiff? we use bigTiff to be able to store large roughness values as float64 dtype in our rasters
+						# compress='jpeg'
+						)
 
-			return out_img_fullpath
+		return out_img_fullpath
+
+	#################################################
+	# decided to include dark images in processing because they might be just land and we need them in our final plot
+		
+	# if (in_arr_2d.max() < 1):
+	# 	print('-> PlotImgFunc(.): image is dark! We skip it.')
+	# 	return 'skipThisImg'
+	
+	# else:
+
+	# 	# img_format = ".jpg"  # does this format support saving neg- values?
+	# 	# img_format = ".png"
+	# 	img_format = ".tif"  # this image format supports saving neg- values in image
+
+
+	# 	print('\n')
+	# 	print('-> image array min= %d' % np.nanmin(in_arr_2d))
+	# 	print('-> image array max= %d' % np.nanmax(in_arr_2d))
+
+	# 	#~ now replace negative pixelValues w/ zero ---> (why???)
+	# 	# in_arr_2d[in_arr_2d<0] = 0 # masks any element of np.array that has value < zero
+	# 	# print('-> img array min= %d' % in_arr_2d.min())
+	# 	# print('-> img array max= %d' % in_arr_2d.max())
+
+
+	# 	out_img_label = path_label+'_'+block_label+img_format
+	# 	# print(img_dir)
+	# 	# print(out_img_label)
+
+	# 	out_img_fullpath = os.path.join(img_dir, out_img_label)
+
+	# 	if (os.path.isfile(out_img_fullpath)):
+	# 		print('-> image EXISTS, we will skip this path!')
+	# 		return 'skipThisImg' 
+
+	# 	else:
+	# 		print('\n-> image is NOT on disc, so we will go on with this path!')
+	# 		print("-> saving output image as:")
+	# 		print(out_img_fullpath)
+
+	# 		# NOTE: plt.imsave() can not save neg. pixel values in an image!
+	# 		# plt.imsave(out_img_fullpath, in_arr_2d, cmap='gray', vmin=0, vmax=in_arr_2d.max())  # note: vmin=in_arr_2d.min() is wrong in this case (why???), cuz roughness array has many fill values with ranges in -99999, so vmin=0 to plot images in range [0,max)
+	# 		# plt.imsave(out_img_fullpath, in_arr_2d, cmap='gray', vmin=in_arr_2d.min(), vmax=in_arr_2d.max())  # note: vmin=in_arr_2d.min() might be right, cuz roughness array has many fill values with ranges in -99999, and we need these fillValues to plot background == [min,max]
+
+
+
+	# 		# #~ create PIL image from roughness array 2D w/ negative values
+	# 		# rough_img = Image.fromarray(in_arr_2d)
+	# 		# print('-> image mode: %s' % rough_img.mode)
+	# 		# #~ save roughness PIL image on disc; 
+	# 		# rough_img.save(out_img_fullpath)  # note: PIL is able to save neg. pixel values in .tif file
+	# 		# # rgb_rough_img.save(out_img_fullpath)
+
+
+	# 		#~ new way to write tif image w/negative values; 
+	# 		tifffile.imwrite(
+	# 						out_img_fullpath, 
+	# 						in_arr_2d,
+	# 						dtype='float64', 
+	# 						bigtiff=True,  # why bigTiff? we use bigTiff to be able to store large roughness values as float64 dtype in our rasters
+	# 						# compress='jpeg'
+	# 						)
+
+	# 		return out_img_fullpath
 
 ########################################################################################################################
 '''this f() builds image dir inside roughness dir'''
