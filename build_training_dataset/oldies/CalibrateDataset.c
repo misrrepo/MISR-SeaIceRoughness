@@ -1,6 +1,6 @@
 /* 
 Ehsan Jan 15, 2020
-originally from dir: /home/mare/Nolin/SeaIce/Code/C
+originally from dir: /home/mare/Nolin/SeaIce/Code/C (atmmodel.c)
 name: atm_to_misr_pixels.c
 usage: labels MISR pixels w/ATM roughness data
 
@@ -584,7 +584,7 @@ int main(int argc, char *argv[]) {
                     // 4- now check cloudMask file
                     if (!cloudMask_run_stat) // if cloudMask is off
                     { // go here
-                        printf("c: NOTE: cloudMask is off == we do not use cloud mask anymore! \n");
+                        // printf("c: NOTE: cloudMask is off == we do not use cloud mask anymore! \n");
                     } 
                     else 
                     {

@@ -1,6 +1,6 @@
-exe_path=/home/ehsan/misr_lab/MISR-roughness/exe_dir
-src_name=MisrAtmCalibratedModel.c
-exe_name=MisrAtmCalibratedModel
+exe_path=/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir
+src_name=CalibrateDataset.c
+exe_name=CalibrateDataset
 
 all:
 	gcc -I/home/ehsan/misr_lab/mtk_src/Mtk-1.5.1/include	\

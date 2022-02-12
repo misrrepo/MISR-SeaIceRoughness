@@ -11,6 +11,6 @@ These are the steps to create the final mosaic.tif from roughness.dat files:
 
 also:
 
-1- plot_ATM_paths.ipynb >>> plot ATM samples on map & extract ATM transect
+1- subset_transect_and_plot_ATM_paths.ipynb >>> plot ATM samples on map & extract ATM transect
 
 2- transect_statistical_tests.ipynb >>> checks transect data and plots timeseries and performs statistics

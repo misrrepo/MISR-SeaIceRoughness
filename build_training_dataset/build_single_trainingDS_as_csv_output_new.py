@@ -37,7 +37,7 @@ note: -999.0 represents no MISR toa file
 ##- set up paths
 ##- input dir should include 9 dir
 masked_toa_home = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46"
-atm_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/ATM_apr2016_5days"
+atm_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/ATM_apr2016_5days/test_19april"
 
 ##- output
 trainingDS_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/training_data"
