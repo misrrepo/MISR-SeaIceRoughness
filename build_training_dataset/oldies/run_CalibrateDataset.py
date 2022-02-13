@@ -13,15 +13,15 @@ from platform import python_version
 ########################################################################################################################
 #-- setup paths
 #-- inputs
-atm_dir = '/home/ehsan/misr_lab/ATM_apr2016_5days'	 		# files in this directory should be all atm files listed there in one single directory 
-masked_toa_refl_home = '/home/ehsan/misr_lab/orders/14528_apr2016/toa_refl_april2016_day1_30_p1to233_b1to46/masked_toa_refl_april2016_day1_30_p1to233_b1to46'				 # path to the home dir of 3 subdir of An/Ca/Cf
+atm_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/ATM_apr2016_5days"	 		# files in this directory should be all atm files listed there in one single directory 
+masked_toa_refl_home = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46"				 # path to the home dir of 3 subdir of An/Ca/Cf
 cloud_masked_dir = atm_dir 		#"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"   # if not used, turn this option off in C.code
 #-- output 
-out_atmmodel_dir = '/home/ehsan/misr_lab/models/april_2016'
-atmmodel_csvfile_label = "MisrAtmCalibratedModel_april_2016.csv"
+out_atmmodel_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/training_data"
+atmmodel_csvfile_label = "MisrAtmCalibratedModel_april_2016_testRun.csv"
 #-- exe dir
-exe_dir = "/home/ehsan/misr_lab/MISR-roughness/exe_dir"
-exe_name = '?'
+exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
+exe_name = "CalibrateDataset"
 ########################################################################################################################
 def main():
 	'''

@@ -73,7 +73,6 @@ final_ds_list = []
 
 ## get a list of ATM csv files
 atm_list = glob.glob(os.path.join(atm_dir, atm_file_pattern))
-
 total_atm_files_found = len(atm_list)
 print('total ATM.csv files: %d' %total_atm_files_found)
 
@@ -85,6 +84,7 @@ print('total ATM.csv files: %d' %total_atm_files_found)
 # final_ds.set_index(total_atm_files_found*10000)
 
 
+# open each ATM file
 for atm_cntr, ATMfile in enumerate(atm_list):
 
 	print('\nprocessing ATM file: (%d/%d)' %(atm_cntr+1, len(atm_list)))
