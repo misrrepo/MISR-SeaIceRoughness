@@ -5,7 +5,12 @@ calibrate MISR dataset with ATM measurement data and returns the training datase
 
 input: dir path where is home to masked_toa_refl & ATM data
 output: single datasets.csv for each ATM.csv; and then will merge all output single datasets together in the end and will return a final merged dataset for filtering 
+
+to-do:
+- do not check empty lists
+- check all code again
 '''
+
 import MisrToolkit as mtk
 import pandas as pd
 import numpy as np
@@ -35,16 +40,24 @@ note: -999.0 represents no MISR toa file
 '''
 
 ##- set up paths
-##- input dir should include 9 dir
-masked_toa_home = "/media/ehsan/Gdrive_18TB/all_masked_toa_refl_2010_2014_2019"
-atm_dir = "/home/ehsan/misr_lab/ATM_2010_2014_2019"
+#################### input dir should include 9 dir
+# masked_toa_home = "/media/ehsan/Gdrive_18TB/all_masked_toa_refl_2010_2014_2019"
+masked_toa_home = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46"
 
-##- output
-trainingDS_dir = "/media/ehsan/Gdrive_18TB/training_DS_2010_2014_2019"
+
+# atm_dir = "/home/ehsan/misr_lab/ATM_2010_2014_2019"
+atm_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/ATM_apr2016_5days"
+
+
+#################### output
+# trainingDS_dir = "/media/ehsan/Gdrive_18TB/training_DS_2010_2014_2019"
+trainingDS_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/training_data/april_2016"
+
+
 # output_final_ds_label = "april_2016_9cam3bands_final_merged_dataset.csv"
 
 
-##- setup pattern- do not change
+#################### setup pattern- do not change
 atm_file_pattern = 'ILATM2*'+'.csv'
 single_csv_ds_label = "9cam3bands"
 
@@ -113,9 +126,16 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 	# print(atm_mon)
 	# print(atm_day)
 
+	hrminsec = atm_label.split('_')[2]
+	atm_hr = hrminsec[0:2]
+	atm_min = hrminsec[2:4]
+	atm_sec = hrminsec[4:6]
 
-	ATM_start_time = atm_yr+'-'+atm_mon+'-'+atm_day+"T"+atm_hr+":"+atm_min+":"+atm_sec+"Z" # YYYY-MM-DDThh:mm:ssZ
-	ATM_end_time = atm_yr+'-'+atm_mon+'-'+atm_day+"T"+atm_hr+":"+atm_min+":"+atm_sec+"Z" # YYYY-MM-DDThh:mm:ssZ
+	ATM_start_time = atm_yr+'-'+atm_mon+'-'+atm_day+"T00:00:00Z" # YYYY-MM-DDThh:mm:ssZ
+	ATM_end_time = atm_yr+'-'+atm_mon+'-'+atm_day+"T23:59:59Z" # YYYY-MM-DDThh:mm:ssZ
+
+	ATM_start_time_hrminsec = atm_yr+'-'+atm_mon+'-'+atm_day+"T"+atm_hr+":"+atm_min+":"+atm_sec+"Z" # YYYY-MM-DDThh:mm:ssZ
+	ATM_end_time_hrminsec = atm_yr+'-'+atm_mon+'-'+atm_day+"T"+atm_hr+":"+atm_min+":"+atm_sec+"Z" # YYYY-MM-DDThh:mm:ssZ
 
 	print(ATM_start_time)
 	print(ATM_end_time)
@@ -275,7 +295,7 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 			########################################################
 			# new way of making a list and then open it in dataframe
 
-			final_ds_values = [misr_path_num, misr_orbit, misr_block, int(misr_pixel_x), int(misr_pixel_y), round(atm_lat,7), round(atm_lon,7), pixel_values[0],pixel_values[1],pixel_values[2],pixel_values[3],pixel_values[4],pixel_values[5],pixel_values[6],pixel_values[7],pixel_values[8],pixel_values[9],pixel_values[10],pixel_values[11],atm_roughness,ATM_start_time,ATM_end_time]
+			final_ds_values = [misr_path_num, misr_orbit, misr_block, int(misr_pixel_x), int(misr_pixel_y), round(atm_lat,7), round(atm_lon,7), pixel_values[0],pixel_values[1],pixel_values[2],pixel_values[3],pixel_values[4],pixel_values[5],pixel_values[6],pixel_values[7],pixel_values[8],pixel_values[9],pixel_values[10],pixel_values[11],atm_roughness,ATM_start_time_hrminsec,ATM_end_time_hrminsec]
 			zipped = zip(column_names, final_ds_values)
 			a_dictionary = dict(zipped)
 			# print(a_dictionary)
