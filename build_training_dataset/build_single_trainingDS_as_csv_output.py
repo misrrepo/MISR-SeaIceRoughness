@@ -67,7 +67,7 @@ t1 = dt.datetime.now()
 
 ds_row_index = 0
 
-column_names = ['path','orbit','block','line','sample','lat','lon','Da_r','Ca_r','Ba_r','Aa_r','An_r','An_g','An_b','An_nir','Af_r','Bf_r','Cf_r','Df_r','mean_ATM_roughness']
+column_names = ['path','orbit','block','line','sample','lat','lon','Da_r','Ca_r','Ba_r','Aa_r','An_r','An_g','An_b','An_nir','Af_r','Bf_r','Cf_r','Df_r','mean_ATM_roughness','ATM_start_time','ATM_end_time']
 
 final_ds_list = []
 
@@ -114,11 +114,11 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 	# print(atm_day)
 
 
-	ATM_start_time = atm_yr+'-'+atm_mon+'-'+atm_day+"T00:00:00Z" # YYYY-MM-DDThh:mm:ssZ
-	ATM_end_time = atm_yr+'-'+atm_mon+'-'+atm_day+"T23:59:59Z"
+	ATM_start_time = atm_yr+'-'+atm_mon+'-'+atm_day+"T"+atm_hr+":"+atm_min+":"+atm_sec+"Z" # YYYY-MM-DDThh:mm:ssZ
+	ATM_end_time = atm_yr+'-'+atm_mon+'-'+atm_day+"T"+atm_hr+":"+atm_min+":"+atm_sec+"Z" # YYYY-MM-DDThh:mm:ssZ
+
 	print(ATM_start_time)
 	print(ATM_end_time)
-
 
 	# get a list of orbits for date-time
 	orbit_list = mtk.time_range_to_orbit_list(ATM_start_time, ATM_end_time)
@@ -275,7 +275,7 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 			########################################################
 			# new way of making a list and then open it in dataframe
 
-			final_ds_values = [misr_path_num, misr_orbit, misr_block, int(misr_pixel_x), int(misr_pixel_y), round(atm_lat,7), round(atm_lon,7), pixel_values[0],pixel_values[1],pixel_values[2],pixel_values[3],pixel_values[4],pixel_values[5],pixel_values[6],pixel_values[7],pixel_values[8],pixel_values[9],pixel_values[10],pixel_values[11],atm_roughness]
+			final_ds_values = [misr_path_num, misr_orbit, misr_block, int(misr_pixel_x), int(misr_pixel_y), round(atm_lat,7), round(atm_lon,7), pixel_values[0],pixel_values[1],pixel_values[2],pixel_values[3],pixel_values[4],pixel_values[5],pixel_values[6],pixel_values[7],pixel_values[8],pixel_values[9],pixel_values[10],pixel_values[11],atm_roughness,ATM_start_time,ATM_end_time]
 			zipped = zip(column_names, final_ds_values)
 			a_dictionary = dict(zipped)
 			# print(a_dictionary)
