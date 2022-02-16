@@ -42,7 +42,7 @@ note: -999.0 represents no MISR toa file
 ##- set up paths
 #################### input dir should include 9 dir
 # masked_toa_home = "/media/ehsan/Gdrive_18TB/all_masked_toa_refl_2010_2014_2019"
-masked_toa_home = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46"
+masked_toa_home = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_9cam3bands/masked_toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46"
 
 
 # atm_dir = "/home/ehsan/misr_lab/ATM_2010_2014_2019"
@@ -59,7 +59,7 @@ trainingDS_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_ap
 
 #################### setup pattern- do not change
 atm_file_pattern = 'ILATM2*'+'.csv'
-single_csv_ds_label = "9cam3bands"
+single_csv_ds_label = "out9cam3bands"
 
 
 # atm_file_sample = 'ILATM2_20160420_175457_smooth_nadir3seg_50pt.csv'
@@ -100,7 +100,8 @@ print('total ATM.csv files: %d' %total_atm_files_found)
 # open each ATM file
 for atm_cntr, ATMfile in enumerate(atm_list):
 
-	print('\nprocessing ATM file: (%d/%d)' %(atm_cntr+1, len(atm_list)))
+	print('\n********** processing ATM file: (%d/%d)' %(atm_cntr+1, len(atm_list)))
+	print("try to use ATM time and locations to find MISR pixel...\n")
 	print(ATMfile)
 
 	atm_filelabel = ATMfile.split('/')[-1]
@@ -137,21 +138,23 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 	ATM_start_time_hrminsec = atm_yr+'-'+atm_mon+'-'+atm_day+"T"+atm_hr+":"+atm_min+":"+atm_sec+"Z" # YYYY-MM-DDThh:mm:ssZ
 	ATM_end_time_hrminsec = atm_yr+'-'+atm_mon+'-'+atm_day+"T"+atm_hr+":"+atm_min+":"+atm_sec+"Z" # YYYY-MM-DDThh:mm:ssZ
 
-	print(ATM_start_time)
-	print(ATM_end_time)
+	print("ATM start: %s" %ATM_start_time)
+	print("ATM end:   %s" %ATM_end_time)
 
 	# get a list of orbits for date-time
-	orbit_list = mtk.time_range_to_orbit_list(ATM_start_time, ATM_end_time)
-	# print('num of orbits found: %s' %len(orbit_list))
-	# print(orbit_list)
+	orbit_list_today = mtk.time_range_to_orbit_list(ATM_start_time, ATM_end_time)
+	# print('orbits today: %s' %len(orbit_list_today))
+	# print(orbit_list_today)
 
 
-	for misr_orbit in orbit_list:
-		# print('\nprocessing orbit: %d' %misr_orbit)
+
+	# for each orbit we find path number and use that to find MISR pixel
+	for misr_orbit_today in orbit_list_today:
+		# print('\nprocessing orbit: %d' %misr_orbit_today)
 
 		# orbit to path
-		misr_path_num = mtk.orbit_to_path(misr_orbit)
-		# print('path: %s' %misr_path_num)
+		misr_pathNumber_today = mtk.orbit_to_path(misr_orbit_today)
+		# print('path: %s' %misr_pathNumber_today)
 
 
 		# open and read ATM file
@@ -166,7 +169,7 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 		# print(csv_total_rows)
 
 
-		# read each row
+		# read each row in ATM-file and extract latLong
 		for atm_row_num in range(csv_total_rows): 
 			# print(type(atm_row_num))
 			atm_lat = input_atm_file.iloc[atm_row_num, 1]	
@@ -181,32 +184,32 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 			# print('finidng list of paths for ATM location...')
 			try:  # to ignore Exception for some path numbers
 				paths_cover_ATM_location = mtk.latlon_to_path_list(atm_lat, atm_lon)
-				# print('MISR list of paths that cover ATM latlon:')
+				# print('MISR paths cover ATM latlon:')
 				# print(paths_cover_ATM_location)
 			except Exception:
-				# print('Exception was raised- continue to next ATM row')
+				print('Exception was raised- continue to next ATM row')
 				continue
 
 
-			if misr_path_num not in paths_cover_ATM_location:
-				# print('MISR path %d in day %s not match with path that ATM lat-lon falls in, continue to next ATM latLon row!' %(misr_path_num, atm_day))
+			if misr_pathNumber_today not in paths_cover_ATM_location:
+				# print('MISR path %d in day %s not match with path that ATM lat-lon falls in, continue to next ATM latLon row!' %(misr_pathNumber_today, atm_day))
 				continue    # to next location == latLon
 			# else:
-			#     print('MISR path %d covers ATM location- we will find Block-Line-Sample!' %misr_path_num)
+				print('MISR path %d covers ATM location- we will find Block-Line-Sample!' %misr_pathNumber_today)
 
 	
 			# find MISR pixel from that
 			resolution_meters = 275
 			
-			misr_block, misr_pixel_x, misr_pixel_y = mtk.latlon_to_bls(misr_path_num, resolution_meters, atm_lat, atm_lon) # q- why crash? these paths cover that that ATM location
+			misr_block, misr_pixel_x, misr_pixel_y = mtk.latlon_to_bls(misr_pathNumber_today, resolution_meters, atm_lat, atm_lon) # q- why crash? these paths cover that that ATM location
 			
 			# print('block: %s' %misr_block)
 			# print('pixel x: %s' %misr_pixel_x)
 			# print('pixel y: %s' %misr_pixel_y)
 
 
-			path_num_str = str(misr_path_num).zfill(3)
-			misr_orbit_str = str(misr_orbit).zfill(6) 
+			path_num_str = str(misr_pathNumber_today).zfill(3)
+			misr_orbit_str = str(misr_orbit_today).zfill(6) 
 			misr_block_str = str(misr_block).zfill(3)
 
 
@@ -244,6 +247,8 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 										  an_red_fp, an_green_fp, an_blue_fp, an_nir_fp, 
 										  af_red_fp, bf_red_fp, cf_red_fp, df_red_fp]
 
+
+
 			available_file_status = []
 			# check file exists
 			for masked_toa_file in masked_toaFile_orderedList:
@@ -262,6 +267,7 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 				# print('did not find even a single camera value for ATM location/row- continue')
 				continue
 
+			# print("num. of masked toa files found:")
 			# print(available_file_status)
 
 
@@ -276,7 +282,7 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 				
 				#-- if a camera is missing, assign fill value for cameras that are not found
 				if (is_file==False):
-					pixel_values.append(-99.0) 
+					pixel_values.append(-999.0) 
 				else:
 					rough_2d_arr = np.fromfile(maskedTOA_rawfile, dtype=np.double)[0:1048576].reshape((512,2048))   # 'double==float64'     # is this roughness in cm?
 					# print(rough_2d_arr.shape)
@@ -290,12 +296,13 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 			# print('orbit-str: %s' %misr_orbit_str)
 			# print('block-str: %s' %misr_block_str)
 
+			# print("found these pixel values for an ATM location:")
 			# print(pixel_values)
 
 			########################################################
 			# new way of making a list and then open it in dataframe
 
-			final_ds_values = [misr_path_num, misr_orbit, misr_block, int(misr_pixel_x), int(misr_pixel_y), round(atm_lat,7), round(atm_lon,7), pixel_values[0],pixel_values[1],pixel_values[2],pixel_values[3],pixel_values[4],pixel_values[5],pixel_values[6],pixel_values[7],pixel_values[8],pixel_values[9],pixel_values[10],pixel_values[11],atm_roughness,ATM_start_time_hrminsec,ATM_end_time_hrminsec]
+			final_ds_values = [misr_pathNumber_today, misr_orbit_today, misr_block, int(misr_pixel_x), int(misr_pixel_y), round(atm_lat,7), round(atm_lon,7), pixel_values[0],pixel_values[1],pixel_values[2],pixel_values[3],pixel_values[4],pixel_values[5],pixel_values[6],pixel_values[7],pixel_values[8],pixel_values[9],pixel_values[10],pixel_values[11],atm_roughness,ATM_start_time_hrminsec,ATM_end_time_hrminsec]
 			zipped = zip(column_names, final_ds_values)
 			a_dictionary = dict(zipped)
 			# print(a_dictionary)
@@ -307,12 +314,21 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 	# print("1st row of data:")
 	# print(final_ds_list[0])
 
-	print("processed %d rows" %ds_row_index)
+	##################################################################
+
+	# print("processed %d rows" %ds_row_index)
+	# if (ds_row_index == 0):
+
+	##################################################################
+
+
 	if (len(final_ds_list) == 0):
 		print(final_ds_list)
-		print("ATM list is empty, we write zeros & continue to next ATM file")
+		print("ATM list is empty, we write -998 flag & continue to next ATM file")
+		print("note: zero means we did not find any MISR pixel for locations in an ATM file.")
+
 		
-		final_ds_list = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+		final_ds_list = [-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998,-998]
 		
 		with open(output_file_fp, 'w', encoding='UTF8', newline='') as fileObj:
 			writer = csv.writer(fileObj)  # create a new instance of the DictWriter class by passing the file object
