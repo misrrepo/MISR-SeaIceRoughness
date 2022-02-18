@@ -13,7 +13,9 @@ to-do:
 input file format?
 output???
 */
-
+/*
+note: check line 850: why -1 is used? 
+*/
 
 // these inside /usr/include
 #include <stdio.h>

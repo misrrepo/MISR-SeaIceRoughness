@@ -10,6 +10,10 @@ to-do:
 - do not check empty lists
 - check all code again
 '''
+'''
+note: -999.0 represents no MISR toa file
+		-998 is the first line
+'''
 
 import MisrToolkit as mtk
 import pandas as pd
@@ -35,9 +39,6 @@ if (py_ver != 3.6):
 else:
 	print('python version: %s' %py_ver)
 
-'''
-note: -999.0 represents no MISR toa file
-'''
 
 ##- set up paths
 #################### input dir should include 9 dir

@@ -18,7 +18,7 @@ masked_toa_refl_home = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/proj
 cloud_masked_dir = atm_dir 		#"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"   # if not used, turn this option off in C.code
 #-- output 
 out_atmmodel_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/training_data"
-atmmodel_csvfile_label = "oldMethod_MisrAtmCalibratedModel_april_2016.csv"
+atmmodel_csvfile_label = "atmmodel_april_2016.csv"
 #-- exe dir
 exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
 exe_name = "CalibrateDataset"
