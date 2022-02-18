@@ -7,15 +7,18 @@ import numpy as np
 import datetime as dt
 from platform import python_version
 
-# home where inout and output is/will be
-home_dir = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/training_dataset"
-# home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/training_dataset"
+# home where input is and output will be
+home_dir = "/Users/ehsanmos/Documents/RnD/MISR_lab/ML_research/training_dataset/test_1000sample_DS"
+
 
 # input merged.csv that will be filtered
-in_file = "merged_april_2016_9cam3bands.csv"
+in_file = "training_dataset_myMethod_merged_april_2016_9cam_4bands_1000sample.csv"
 
-# name of output averaged csv
-output_csv_label = "averaged_april_2016_9cam3bands_pandasMethod_finalDS_forML_withCount.csv"
+
+# name of output averaged csv- output will be saved at home directory
+output_csv_label = "training_dataset_myMethod_averaged_april_2016_9cam3bands_pandasMethod_finalDS_forML_withCount_1000samples_2.csv"
+
+##################################################################
 
 # path to input dir
 in_ds = os.path.join(home_dir, in_file)
@@ -23,6 +26,16 @@ in_ds = os.path.join(home_dir, in_file)
 # read input data to pandas DF
 df1 = pd.read_csv(in_ds)
 print("df1 shape: (%s, %s)" %df1.shape)
+
+
+
+# change dtype of lin-sample columns from float to int and later filter based on int dtype
+# print(df1.info())
+print(df1['line'][0])
+df1 = df1.astype({'path':int, 'orbit': int, 'block':int, 'line':int, 'sample':int})
+# print(df1.info())
+print(df1['line'][0])
+
 
 
 # create DF2
@@ -38,21 +51,22 @@ median_cols = ['lat', 'lon']
 t1 = dt.datetime.now()
 print(t1)
 
+
 # for irow in range(1000): #range(in_df.shape[0]):
 for irow in range(df1.shape[0]):
     
-    print('\nrow: %d' %irow)
+    # print('\nrow: %d' %irow)
     path_num = df1['path'][irow]
     orbit_num = df1['orbit'][irow]
     block_num = df1['block'][irow]
     line_num = df1['line'][irow]
     sample_num = df1['sample'][irow]
     
-    # print(path_num)
-    # print(orbit_num)
-    # print(block_num)
-    # print(line_num)
-    # print(sample_num)
+    # print(type(path_num))
+    # print(type(orbit_num))
+    # print(type(block_num))
+    # print(type(line_num))
+    # print(type(sample_num))
 
     
     # check if POBLS exists in df2... 
@@ -60,24 +74,26 @@ for irow in range(df1.shape[0]):
     row_in_df2 = df2.loc[(df2['path']==path_num) & (df2['orbit']==orbit_num) & (df2['block']==block_num) & (df2['line']==line_num) & (df2['sample']==sample_num)] # HOW DOES IT FILTER?
     # print(len(row_in_df2))
 
-    if (len(row_in_df2 != 0 )):
-        print('POBLS found inside df2, continue...')
+    if (len(row_in_df2 != 0)):
+        # print('POBLS found inside df2, continue...')
         continue
 
 
-    else: # filter df1 for POBLS and average the block and join it to df2
-        print('new-row is not in df2...')
+    else: # filter df1 for POBLS and average the block/ or pixel? and join it to df2
+        print('\nfound new-row not in df2...')
         # filter df1 for POBLS
         # define conditions seperately
-        cond1 = df1['path']==path_num
-        cond2 = df1['orbit']==orbit_num
-        cond3 = df1['block']==block_num
-        cond4 = df1['line']==line_num
-        cond5 = df1['sample']==sample_num
+        cond1 = (df1['path']==path_num)
+        cond2 = (df1['orbit']==orbit_num)
+        cond3 = (df1['block']==block_num)
+        cond4 = (df1['line']==line_num)
+        cond5 = (df1['sample']==sample_num)
 
         # apply filters to all df1
         df1_chunk = df1.loc[cond1 & cond2 & cond3 & cond4 & cond5]
-        print('chunk: (%d,%d)' %df1_chunk.shape)
+        print('row: %d' %irow)
+        # print(df1_chunk)
+        print('chunk shape: (%d,%d)' %df1_chunk.shape)
 
         # average the filtered block
         df1_chunk_average = df1_chunk[average_cols].mean(axis=0)
@@ -92,7 +108,7 @@ for irow in range(df1.shape[0]):
         'line':line_num,
         'sample':sample_num,
         'count':df1_chunk_count
-        }, dtype='int')
+        }, dtype=int)
 
         # create a new row
         new_row = pd.concat([poblsc, df1_chunk_median, df1_chunk_average], axis=0) # axis=0 ==> along row/x axis
@@ -113,6 +129,15 @@ print(output_csv)
 t2 = dt.datetime.now()
 runtime = t2-t1
 print("runtime: %s" %runtime)
+
+
+
+
+
+
+
+
+
 
 
 
