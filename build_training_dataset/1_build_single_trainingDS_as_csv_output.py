@@ -11,8 +11,9 @@ to-do:
 - check all code again
 '''
 '''
-note: -999.0 represents no MISR toa file
-		-998 is the first line
+notes:
+	-999.0 represents no MISR toa file
+	-998 is the first line
 '''
 
 import MisrToolkit as mtk
@@ -81,7 +82,8 @@ t1 = dt.datetime.now()
 
 ds_row_index = 0
 
-column_names = ['path','orbit','block','line','sample','lat','lon','Da_r','Ca_r','Ba_r','Aa_r','An_r','An_g','An_b','An_nir','Af_r','Bf_r','Cf_r','Df_r','mean_ATM_roughness','ATM_start_time','ATM_end_time']
+column_names = ['path','orbit','block','line','sample','lat','lon','Da_r','Ca_r','Ba_r','Aa_r',\
+				'An_r','An_g','An_b','An_nir','Af_r','Bf_r','Cf_r','Df_r','mean_ATM_roughness','ATM_start_time','ATM_end_time']
 
 final_ds_list = []
 
@@ -303,7 +305,14 @@ for atm_cntr, ATMfile in enumerate(atm_list):
 			########################################################
 			# new way of making a list and then open it in dataframe
 
-			final_ds_values = [misr_pathNumber_today, misr_orbit_today, misr_block, int(misr_pixel_x), int(misr_pixel_y), round(atm_lat,7), round(atm_lon,7), pixel_values[0],pixel_values[1],pixel_values[2],pixel_values[3],pixel_values[4],pixel_values[5],pixel_values[6],pixel_values[7],pixel_values[8],pixel_values[9],pixel_values[10],pixel_values[11],atm_roughness,ATM_start_time_hrminsec,ATM_end_time_hrminsec]
+			final_ds_values = [misr_pathNumber_today, misr_orbit_today, misr_block,\
+			 int(misr_pixel_x), int(misr_pixel_y), round(atm_lat,7), round(atm_lon,7), \
+			 pixel_values[0],pixel_values[1],pixel_values[2],pixel_values[3],pixel_values[4],\
+			 pixel_values[5],pixel_values[6],pixel_values[7],pixel_values[8],pixel_values[9],\
+			 pixel_values[10],pixel_values[11],atm_roughness,\
+			 ATM_start_time_hrminsec,ATM_end_time_hrminsec]
+			
+
 			zipped = zip(column_names, final_ds_values)
 			a_dictionary = dict(zipped)
 			# print(a_dictionary)
