@@ -9,7 +9,8 @@ notes:
 
 import numpy as np
 import os, glob
-import gdal, osr # python2.7
+# import gdal, osr # python2.7
+from osgeo import gdal  # python3.6 on Mac
 import MisrToolkit as Mtk # python2.7
 from MisrToolkit import * # 
 from subprocess import call
@@ -23,27 +24,28 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files
-rough_dir_fullpath =  "/media/ehsan/6T_part1/2016/july_2016/roughness_2016_july1to16_p1to233_b1to46/all_roughness_subdirs_1_to_16_july2016/roughness_subdir_2016_7_1"
+rough_dir_fullpath =  "/Users/ehsanmos/MLP_dataset/sample_roughness_april2016"
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
 # georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
 
-roughness_date = "2016_7_1"
+roughness_date = "2016_4_1"
 
 
-output_dir = "/media/ehsan/6TB_part2/roughness2raster_2016/july"
-# output_dir = rough_dir_fullpath
+# output_dir = "/media/ehsan/6TB_part2/roughness2raster_2016/july"
+output_dir = rough_dir_fullpath
 
 
 georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max'
 
 
 ########################################################################################################################
-#~ global IDfiers
+#~ global ID-fiers
 ########################################################################################################################
 # misr_img_res = (512, 2048)
 # img_nrows = misr_img_dims[0]
 # img_ncols = misr_img_dims[1]
+ascending_block_threshold = 5
 misr_res_meter = 275
 gcp_mode = "corners_n_inside"                       									# 'inside' OR "corners_n_inside"
 reprojection = 'on'
@@ -82,9 +84,10 @@ def main():
 			continue
 		else:
 			out_img_fullpath = ret
+
 		print('-> block: %s' %block_num)
-		if (block_num < 10): 	# we exclude blocks less than 20 (I changed to 10) to exclude blocks in ascending path
-			print('-> block num < 10, so we skip it!')
+		if (block_num < ascending_block_threshold): 	# we exclude blocks less than 20 (I changed to 10) to exclude blocks in ascending path
+			print('-> block num < ascending threshold=%s, so we skip it!' %ascending_block_threshold)
 			continue
 
 		#~ we open the saved-on-disc images from previous step; gdal.Open(can read any img format=tif, jpg, png, but png has issues w/resamplinh alg later, so jpg + tif(but larger files) is better)
@@ -148,7 +151,7 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 		return 'skipThisImg' 
 
 	else:
-		print('\n-> image is NOT on disc, so we will go on with this path!')
+		print('\n-> image is NOT on disc, so we will build this file!')
 		print("-> saving output image as:")
 		print(out_img_fullpath)
 
