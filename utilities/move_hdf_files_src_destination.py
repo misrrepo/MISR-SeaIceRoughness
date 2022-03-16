@@ -16,7 +16,6 @@ home_dir_unique = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/utilities'
 
 
 hdf_home = '/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid'
-hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+str(path)+'_O0'+str(orbit)+'_DF_F03_0024.hdf'
 hdf_dest_dir_name = 'move_to_Mac_blocksInAtmmodel' 		# this will be inside hdf_home
 
 ######################################################
@@ -38,6 +37,9 @@ for row_indx in range(input_unique_df.shape[0]):
 		zfill(path, 3)
 		print(path)
 
+
+	
+	hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+str(path)+'_O0'+str(orbit)+'_DF_F03_0024.hdf'
 
 	hdf_src_fp = os.path.join(hdf_home, hdf_file_pattern)
 	print(hdf_src_fp)
