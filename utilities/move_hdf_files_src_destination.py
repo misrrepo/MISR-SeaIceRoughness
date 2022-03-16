@@ -19,7 +19,8 @@ hdf_home = '/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid'
 hdf_dest_dir_name = 'move_to_Mac_blocksInAtmmodel' 		# this will be inside hdf_home
 
 ######################################################
-if (os.path.isdir(hdf_dest_dir_name)!=True):
+if (os.path.isdir(hdf_home, hdf_dest_dir_name)!=True):
+	print('destination folder not available')
 	raise RuntimeError()
 
 
