@@ -35,12 +35,16 @@ for row_indx in range(input_unique_df.shape[0]):
 
 	# zero-pad path to 3 digits
 	if path < 100:
-		zfill(path, 3)
-		print(path)
+		path_str = str(path)
+		path_str.zfill(3)
+		print(path_str)
+	else:
+		path_str = str(path)
 
 
-	
-	hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+str(path)+'_O0'+str(orbit)+'_DF_F03_0024.hdf'
+
+
+	hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+path_str+'_O0'+str(orbit)+'_DF_F03_0024.hdf'
 
 	hdf_src_fp = os.path.join(hdf_home, hdf_file_pattern)
 	print(hdf_src_fp)
