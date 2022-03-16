@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "hi Ehsan!"
-hdf_dir=/Volumes/Ehsan-7757225325/2016/april_2016/10752_april_2016_1_16_susan
+hdf_dir=/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid
+
 echo $hdf_dir
 
 echo "before renaming..."
