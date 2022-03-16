@@ -37,7 +37,7 @@ for row_indx in range(input_unique_df.shape[0]):
 	if path < 100:
 		path_str = str(path)
 		path_str.zfill(3)
-		print(path_str)
+		print('updated to: %s' %path_str)
 	else:
 		path_str = str(path)
 
@@ -50,8 +50,9 @@ for row_indx in range(input_unique_df.shape[0]):
 	print(hdf_src_fp)
 	check_status = os.path.isfile(hdf_src_fp)
 	if (check_status!=True):
-		# continue
-		pass
+		print('hdf-file not found!')
+		continue
+
 
 	else:
 
