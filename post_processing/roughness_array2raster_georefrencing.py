@@ -8,6 +8,7 @@ notes:
 '''
 
 import numpy as np
+import pandas as pd
 import os, glob
 # import gdal, osr # python2.7
 from osgeo import gdal  # python3.6 on Mac
@@ -24,19 +25,18 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files
-rough_dir_fullpath =  "/Users/ehsanmos/MLP_dataset/sample_roughness_april2016"
+rough_dir_fullpath =  "/Volumes/SEAGATE/april_2016/roughness_apr2016_from_PH/move_to_Box"
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
 # georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
 
-roughness_date = "2016_4_1"
-
+roughness_date = "2016_4"
 
 # output_dir = "/media/ehsan/6TB_part2/roughness2raster_2016/july"
 output_dir = rough_dir_fullpath
 
 
-georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max'
+georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList'
 
 
 ########################################################################################################################
@@ -68,7 +68,7 @@ def main():
 	#~ reading roughness files in loop & process each at a time
 	for file_count, rough_fname in enumerate(rough_files_fullpath_list):
 		print("--------------------------------------------------------------------------------------------------------")
-		print('-> processing new roughness array: (%d/ %d)' % (file_count+1, tot_found_rough_files))
+		print('processing new roughness array: (%d/ %d)' % (file_count+1, tot_found_rough_files))
 		print(rough_fname)
 		print('\n')
 		rough_arr_2d, block_num, path_num = read_rough_file(rough_fname)
@@ -80,14 +80,14 @@ def main():
 		ret = arr2img_writeToDisc(rough_arr_2d, path_label, block_label, image_dir)
 		
 		if (ret=='skipThisImg'):
-			print('-> continue to next img.')
+			print('continue to next img.')
 			continue
 		else:
 			out_img_fullpath = ret
 
-		print('-> block: %s' %block_num)
+		print('block: %s' %block_num)
 		if (block_num < ascending_block_threshold): 	# we exclude blocks less than 20 (I changed to 10) to exclude blocks in ascending path
-			print('-> block num < ascending threshold=%s, so we skip it!' %ascending_block_threshold)
+			print('block num < ascending threshold=%s, so we skip it!' %ascending_block_threshold)
 			continue
 
 		#~ we open the saved-on-disc images from previous step; gdal.Open(can read any img format=tif, jpg, png, but png has issues w/resamplinh alg later, so jpg + tif(but larger files) is better)
@@ -95,11 +95,11 @@ def main():
 		# print('-> inDS type: %s' % type(in_ds)) # returns a Dataset obj
 		
 		# gcp_list, total_gcps, antimaridina_crossing, gcp_numbers = create_gcp_list_for_imgBlockPixels_mostGCPs(path_num, block_num, misr_res_meter)
-		gcp_list, total_gcps, gcp_numbers, antimaridina_crossing = create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_num, misr_res_meter)
+		gcp_list, total_gcps, gcp_numbers, antimaridina_crossing = create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_num, misr_res_meter, image_dir)
 
 		if (skip_antimeridian=='on'):
 			if (antimaridina_crossing==True):
-				print('-> note: image block crosses Anti-Maridian! we will skip it')
+				print('note: image block crosses Anti-Maridian! we will skip it')
 				continue
 
 		translated_img_fullpath = apply_gcp(path_label, block_label, image_dir, in_ds, gcp_list)
@@ -110,7 +110,7 @@ def main():
 
 		#~ we print the raster directory at the end to be easier to use for next step: create-mosaic
 		print('\n')
-		print('-> raster direcotyr:')
+		print('raster direcotyr:')
 		print(image_dir)
 
 	return 0
@@ -131,8 +131,8 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 
 
 	print('\n')
-	print('-> image array min= %d' % np.nanmin(in_arr_2d))
-	print('-> image array max= %d' % np.nanmax(in_arr_2d))
+	print('image array min= %d' % np.nanmin(in_arr_2d))
+	print('image array max= %d' % np.nanmax(in_arr_2d))
 
 	#~ now replace negative pixelValues w/ zero ---> (why???)
 	# in_arr_2d[in_arr_2d<0] = 0 # masks any element of np.array that has value < zero
@@ -147,12 +147,12 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 	out_img_fullpath = os.path.join(img_dir, out_img_label)
 
 	if (os.path.isfile(out_img_fullpath)):
-		print('-> image EXISTS, we will skip this path!')
+		print('image EXISTS on disc, we will skip this path!')
 		return 'skipThisImg' 
 
 	else:
-		print('\n-> image is NOT on disc, so we will build this file!')
-		print("-> saving output image as:")
+		print('\nimage is NOT on disc, so we will build this file!')
+		print("saving output image as:")
 		print(out_img_fullpath)
 
 		# NOTE: plt.imsave() can not save neg. pixel values in an image!
@@ -249,23 +249,23 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 def img_dir_setup(arr2tiff_dir_path, georefRaster_dir_name):
 	img_dir = os.path.join(arr2tiff_dir_path, georefRaster_dir_name) 
 	if (os.path.isdir(img_dir)):
-		print('-> image dir exists!')
+		print('image dir exists!')
 		print(img_dir)
 	else:
-		print('-> image dir NOT exist. We will make it.')
+		print('image dir NOT exist. We will make it.')
 		os.mkdir(img_dir)
 		print(img_dir)
 	return img_dir
 ########################################################################################################################
 def reproject_to_polar(warpedFile_fullPath_noExt):
 	target_epsg = 3995
-	print('\n-> re-projecting to EPSG: %s' % target_epsg)
+	print('\nre-projecting to EPSG: %s' % target_epsg)
 	file_extension = '.tif'
 	input_raster = warpedFile_fullPath_noExt+file_extension
 	output_raster_fullpath = warpedFile_fullPath_noExt+'_reprojToEPSG_'+str(target_epsg)+file_extension
 	print(output_raster_fullpath)
 	gdal.Warp(output_raster_fullpath, input_raster, dstSRS='EPSG:3995')
-	print('\n-> final re-projected raster:')
+	print('\nfinal re-projected raster:')
 	print(output_raster_fullpath)
 	return 0
 ########################################################################################################################
@@ -275,13 +275,13 @@ def make_roughness_list_from_dir(rough_dir_fullpath):
 
 	#~ make a list of existing roughness files
 	roughness_file_patern = 'roughness_toa_refl_P*'+'_O*'+'_B*'+'.dat'   # for ELLIPSOID data - check file names 
-	print("-> looking for pattern: %s" %roughness_file_patern)
+	print("looking for pattern: %s" %roughness_file_patern)
 
 	#~ get a list of available/downloaded Ellipsoid files, the list will be list of file_fullpath-s 
 	rough_files_fullpath_list = glob.glob(os.path.join(rough_dir_fullpath, roughness_file_patern))
 
 	tot_found_files = len(rough_files_fullpath_list)
-	print("-> files found: %d" %tot_found_files)
+	print("files found: %d" %tot_found_files)
 	#~ maybe split and sort?
 	return rough_files_fullpath_list, tot_found_files
 ########################################################################################################################
@@ -291,33 +291,33 @@ def read_rough_file(rough_fname):
 	# rough_2d_arr = np.fromfile(rough_fname, dtype=np.double)[0:1048576].reshape((512,2048))			# 'double==float64'     # is this roughness in cm?
 	rough_2d_arr = np.fromfile(rough_fname, dtype=np.double)[0:1048576].reshape((512,-1))			# 'double==float64'     # is this roughness in cm?
 	#~ define NaN values
-	rough_2d_arr[(rough_2d_arr < 0.0) & (rough_2d_arr != -999994.0)] = -99.0 # NaN any negative pixels and keep positive pixels and land mask only
+	rough_2d_arr[(rough_2d_arr < 0.0) & (rough_2d_arr != -999994.0)] = -99991.0 # NaN any negative pixels and keep positive pixels and land mask only
 
 	#~ get some info about each array
 #     print("-> input file elements: %d" % rough_latlon_arr.size)
 #     print("-> input file dim: %d" % rough_latlon_arr.ndim)
 #     print("-> input file shape: %s" % rough_latlon_arr.shape)
-	print("-> roughnessArray new shape: (%d, %d)" % rough_2d_arr.shape)
+	print("roughnessArray new shape: (%d, %d)" % rough_2d_arr.shape)
 
 	#~ find and extract path number
 	path_num = rough_fname.split("/")[-1].split("_")[3][1:] # extract path chuncka and then etract just the number
 	path_num = int(path_num)
-	print("-> roughness-Path: %s" % (path_num))
+	print("roughness-Path: %s" % (path_num))
 
 	#~ find and extract block number
 	block_num = rough_fname.split("/")[-1].split("_")[-1].split(".")[0]
 	block_num = int(block_num[-2:])
-	print("-> roughness-Block: %s" % (block_num))
+	print("roughness-Block: %s" % (block_num))
 
 	return rough_2d_arr, block_num, path_num
 ########################################################################################################################
 
-def create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_num, misr_res_meter):
+def create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_num, misr_res_meter, image_dir):
 
 	'''index is useful here, so first we create a list from img coordinates from all img pixels
 	then we use the index of each element in the pixel coord list as the index/count of each GCP'''
 
-	print("-> transfer img frame -> latlon frame for path_num: %d, block_num: %s" %(path_num, block_num))
+	print("transfer img frame -> latlon frame for path_num: %d, block_num: %s" %(path_num, block_num))
 	#~ make 2 lists for img and geographic frames, then analyze long. to see if all are neg. or all are pos.; if all are the same then pass, else: change <-> to <+>
 	img_pixelFrame_rowcol_list = []  # (row, column)
 	img_worldFrame_latlon_list = []
@@ -329,44 +329,84 @@ def create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_
 	row_list = []
 	col_list = []
 	
-	#~ make a list of row numbers
-	for num in range(20):
-		row=num*128
-		if(row<512):
-			row_list.append(row)
-	row_list.append(511)
+	##############################################################
+	# #- make a list of row numbers- old
+	# for num in range(20):
+	# 	row=num*128
+	# 	if(row<512):
+	# 		row_list.append(row)
+	# row_list.append(511)
+	# # print(row_list)
+
+	# #- make a list of col numbers
+	# for num in range(20):
+	# 	col=num*128
+	# 	if(col<2048):
+	# 		col_list.append(col)
+	# col_list.append(2047)
+	# # print(col_list)
+
+
+	##############################################################
+	#- make a list of row numbers- includes all geographical mesh
+	print('calculating row-col for all geographical mesh!')
+	for row in range(512):
+		row_list.append(row)
 	# print(row_list)
 
-	#~ make a list of col numbers
-	for num in range(20):
-		col=num*128
-		if(col<2048):
-			col_list.append(col)
-	col_list.append(2047)
+	#- make a list of col numbers
+	for col in range(2048):
+		col_list.append(col)
 	# print(col_list)
+	##############################################################
+
 
 	for jrow in row_list:
 		for icol in col_list:
-			#~ process each col of each row
-			# print("\n-> processing img coords: (%d, %d)" %(jrow, icol))
+			#- process each row and col
+			# print("\nprocessing coordinates for each pixel: (%d, %d)" %(jrow, icol))
 	
 			#~ use MTK function to map from img frame to geographic frame
-			pixel_latlon_tuple = bls_to_latlon(path_num, misr_res_meter, block_num, jrow, icol) # struct=(lat, lon)
+			pixel_latlon_tuple = bls_to_latlon(path_num, misr_res_meter, block_num, jrow, icol) # struct=(lat, lon) depends on location of point in img frame, corner or center of a pixel
 			# print(pixel_latlon_tuple)  # print every tuple of transfered latlon
 
-			img_pixelFrame_rowcol_list.append([jrow, icol])
-			img_worldFrame_latlon_list.append(pixel_latlon_tuple)
+			img_pixelFrame_rowcol_list.append([jrow, icol]) # rename to img_frame_...
+			img_worldFrame_latlon_list.append(pixel_latlon_tuple) # rename to geographical(or world)_frame_...
 			# print(pixel_latlon_tuple)
 
 
-	print("-> total GCPs from img frame: %d" %len(img_pixelFrame_rowcol_list)) 
+	print("total GCPs from img frame: %d" %len(img_pixelFrame_rowcol_list)) 
 	gcp_numbers = len(img_pixelFrame_rowcol_list)
 
 	# print(img_pixelFrame_rowcol_list)
-	# print(img_worldFrame_latlon_list)  # print this to check all latlon list; tupke of (lat, lon)
+	# print(img_worldFrame_latlon_list)  # print this to check all latlon list; tuple of (lat, lon)
+	
+
+	#- write out the latLon list
+	# img_worldFrame_latlon_list.to_csv()
+	import csv
+	latLon_fileName = 'latLon_P'+str(path_num)+'_B'+str(block_num)+'.csv'
+	latLon_file_name_fp = os.path.join(image_dir, latLon_fileName)
+	with open (latLon_file_name_fp, 'w') as output_fp:
+		write = csv.writer(output_fp)
+		write.writerows(img_worldFrame_latlon_list)
+		print('output latLon file:')
+		print(latLon_file_name_fp)
+
+
+
+
+
+
+
+	# df_latLon = pd.DataFrame(img_worldFrame_latlon_list)	
+	# df_latLon.to_csv(latLon_file_name_fp, encoding='utf-8', index=False)
+	# print('output latLon file:')
+	# print(latLon_file_name_fp)
+
 
 	min_long_in_img = min([ituple[1] for ituple in img_worldFrame_latlon_list]) # get lon from latlon tuple
-	print('-> min long.: %s' % min_long_in_img)
+	print('min long.: %s' % min_long_in_img)
 
 
 
@@ -374,9 +414,9 @@ def create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_
 	#~~ if any Lon in img_worldFrame_latlon_list is neg. we change that to pos. 
 	if (any([pixel_LatLon_tuple[1] < 0  for  pixel_LatLon_tuple in img_worldFrame_latlon_list])):  ## all(iterable); iterable==list or anything that we can iterate on; Return True if all elements of the iterable are true
 		''' we do this part if any OR all block pixels are on West hemisphere (have neg. long.) in img block, and we change them to pos. and the range will be [0, +360] '''
-		print("-> found some neg. lon. in img_worldFrame_latlon_list!")
+		print("found some neg. lon. in img_worldFrame_latlon_list!")
 		if (all([pixel_LatLon_tuple[1] < 0  for  pixel_LatLon_tuple in img_worldFrame_latlon_list])):
-			print('\n-> all pixels have negative lon. (West Hem.)!\n')
+			print('\nall pixels have negative lon. (West Hem.)!\n')
 			#~ no conversion of lon. anymore
 			gcp_list = []  # a list of ground control points
 			for index, element in enumerate(img_pixelFrame_rowcol_list):    # index == each GCP ; element order == [row, col]
@@ -394,7 +434,7 @@ def create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_
 
 		elif ((180-abs(min_long_in_img))<distance_from_AM_line):
 			#~ for any block that crosses AM line, we just label that block as AM crossing 
-			print('\n-> image crosses A.M. line! \n')
+			print('\nimage crosses A.M. line! \n')
 			gcp_list = []  # a list of ground control points
 
 			for index, element in enumerate(img_pixelFrame_rowcol_list):    # index == each GCP ; element order == [row, col]
@@ -447,7 +487,7 @@ def create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_
 			# print('-> min-lat in block: %s' %min_lat_in_block)
 
 	else:
-		print("\n-> all pixels have positive lon. (East Hem.)!\n")
+		print("\nall pixels have positive lon. (East Hem.)!\n")
 		gcp_list = []  # a list of ground control points
 		for index, element in enumerate(img_pixelFrame_rowcol_list):    # index == each GCP ; element order == [row, col]
 			#~ for each point we add GCPs to a list
@@ -663,7 +703,7 @@ def warp_img(path_label, block_label, total_gcps, image_dir, translated_img_full
 	warped_img_extension = '.tif'
 	warped_img = warped_img_tag+warped_img_extension
 	output_file_warped = os.path.join(image_dir, warped_img)
-	print('\n-> output_file_warped:')
+	print('\noutput_file_warped:')
 	print(output_file_warped)
 	# print(os.path.isfile(translated_img_fullpath))
 	# print(os.path.isfile(output_file_warped))
@@ -723,13 +763,13 @@ def warp_img(path_label, block_label, total_gcps, image_dir, translated_img_full
 if __name__ == '__main__':
 	
 	start_time = dt.datetime.now()
-	print('-> start time: %s' %start_time)
+	print('start time: %s' %start_time)
 	print('\n\n')
 	main()
 	end_time = dt.datetime.now()
 	print('\n\n')
-	print('-> end time= %s' %end_time)
-	print('-> runtime= %s' %(end_time-start_time))
+	print('end time= %s' %end_time)
+	print('runtime= %s' %(end_time-start_time))
 	print(" ")
 	print('######################## TOA COMPLETED SUCCESSFULLY ########################')
 

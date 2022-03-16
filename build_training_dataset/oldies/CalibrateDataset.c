@@ -761,7 +761,7 @@ int main(int argc, char *argv[]) {
     orbit_x = 0;  // what is this?
 
     
-    fprintf(filePtr, "#path, orbit, img_block, line, sample, lat, lon, an, ca, cf, rms, weight, npts, cloud, var\n"); // write this line as the header/1st line of output file
+    fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, an, ca, cf, rms, weight, npts, cloud, var\n"); // write this line as the header/1st line of output file
     // printf("check seg fault-4 \n");
 
     for (n = 0; n < atm_DS_row; n++) 
