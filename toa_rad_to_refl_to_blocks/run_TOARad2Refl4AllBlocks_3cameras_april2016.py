@@ -39,8 +39,8 @@ import MisrToolkit as MTK
 #~ input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
 
 # path to dir that hdf files are stored in
-input_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files/misr_ellipsoid_files"
-output_path = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files/"  																# writes out processed data inside same input dir
+input_dir_fullpath = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919"
+output_path = input_dir_fullpath 																# writes out processed data inside same input dir
 
 exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
 exe_name = "TOARad2Refl4AllBlocks_3Cameras"
