@@ -3,9 +3,11 @@
 # 	hdfeos include dir
 #	
 
-exe_path=/Users/ehsanmos/Documents/MISR/MISR-roughness/exe_dir
-exe_name=LandMask
-src_name=LandMask.c 				#TOARad2Blocks_noblokcs1to6.c #TOARad2BlocksAllBlocks.c
+src_name=TOARad2Refl4AllBlocks_3Cameras.c
+exe_path=/Users/ehsanmos/Documents/MISR/MISR-SeaIceRoughness/exe_dir
+exe_name=TOARad2Refl4AllBlocks_3Cameras
+
+
 
 all:
 	gcc -I/Users/ehsanmos/Documents/MISR/mtk_root/Mtk-1.5.0/include 	\
@@ -18,5 +20,6 @@ all:
 clean:
 
 	rm ${exe_path}/${exe_name}
+
 
 
