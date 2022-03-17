@@ -36,7 +36,8 @@ for row_indx in range(input_unique_df.shape[0]):
 	# zero-pad path to 3 digits
 	if (path_int < 100):
 		path_str = str(path_int)
-		path_str.zfill(3)
+		# path_str.zfill(3)
+		path_str = "0"+path_str
 		print('updated to: %s' %path_str)
 	else:
 		path_str = str(path_int) 
@@ -44,7 +45,7 @@ for row_indx in range(input_unique_df.shape[0]):
 
 
 
-	hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+path_str+'_O0'+orbit_int+'_DF_F03_0024.hdf'
+	hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+path_str+'_O0'+str(orbit_int)+'_DF_F03_0024.hdf'
 
 	hdf_src_fp = os.path.join(hdf_home, hdf_file_pattern)
 	print(hdf_src_fp)
