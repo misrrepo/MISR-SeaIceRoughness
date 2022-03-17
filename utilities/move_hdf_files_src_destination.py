@@ -28,29 +28,29 @@ input_unique_df = pd.read_csv(os.path.join(home_dir_unique, unique_pob_file))
 print(input_unique_df.columns)
 
 for row_indx in range(input_unique_df.shape[0]):
-	path = input_unique_df['#path'].iloc[row_indx]
-	orbit = input_unique_df['orbit'].iloc[row_indx]
-	print(path, orbit)
+	path_int = input_unique_df['#path'].iloc[row_indx]
+	orbit_int = input_unique_df['orbit'].iloc[row_indx]
+	print(path_int, orbit_int)
 
 
 	# zero-pad path to 3 digits
-	if path < 100:
-		path_str = str(path)
+	if (path_int < 100):
+		path_str = str(path_int)
 		path_str.zfill(3)
 		print('updated to: %s' %path_str)
 	else:
-		path_str = str(path)
+		path_str = str(path_int) 
 
 
 
 
-	hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+path_str+'_O0'+str(orbit)+'_DF_F03_0024.hdf'
+	hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+path_str+'_O0'+orbit_int+'_DF_F03_0024.hdf'
 
 	hdf_src_fp = os.path.join(hdf_home, hdf_file_pattern)
 	print(hdf_src_fp)
 	check_status = os.path.isfile(hdf_src_fp)
 	if (check_status!=True):
-		print('hdf-file not found!')
+		print('hdfFile not found!')
 		continue
 
 
