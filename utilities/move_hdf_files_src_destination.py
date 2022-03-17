@@ -10,9 +10,10 @@ import pandas as pd
 
 ######################################################
 # PO of files that we will move
+cam = 'AN'
+
 unique_pob_file = 'uniques_pob_april2016_withATMinThem_from_atmmodel.csv'
 home_dir_unique = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/utilities'
-
 
 
 hdf_home = '/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid'
@@ -45,13 +46,14 @@ for row_indx in range(input_unique_df.shape[0]):
 
 
 
-	hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+path_str+'_O0'+str(orbit_int)+'_DF_F03_0024.hdf'
+	hdf_file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P'+path_str+'_O0'+str(orbit_int)+'_'+cam+'_F03_0024.hdf'
 
 	hdf_src_fp = os.path.join(hdf_home, hdf_file_pattern)
-	print(hdf_src_fp)
+	print("src: %s" %hdf_src_fp)
+
 	check_status = os.path.isfile(hdf_src_fp)
 	if (check_status!=True):
-		print('hdfFile not found!')
+		print('HDFfile not found!')
 		continue
 
 
