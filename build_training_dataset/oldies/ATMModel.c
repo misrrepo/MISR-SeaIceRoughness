@@ -190,10 +190,10 @@ int main(int argc, char *argv[]) {
     // char cloud_masked_dir[256] = "/Volumes/easystore/from_home/Nolin_except_dataFolder/remainder_forExternalHD_3.1TB/2011/MaskedSurf/Apr_sdcmClearHC/" ;  // cloud mask data == lsdcm dat files, to do a testrun i renames files to sdcm_p* @ line:345
     // char cloud_masked_dir[256] = "/Volumes/Ehsan7757420250/2016/TC_CLASSIFIERS_F07/cloudmask_TC_CLASSIFIERS_F07_HC4_only" ;
     char cloud_masked_dir[256];
+    
+
     // output
-    // char atmmodel_csvfile[256] = "/Users/ehsanmos/Documents/RnD/MISR_lab/misr_processing_dir/atmmodel_csvfile_July_2011/Ehsan_July_2011_atmmodel.csv" ; // ERROR: how check if a file or directory exists in Clang? check ptr?
-    // char atmmodel_csvfile[256] = "/Volumes/Ehsan7757420250/2016/april_2016/atmmodel/atmmodel_april_2016.csv" ; // writes output=atmmodel_csvfile to current dir
-    char atmmodel_csvfile[256];
+    char atmmodel_csvfile[256]; // writes output=atmmodel_csvfile to current dir
     // char atmmodel_csvfile[256] = "/home/mare/Projects/MISR/Julienne/IceBridge2016/SeaIce_Jul2016_atmmodel_csvfile_cloud_var.csv"; // old
     //char lsmask_dir[256] = "/home/mare/Nolin/SeaIce/LWData/MISR_LandSeaMask";
 
@@ -393,7 +393,7 @@ int main(int argc, char *argv[]) {
             // printf("day= %d \n" , day);
 
             // to use for MTK function
-            sprintf(ATMStartTime, "%s-%02d-%02dT00:00:00Z", syear, month, day); // start time
+            sprintf(ATMStartTime, "%s-%02d-%02dT00:00:00Z", syear, month, day); // start time by considering K=+-1 day
             sprintf(ATMEndTime, "%s-%02d-%02dT23:59:59Z", syear, month, day); // end time
             // printf("ATM time= %s, %s, %s\n", atm_fileList[i], ATMStartTime, ATMEndTime);
             // printf("ATM period= %s -- to -- %s\n", ATMStartTime, ATMEndTime);
