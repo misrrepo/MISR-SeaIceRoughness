@@ -519,6 +519,8 @@ int main(int argc, char *argv[]) {
 
 
                     // do this for xcam == 0, so for each ATM xlat/xlon, we try to find the MISR pixel that ATM falls into 
+                    // for a path number, we search if ATM laton falls into an image block
+                    // if ok, then means we can use this ATM latlon to label this image block
                     status = MtkLatLonToBls(path, 275, xlat, xlon, &img_block, &fline, &fsample); // try to find an image pixel for an ATM point
                     
                     if (status != MTK_SUCCESS) 
@@ -552,12 +554,18 @@ int main(int argc, char *argv[]) {
 
                     /* NOTE: now that Mtk has returned an associated Bls for ATM lat-lon, it's time to search for input files: MISR masked_toa files & cloudmask files.: MISR toa masked files based on the extracted info from each ATM row; we should look into these files */
 
+
+                    // printf("checking masked-toa-refl.dat for path: %d, orbit: %d, block: %d\n", path, orbitlist[j], img_block);
+
+
                     // 1- preparing An camera
                     sprintf(toa_an_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     // check if file is accessible 
                     if (access(toa_an_masked_fullpath, F_OK) == -1) 
                     {
                         // printf("WARNING-1: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_masked_fullpath);
+                        // printf("WARNING-1: input NOT exist: continue to next ATM row\n");
+
                         continue; 
                     }
 
@@ -675,6 +683,7 @@ int main(int argc, char *argv[]) {
                         read_data(toa_ca_masked_fullpath, line, sample, &ca);
                         // printf("PROBLEM: ca= %f\n" , ca); // problem here: why all zero?
 
+                        printf("using AN file: %s\n", toa_an_masked_fullpath);
                         read_data(toa_an_masked_fullpath, line, sample, &an);
                         // printf("PROBLEM: an= %f\n" , an); // problem here: why all zero?
 
@@ -862,8 +871,8 @@ int main(int argc, char *argv[]) {
     printf("********************************************************\n");
     printf("Number of Total ATM rms points = %d\n", atm_DS_row);
     printf("Number of Valid ATM rms points = %d\n", natm_valid);
-    printf("Number of Valid ATM rms with weight of 1.0  = %d\n", natm_valid - natm_half_weight);
-    printf("Number of Valid ATM rms with weight of 0.5  = %d\n", natm_half_weight);
+    printf("Number of Valid ATM rms with weight of 1.0 (today overpass ATM) = %d\n", natm_valid - natm_half_weight);
+    printf("Number of Valid ATM rms with weight of 0.5 (yesterday/tomorrow overpass ATM) = %d\n", natm_half_weight);
     printf("Total Average rms = %lf from max_npts= %lf\n", avg_rms, max_npts);
     printf("Average valid rms = %lf\n", avg_valid_rms);
     printf("Max valid rms = %lf\n", max_rms);
