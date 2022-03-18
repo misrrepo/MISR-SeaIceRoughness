@@ -10,16 +10,16 @@ from platform import python_version
 
 ########################################################################################################################
 #~ input dir: <toa_refl> should include 3 different directories in here (An/Ca/Cf)
-toa_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files/toa_refl_april2016_3cams_day1_30_p1to233_b1to46"
+toa_dir_fullpath = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919/toa_refl_april2016_3cams_day1_30_p1to233_b1to46"
 
 #~ landmask dir
-lsmask_dir_fullpath = "/home/ehsan/misr_lab/landseamask_blocks_1to46"									
+lsmask_dir_fullpath = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919/landseamask_blocks_1to46"									
 
 exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
 exe_name = "LandMask_3cams" # should be set in $PATH
 
 #~ output dir for masked_toa_refl file
-output_path = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files/masked_toa_refl"
+output_path = toa_dir_fullpath
 
 exe_dir_fullpath = os.path.join(exe_dir, exe_name)
 ########################################################################################################################
