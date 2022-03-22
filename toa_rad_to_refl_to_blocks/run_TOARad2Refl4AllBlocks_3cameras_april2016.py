@@ -12,7 +12,7 @@ how to use:
 	update dir path for input data to point to where ellipsoid.hdf files are
 
 data flow:
-	inputs: hdf Ellipsoid files- check file nam epattern; should be similar to: MISR_AM1_GRP_ELLIPSOID_GM_P156_O088029_CF_F03_0024.hdf --- NOT: MISR_AM1_GRP_ELLIPSOID_GM_P001_O086665_AN_F03_0024.b010-046.f8ba79f3f.hdf 
+	inputs: hdf Ellipsoid files- check file name pattern; should be similar to: MISR_AM1_GRP_ELLIPSOID_GM_P156_O088029_CF_F03_0024.hdf --- NOT: MISR_AM1_GRP_ELLIPSOID_GM_P001_O086665_AN_F03_0024.b010-046.f8ba79f3f.hdf 
 	outputs: toa_refl_p-o-b.cam.dat
 
 to do: 
@@ -38,7 +38,7 @@ import MisrToolkit as MTK
 # input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
 
 # input- path to dir that hdf files are stored at
-input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid"
+input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid/hdf_files_inrange_15_30"
 
 
 # output- 
@@ -52,7 +52,7 @@ exe_name = "TOARad2Refl4AllBlocks_3Cameras"
 
 year = 2016
 month = 4
-day_range = [?,?]		# this code checks day-range and skips files w/days that are not in this range
+day_range = [15,30]		# this code checks day-range and skips files w/days that are not in this range
 block_range = [1,46] 	# [start, stop]; should match with block range in downloading step
 
 # output file labling- rename them based on your project

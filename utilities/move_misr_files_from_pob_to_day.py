@@ -50,7 +50,7 @@ if (process_mode == 'move_roughness_files_to_subdir'):
 	for iday in range(num_of_days):
 
 		day = iday+1
-		print('\n-> processing day= %d \n' %day)
+		print('\nprocessing day= %d \n' %day)
 		start_time = str(year)+'-'+str(month)+'-'+str(day)+'T00:00:00Z'
 		end_time = str(year)+'-'+str(month)+'-'+str(day)+'T23:59:59Z'
 		print(start_time)
@@ -58,7 +58,7 @@ if (process_mode == 'move_roughness_files_to_subdir'):
 
 		orbit_list = Mtk.time_range_to_orbit_list(start_time, end_time)
 		print(orbit_list)
-		print('\n-> found %d orbits!' %len(orbit_list))
+		print('\nfound %d orbits!' %len(orbit_list))
 
 		rough_subdir_name = 'roughness_subdir_'+str(year)+'_'+str(month)+'_'+str(day)
 		print(rough_subdir_name)
@@ -68,12 +68,12 @@ if (process_mode == 'move_roughness_files_to_subdir'):
 
 		#~ check if directory for specific day exists, else we create the directory
 		if (not (os.path.isdir(rough_subdir_fullpath))):
-			print('-> roughness subdir does NOT exist! We make that directory.')
+			print('roughness subdir does NOT exist! We make that directory.')
 			os.mkdir(rough_subdir_fullpath)
 			print(rough_subdir_fullpath)
 			print(os.path.isdir(rough_subdir_fullpath))
 		else:
-			print('-> roughness subdir exists!')
+			print('roughness subdir exists!')
 			print(rough_subdir_fullpath)
 			print(os.path.isdir(rough_subdir_fullpath))
 
@@ -81,17 +81,17 @@ if (process_mode == 'move_roughness_files_to_subdir'):
 
 		## make list of all available roughness file patterns for specific day
 		for orbit in orbit_list:
-			print('-> processing orbit= %d' %orbit)
+			print('processing orbit= %d' %orbit)
 			#~ file pattern that we will use 
 			file_pattern = 'roughness_toa_refl_P*'+'*_O0'+str(orbit)+'*'+'.dat'
-			print('-> looking for pattern= %s' %file_pattern)
+			print('looking for pattern= %s' %file_pattern)
 			#~ search for file pattern and make a list
 			roughness_files_found_list = glob.glob(os.path.join(src_dir_fp, file_pattern))
-			print('-> roughness files found: %s' % len(roughness_files_found_list))
+			print('roughness files found: %s' % len(roughness_files_found_list))
 		#     print(roughness_files_found_list)
 
 			for rough_file_day in roughness_files_found_list:
-				print('-> moving data to subdir for: %s ' %rough_file_day)
+				print('moving data to subdir for: %s ' %rough_file_day)
 				new_path = shutil.move(rough_file_day, rough_subdir_fullpath)
 
 ##----------------------------------------------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ if (process_mode == 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir'):
 	for iday in range(0, num_of_days, 1):
 
 		day = iday+1
-		print('\n-> processing day= %d \n' %day)
+		print('\nprocessing day= %d \n' %day)
 		start_time = str(year)+'-'+str(month)+'-'+str(day)+'T00:00:00Z'
 		end_time = str(year)+'-'+str(month)+'-'+str(day)+'T23:59:59Z'
 		print(start_time)
@@ -111,7 +111,7 @@ if (process_mode == 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir'):
 
 		orbit_list = Mtk.time_range_to_orbit_list(start_time, end_time)
 		print(orbit_list)
-		print('\n-> found %d orbits!' %len(orbit_list))
+		print('\nfound %d orbits!' %len(orbit_list))
 
 		misr_subdir_name = 'GRP_ELLIPSOID_GM_subdir_'+str(year)+'_'+str(month)+'_'+str(day)
 		print(misr_subdir_name)
@@ -121,12 +121,12 @@ if (process_mode == 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir'):
 
 		#~ check if directory for specific day exists, else we create the directory
 		if (not (os.path.isdir(hdf_subdir_fullpath))):
-			print('-> GRP_ELLIPSOID_GM subdir does NOT exist! We make that directory.')
+			print('GRP_ELLIPSOID_GM subdir does NOT exist! We make that directory.')
 			os.mkdir(hdf_subdir_fullpath)
 			print(hdf_subdir_fullpath)
 			print(os.path.isdir(hdf_subdir_fullpath))
 		else:
-			print('-> GRP_ELLIPSOID_GM subdir exists!')
+			print('GRP_ELLIPSOID_GM subdir exists!')
 			print(hdf_subdir_fullpath)
 			print(os.path.isdir(hdf_subdir_fullpath))
 
@@ -134,17 +134,17 @@ if (process_mode == 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir'):
 
 		## make list of all available roughness file patterns for specific day
 		for orbit in orbit_list:
-			print('-> processing for orbit= %d' %orbit)
+			print('processing for orbit= %d' %orbit)
 			#-- file pattern that we will use to move files
 			file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P*'+'*_O0'+str(orbit)+'*'+'.hdf'
-			print('-> looking for pattern= %s' %file_pattern)
+			print('looking for pattern= %s' %file_pattern)
 			#-- search for file pattern and make a list
 			hdf_files_found_list = glob.glob(os.path.join(src_dir_fp, file_pattern))
-			print('-> hdf files found: %s' % len(hdf_files_found_list))
+			print('hdf files found: %s' % len(hdf_files_found_list))
 		#     print(hdf_files_found_list)
 
 			for hdf_file_day in hdf_files_found_list:
-				print('-> moving hdf file to its subdir for: %s ' %hdf_file_day)
+				print('moving hdf file to its subdir for: %s ' %hdf_file_day)
 				new_path = shutil.move(hdf_file_day, hdf_subdir_fullpath)
 
 ##----------------------------------------------------------------------------------------------------------------------
