@@ -24,7 +24,7 @@ note:
 '''
 
 #-- step-1
-src_dir_fp =  '/Volumes/Ehsan-7757225325/2016/april_2016/hdf_files_on_PH'
+src_dir_fp =  '/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid'
 
 #-- step-2 
 year = 2016
@@ -32,7 +32,7 @@ month = 4			# april=4, july=7
 num_of_days = 30  		# this is the end-date of processing/ should include the whole time period
 
 #-- step-3 
-process_mode_num = 1
+process_mode_num = 2
 
 process_mode_list = ['move_roughness_files_to_subdir', \
 					'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir', \
