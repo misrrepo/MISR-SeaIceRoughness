@@ -41,8 +41,8 @@ import MisrToolkit as MTK
 input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid/hdf_files_inrange_15_30"
 
 
-# output- 
-output_path = "/data/gpfs/assoc/misr_roughness/2016/april_2016/toa_refl_files" 		# writes out processed data inside same input dir
+# output- the code will make an output dir based on file labels below
+output_path = "/data/gpfs/assoc/misr_roughness/2016/april_2016" 		# writes out processed data inside same input dir
 
 # exe dir path
 exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
@@ -55,9 +55,10 @@ month = 4
 day_range = [15,30]		# this code checks day-range and skips files w/days that are not in this range
 block_range = [1,46] 	# [start, stop]; should match with block range in downloading step
 
+
 # output file labling- rename them based on your project
 month_label = 'april2016_3cams'
-num_of_days = 'day1_30'
+num_of_days = 'day15_30'
 num_of_paths = 'p1to233'
 num_of_blocks = 'b1to46'
 
