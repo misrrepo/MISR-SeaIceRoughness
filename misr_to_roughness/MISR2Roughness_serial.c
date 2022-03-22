@@ -195,7 +195,7 @@ int main(int argc, char *argv[]) {
     char masked_toa_an_dir[256] = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919/toa_refl_april2016_3cams_day1_30_p1to233_b1to46/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46/An" ; // path to An dir files, we use An camera to define file labels for Ca Cf cameras
 
    // char atmmodel_csvfile[256] = "/home/mare/Projects/MISR/Julienne/IceBridge2016/SeaIce_Jul2016_atmmodel_csvfile2_r025.csv"; // ATM csv file; source from where/
-    char atmmodel_csvfile[256] = "/media/ehsan/Ehsan-7757225325/2016/april_2016/atmmodel/atmmodel_april_2016.csv" ; // ATM csv file; source from where/
+    char atmmodel_csvfile[256] = "/media/ehsan/SEAGATE/april_2016/atmmodel_april_2016_npts_larger15.csv" ; // ATM csv file; source from where/
 
 
     // we don't use this file anymore, we decided to use all blocks, meaning no correction/reversing Cf and Ca cameras.
@@ -203,7 +203,7 @@ int main(int argc, char *argv[]) {
 
     
     // outputs 
-    char predicted_roughness_dir[256] = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919/toa_refl_april2016_3cams_day1_30_p1to233_b1to46/misr2roughness_serial_test" ; // MISR roughness; rms file; no "/" at the end
+    char predicted_roughness_dir[256] = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919/toa_refl_april2016_3cams_day1_30_p1to233_b1to46/misr2roughness_serial_test_npts_larger15" ; // MISR roughness; rms file; no "/" at the end
     
     // other variables
     char command[256];

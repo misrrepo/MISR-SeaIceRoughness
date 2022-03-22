@@ -25,7 +25,7 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files
-rough_dir_fullpath =  "/Volumes/SEAGATE/april_2016/roughness_apr2016_from_PH/move_to_Box"
+rough_dir_fullpath =  "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919/toa_refl_april2016_3cams_day1_30_p1to233_b1to46/misr2roughness_serial_test_npts_larger20"
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
 # georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
@@ -45,6 +45,7 @@ georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max
 # misr_img_res = (512, 2048)
 # img_nrows = misr_img_dims[0]
 # img_ncols = misr_img_dims[1]
+
 ascending_block_threshold = 5
 misr_res_meter = 275
 gcp_mode = "corners_n_inside"                       									# 'inside' OR "corners_n_inside"
@@ -330,34 +331,35 @@ def create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_
 	col_list = []
 	
 	##############################################################
-	# #- make a list of row numbers- old
-	# for num in range(20):
-	# 	row=num*128
-	# 	if(row<512):
-	# 		row_list.append(row)
-	# row_list.append(511)
-	# # print(row_list)
-
-	# #- make a list of col numbers
-	# for num in range(20):
-	# 	col=num*128
-	# 	if(col<2048):
-	# 		col_list.append(col)
-	# col_list.append(2047)
-	# # print(col_list)
-
-
-	##############################################################
-	#- make a list of row numbers- includes all geographical mesh
-	print('calculating row-col for all geographical mesh!')
-	for row in range(512):
-		row_list.append(row)
+	#- make a list of row numbers- old
+	for num in range(20):
+		row=num*128
+		if(row<512):
+			row_list.append(row)
+	row_list.append(511)
 	# print(row_list)
 
 	#- make a list of col numbers
-	for col in range(2048):
-		col_list.append(col)
+	for num in range(20):
+		col=num*128
+		if(col<2048):
+			col_list.append(col)
+	col_list.append(2047)
 	# print(col_list)
+
+
+	##############################################################
+	# #- make a list of row numbers- includes all geographical mesh
+	# print('calculating row-col for all geographical mesh!')
+	# for row in range(512):
+	# 	row_list.append(row)
+	# # print(row_list)
+
+	# #- make a list of col numbers
+	# for col in range(2048):
+	# 	col_list.append(col)
+	# # print(col_list)
+	
 	##############################################################
 
 
