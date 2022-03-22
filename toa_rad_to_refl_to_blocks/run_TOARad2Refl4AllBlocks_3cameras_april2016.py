@@ -33,24 +33,29 @@ from platform import python_version
 import MisrToolkit as MTK
 
 ########################################################################################################################
-#~ directory path setting (>>> set by USER <<<)
+# directory path setting (>>> set by USER <<<)
 
-#===== input directory #=====
-#~ input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
+# input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
 
-# path to dir that hdf files are stored in
-input_dir_fullpath = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919"
-output_path = input_dir_fullpath 																# writes out processed data inside same input dir
+# input- path to dir that hdf files are stored at
+input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid"
 
-exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
+
+# output- 
+output_path = "/data/gpfs/assoc/misr_roughness/2016/april_2016/toa_refl_files" 		# writes out processed data inside same input dir
+
+# exe dir path
+exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
 exe_name = "TOARad2Refl4AllBlocks_3Cameras"
+
+
 
 year = 2016
 month = 4
-day_range = [1,30]		# this code checks day-range and skips files w/days that are not in this range
+day_range = [?,?]		# this code checks day-range and skips files w/days that are not in this range
 block_range = [1,46] 	# [start, stop]; should match with block range in downloading step
 
-#~ output file labling- rename them based on your project
+# output file labling- rename them based on your project
 month_label = 'april2016_3cams'
 num_of_days = 'day1_30'
 num_of_paths = 'p1to233'

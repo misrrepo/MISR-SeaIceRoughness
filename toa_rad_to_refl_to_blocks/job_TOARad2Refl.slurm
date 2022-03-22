@@ -16,6 +16,9 @@
 date
 module list 
 echo “MISR job started ...”
+
+## path to python script to run
 python /data/gpfs/home/emosadegh/MISR-roughness/toa_rad_to_refl_to_blocks/run_TOARad2Refl4AllBlocks.py
+
 echo “MISR job ended ...”
 date

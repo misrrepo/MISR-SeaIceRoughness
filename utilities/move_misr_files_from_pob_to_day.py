@@ -9,10 +9,11 @@ import shutil
 '''
 usage: 
 	this program makes directories for a single day of MISR/roughness files and moves files [MISR or roughness] that belong to each date to its folder
+	useful to use on Pronghorn
 
 steps:
 step-1: setup src dir= directory that includes either HDF or roughness files
-step-2: setup period of files: year and month of HDF or roughness files that you want to move
+step-2: setup time period of files: year and month of HDF or roughness files that you want to move
 step-3: select type/file name pattern from the list
 
 	1st, set the number of days that you have data available for.
@@ -23,16 +24,21 @@ note:
 '''
 
 #-- step-1
-src_dir_fp = '/home/ehsan/misr_lab/orders/32514'
+src_dir_fp =  '/Volumes/Ehsan-7757225325/2016/april_2016/hdf_files_on_PH'
 
 #-- step-2 
-year = 2012
-month = 5				# april=4, july=7
+year = 2016
+month = 4			# april=4, july=7
 num_of_days = 30  		# this is the end-date of processing/ should include the whole time period
 
 #-- step-3 
-process_mode_num = 2
-process_mode_list = ['move_roughness_files_to_subdir', 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir', 'check_hdf_order_dates', 'move_wrong_hdf_files_to_subdir']
+process_mode_num = 1
+
+process_mode_list = ['move_roughness_files_to_subdir', \
+					'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir', \
+					'check_hdf_order_dates', \
+					'move_wrong_hdf_files_to_subdir']
+
 process_mode = process_mode_list[process_mode_num]
 
 ########################################################################################################################
@@ -88,6 +94,8 @@ if (process_mode == 'move_roughness_files_to_subdir'):
 				new_path = shutil.move(rough_file_day, rough_subdir_fullpath)
 
 ##----------------------------------------------------------------------------------------------------------------------
+## what it does:
+
 
 if (process_mode == 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir'):
 	#~ loop through all 16 days and move files for each day to its roughness subdir
@@ -140,6 +148,8 @@ if (process_mode == 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir'):
 
 ##----------------------------------------------------------------------------------------------------------------------
 #-- check period of hdf files in a dir- if it is not in the period, files will be moved to a subdir
+''' this part checks each hdf file be in our desired date (for example: April 2016)
+'''
 
 if (process_mode == 'check_hdf_order_dates'):
 	print('process mode: %s' %process_mode)
@@ -190,7 +200,7 @@ if (process_mode == 'check_hdf_order_dates'):
 			shutil.move(os.path.join(order_dir, hdf_file), os.path.join(parking_dir, hdf_file))
 			hdf_wrong_file_count = hdf_wrong_file_count+1
 
-	print('wrong/miss-matched hdf files found: %s' %hdf_wrong_file_count)
+	print('finished; wrong/miss-matched date hdf files found: %s' %hdf_wrong_file_count)
 
 ##----------------------------------------------------------------------------------------------------------------------
 #-- this part moves HDF files that are NOT in our time period to a subdirectoy inside it---- need to develop later
@@ -246,3 +256,4 @@ if (process_mode == 'check_hdf_order_dates'):
 # 			for hdf_file_day in hdf_files_found_list:
 # 				print('-> moving hdf file to its subdir for: %s ' %hdf_file_day)
 # 				new_path = shutil.move(hdf_file_day, hdf_subdir_fullpath)
+

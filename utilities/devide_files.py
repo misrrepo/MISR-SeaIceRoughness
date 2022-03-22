@@ -2,7 +2,9 @@
 
 import glob, shutil, os
 
-#~ to devide files from whole to n-subdir to process parallel
+''' usage: to devide files from whole to n-subdir to process parallel'''
+
+
 src_dir = '/data/gpfs/assoc/misr_roughness/2016/july_2016'
 dest_dir = src_dir
 
