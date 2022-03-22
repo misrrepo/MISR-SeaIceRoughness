@@ -19,7 +19,8 @@ step-3: select type/file name pattern from the list
 	1st, set the number of days that you have data available for.
 
 note:
-	we use python2.7 + MTK library to do this task. MTK lib will find associated day/time from orbit data on file labels
+	we use python2.7 + MTK library to do this task. (or a virtual env. that we can run MTK) 
+	MTK lib will find associated day/time from orbit data on file labels
 
 '''
 
@@ -32,12 +33,12 @@ month = 4			# april=4, july=7
 num_of_days = 30  		# this is the end-date of processing/ should include the whole time period
 
 #-- step-3 
-process_mode_num = 2
+process_mode_num = 1
 
 process_mode_list = ['move_roughness_files_to_subdir', \
 					'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir', \
 					'check_hdf_order_dates', \
-					'move_wrong_hdf_files_to_subdir']
+					'move_wrong_hdf_files_to_subdir'] # the last one is turned off (why?)
 
 process_mode = process_mode_list[process_mode_num]
 
@@ -191,7 +192,7 @@ if (process_mode == 'check_hdf_order_dates'):
 
 		if (hdf_file_year != str(my_year)) or (hdf_file_month != str(my_month).zfill(2)):  # both conditions should be true to go inside; and==both; or==either
 
-			print('WRONG year: %s or month: %s, moving hdf file to parking' %(hdf_file_year, hdf_file_month))
+			print('WRONG year: found %s or month: %s, moving hdf file to parking' %(hdf_file_year, hdf_file_month))
 			# mkdir if dir not found
 			parking_dir = os.path.join(order_dir, parking)
 			if (not os.path.isdir(parking_dir)):
