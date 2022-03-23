@@ -390,7 +390,7 @@ int main(int argc, char *argv[]) {
 
 
             // test for only k=0 (MISR images from todat)
-            if (k = -1 || k = 1) {
+            if (k == -1 || k == 1) {
                 /* skip the iteration at this step */
                 printf("k= %d, we continue to next k\n", k);
                 continue;
