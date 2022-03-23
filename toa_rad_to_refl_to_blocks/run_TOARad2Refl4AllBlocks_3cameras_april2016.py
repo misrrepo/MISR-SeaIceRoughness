@@ -121,6 +121,11 @@ def main():
 			# print("returned False from past step. Go to cmd...")
 			run_from_cmd(exe_fullpath, hdf_file_fullpath, block_num, band_num, minnaert, toa_file_fullpath, hdf_counter, total_hdf_files, camera)  # note: to just check runtime setting comment out this line
 
+
+			print('\nfinished processing (block/HDF-File/totalHDF-File/cam): (%s/%s/%s/%s) (w/rjust performed)' % (block_num, hdf_counter, total_hdf_files, camera))
+			print("**********************************************************************************************************************\n") # this line indicates a signal from python that shows we go to next iteration inside python without any cmd ERROR
+
+
 	return 0
 
 ########################################################################################################################
@@ -200,13 +205,13 @@ def run_from_cmd(exe_fullpath, hdf_file_fullpath, block_num, band_num, minnaert,
 	# run the cmd command
 	return_value_of_cmd = subprocess.call(cmd, shell=True)
 	# print('-> return value= %s' %return_value_of_cmd)
-	print('\nfinished processing (block/HDF-File/totalHDF-File/cam): (%s/%s/%s/%s) (w/rjust performed)' % (block_num, hdf_counter, total_hdf_files, camera))
 
-	print("**********************************************************************************************************************\n") # this line indicates a signal from python that shows we go to next iteration inside python without any cmd ERROR
 
 	if (return_value_of_cmd != 0):
+		print('hdf file: %s' %hdf_file_fullpath)
 		print('ERROR: return from call(): != zero; so either either of these: [1] path to the executable NOT set correctly in this path: %s, [2] there is an issue with input file name (check hdf file name), [3] maybe storage is full, [4] or some unknown issue from C-code. *** Exiting' %exe_fullpath)
 		raise SystemExit() 
+
 
 ########################################################################################################################
 
