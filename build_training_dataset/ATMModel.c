@@ -385,8 +385,19 @@ int main(int argc, char *argv[]) {
         // extracted this info from each ATM file name
         // printf("date info= yr: %s; mon: %d; day: %s \n", syear, month, sday);
 
-        //-------------
+        //--------------------------------------------------------------------------------------------------
         for (k  = -1; k < 2; k++) { // k=days; yesterday (-1) or tmrw (+1) == 0.5 of the ATM overpass; today=o
+
+
+            // test for only k=0 (MISR images from todat)
+            if (k = -1 || k = 1) {
+                /* skip the iteration at this step */
+                printf("k= %d, we continue to next k\n", k);
+                continue;
+            } 
+
+            printf("k= %d\n", k);
+
 
             // printf("\nprocess for k-day: %d \n", k);
             day = atoi(sday) + k;
