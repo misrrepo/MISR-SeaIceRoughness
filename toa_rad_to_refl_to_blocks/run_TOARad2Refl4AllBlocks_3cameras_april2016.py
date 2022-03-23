@@ -208,7 +208,8 @@ def run_from_cmd(exe_fullpath, hdf_file_fullpath, block_num, band_num, minnaert,
 
 
 	if (return_value_of_cmd != 0):
-		print('hdf file: %s' %hdf_file_fullpath)
+		print('hdf file:')
+		print(hdf_file_fullpath)
 		print('ERROR: return from call(): != zero; so either either of these: [1] path to the executable NOT set correctly in this path: %s, [2] there is an issue with input file name (check hdf file name), [3] maybe storage is full, [4] or some unknown issue from C-code. *** Exiting' %exe_fullpath)
 		raise SystemExit() 
 
