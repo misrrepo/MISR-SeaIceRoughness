@@ -882,8 +882,8 @@ int main(int argc, char *argv[]) {
     printf("********************************************************\n");
     printf("Number of Total ATM rms points = %d\n", atm_DS_row);
     printf("Number of Valid ATM rms points = %d\n", natm_valid);
-    printf("Number of Valid ATM rms with weight of 1.0 (today overpass ATM) = %d\n", natm_valid - natm_half_weight);
-    printf("Number of Valid ATM rms with weight of 0.5 (yesterday/tomorrow overpass ATM) = %d\n", natm_half_weight);
+    printf("Number of Valid ATM rms with weight of 1.0 (ATM overpass today) = %d\n", natm_valid - natm_half_weight);
+    printf("Number of Valid ATM rms with weight of 0.5 (ATM overpass yesterday/tomorrow) = %d\n", natm_half_weight);
     printf("Total Average rms = %lf from max_npts= %lf\n", avg_rms, max_npts);
     printf("Average valid rms = %lf\n", avg_valid_rms);
     printf("Max valid rms = %lf\n", max_rms);
