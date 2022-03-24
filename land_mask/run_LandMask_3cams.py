@@ -19,7 +19,7 @@ exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
 exe_name = "LandMask_3cams" # should be set in $PATH
 
 #~ output dir for masked_toa_refl file
-output_path = toa_dir_fullpath
+output_path = "/data/gpfs/assoc/misr_roughness/2016/april_2016"
 
 exe_dir_fullpath = os.path.join(exe_dir, exe_name)
 ########################################################################################################################
