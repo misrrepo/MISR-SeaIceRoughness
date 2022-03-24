@@ -5,7 +5,7 @@ name: atm_to_misr_pixels.c
 usage: labels MISR pixels w/ATM roughness data
 
 1- makes a list of all available ATM.csv files
-2- 
+2- finds date from each ATM file, finds k=-+1 day MISR images (yesterday, today, tomorrow), finds the corresponding pixel in each MISR image, updates dataset 
 3- outputs atmmodel
 
 */
@@ -62,10 +62,7 @@ int nlines = 512;
 int nsamples = 2048;
 
 int read_data(char *atm_fname_fullpath, int line, int sample, double *data);
-
 int read_data_cloudmask(char* atm_fname_fullpath, int line, int sample, uint8_t* data);
-
-
 //int write_data(char *atm_fname_fullpath, double *data, int nlines, int nsamples);
 char *strsub(char *s, char *a, char *b);
 
@@ -252,7 +249,7 @@ int main(int argc, char *argv[]) {
     int atm_files_list_index = 0;
     int misr_nfiles = 0;
     int atm_DS_row = 0;
-    int i, j, k, ATM_DStruct_row, n, w;
+    int i, j, k_misr_date, ATM_DStruct_row, n, w;
     int img_block;
     int previous_atm_in_pixel;
     int natm_half_weight = 0;
@@ -264,7 +261,6 @@ int main(int argc, char *argv[]) {
     double ca, cf, an; // , cm; // note: cm dtype should be double cuz inside read_data f(.) it is defined as double and this f(.) is used to read several files
     // double cm; // = -1;
     uint8_t cm; // dtype= maybe to uint8_t??? cuz cm is either= 0, 1
-
     double xlat, xlon, xrms; //, xcam;
     int xcam;
     float fline, fsample;
@@ -445,7 +441,7 @@ int main(int argc, char *argv[]) {
             // }
             // printf("\nnow process each orbit number...\n\n");
 
-            //----------------------------------------------------
+            //----------------------------------------------------------------------------------------
 
             for (j = 0; j < orbit_count; j++){   // what is orbit_count? orbitCount; Q- orbit during each day? --> comes from MTK, orbits in a specific day
                 
@@ -704,7 +700,7 @@ int main(int argc, char *argv[]) {
                         read_data(toa_ca_masked_fullpath, line, sample, &ca);
                         // printf("PROBLEM: ca= %f\n" , ca); // problem here: why all zero?
 
-                        printf("using AN file: %s\n", toa_an_masked_fullpath);
+                        // printf("using AN file: %s\n", toa_an_masked_fullpath);
                         read_data(toa_an_masked_fullpath, line, sample, &an);
                         // printf("PROBLEM: an= %f\n" , an); // problem here: why all zero?
 

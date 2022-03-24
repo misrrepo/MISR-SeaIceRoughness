@@ -16,18 +16,20 @@ from platform import python_version
 
 # inputs
 # files in this directory should be all atm files listed there in one single directory 
-atm_dir = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919/atm_data_april2016"
+atm_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/ATM_apr2016_5days"
 
-# path to the home dir of 3 subdir of An/Ca/Cf
-masked_toa_refl_home = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919/toa_refl_april2016_3cams_day1_30_p1to233_b1to46/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46"				 
+
+# path to the home directory of 3 An/Ca/Cf subdir
+masked_toa_refl_home = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46"
+
 
 # if not used, turn this option off in C.code
 cloud_masked_dir = atm_dir  #"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"  
 
 
 #-- output 
-out_atmmodel_dir = "/home/ehsan/misr_lab/test_not_cloudy_p104_o86919/atmmodel_from_p104_o86919_april2016"
-atmmodel_csvfile_label = "atmmodelDS_from_p104_o86919_april2016_k_zero_today.csv"
+out_atmmodel_dir = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/training_data"
+atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_today.csv"
 
 
 #-- exe dir
