@@ -25,7 +25,7 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files there
-rough_dir_fullpath =  "/media/ehsan/SEAGATE/p104_o86919_b23/misr2roughness_serial_test_npts_larger40"
+rough_dir_fullpath =  "/media/ehsan/SEAGATE/test_p49_o86901_b25/misr2roughness_serial_test_k_zero_npts_10"
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
 # georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
