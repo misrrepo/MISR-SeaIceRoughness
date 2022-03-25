@@ -192,11 +192,15 @@ int main(int argc, char *argv[]) {
     
     // inputs
     // char masked_toa_an_dir[256] = "/home/mare/Nolin/data_2000_2016/2016/Surface3_LandMasked/Jul/An/test_ehsan"; // output of LandMask.c - use masked_surf files instead
-    char masked_toa_an_dir[256] = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46/test_pob/An"  ; // path to An dir files, we use An camera to define file labels for Ca Cf cameras
+    // // path to An dir files, we use An camera to define file labels for Ca Cf cameras
+    char masked_toa_an_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/An" ;
+
 
 
    // char atmmodel_csvfile[256] = "/home/mare/Projects/MISR/Julienne/IceBridge2016/SeaIce_Jul2016_atmmodel_csvfile2_r025.csv"; // ATM csv file; source from where/
-    char atmmodel_csvfile[256] = "/media/ehsan/SEAGATE/atmmodel_k_zero/atmmodel_april_2016_k_zero_npts_larger20.csv"   ; // ATM csv file; source from where/
+    // // ATM csv file; source from where/
+    char atmmodel_csvfile[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/atmmodels/atmmodel_april_2016_k_zero_npts_larger10.csv" ;
+
 
 
     // we don't use this file anymore, we decided to use all blocks, meaning no correction/reversing Cf and Ca cameras.
@@ -204,8 +208,10 @@ int main(int argc, char *argv[]) {
 
     
     // outputs 
-    char predicted_roughness_dir[256] = "/media/ehsan/6T_part1/2016/april_2016/14528_apr2016/project_april_2016_3cam/masked_toa_refl_april2016_3cams_day1_30_p1to233_b1to46/test_pob" ; // MISR roughness; rms file; no "/" at the end
-    
+    // // MISR roughness; rms file; no "/" at the end
+    char predicted_roughness_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/roughness_k_zero_npts_10" ;
+
+
 
     
     // other variables
