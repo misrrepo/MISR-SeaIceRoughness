@@ -1,0 +1,29 @@
+Fri Mar 25 13:57:50 PDT 2022
+Currently Loaded Modulefiles:
+ 1) shared   4) singularity/3.6.1     7) slurm/pronghorn/20.11.7  
+ 2) dot      5) utilities             8) gcc/8.4.0-gcc-4.8.5      
+ 3) unr-rc   6) default-environment  
+“MISR job started ...”
+c: input/toa dir: /data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/An 
+c: input/atmmodel csv file: /data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/atmmodels/atmmodel_april_2016_k_zero_npts_larger40.csv 
+c: output roughness dir: /data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/roughness_k_zero_npts_40 
+
+processing atmmodel_csvfile: /data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/atmmodels/atmmodel_april_2016_k_zero_npts_larger40.csv 
+
+c: total rows of ATMModel-DataStruct: 1649 
+c: make a list from masked TOA An files ...
+c: MISR (An) files found = 1
+c: Processing each MISR toa_an.dat file ...
+
+*********************** processing input (1/1): masked_toa_refl_P079_O086932_B031_an.dat ***********************
+
+an_fname: /data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/An/masked_toa_refl_P079_O086932_B031_an.dat 
+ca_fname: /data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/Ca/masked_toa_refl_P079_O086932_B031_ca.dat 
+cf_fname: /data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/Cf/masked_toa_refl_P079_O086932_B031_cf.dat 
+c: reading each MISR image block from 3 camera files into memory...
+c: now processing 3 MISR toa_block.dat files in memory 
+c: writing roughness block: 1 
+/data/gpfs/assoc/misr_roughness/2016/april_2016/test_predict_atmmodel_diff_npts/roughness_k_zero_npts_40/roughness_toa_refl_P079_O086932_B031.dat 
+c: FINISHED writing roughness block: 1 
+“MISR job ended ...”
+Fri Mar 25 13:58:04 PDT 2022
