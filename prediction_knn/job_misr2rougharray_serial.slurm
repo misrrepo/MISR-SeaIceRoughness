@@ -24,7 +24,7 @@ module list
 echo “MISR job started ...”
 
 ## path to python script to run
-./data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
+/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir/MISR2Roughness_serial
 
 echo “MISR job ended ...”
 date
