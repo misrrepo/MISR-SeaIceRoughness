@@ -16,6 +16,6 @@
 date
 module list 
 echo “MISR job started here...”
-python /Users/ehsanmos/Documents/MISR/MISR-SeaIceRoughness/prediction_knn/run_MISR2roughness_parallel_HPC.py
+python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/prediction_knn/run_MISR2roughness_parallel_HPC.py
 echo “MISR job ended here...”
 date
