@@ -31,7 +31,7 @@
 
 
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
-#SBATCH --mail-user=emosadegh@pronghorn.rc.unr.edu
+#SBATCH --mail-user=emosadegh@nevada.unr.edu
 
 #SBATCH --output=log_array2raster.txt   		 # The output file name
 #SBATCH --error=log_array2raster.txt		 	# The error file nam
