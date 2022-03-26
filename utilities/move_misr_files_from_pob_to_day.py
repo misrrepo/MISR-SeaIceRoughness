@@ -25,11 +25,13 @@ note:
 '''
 
 #-- step-1
-src_dir_fp =  '/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_ellipsoid'
+src_dir_fp =  '/Volumes/Ehsan-7757225325/2016/july_2016_old_review_later/ellipsoid_files/elliposid_files_used_for_mapping'
+
+
 
 #-- step-2 
 year = 2016
-month = 4			# april=4, july=7
+month = 7			# april=4, july=7
 num_of_days = 30  		# this is the end-date of processing/ should include the whole time period
 
 #-- step-3 
@@ -96,6 +98,9 @@ if (process_mode == 'move_roughness_files_to_subdir'):
 
 ##----------------------------------------------------------------------------------------------------------------------
 ## what it does:
+'''
+this part moves each HDF file to its subdirectory == date
+'''
 
 
 if (process_mode == 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir'):
@@ -103,7 +108,7 @@ if (process_mode == 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir'):
 	for iday in range(0, num_of_days, 1):
 
 		day = iday+1
-		print('\nprocessing day= %d \n' %day)
+		print('\n\nprocessing day= %d \n' %day)
 		start_time = str(year)+'-'+str(month)+'-'+str(day)+'T00:00:00Z'
 		end_time = str(year)+'-'+str(month)+'-'+str(day)+'T23:59:59Z'
 		print(start_time)
@@ -149,11 +154,14 @@ if (process_mode == 'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir'):
 
 ##----------------------------------------------------------------------------------------------------------------------
 #-- check period of hdf files in a dir- if it is not in the period, files will be moved to a subdir
-''' this part checks each hdf file be in our desired date (for example: April 2016)
+''' 
+this part checks each hdf file to be in our desired date (for example: April 2016)
 '''
 
 if (process_mode == 'check_hdf_order_dates'):
 	print('process mode: %s' %process_mode)
+
+	print('checking directory: %s' %src_dir_fp)
 
 	order_dir = src_dir_fp
 	file_pattern = 'MISR_AM1_GRP_ELLIPSOID_GM_P**.hdf'

@@ -9,8 +9,11 @@
 
 import os, glob, shutil
 
-src_dir_fullpath = "/home/ehsan/misr_lab/ATM_2010_2014_2019/5000002469199/"
-target_dir_fullpath = "/home/ehsan/misr_lab/ATM_2010_2014_2019"
+src_dir_fullpath = "/Volumes/Ehsan-7757225325/2016/july_2016_old_review_later/atm_data_july_2016"
+
+# target_dir_fullpath = "/home/ehsan/misr_lab/ATM_2010_2014_2019"
+target_dir_fullpath = src_dir_fullpath
+
 
 
 #~ define file pattern
