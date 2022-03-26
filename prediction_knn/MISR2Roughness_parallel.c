@@ -16,12 +16,12 @@ by: Ehsan Mosadegh, 29 August 2020
 #include <dirent.h>
 
 
-
-
+/* ----------------------- set number of threads for parallel run here ----------------------------*/
 
 // E- number of threads/CPU cores to use
 #define total_threads 32         // Q- how many CPU cores on your machine? max number of CPUs on a board. how many logical processors?
 
+/* ----------------------- set number of threads here ----------------------------*/
 
 
 
