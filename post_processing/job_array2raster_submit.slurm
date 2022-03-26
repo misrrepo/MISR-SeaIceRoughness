@@ -54,12 +54,15 @@ date
 ## module load intel/compiler/64/2018/18.0.1
 module list 
 
+## load virtual environment
+# conda activate /data/gpfs/home/emosadegh/miniconda2/envs/virtenv_py36 # no need, all libraries are installed from source
+
 
 echo “array2raster job started here...”
 
-## ./data/gpfs/home/emosadegh/MISR-roughness/exe_dir/MISR2Roughness_parallel
 
-python2.7 -u ./roughness_array2raster_georefrencing.py
+# python2.7 -u ./roughness_array2raster_georefrencing.py
+python -u ./roughness_array2raster_georefrencing.py
 
 echo “array2raster job ended here...”
 

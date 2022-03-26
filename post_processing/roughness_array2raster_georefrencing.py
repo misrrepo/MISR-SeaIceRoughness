@@ -7,20 +7,20 @@ notes:
 	output: georeferenced raster <.tif> file in both latlon and polar stereographic projections
 	
 	note: need to be run with python 3.6 if using precompiled MTK library
+	note: on Pronghorn I built and installed MTK and gdal libraries from source myself, so no need to use virtual environment then!
 '''
 
 import numpy as np
 import pandas as pd
 import os, glob
-# import gdal, osr # python2.7
-from osgeo import gdal  # python3.6 on Mac
+from osgeo import gdal  # python3.6 on Mac ?
 import MisrToolkit as Mtk # python2.7
 from MisrToolkit import * # 
 from subprocess import call
 import datetime as dt
-from matplotlib import pyplot as plt  #  pyplot uses the actual RGB values as they are, more accurate than PIL
-import PIL # (why???)
-from PIL import Image
+from matplotlib import pyplot as plt  #  ?   pyplot uses the actual RGB values as they are, more accurate than PIL
+# import PIL 
+# from PIL import Image  
 import tifffile # to write images with dtype=float64 on disc as bigTiff
 
 ########################################################################################################################
