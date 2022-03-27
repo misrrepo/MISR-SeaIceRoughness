@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=TOA
+#SBATCH --job-name=HDF-DL-July
 
 ##SBATCH --account=cpu-s6-test-0 
 ##SBATCH --partition=cpu-s6-test-0
@@ -24,7 +24,7 @@ module list
 echo “MISR job started ...”
 
 ## path to python script to run
-python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/toa_rad_to_refl_to_blocks/run_TOARad2Refl4AllBlocks_3cameras_april2016.py
+python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/download_from_FTP/multi_download_NASA_modified.py
 
 echo “MISR job ended ...”
 date
