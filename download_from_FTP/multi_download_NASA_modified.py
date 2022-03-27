@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+'''
+how this code works: 
+'''
+
+
 from getpass import getpass
 from html.parser import HTMLParser
 from pathlib import Path
@@ -118,6 +123,7 @@ def download(session: Session, files: List[str], output_dir: Path) -> None:
             with file_path.open('wb') as file:
                 file.write(_response._content)
 
+
 if __name__ == "__main__":
     # This URL is the starting directory
     starting_url = input("Enter the top level URL: ")
@@ -135,3 +141,4 @@ if __name__ == "__main__":
     files = get_files_to_download(session, filter_list)
     files = verify_download(session, files, output_dir)
     download(session, files, output_dir)
+

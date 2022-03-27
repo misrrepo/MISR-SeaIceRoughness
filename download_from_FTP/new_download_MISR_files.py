@@ -3,6 +3,11 @@
 import glob, os
 from subprocess import call
 
+'''
+how to use this script: ???
+
+'''
+
 # email_dir_fullpath = '/Users/ehsanmos/Documents/MISR/MISR-roughness/email_orders/april_2016'
 email_dir_fullpath = '/data/gpfs/home/emosadegh/MISR-roughness/email_orders/april_2016'
 
