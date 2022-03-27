@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 '''
-how this code works: 
+how this code works:  setup server path and download path in this code and run it 
 '''
 
 
@@ -10,7 +10,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, List
 
-from requests import Session
+import os
+from requests import Session 
 import requests
 from requests import Response
 
@@ -33,8 +34,11 @@ class MyHTMLParser(HTMLParser):
 
 def get_session() -> Session:
     # This code will prompt you to enter your username and password
-    username = input("Earthdata username: ")
-    password = getpass("Earthdata password: ")
+    # username = input("Earthdata username: ")
+    # password = getpass("Earthdata password: ")
+
+    username = "emosadegh@nevada.unr.edu"
+    password = "E@reno2021"
 
     # create a session that can be used to log in
     session = Session()
@@ -84,30 +88,43 @@ def verify_download(session: Session, files: List[str], output_dir: Path) -> Lis
     print("Checking for existing files")
     local_files = [file.name.lower() for file in output_dir.iterdir()]
     existing_files = list(filter(lambda file: Path(file).name.lower() in local_files, files))
+
     if existing_files and input(f"Overwrite {len(existing_files)} exiting files? [y/n]: ") not in ('y', 'ye', 'yes'):
         files = list(filter(lambda file: file not in existing_files, files))
 
+    # print(type(files))
     print('found files: %s' %len(files))
     print('first file on list:')
     print(files[0])
 
+
     # calculate total file size so that the user can verify they have enough space
     print("Getting download size.")
-    total_size = 0
+    # total_size = 0
     if not files:
         print("No files matched the filter or no files were found in the directory, exiting")
         exit()
 
     for iterNum, file in enumerate(files):
+        # print('remote file: %s' %file)
+        # print(type(file))
+        main_file = file.split('/')[-1]
+        # print('file to download: %s' %main_file)
+        starting_label = main_file.split('_')[0]
+        # print('starting label: %s' %starting_label)
+        if (starting_label !='MISR'):
+            # print('starting label is wrong; continue')
+            continue
+        print(file)
         _redirect = session.head(file)
         _response = session.head(_redirect.url)
-        print('checking size for file: %d/%d' %(iterNum+1, len(files)))
-        total_size += int(_response.headers.get('content-length'))
+        # print('checking size for file: %d/%d' %(iterNum+1, len(files)))
+        # total_size += int(_response.headers.get('content-length'))
 
     # inform the user before starting download
-    if input(f"Download {len(files)}, {total_size // 1024**2} MB? [y/n]: ").lower() not in ('y', 'ye', 'yes'):
-        print("Exiting, consider adding more filters or starting at a lower level folder")
-        exit()
+    # if input(f"Download {len(files)}, {total_size // 1024**2} MB? [y/n]: ").lower() not in ('y', 'ye', 'yes'):
+    #     print("Exiting, consider adding more filters or starting at a lower level folder")
+    #     exit()
 
     return files
 
@@ -117,6 +134,7 @@ def download(session: Session, files: List[str], output_dir: Path) -> None:
     for i, file in enumerate(files):
         print(f"Downloading file {i+1} of {len(files)}", end="\r")
         file_path = output_dir.joinpath(file.split('/')[-1])
+        print('file path: %s' %file_path)
         with session.get(file) as _redirect:
             _redirect = session.get(file) 
             _response = session.get(_redirect.url) 
@@ -126,15 +144,25 @@ def download(session: Session, files: List[str], output_dir: Path) -> None:
 
 if __name__ == "__main__":
     # This URL is the starting directory
-    starting_url = input("Enter the top level URL: ")
-    # enter "test" for the url to download form a small, 20MB directory.
-    if starting_url == "test":
-        starting_url = "https://asdc.larc.nasa.gov/data/MISR/MI3DCLDN.002/2000.09.20/"
-        
-    # the otuput directory Path('data') will save it to a file called 'data' in the current working directory
-    output_dir = Path('data')
+    # starting_url = input("Enter the top level URL: ")
+    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202203261938/"
 
-    filter_text = input("File types to download. (Ex: .ict, .h5, blank for all): ")
+    # enter "test" for the url to download form a small, 20MB directory.
+    # if starting_url == "test":
+    #     starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202203261938/"
+        
+    # the output directory Path('data') will save it to a file called 'data' in the current working directory
+    # output_dir = Path('data')
+
+    home_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016_reviewLater/hdf_downloaded"
+    out_dir_label = "july_2016_3cams"
+    out_dir_fp = os.path.join(home_dir, out_dir_label)
+    output_dir = Path(out_dir_fp)
+    print(output_dir)
+
+
+    # filter_text = input("File types to download. (Ex: .ict, .h5, blank for all): ")
+    filter_text = ".hdf"
     filter_list = [filter.strip() for filter in filter_text.split(',')]
 
     session = get_session()
