@@ -24,7 +24,7 @@ module list
 echo “MISR job started ...”
 
 ## path to python script to run
-python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/toa_rad_to_refl_to_blocks/run_TOARad2Refl4AllBlocks_3cameras_april2016.py
+python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/toa_rad_to_refl_to_blocks/run_TOARad2Refl4AllBlocks_3cameras_july2016.py
 
 echo “MISR job ended ...”
 date
