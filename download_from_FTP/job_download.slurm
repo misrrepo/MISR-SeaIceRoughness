@@ -19,8 +19,7 @@
 #SBATCH --output=log_multi_download.txt   		 # The output file name
 #SBATCH --error=log_multi_download.txt		 	# The error file nam
 
-export PATH=/data/gpfs/home/emosadegh/miniconda2/bin:$PATH
-conda init bash
+source /data/gpfs/home/emosadegh/.bashrc
 
 date
 module list 
