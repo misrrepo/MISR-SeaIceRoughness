@@ -1341,7 +1341,7 @@ return data2;
 int main(int argc, char* argv[]){ // return 0= success, return 1= error
 
 	// printf("date/time is ...\n");
-	printf("\n")
+	printf("\n");
 	system(command);
 
 
