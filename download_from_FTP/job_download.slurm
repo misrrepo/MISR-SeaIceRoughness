@@ -22,9 +22,12 @@
 date
 module list 
 echo “MISR job started ...”
+conda activate /data/gpfs/home/emosadegh/miniconda2/envs/virtenv_py36
+python -V
 
 ## path to python script to run
 python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/download_from_FTP/multi_download_NASA_modified.py
 
 echo “MISR job ended ...”
+conda deactivate
 date
