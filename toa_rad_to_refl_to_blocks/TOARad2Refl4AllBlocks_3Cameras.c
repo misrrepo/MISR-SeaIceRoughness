@@ -1342,7 +1342,6 @@ int main(int argc, char* argv[]){ // return 0= success, return 1= error
 
 	// printf("date/time is ...\n");
 	printf("\n");
-	printf("hi\n");
 	system(command);
 
 
@@ -1499,7 +1498,7 @@ int main(int argc, char* argv[]){ // return 0= success, return 1= error
 		// if (!write_png(fname[2], data2image(data, nlines, nsamples, 1), nlines, nsamples)) return 1; E: turnedoff this function & data2image, fname[2]- anything that goes to this function
 	}
 
-	printf("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
+	printf("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\n");
 
 	return 0;
 
