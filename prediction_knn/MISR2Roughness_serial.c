@@ -199,7 +199,7 @@ int main(int argc, char *argv[]) {
 
    // char atmmodel_csvfile[256] = "/home/mare/Projects/MISR/Julienne/IceBridge2016/SeaIce_Jul2016_atmmodel_csvfile2_r025.csv"; // ATM csv file; source from where/
     // // ATM csv file; source from where/
-    char atmmodel_csvfile[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel/atmmodel_july_2016_k_zero_npts_larger5.csv" ;
+    char atmmodel_csvfile[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel/atmmodel_july_2016_k_zero_npts_larger10.csv" ;
 
 
 
@@ -209,7 +209,7 @@ int main(int argc, char *argv[]) {
     
     // outputs 
     // // MISR roughness; rms file; no "/" at the end
-    char predicted_roughness_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_test/npts_5" ;
+    char predicted_roughness_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_test/npts_10" ;
 
 
 
