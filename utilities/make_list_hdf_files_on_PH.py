@@ -7,7 +7,7 @@ import os, glob, pandas as pd
 
 
 src_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/hdf_downloaded/july_2016_3cams"
-output_dir = "/Users/ehsanmos/Documents/MISR/MISR-SeaIceRoughness/utilities"
+output_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/utilities"
 
 
 # make a list 
