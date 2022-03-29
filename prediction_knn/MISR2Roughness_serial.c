@@ -193,7 +193,7 @@ int main(int argc, char *argv[]) {
     // inputs
     // char masked_toa_an_dir[256] = "/home/mare/Nolin/data_2000_2016/2016/Surface3_LandMasked/Jul/An/test_ehsan"; // output of LandMask.c - use masked_surf files instead
     // // path to An dir files, we use An camera to define file labels for Ca Cf cameras
-    char masked_toa_an_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_july2016_3cams_day1_30_p1to233_b1to46/An" ;
+    char masked_toa_an_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_test/An" ;
 
 
 
