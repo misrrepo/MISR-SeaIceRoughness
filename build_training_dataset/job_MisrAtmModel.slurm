@@ -16,6 +16,7 @@
 date
 module list 
 echo “MISR job started ...”
-python  /data/gpfs/home/emosadegh/MISR-roughness/atmmodel/run_MisrAtmModel.py
+python  /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/build_training_dataset/run_ATMModel.py
+
 echo “MISR job ended ...”
 date
