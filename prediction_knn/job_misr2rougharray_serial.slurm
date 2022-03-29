@@ -13,8 +13,8 @@
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
 
-#SBATCH --output=log_misr2rough.txt   		 # The output file name
-#SBATCH --error=log_misr2rough.txt		 	# The error file nam
+#SBATCH --output=log_misr2rough_serial.txt   		 # The output file name
+#SBATCH --error=log_misr2rough_serial.txt		 	# The error file nam
 
 date
 module list 
