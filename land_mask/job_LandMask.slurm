@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=TOA
+#SBATCH --job-name=lmask
 
 ##SBATCH --account=cpu-s6-test-0 
 ##SBATCH --partition=cpu-s6-test-0
@@ -16,8 +16,8 @@
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
 
-#SBATCH --output=log_toa2rad_1.txt   		 # The output file name
-#SBATCH --error=log_toa2rad_1.txt		 	# The error file nam
+#SBATCH --output=log_lmask.txt   		 # The output file name
+#SBATCH --error=log_lmask.txt		 	# The error file nam
 
 date
 module list 
