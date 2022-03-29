@@ -2,9 +2,6 @@
 
 #SBATCH --job-name=misr2rough
 
-##SBATCH --account=cpu-s6-test-0 
-##SBATCH --partition=cpu-s6-test-0
-
 #SBATCH --account=cpu-s5-misr_roughness-0
 #SBATCH --partition=cpu-core-0			 # Submit job to the cpu partition
 
@@ -23,7 +20,7 @@ date
 module list 
 echo “MISR job started ...”
 
-## path to python script to run
+## path to exe file to run
 /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir/MISR2Roughness_serial
 
 echo “MISR job ended ...”

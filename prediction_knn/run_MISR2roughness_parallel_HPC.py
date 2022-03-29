@@ -16,19 +16,19 @@ from platform import python_version
 #-- inputs
 
 #-- note: should set to masked/AN/ dir= should have An/ at the end of path
-masked_toa_An_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april2016_3cams_day15_30_p1to233_b1to46/An"
+masked_toa_An_dir = "?????????/An"
 
 
 
 #-- dir where the model.csv will be written in
-atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atmmodel/atmmodel_k_zero"
+atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel/???????????"
 #-- name of the model
-atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_npts_larger10.csv"
+atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_npts_larger10??????????????.csv"
 
 
 
 #-- output
-predicted_roughness_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10"
+predicted_roughness_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10" ??????
 
 
 
