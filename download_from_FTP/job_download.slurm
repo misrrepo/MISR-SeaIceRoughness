@@ -25,6 +25,7 @@ date
 module list 
 echo “MISR job started ...”
 conda activate /data/gpfs/home/emosadegh/miniconda2/envs/virtenv_py36
+echo "python version:"
 python -V
 
 ## path to python script to run
