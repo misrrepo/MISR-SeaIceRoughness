@@ -16,25 +16,26 @@ from platform import python_version
 #-- inputs
 
 #-- note: should set to masked/AN/ dir= should have An/ at the end of path
-masked_toa_An_dir = "?????????/An"
+masked_toa_An_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_july2016_3cams_day1_30_p1to233_b1to46/An"
 
 
 
-#-- dir where the model.csv will be written in
-atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel/???????????"
+#-- dir where the atmmodel.csv is there
+atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel/"
 #-- name of the model
-atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_npts_larger10??????????????.csv"
+atmmodel_csvfile_label = "atmmodel_july_2016_k_zero_npts_larger10.csv"
 
 
 
 #-- output
-predicted_roughness_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10" ??????
+predicted_roughness_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10"
 
 
 
 #-- executable
 exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
 exe_name = "MISR2Roughness_parallel"
+
 ########################################################################################################################
 def main():
 	'''

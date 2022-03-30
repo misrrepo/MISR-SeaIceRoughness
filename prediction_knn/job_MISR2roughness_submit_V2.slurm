@@ -1,7 +1,7 @@
 #!/bin/bash
+
 #SBATCH --job-name=MISR2roughness
-##SBATCH --account=cpu-s6-test-0 
-##SBATCH --partition=cpu-s6-test-0
+
 #SBATCH --account=cpu-s5-misr_roughness-0
 #SBATCH --partition=cpu-core-0			 			# Submit job to the cpu partition
 #SBATCH --ntasks=1
@@ -10,8 +10,8 @@
 #SBATCH --mem-per-cpu=3500M
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
-#SBATCH --output=log_misr2Rough.txt   		 	# The output file name
-#SBATCH --error=log_misr2Rough.txt		 		# The error file nam
+#SBATCH --output=log_misr2rough_parallel.txt   		 	# The output file name
+#SBATCH --error=log_misr2rough_parallel.txt		 		# The error file nam
 #SBATCH --time=14-00:00				 				# Set max. run time; format: D-HH:MM
 date
 module list 
