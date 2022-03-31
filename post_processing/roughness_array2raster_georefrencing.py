@@ -27,7 +27,7 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files there
-rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_16"
+rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_17"
 
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
