@@ -3,10 +3,10 @@
 #~ by: Ehsan Mosadegh, 25 Sep 2020
 
 '''
-input: directory to raster.tif files
+input: directory to raster.tif files (output of roughness_array2raster_georefrencing.py)
 output: intermediate VRT file, and then final mosaic.tif file in the same directory where raster.tif files are. Then, we will plot that mosaic later in QGIS.
 
-note: before running this script, we have to build raster.tif files first
+note: before running this script, we have to build raster.tif files first (output of roughness_array2raster_georefrencing.py), then move 
 note: change the date also: day/month/year
 '''
 import glob, os
@@ -28,16 +28,16 @@ def main():
 	raster_dir_fullpath = "/media/ehsan/6TB_part2/roughness2raster_2016/july/2016_7_16_rasters_noDataNeg99_TiffFileFloat64_max"
 	
 	# day label
-	day='16'
-	month='july'
+	day='15'
+	month='april'
 	year='2016'
 
 
 
-	#~~ forl date-tag from 3 parameters
+	# form date-tag from 3 parameters
 	date_tag = day+'-'+month+'-'+year
 
-	#~ naming labels
+	# naming labels
 	resamplingAlg = 'nearest'
 	output_VRT_dataset_name = 'virtualDataset_float64_'+resamplingAlg+'_'+date_tag+'.vrt'
 	output_mosaic_name = 'mosaic_fromVRT_float64_'+resamplingAlg+'_'+date_tag+'.tif'
