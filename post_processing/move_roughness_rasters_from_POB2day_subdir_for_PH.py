@@ -17,12 +17,12 @@ note: this code moves misr roughness files based on POB to its specific day and
 
 
 year = 2016
-month = 4
-day = 30
+month = 7
+day = 10
 
 
 # fullpath to predicted roughness directory
-main_roughness_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10"
+main_roughness_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10"
 
 
 # ####################### do not change anything else bellow ################################################
