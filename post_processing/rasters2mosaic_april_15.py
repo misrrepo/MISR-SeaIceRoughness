@@ -28,7 +28,7 @@ def main():
 
 	print('-> start main(): ')
 	# path to date dir with raster.tif files there 
-	raster_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_15/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonLis"
+	raster_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_15/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList"
 	
 	# day label
 	day='15'
