@@ -33,8 +33,8 @@
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 
-#SBATCH --output=log_array2raster.txt   		 # The output file name
-#SBATCH --error=log_array2raster.txt		 	# The error file nam
+#SBATCH --output=log_array2raster_july.txt   		 # The output file name
+#SBATCH --error=log_array2raster_july.txt		 	# The error file nam
 
 ##---------------------------------------------------------
 ## other settings 
@@ -55,15 +55,16 @@ date
 module list 
 
 ## load virtual environment
-# conda activate /data/gpfs/home/emosadegh/miniconda2/envs/virtenv_py36 # no need, all libraries are installed from source
+## conda activate /data/gpfs/home/emosadegh/miniconda2/envs/virtenv_py36 # no need, all libraries are installed from source
 
 
 echo “array2raster job started here...”
 
 
-# python2.7 -u ./roughness_array2raster_georefrencing.py
 python -u ./roughness_array2raster_georefrencing.py
+
 
 echo “array2raster job ended here...”
 
 date
+

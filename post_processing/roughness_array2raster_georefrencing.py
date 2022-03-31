@@ -27,14 +27,16 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files there
-rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10"
+rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10"
 
 
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
 # georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
 
-roughness_date = "2016_4"
+
+roughness_date = "2016_7"
+
 
 # output_dir = "/media/ehsan/6TB_part2/roughness2raster_2016/july"
 output_dir = rough_dir_fullpath
