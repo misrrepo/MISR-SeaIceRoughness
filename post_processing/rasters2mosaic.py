@@ -6,7 +6,10 @@
 input: directory to raster.tif files (output of roughness_array2raster_georefrencing.py)
 output: intermediate VRT file, and then final mosaic.tif file in the same directory where raster.tif files are. Then, we will plot that mosaic later in QGIS.
 
-note: before running this script, we have to build raster.tif files first (output of roughness_array2raster_georefrencing.py), then move 
+note: before running this script, we have to build raster.tif files first (output of roughness_array2raster_georefrencing.py), 
+		then move rasters to subdir for each day (move_roughness_rasters_from_POB2day_subdir.ipynb),
+		and then use this script to create mosaics from files inside each day-dir
+
 note: change the date also: day/month/year
 '''
 import glob, os
@@ -24,8 +27,8 @@ raster_file_pattern = 'raster_path_*'+'*_reprojToEPSG_3995.tif'
 def main():
 
 	print('-> start main(): ')
-
-	raster_dir_fullpath = "/media/ehsan/6TB_part2/roughness2raster_2016/july/2016_7_16_rasters_noDataNeg99_TiffFileFloat64_max"
+	# path to date dir with raster.tif files there 
+	raster_dir_fullpath = "/Volumes/Ehsan-7757225325/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_15/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList"
 	
 	# day label
 	day='15'
