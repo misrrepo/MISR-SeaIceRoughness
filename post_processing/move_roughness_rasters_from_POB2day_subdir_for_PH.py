@@ -18,7 +18,7 @@ note: this code moves misr roughness files based on POB to its specific day and
 
 year = 2016
 month = 4
-day = 15
+day = 30
 
 
 # fullpath to predicted roughness directory
