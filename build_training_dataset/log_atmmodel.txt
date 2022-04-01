@@ -1,0 +1,534 @@
+Tue Mar 29 13:39:38 PDT 2022
+Currently Loaded Modulefiles:
+ 1) shared   4) singularity/3.6.1     7) slurm/pronghorn/20.11.7  
+ 2) dot      5) utilities             8) gcc/8.4.0-gcc-4.8.5      
+ 3) unr-rc   6) default-environment  
+“MISR job started ...”
+C: OK! received 5 arguments. 
+ATM-dir: /data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016 
+maskedTOA-dir: /data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_july2016_3cams_day1_30_p1to233_b1to46 
+cloudMask-dir: /data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016 
+atmmodel-csvfilem: /data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel/atmmodel_july_2016_k_zero.csv 
+
+*********** PROGRAM: ATMRoughness2MISRPixels.c ***********
+
+making list of ATM.csv files...
+----------------------------------------------------------------------------------------------
+number of ATM.csv (ILATM2) files found= (67) in direcotry: /data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016 
+
+
+############################## process a new ATM nfile ##############################
+ATM file: (1/67) --> ILATM2_20160714_202254_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (2/67) --> ILATM2_20160719_222400_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (3/67) --> ILATM2_20160720_032617_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (4/67) --> ILATM2_20160719_224634_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (5/67) --> ILATM2_20160716_005357_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (6/67) --> ILATM2_20160714_221109_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (7/67) --> ILATM2_20160721_214251_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (8/67) --> ILATM2_20160713_200853_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (9/67) --> ILATM2_20160719_221623_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (10/67) --> ILATM2_20160714_203002_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (11/67) --> ILATM2_20160719_225431_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (12/67) --> ILATM2_20160721_210148_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (13/67) --> ILATM2_20160714_212518_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (14/67) --> ILATM2_20160713_212528_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (15/67) --> ILATM2_20160719_230210_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (16/67) --> ILATM2_20160713_211216_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (17/67) --> ILATM2_20160716_004644_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (18/67) --> ILATM2_20160721_213503_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (19/67) --> ILATM2_20160714_204439_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (20/67) --> ILATM2_20160714_210816_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (21/67) --> ILATM2_20160720_033405_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (22/67) --> ILATM2_20160719_232432_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (23/67) --> ILATM2_20160720_034055_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (24/67) --> ILATM2_20160714_215408_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (25/67) --> ILATM2_20160721_212612_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (26/67) --> ILATM2_20160714_205236_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (27/67) --> ILATM2_20160714_203641_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (28/67) --> ILATM2_20160720_031838_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (29/67) --> ILATM2_20160719_231709_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (30/67) --> ILATM2_20160719_223204_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (31/67) --> ILATM2_20160721_205348_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (32/67) --> ILATM2_20160719_220843_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (33/67) --> ILATM2_20160721_220932_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (34/67) --> ILATM2_20160714_213429_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (35/67) --> ILATM2_20160716_010800_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (36/67) --> ILATM2_20160720_024714_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (37/67) --> ILATM2_20160721_215143_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (38/67) --> ILATM2_20160714_210023_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (39/67) --> ILATM2_20160713_211825_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (40/67) --> ILATM2_20160720_025508_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (41/67) --> ILATM2_20160721_211808_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (42/67) --> ILATM2_20160719_215309_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (43/67) --> ILATM2_20160713_213248_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (44/67) --> ILATM2_20160714_222701_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (45/67) --> ILATM2_20160714_201838_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (46/67) --> ILATM2_20160713_200143_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (47/67) --> ILATM2_20160716_002520_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (48/67) --> ILATM2_20160714_221849_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (49/67) --> ILATM2_20160713_215414_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (50/67) --> ILATM2_20160716_011458_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (51/67) --> ILATM2_20160716_001749_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (52/67) --> ILATM2_20160716_003941_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (53/67) --> ILATM2_20160719_224017_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (54/67) --> ILATM2_20160719_220109_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (55/67) --> ILATM2_20160721_220019_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (56/67) --> ILATM2_20160721_210945_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (57/67) --> ILATM2_20160713_214718_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (58/67) --> ILATM2_20160714_220240_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (59/67) --> ILATM2_20160713_214030_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (60/67) --> ILATM2_20160713_195419_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (61/67) --> ILATM2_20160713_210559_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (62/67) --> ILATM2_20160719_230943_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (63/67) --> ILATM2_20160716_003227_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (64/67) --> ILATM2_20160713_220121_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (65/67) --> ILATM2_20160716_010102_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (66/67) --> ILATM2_20160714_211646_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+############################## process a new ATM nfile ##############################
+ATM file: (67/67) --> ILATM2_20160720_030106_smooth_nadir3seg_50pt.csv 
+
+k= -1, we continue to next k
+k= 0
+k= 1, we continue to next k
+
+************************* preparing output file *************************
+
+
+atmmodel_csvfile (output) file opened successfully! 
+
+writing data into output file... 
+
+number of variables/rows in ATM_DataStruct= 34403 after checking all ATM files, k days, orbits.
+********************************************************
+Number of Total ATM rms points = 34403
+Number of Valid ATM rms points = 25482
+Number of Valid ATM rms with weight of 1.0 (ATM overpass today) = 25482
+Number of Valid ATM rms with weight of 0.5 (ATM overpass yesterday/tomorrow) = 0
+Total Average rms = 8.525204 from max_npts= 17.000000
+Average valid rms = 8.473806
+Max valid rms = 119.250000
+Min valid rms = 2.348333
+
+Number of cloud points = 0
+Number of nocloud points = 0
+Number of missing cloud mask pts = 21181
+
+***** FINISHED SUCCESSFULLY!***** 
+
+start time: 2022-03-29 13:39:39.160508
+python version: 2.7.18
+ 
+dir exists: /data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016
+dir exists: /data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_july2016_3cams_day1_30_p1to233_b1to46
+dir exists: /data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016
+dir exists: /data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel
+dir exists: /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
+ 
+python: "Usage: <exe-name> <ATM-dir> <maskedTOA-dir> <cloudMask-dir> <atmmodelCSV-file>
+to cmd=  /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir/ATMModel /data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016 /data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_july2016_3cams_day1_30_p1to233_b1to46 /data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016 /data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel/atmmodel_july_2016_k_zero.csv 
+
+
+******************************************
+
+/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel/atmmodel_july_2016_k_zero.csv
+end time= 2022-03-29 13:43:00.376845
+runtime duration= 0:03:21.216337
+ 
+######################## ATM-to-MISR COMPLETED SUCCESSFULLY ########################
+“MISR job ended ...”
+Tue Mar 29 13:43:00 PDT 2022
