@@ -32,8 +32,7 @@ def main():
 
 	print('start main(): ')
 	# path to date dir with raster.tif files there 
-	raster_dir_fullpath = "/Volumes/Ehsan-7757225325/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_15/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/test_path_85"
-
+	raster_dir_fullpath = "/Volumes/Ehsan-7757225325/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_15/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/polar_sterio"
 	
 
 
@@ -102,8 +101,8 @@ def main():
 								format = 'GTiff',
 								noData = -99.0,
 								resampleAlg = resamplingAlg,
-								outputType = gdal.GDT_Float64 # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte 	
-								) 
+								outputType = gdal.GDT_Float64) # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte 	
+								
 
 	print('-> output mosaic: ')
 	print(out_mosaic_fullpath)
