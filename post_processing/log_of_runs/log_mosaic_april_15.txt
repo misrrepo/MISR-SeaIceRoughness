@@ -1,10 +1,10 @@
-Thu Mar 31 15:25:15 PDT 2022
+Thu Mar 31 19:20:53 PDT 2022
 Currently Loaded Modulefiles:
  1) shared   4) singularity/3.6.1     7) slurm/pronghorn/20.11.7  
  2) dot      5) utilities             8) gcc/8.4.0-gcc-4.8.5      
  3) unr-rc   6) default-environment  
 “array2raster job started here...”
--> start time: 2022-03-31 15:25:15.339104
+-> start time: 2022-03-31 19:20:55.908208
  
 -> start main(): 
 -> raster dir: /data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_15/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
@@ -15,7 +15,14 @@ Currently Loaded Modulefiles:
 -> building VRT dataset!
 -> closing VRT dataset!
 -> building mosaic from VRT dataset!
-/cm/local/apps/slurm/var/spool/job3481477/slurm_script: line 64: 149610 Killed                  python -u ./rasters2mosaic_april_15.py
+-> output mosaic: 
+/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_15/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/mosaic_fromVRT_float64_nearest_15-april-2016.tif
+
+-> closing mosaic dataset!
+
+-> end time= 2022-03-31 19:25:25.150557
+-> runtime duration= 0:04:29.242349
+ 
+######################## MOSAIC COMPLETED SUCCESSFULLY ########################
 “array2raster job ended here...”
-Thu Mar 31 15:26:00 PDT 2022
-slurmstepd: error: Detected 1 oom-kill event(s) in StepId=3481477.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+Thu Mar 31 19:25:25 PDT 2022

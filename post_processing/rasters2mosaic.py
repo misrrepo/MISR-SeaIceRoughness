@@ -4,7 +4,10 @@
 
 '''
 input: directory to raster.tif files (output of roughness_array2raster_georefrencing.py)
+
 output: intermediate VRT file, and then final mosaic.tif file in the same directory where raster.tif files are. Then, we will plot that mosaic later in QGIS.
+
+
 
 note: before running this script, we have to build raster.tif files first (output of roughness_array2raster_georefrencing.py), 
 		then move rasters to subdir for each day (move_roughness_rasters_from_POB2day_subdir.ipynb),
@@ -12,6 +15,7 @@ note: before running this script, we have to build raster.tif files first (outpu
 
 note: change the date also: day/month/year
 '''
+
 import glob, os
 from osgeo import gdal
 from subprocess import call
@@ -26,14 +30,15 @@ raster_file_pattern = 'raster_path_*'+'*_reprojToEPSG_3995.tif'
 ########################################################################################################################
 def main():
 
-	print('-> start main(): ')
+	print('start main(): ')
 	# path to date dir with raster.tif files there 
-	raster_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_17/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList"
+	raster_dir_fullpath = "/Volumes/Ehsan-7757225325/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_15/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/test_path_85"
 
+	
 
 
 	# day label
-	day='17'
+	day='15'
 	month='april'
 	year='2016'
 
@@ -72,8 +77,7 @@ def main():
 	#~ mwthod 2- VRT and gdal_translate
 	print('-> building VRT dataset!')
 	# vrt_options = gdal.BuildVRTOptions(resampleAlg='linear') #, addAlpha=True)
-	my_vrt_ptr = gdal.BuildVRT(
-								VRT_fullpath, 
+	my_vrt_ptr = gdal.BuildVRT(VRT_fullpath, 
 								files_to_mosaic,
 								srcNodata = -99.0,
 								VRTNodata = -99.0
@@ -91,15 +95,14 @@ def main():
 
 
 	#~ define Translate Options --> we don't need to create a TranslateOptions object, we only need do define anything as an keyword_argument for the .Translate()
-	#~ writes translated output to a .tif file and returns a gdal.Dataset object; after writing it, mosaic_ds will be empty --> how do it VRT???
+	#~ this f() writes translated output to a .tif file and returns a gdal.Dataset object; after writing it, mosaic_ds will be empty --> how do it VRT???
 	print('-> building mosaic from VRT dataset!')
-	mosaic_ds = gdal.Translate( 								# verbose?
-									out_mosaic_fullpath,
-									VRT_fullpath,
-									format = 'GTiff',
-									noData = -99.0,
-									resampleAlg = resamplingAlg,
-									outputType = gdal.GDT_Float64 # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte 	
+	mosaic_ds = gdal.Translate(out_mosaic_fullpath,
+								VRT_fullpath,
+								format = 'GTiff',
+								noData = -99.0,
+								resampleAlg = resamplingAlg,
+								outputType = gdal.GDT_Float64 # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte 	
 								) 
 
 	print('-> output mosaic: ')
@@ -127,4 +130,14 @@ if __name__ == '__main__':
 	print(" ")
 	print('######################## MOSAIC COMPLETED SUCCESSFULLY ########################')
 ########################################################################################################################
+
+#define NO_DATA -999999.0
+#define BACKGROUND -999998.0
+#define FOREGROUND -999997.0
+#define TDROPOUT -999996.0
+#define CMASKED -999995.0
+#define LMASKED -999994.0
+#define VERBOSE 0
+
+
 
