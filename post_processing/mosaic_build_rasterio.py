@@ -16,8 +16,8 @@ dt1 = dt.datetime.now()
 
 
 # File and folder paths
-dirpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters"
-out_fp = os.path.join(dirpath, "final_mosaic_rasterio_15_30_april_2016_max.tif")
+dirpath = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files"
+out_fp = os.path.join(dirpath, "final_mosaic_rasterio_10_26_july_2016_max.tif")
 
 # Make a search criteria to select the DEM files
 search_criteria = 'raster_path_*'+'*_reprojToEPSG_3995.tif'
