@@ -9,17 +9,14 @@ from rasterio.merge import merge
 from rasterio.plot import show
 import glob
 import os
-# get_ipython().run_line_magic('matplotlib', 'inline')
+import datetime as dt
 
-
+dt1 = dt.datetime.now()
 # In[2]:
 
 
 # File and folder paths
 dirpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters"
-
-
-
 out_fp = os.path.join(dirpath, "final_mosaic_rasterio_15_30_april_2016_max.tif")
 
 # Make a search criteria to select the DEM files
@@ -54,7 +51,7 @@ for fp in rasters_fps:
 
 
 # Merge function returns a single mosaic array and the transformation info
-print('merging rasters...')
+print('merging all rasters...')
 mosaic, out_trans = merge(src_files_to_mosaic, method='max')
 
 # Plot the result
@@ -74,12 +71,16 @@ out_meta.update({"driver": "GTiff",
 
 
 # Write the mosaic raster to disk
-print('writing out files')
+print('writing out files...')
 with rasterio.open(out_fp, "w", **out_meta) as dest:
     dest.write(mosaic)
 
 
 print(out_fp)
+dt2 = dt.datetime.now()
+delta_time = dt2-dt1
+print('time: %s' %delta_time)
+
 
 
 
