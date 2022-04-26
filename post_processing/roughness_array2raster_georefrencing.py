@@ -27,14 +27,14 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files there
-rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_4_15"
+rough_dir_fullpath =  "/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10"
 
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
 # georefRaster_dir_name = 'rasters_noDataNeg99_TiffFileFloat64_max'
 
 
-roughness_date = "2016_4"
+roughness_date = "2016_7"
 
 
 # output_dir = "/media/ehsan/6TB_part2/roughness2raster_2016/july"
@@ -55,7 +55,8 @@ ascending_block_threshold = 5
 misr_res_meter = 275
 gcp_mode = "corners_n_inside"                       									# 'inside' OR "corners_n_inside"
 reprojection = 'on'
-skip_antimeridian = 'on' # if on == skip any image block that crosses A.M. line
+skip_antimeridian = 'off' # if on == skip any image block that crosses A.M. line
+
 # copy_Anne_region = False  # copy raters that fall into a region to a seperate dir 
 ########################################################################################################################
 
@@ -106,7 +107,10 @@ def main():
 		if (skip_antimeridian=='on'):
 			if (antimaridina_crossing==True):
 				print('note: image block crosses Anti-Maridian! we will skip it')
+				# what can we do here to fill the gap?
 				continue
+				### test here to figure a solution for blocks crossing AM line
+
 
 		translated_img_fullpath = apply_gcp(path_label, block_label, image_dir, in_ds, gcp_list)
 		warpedFile_fullPath_noExt = warp_img(path_label, block_label, total_gcps, image_dir, translated_img_fullpath, gcp_numbers)
