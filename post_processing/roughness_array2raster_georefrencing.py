@@ -27,7 +27,7 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files there
-rough_dir_fullpath =  "/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10"
+rough_dir_fullpath =  "/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/test_paths_under10"
 
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
@@ -112,6 +112,7 @@ def main():
 				### test here to figure a solution for blocks crossing AM line
 
 
+		####### note: if skip AM (skip_antimeridian) line==off ==> we will apply GCP and warp all blocks 
 		translated_img_fullpath = apply_gcp(path_label, block_label, image_dir, in_ds, gcp_list)
 		warpedFile_fullPath_noExt = warp_img(path_label, block_label, total_gcps, image_dir, translated_img_fullpath, gcp_numbers)
 		
@@ -461,9 +462,9 @@ def create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_
 				# print("-> found neg. pixel long. in the crossing block: %f" % pixel_long)
 				#~ update neg. long. to pos. long.
 
-				if ( pixel_long < 0 ):  # if we find neg. long., we change it to pos. long. and will be in range [0, +360], especially case is all in neg. side of A.M.
+				if (pixel_long < 0):  # if we find neg. long., we change it to pos. long. and will be in range [0, +360], especially case is all in neg. side of A.M.
 					# print("-> neg. pixel long. in block: %f" % pixel_long)
-					updated_pixel_lon = (360.0 + pixel_long )  # this long. is changed to pos. and will be in range [0, +360]
+					updated_pixel_lon = (360.0 + pixel_long)  # this long. is changed to pos. and will be in range [0, +360]
 					# print("=> updated to range 0-360 to: %f" %updated_pixel_lon)
 					#~ update neg. long. to pos. long.
 					gcp_list[index].GCPX = updated_pixel_lon
