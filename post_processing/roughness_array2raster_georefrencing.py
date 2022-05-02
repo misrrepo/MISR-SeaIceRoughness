@@ -27,7 +27,7 @@ import tifffile # to write images with dtype=float64 on disc as bigTiff
 # dir path setup by user
 ########################################################################################################################
 #~ setup dir w/ roughness files there
-rough_dir_fullpath =  "/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/test_paths_under10"
+rough_dir_fullpath =  "/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10"
 
 
 #~ tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
@@ -446,7 +446,7 @@ def create_gcp_list_for_imgBlockPixels_fixedGCPs_skipAMcrossing(path_num, block_
 
 		elif ((180-abs(min_long_in_img))<distance_from_AM_line):
 			#~ for any block that crosses AM line, we just label that block as AM crossing 
-			print('\nimage crosses A.M. line! \n')
+			print('\n--------> image crosses A.M. line! \n')
 			gcp_list = []  # a list of ground control points
 
 			for index, element in enumerate(img_pixelFrame_rowcol_list):    # index == each GCP ; element order == [row, col]

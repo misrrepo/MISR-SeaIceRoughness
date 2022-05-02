@@ -1,0 +1,2837 @@
+start time: 2022-04-25 20:39:59.338688
+
+
+
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10
+looking for pattern: roughness_toa_refl_P*_O*_B*.dat
+files found: 4140
+image dir NOT exist. We will make it.
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (1/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B001.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 1
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_1.tif
+block: 1
+block num < ascending threshold=5, so we skip it!
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (2/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B002.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 2
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_2.tif
+block: 2
+block num < ascending threshold=5, so we skip it!
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (3/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B003.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 3
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_3.tif
+block: 3
+block num < ascending threshold=5, so we skip it!
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (4/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B004.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 4
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_4.tif
+block: 4
+block num < ascending threshold=5, so we skip it!
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (5/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B005.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 5
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_5.tif
+block: 5
+transfer img frame -> latlon frame for path_num: 1, block_num: 5
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B5.csv
+min long.: 90.60921888878168
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_5_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_5_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_5_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (6/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B006.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 6
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_6.tif
+block: 6
+transfer img frame -> latlon frame for path_num: 1, block_num: 6
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B6.csv
+min long.: 88.55494369353512
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_6_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_6_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_6_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (7/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B007.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 7
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_7.tif
+block: 7
+transfer img frame -> latlon frame for path_num: 1, block_num: 7
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B7.csv
+min long.: 86.26588625697616
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_7_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_7_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_7_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (8/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B008.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 8
+
+
+image array min= -999994
+image array max= 0
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_8.tif
+block: 8
+transfer img frame -> latlon frame for path_num: 1, block_num: 8
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B8.csv
+min long.: 83.7064378786496
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_8_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_8_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_8_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (9/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B009.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 9
+
+
+image array min= -999994
+image array max= 66
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_9.tif
+block: 9
+transfer img frame -> latlon frame for path_num: 1, block_num: 9
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B9.csv
+min long.: 80.40721192284549
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_9_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_9_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_9_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (10/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B010.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 10
+
+
+image array min= -999994
+image array max= 43
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_10.tif
+block: 10
+transfer img frame -> latlon frame for path_num: 1, block_num: 10
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B10.csv
+min long.: 77.17818406620698
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_10_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_10_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_10_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (11/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B011.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 11
+
+
+image array min= -999994
+image array max= 47
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_11.tif
+block: 11
+transfer img frame -> latlon frame for path_num: 1, block_num: 11
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B11.csv
+min long.: 73.5506807816951
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_11_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_11_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_11_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (12/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B012.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 12
+
+
+image array min= -99991
+image array max= 66
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_12.tif
+block: 12
+transfer img frame -> latlon frame for path_num: 1, block_num: 12
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B12.csv
+min long.: 69.47843957373668
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_12_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_12_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_12_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (13/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B013.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 13
+
+
+image array min= -999994
+image array max= 43
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_13.tif
+block: 13
+transfer img frame -> latlon frame for path_num: 1, block_num: 13
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B13.csv
+min long.: 64.92067954397501
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_13_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_13_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_13_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (14/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B014.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 14
+
+
+image array min= -999994
+image array max= 68
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_14.tif
+block: 14
+transfer img frame -> latlon frame for path_num: 1, block_num: 14
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B14.csv
+min long.: 59.5003709531052
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_14_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_14_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_14_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (15/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B015.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 15
+
+
+image array min= -999994
+image array max= 68
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_15.tif
+block: 15
+transfer img frame -> latlon frame for path_num: 1, block_num: 15
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B15.csv
+min long.: 53.96743181546549
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_15_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_15_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_15_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (16/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B016.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 16
+
+
+image array min= -999994
+image array max= 47
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_16.tif
+block: 16
+transfer img frame -> latlon frame for path_num: 1, block_num: 16
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B16.csv
+min long.: 47.97162460285942
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_16_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_16_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_16_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (17/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B017.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 17
+
+
+image array min= -999994
+image array max= 43
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_17.tif
+block: 17
+transfer img frame -> latlon frame for path_num: 1, block_num: 17
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B17.csv
+min long.: 41.594326015801165
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_17_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_17_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_17_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (18/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B018.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 18
+
+
+image array min= -999994
+image array max= 66
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_18.tif
+block: 18
+transfer img frame -> latlon frame for path_num: 1, block_num: 18
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B18.csv
+min long.: 34.963560188628435
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_18_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_18_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_18_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (19/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B019.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 19
+
+
+image array min= -999994
+image array max= 67
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_19.tif
+block: 19
+transfer img frame -> latlon frame for path_num: 1, block_num: 19
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B19.csv
+min long.: 25.362775759895612
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_19_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_19_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_19_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (20/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B020.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 20
+
+
+image array min= -999994
+image array max= 96
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_20.tif
+block: 20
+transfer img frame -> latlon frame for path_num: 1, block_num: 20
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B20.csv
+min long.: 13.394205544060194
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_20_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_20_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_20_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (21/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B021.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 21
+
+
+image array min= -999994
+image array max= 67
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_21.tif
+block: 21
+transfer img frame -> latlon frame for path_num: 1, block_num: 21
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B21.csv
+min long.: 2.8307263731951138
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_21_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_21_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_21_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (22/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B022.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 22
+
+
+image array min= -999994
+image array max= 70
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_22.tif
+block: 22
+transfer img frame -> latlon frame for path_num: 1, block_num: 22
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B22.csv
+min long.: -6.0009412657793515
+found some neg. lon. in img_worldFrame_latlon_list!
+
+--------> image crosses P.M. line! 
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_22_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_22_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_22_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (23/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B023.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 23
+
+
+image array min= -99991
+image array max= 70
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_23.tif
+block: 23
+transfer img frame -> latlon frame for path_num: 1, block_num: 23
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B23.csv
+min long.: -13.183589250417958
+found some neg. lon. in img_worldFrame_latlon_list!
+
+--------> image crosses P.M. line! 
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_23_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_23_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_23_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (24/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B024.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 24
+
+
+image array min= -999994
+image array max= 96
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_24.tif
+block: 24
+transfer img frame -> latlon frame for path_num: 1, block_num: 24
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B24.csv
+min long.: -18.977717077794964
+found some neg. lon. in img_worldFrame_latlon_list!
+
+--------> image crosses P.M. line! 
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_24_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_24_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_24_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (25/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B025.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 25
+
+
+image array min= -999994
+image array max= 96
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_25.tif
+block: 25
+transfer img frame -> latlon frame for path_num: 1, block_num: 25
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B25.csv
+min long.: -23.66771688500067
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_25_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_25_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_25_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (26/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B026.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 26
+
+
+image array min= -999994
+image array max= 96
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_26.tif
+block: 26
+transfer img frame -> latlon frame for path_num: 1, block_num: 26
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B26.csv
+min long.: -27.49930165736175
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_26_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_26_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_26_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (27/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B027.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 27
+
+
+image array min= -999994
+image array max= 96
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_27.tif
+block: 27
+transfer img frame -> latlon frame for path_num: 1, block_num: 27
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B27.csv
+min long.: -30.666413848081106
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_27_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_27_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_27_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (28/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B028.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 28
+
+
+image array min= -999994
+image array max= 96
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_28.tif
+block: 28
+transfer img frame -> latlon frame for path_num: 1, block_num: 28
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B28.csv
+min long.: -33.9370399535051
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_28_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_28_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_28_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (29/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B029.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 29
+
+
+image array min= -999994
+image array max= 76
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_29.tif
+block: 29
+transfer img frame -> latlon frame for path_num: 1, block_num: 29
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B29.csv
+min long.: -36.14287732460028
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_29_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_29_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_29_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (30/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B030.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 30
+
+
+image array min= -999994
+image array max= 96
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_30.tif
+block: 30
+transfer img frame -> latlon frame for path_num: 1, block_num: 30
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B30.csv
+min long.: -38.029898892038524
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_30_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_30_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_30_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (31/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B031.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 31
+
+
+image array min= -999994
+image array max= 13
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_31.tif
+block: 31
+transfer img frame -> latlon frame for path_num: 1, block_num: 31
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B31.csv
+min long.: -39.661544992545416
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_31_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_31_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_31_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (32/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B032.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 32
+
+
+image array min= -999994
+image array max= 0
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_32.tif
+block: 32
+transfer img frame -> latlon frame for path_num: 1, block_num: 32
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B32.csv
+min long.: -41.57386237488431
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_32_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_32_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_32_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (33/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B033.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 33
+
+
+image array min= -999994
+image array max= -99991
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_33.tif
+block: 33
+transfer img frame -> latlon frame for path_num: 1, block_num: 33
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B33.csv
+min long.: -42.80210051124869
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_33_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_33_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_33_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (34/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B034.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 34
+
+
+image array min= -999994
+image array max= -99991
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_34.tif
+block: 34
+transfer img frame -> latlon frame for path_num: 1, block_num: 34
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B34.csv
+min long.: -43.89238820846586
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_34_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_34_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_34_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (35/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B035.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 35
+
+
+image array min= -999994
+image array max= -99991
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_35.tif
+block: 35
+transfer img frame -> latlon frame for path_num: 1, block_num: 35
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B35.csv
+min long.: -45.28402510870611
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_35_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_35_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_35_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (36/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B036.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 36
+
+
+image array min= -999994
+image array max= 27
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_36.tif
+block: 36
+transfer img frame -> latlon frame for path_num: 1, block_num: 36
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B36.csv
+min long.: -46.14191543303781
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_36_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_36_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_36_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (37/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B037.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 37
+
+
+image array min= -999994
+image array max= 61
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_37.tif
+block: 37
+transfer img frame -> latlon frame for path_num: 1, block_num: 37
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B37.csv
+min long.: -46.91902184053023
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_37_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_37_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_37_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (38/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B038.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 38
+
+
+image array min= -999994
+image array max= 66
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_38.tif
+block: 38
+transfer img frame -> latlon frame for path_num: 1, block_num: 38
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B38.csv
+min long.: -47.989982496335706
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_38_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_38_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_38_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (39/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B039.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 39
+
+
+image array min= -999994
+image array max= 70
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_39.tif
+block: 39
+transfer img frame -> latlon frame for path_num: 1, block_num: 39
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B39.csv
+min long.: -48.62310963520438
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_39_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_39_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_39_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (40/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B040.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 40
+
+
+image array min= -999994
+image array max= 70
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_40.tif
+block: 40
+transfer img frame -> latlon frame for path_num: 1, block_num: 40
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B40.csv
+min long.: -49.54046945853756
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_40_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_40_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_40_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (41/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B041.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 41
+
+
+image array min= -999994
+image array max= 70
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_41.tif
+block: 41
+transfer img frame -> latlon frame for path_num: 1, block_num: 41
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B41.csv
+min long.: -50.06623349252081
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_41_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_41_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_41_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (42/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B042.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 42
+
+
+image array min= -999994
+image array max= 70
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_42.tif
+block: 42
+transfer img frame -> latlon frame for path_num: 1, block_num: 42
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B42.csv
+min long.: -50.86506424062727
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_42_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_42_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_42_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (43/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B043.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 43
+
+
+image array min= -99991
+image array max= 70
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_43.tif
+block: 43
+transfer img frame -> latlon frame for path_num: 1, block_num: 43
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B43.csv
+min long.: -51.3090367068455
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_43_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_43_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_43_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (44/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B044.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 44
+
+
+image array min= -99991
+image array max= 70
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_44.tif
+block: 44
+transfer img frame -> latlon frame for path_num: 1, block_num: 44
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B44.csv
+min long.: -52.014623503237544
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_44_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_44_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_44_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (45/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088063_B045.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 45
+
+
+image array min= -99991
+image array max= 70
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_1_block_45.tif
+block: 45
+transfer img frame -> latlon frame for path_num: 1, block_num: 45
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P1_B45.csv
+min long.: -52.67642558105937
+found some neg. lon. in img_worldFrame_latlon_list!
+
+all pixels have negative lon. (West Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_45_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_45_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_1_block_45_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (46/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B001.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 1
+
+
+image array min= -999994
+image array max= -999994
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (47/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B002.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 2
+
+
+image array min= -999994
+image array max= -999994
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (48/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B003.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 3
+
+
+image array min= -999994
+image array max= -999994
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (49/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B004.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 4
+
+
+image array min= -999994
+image array max= -999994
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (50/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B005.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 5
+
+
+image array min= -999994
+image array max= -999994
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (51/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B006.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 6
+
+
+image array min= -999994
+image array max= -999994
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (52/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B007.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 7
+
+
+image array min= -999994
+image array max= -999994
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (53/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B008.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 8
+
+
+image array min= -999994
+image array max= 9
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (54/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B009.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 9
+
+
+image array min= -999994
+image array max= 95
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (55/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B010.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 10
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (56/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B011.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 11
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (57/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B012.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 12
+
+
+image array min= -99991
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (58/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B013.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 13
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (59/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B014.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 14
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (60/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B015.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 15
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (61/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B016.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 16
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (62/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B017.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 17
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (63/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B018.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 18
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (64/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B019.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 19
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (65/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B020.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 20
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (66/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B021.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 21
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (67/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B022.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 22
+
+
+image array min= -999994
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (68/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B023.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 23
+
+
+image array min= -99991
+image array max= 70
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (69/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B024.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 24
+
+
+image array min= -999994
+image array max= 70
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (70/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B025.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 25
+
+
+image array min= -999994
+image array max= 70
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (71/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B026.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 26
+
+
+image array min= -999994
+image array max= 70
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (72/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B027.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 27
+
+
+image array min= -999994
+image array max= 70
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (73/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B028.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 28
+
+
+image array min= -999994
+image array max= 66
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (74/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B029.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 29
+
+
+image array min= -999994
+image array max= 30
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (75/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B030.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 30
+
+
+image array min= -999994
+image array max= 30
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (76/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B031.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 31
+
+
+image array min= -999994
+image array max= 27
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (77/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B032.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 32
+
+
+image array min= -999994
+image array max= 11
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (78/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B033.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 33
+
+
+image array min= -999994
+image array max= -99991
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (79/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B034.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 34
+
+
+image array min= -999994
+image array max= -99991
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (80/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B035.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 35
+
+
+image array min= -999994
+image array max= -99991
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (81/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B036.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 36
+
+
+image array min= -999994
+image array max= 15
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (82/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B037.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 37
+
+
+image array min= -999994
+image array max= 70
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (83/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B038.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 38
+
+
+image array min= -999994
+image array max= 67
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (84/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B039.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 39
+
+
+image array min= -999994
+image array max= 67
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (85/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B040.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 40
+
+
+image array min= -999994
+image array max= 60
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (86/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B041.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 41
+
+
+image array min= -999994
+image array max= 45
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (87/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B042.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 42
+
+
+image array min= -999994
+image array max= 66
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (88/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B043.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 43
+
+
+image array min= -99991
+image array max= 70
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (89/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B044.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 44
+
+
+image array min= -99991
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (90/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P001_O088296_B045.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 1
+roughness-Block: 45
+
+
+image array min= -99991
+image array max= 96
+image EXISTS on disc, we will skip this path!
+continue to next img.
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (91/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B001.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 1
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_1.tif
+block: 1
+block num < ascending threshold=5, so we skip it!
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (92/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B002.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 2
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_2.tif
+block: 2
+block num < ascending threshold=5, so we skip it!
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (93/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B003.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 3
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_3.tif
+block: 3
+block num < ascending threshold=5, so we skip it!
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (94/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B004.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 4
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_4.tif
+block: 4
+block num < ascending threshold=5, so we skip it!
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (95/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B005.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 5
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_5.tif
+block: 5
+transfer img frame -> latlon frame for path_num: 2, block_num: 5
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B5.csv
+min long.: 89.06415451110045
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_5_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_5_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_5_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (96/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B006.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 6
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_6.tif
+block: 6
+transfer img frame -> latlon frame for path_num: 2, block_num: 6
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B6.csv
+min long.: 87.00987931585388
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_6_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_6_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_6_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (97/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B007.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 7
+
+
+image array min= -999994
+image array max= -999994
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_7.tif
+block: 7
+transfer img frame -> latlon frame for path_num: 2, block_num: 7
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B7.csv
+min long.: 84.72082187929493
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_7_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_7_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_7_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (98/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B008.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 8
+
+
+image array min= -999994
+image array max= 10
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_8.tif
+block: 8
+transfer img frame -> latlon frame for path_num: 2, block_num: 8
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B8.csv
+min long.: 82.16137350096837
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_8_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_8_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_8_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (99/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B009.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 9
+
+
+image array min= -999994
+image array max= 43
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_9.tif
+block: 9
+transfer img frame -> latlon frame for path_num: 2, block_num: 9
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B9.csv
+min long.: 78.86214754516425
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_9_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_9_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_9_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (100/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B010.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 10
+
+
+image array min= -999994
+image array max= 43
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_10.tif
+block: 10
+transfer img frame -> latlon frame for path_num: 2, block_num: 10
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B10.csv
+min long.: 75.63311968852575
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_10_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_10_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_10_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (101/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B011.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 11
+
+
+image array min= -999994
+image array max= 18
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_11.tif
+block: 11
+transfer img frame -> latlon frame for path_num: 2, block_num: 11
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B11.csv
+min long.: 72.00561640401388
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_11_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_11_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_11_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (102/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B012.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 12
+
+
+image array min= -999994
+image array max= 61
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_12.tif
+block: 12
+transfer img frame -> latlon frame for path_num: 2, block_num: 12
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B12.csv
+min long.: 67.93337519605545
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_12_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_12_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_12_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (103/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B013.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 13
+
+
+image array min= -999994
+image array max= 69
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_13.tif
+block: 13
+transfer img frame -> latlon frame for path_num: 2, block_num: 13
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B13.csv
+min long.: 63.37561516629379
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_13_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_13_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_13_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (104/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B014.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 14
+
+
+image array min= -999994
+image array max= 47
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_14.tif
+block: 14
+transfer img frame -> latlon frame for path_num: 2, block_num: 14
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B14.csv
+min long.: 57.95530657542396
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_14_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_14_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_14_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (105/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B015.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 15
+
+
+image array min= -999994
+image array max= 69
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_15.tif
+block: 15
+transfer img frame -> latlon frame for path_num: 2, block_num: 15
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B15.csv
+min long.: 52.42236743778426
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_15_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_15_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_15_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (106/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B016.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 16
+
+
+image array min= -999994
+image array max= 96
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_16.tif
+block: 16
+transfer img frame -> latlon frame for path_num: 2, block_num: 16
+total GCPs from img frame: 85
+output latLon file:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/latLon_P2_B16.csv
+min long.: 46.42656022517819
+
+all pixels have positive lon. (East Hem.)!
+
+
+output_file_warped:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_16_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon.tif
+
+re-projecting to EPSG: 3995
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_16_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+final re-projected raster:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/raster_path_2_block_16_85GCPs_noGdalRes_dTypeFloat64_85gcps_latlon_reprojToEPSG_3995.tif
+
+
+raster direcotyr:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList
+--------------------------------------------------------------------------------------------------------
+processing new roughness array: (107/ 4140)
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_toa_refl_P002_O088165_B017.dat
+
+
+roughnessArray new shape: (512, 2048)
+roughness-Path: 2
+roughness-Block: 17
+
+
+image array min= -999994
+image array max= 96
+
+image is NOT on disc, so we will build this file!
+saving output image as:
+/Volumes/Ehsan-7757225325/2016/july_2016/predict_roughness_k_zero_npts_10/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList/path_2_block_17.tif
