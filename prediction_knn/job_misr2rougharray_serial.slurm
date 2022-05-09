@@ -13,15 +13,15 @@
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
 
-#SBATCH --output=log_misr2rough_serial.txt   		 # The output file name
-#SBATCH --error=log_misr2rough_serial.txt		 	# The error file nam
+#SBATCH --output=log_misr2rough_serial_test1.txt   		 # The output file name
+#SBATCH --error=log_misr2rough_serial_test1.txt		 	# The error file nam
 
 date
 module list 
-echo “MISR job started ...”
+echo “MISR2rough-serial job started ...”
 
 ## path to exe file to run
 /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir/MISR2Roughness_serial
 
-echo “MISR job ended ...”
+echo “MISR2rough-serial job ended ...”
 date
