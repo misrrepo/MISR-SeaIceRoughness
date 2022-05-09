@@ -26,6 +26,9 @@
 #define VERBOSE 0
 
 // E- global variables
+// Global variables 
+char* command = "date";
+
 typedef struct // E- why not path??? --> 9 var/elements
 {
     int block;
@@ -43,7 +46,6 @@ atm_type* ATMModel_DataStruct; // declare an instance/member
 MTKt_status status;
 
 int nfiles;
-
 int nlines = 512;
 int nsamples = 2048;
 
@@ -186,13 +188,15 @@ char *strsub(char *s, char *a, char *b) {
 //############################################### main ######################################################
 
 int main(int argc, char *argv[]) {
+    
+    system(command);
+
     DIR* dirp;
     FILE* fp;
     struct dirent* DirEntryObj; // directory entries
     
     // inputs
-    // char masked_toa_an_dir[256] = "/home/mare/Nolin/data_2000_2016/2016/Surface3_LandMasked/Jul/An/test_ehsan"; // output of LandMask.c - use masked_surf files instead
-    // // path to An dir files, we use An camera to define file labels for Ca Cf cameras
+    // path to An dir files, we use An camera to define file labels for Ca Cf cameras
     char masked_toa_an_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/test_predict_npts_p94_o88229_b30/An" ;
 
 
