@@ -17,9 +17,11 @@ import datetime as dt
 dt1 = dt.datetime.now()
 ####################################################################
 # File and folder paths
-dirpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters"
+dirpath = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files"
 
-output_mosaic_name = "final_mosaic_rasterio_15_30_april_2016_max.tif"
+
+
+output_mosaic_name = "final_mosaic_rasterio_10_26_july_2016_max.tif"
 
 out_fp = os.path.join(dirpath, output_mosaic_name)
 
