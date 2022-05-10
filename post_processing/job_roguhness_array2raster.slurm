@@ -33,8 +33,8 @@
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 
-#SBATCH --output=log_array2raster_july2016_AMline.txt   		 # The output file name
-#SBATCH --error=log_array2raster_july2016_AMline.txt		 	# The error file nam
+#SBATCH --output=log_arr2raster_july2016_AMline.txt   		 # The output file name
+#SBATCH --error=log_arr2raster_july2016_AMline.txt		 	# The error file nam
 
 ##---------------------------------------------------------
 ## other settings 
