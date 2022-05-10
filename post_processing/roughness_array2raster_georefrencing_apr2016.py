@@ -51,6 +51,7 @@ output_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_
 # labels:
 roughness_date = "2016_4"
 # roughness_date = "2016_7"
+
 georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList_withAMline'
 
 
@@ -173,6 +174,7 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 
 	# new method- check if raster- in latlon format- is on local drive
 	raster_filepattern = "raster_path_"+path_label+"_block_"+block_label+"*_reprojToEPSG_3995.tif"
+	print(raster_filepattern)
 
 	files_found_list = glob.glob(os.path.join(img_dir, raster_filepattern))
 	if (len(files_found_list) == 1):
