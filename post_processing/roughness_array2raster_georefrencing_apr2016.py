@@ -172,7 +172,8 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 
 
 	# new method- check if raster- in latlon format- is on local drive
-	raster_filepattern = "raster_path_"+path_label+"_block_"+block_label+"*_latlon.tif"
+	raster_filepattern = "raster_path_"+path_label+"_block_"+block_label+"*_reprojToEPSG_3995.tif"
+
 	files_found_list = glob.glob(os.path.join(img_dir, raster_filepattern))
 	if (len(files_found_list) == 1):
 		print('raster EXISTS on local drive, we will skip this image block!')
