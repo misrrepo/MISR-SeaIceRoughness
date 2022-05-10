@@ -80,7 +80,7 @@ def main():
 
 	#~ reading roughness files in loop & process each at a time
 	for file_count, rough_fname in enumerate(rough_files_fullpath_list):
-		print("********************************************************************************")
+		print("*********************************************************************************************")
 		print('processing new roughness array: (%d/ %d)' % (file_count+1, tot_found_rough_files))
 		print(rough_fname)
 		print('\n')
