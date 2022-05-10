@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
+# Ehsan Mosadegh; April 2022
 
-# In[1]:
+'''
+first move all polar files into a single directory and then run this code
+'''
 
 
 import rasterio
@@ -12,13 +15,15 @@ import os
 import datetime as dt
 
 dt1 = dt.datetime.now()
-# In[2]:
-
-
+####################################################################
 # File and folder paths
-dirpath = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files"
-out_fp = os.path.join(dirpath, "final_mosaic_rasterio_10_26_july_2016_max.tif")
+dirpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters"
 
+output_mosaic_name = "final_mosaic_rasterio_15_30_april_2016_max.tif"
+
+out_fp = os.path.join(dirpath, output_mosaic_name)
+
+####################################################################
 # Make a search criteria to select the DEM files
 search_criteria = 'raster_path_*'+'*_reprojToEPSG_3995.tif'
 raster_dir_fp = os.path.join(dirpath, search_criteria)
