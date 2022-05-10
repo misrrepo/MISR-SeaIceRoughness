@@ -33,8 +33,7 @@ import sys # for some debuggings
 ########################################################################################################################
 # input:
 # setup dir w/ roughness files there
-rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_roughness_predicted_files"
-
+rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_roughness_files_predicted"
 
 
 
@@ -43,14 +42,16 @@ rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_r
 
 
 # output:
-output_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10"
+output_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10"
+
 
 # output_dir = rough_dir_fullpath
 
 
 # labels:
-roughness_date = "2016_4"
-# roughness_date = "2016_7"
+# roughness_date = "2016_4"
+roughness_date = "2016_7"
+
 
 georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList_withAMline'
 
