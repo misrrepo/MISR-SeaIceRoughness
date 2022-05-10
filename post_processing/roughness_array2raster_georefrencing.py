@@ -61,7 +61,7 @@ ascending_block_threshold = 5
 misr_res_meter = 275
 gcp_mode = "corners_n_inside"                       									# 'inside' OR "corners_n_inside"
 reprojection = 'on'
-skip_antimeridian = 'off' # if on == skip any image block that crosses A.M. line
+skip_antimeridian = 'off' 	# if on == skip any image block that crosses A.M. line
 
 # copy_Anne_region = False  # copy raters that fall into a region to a seperate dir 
 ########################################################################################################################
@@ -76,7 +76,7 @@ def main():
 	# ## build a dir where images from arr2img will go to
 
 	# image_dir = img_dir_setup(rough_dir_fullpath, georefRaster_dir_name)
-	image_dir = img_dir_setup(output_dir, georefRaster_dir_name)
+	image_dir = img_dir_setup(output_dir, georefRaster_dir_name) # this is the output directory full path 
 
 	#~ reading roughness files in loop & process each at a time
 	for file_count, rough_fname in enumerate(rough_files_fullpath_list):
@@ -100,7 +100,7 @@ def main():
 
 		print('block: %s' %block_num)
 		if (block_num < ascending_block_threshold): 	# we exclude blocks less than 20 (I changed to 10) to exclude blocks in ascending path
-			print('block num < ascending threshold=%s, so we skip it!' %ascending_block_threshold)
+			print('block num < ascending threshold = %s, so we will skip this block!' %ascending_block_threshold)
 			continue
 
 		#~ we open the saved-on-disc images from previous step; gdal.Open(can read any img format=tif, jpg, png, but png has issues w/resamplinh alg later, so jpg + tif(but larger files) is better)
@@ -156,19 +156,27 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 	# print('-> img array min= %d' % in_arr_2d.min())
 	# print('-> img array max= %d' % in_arr_2d.max())
 
-
+	# old method- check if imgae is on local drive
 	out_img_label = path_label+'_'+block_label+img_format
 	# print(img_dir)
 	# print(out_img_label)
-
 	out_img_fullpath = os.path.join(img_dir, out_img_label)
+	# if (os.path.isfile(out_img_fullpath)):
+	# 	print('image EXISTS on disc, we will skip this path!')
+	# 	return 'skipThisImg' 	
 
-	if (os.path.isfile(out_img_fullpath)):
-		print('image EXISTS on disc, we will skip this path!')
+
+
+	# new method- check if raster- in latlon format- is on local drive
+	raster_filepattern = "raster_path_"+path_label+"_block_"+block_label+"*_latlon.tif"
+	files_found_list = glob.glob(os.path.join(ras_dir, raster_filepattern))
+	if (len(files_found_list) == 0):
+		print('raster EXISTS on local drive, we will skip this image block!')
+		print(files_found_list[0].split('/')[-1])
 		return 'skipThisImg' 
 
 	else:
-		print('\nimage is NOT on disc, so we will build this file!')
+		print('\raster is NOT on local drive, so we will build this file!')
 		print("saving output image as:")
 		print(out_img_fullpath)
 
@@ -298,7 +306,7 @@ def make_roughness_list_from_dir(rough_dir_fullpath):
 	rough_files_fullpath_list = glob.glob(os.path.join(rough_dir_fullpath, roughness_file_patern))
 
 	tot_found_files = len(rough_files_fullpath_list)
-	print("files found: %d" %tot_found_files)
+	print("roughness files found: %d" %tot_found_files)
 	#~ maybe split and sort?
 	return rough_files_fullpath_list, tot_found_files
 ########################################################################################################################
@@ -316,12 +324,15 @@ def read_rough_file(rough_fname):
 #     print("-> input file shape: %s" % rough_latlon_arr.shape)
 	print("roughnessArray new shape: (%d, %d)" % rough_2d_arr.shape)
 
-	#~ find and extract path number
+	# find and extract path number
 	path_num = rough_fname.split("/")[-1].split("_")[3][1:] # extract path chuncka and then etract just the number
 	path_num = int(path_num)
 	print("roughness-Path: %s" % (path_num))
 
-	#~ find and extract block number
+
+	# later extract orbit-num from roughfile and add it to output file label
+
+	# find and extract block number
 	block_num = rough_fname.split("/")[-1].split("_")[-1].split(".")[0]
 	block_num = int(block_num[-2:])
 	print("roughness-Block: %s" % (block_num))
