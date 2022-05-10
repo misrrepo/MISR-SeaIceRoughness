@@ -177,7 +177,7 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 		return 'skipThisImg' 
 
 	else:
-		print('\raster is NOT on local drive, so we will build this file!')
+		print('raster is NOT on local drive, so we will build this file!')
 		print("saving output image as:")
 		print(out_img_fullpath)
 
