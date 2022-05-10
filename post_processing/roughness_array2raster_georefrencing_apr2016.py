@@ -173,7 +173,7 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 
 
 	# new method- check if raster- in latlon format- is on local drive
-	raster_filepattern = "raster_path_"+path_label+"_block_"+block_label+"*_reprojToEPSG_3995.tif"
+	raster_filepattern = "raster_"+path_label+"_"+block_label+"*_reprojToEPSG_3995.tif"
 	print(raster_filepattern)
 
 	files_found_list = glob.glob(os.path.join(img_dir, raster_filepattern))
