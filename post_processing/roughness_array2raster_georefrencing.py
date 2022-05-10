@@ -172,7 +172,8 @@ def arr2img_writeToDisc(in_arr_2d, path_label, block_label, img_dir):
 	files_found_list = glob.glob(os.path.join(img_dir, raster_filepattern))
 	if (len(files_found_list) == 0):
 		print('raster EXISTS on local drive, we will skip this image block!')
-		print(files_found_list[0].split('/')[-1])
+		# print(files_found_list[0].split('/')[-1])
+		print(files_found_list)
 		return 'skipThisImg' 
 
 	else:
