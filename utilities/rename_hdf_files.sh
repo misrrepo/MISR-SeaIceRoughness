@@ -1,11 +1,12 @@
 #!/bin/bash
-
+# Ehsan Mosadegh; January 2022
+#
 # usage: rename file labels of hdf files and remove unnecessary labels at the end of each file:
-# MISR_AM1_GRP_ELLIPSOID_GM_P112_O088201_CA_F03_0024.b001-046.f83cc3096.hdf --> MISR_AM1_GRP_ELLIPSOID_GM_P112_O088201_CA_F03_0024.hdf
+# MISR_AM1_GRP_ELLIPSOID_GM_P112_O088201_CA_F03_0024.b001-046.f83cc3096.hdf -- changes to --> MISR_AM1_GRP_ELLIPSOID_GM_P112_O088201_CA_F03_0024.hdf
 
 echo "renaming HDF files...!"
 
-hdf_dir=/data/gpfs/assoc/misr_roughness/2016/july_2016/hdf_downloaded/july_2016_3cams
+hdf_dir=/media/ehsan/6T_part1/2016/april_2016/hdf_files_9cams
 
 
 echo $hdf_dir
@@ -17,6 +18,7 @@ do
 	mv "$hdf_file"  "${hdf_file/.b*-0*.f*.hdf/.hdf}"
 done
 
+# check file names here
 echo "after renaming..." 
 for hdf_file in $hdf_dir/MISR_AM1_GRP_ELLIPSOID_GM*.hdf
 do
