@@ -16,8 +16,8 @@
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
 
-#SBATCH --output=log_multi_download_month2.txt   		 # The output file name
-#SBATCH --error=log_multi_download_month2.txt		 	# The error file nam
+#SBATCH --output=log_multi_download_month_2.txt   		 # The output file name
+#SBATCH --error=log_multi_download_month_2.txt		 	# The error file nam
 
 source /data/gpfs/home/emosadegh/.bashrc
 
@@ -29,7 +29,7 @@ echo "python version:"
 python -V
 
 ## path to python script to run
-python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/download_from_FTP/multi_download_NASA_modified_month2.py
+python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/download_from_FTP/multi_download_NASA_modified_month_2.py
 
 echo “MISR job ended ...”
 conda deactivate
