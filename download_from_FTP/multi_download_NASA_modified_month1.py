@@ -1,7 +1,13 @@
 #!/usr/bin/python3
 
 '''
-how this code works:  setup server path and download path in this code and run it 
+how this code works:  setup server path and download path in this code and then run it 
+also set these directory paths: 
+
+starting_url
+home_dir
+out_dir_label
+
 '''
 
 
@@ -141,12 +147,20 @@ def download(session: Session, files: List[str], output_dir: Path) -> None:
             with file_path.open('wb') as file:
                 file.write(_response._content)
 
-
+####################################################################################
 if __name__ == "__main__":
     # This URL is the starting directory
     # starting_url = input("Enter the top level URL: ")
-    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202203261938/"
+    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202205203702/"
 
+
+    # path to download directory on local machine
+    home_dir = "/data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams"
+
+    out_dir_label = "month1_2016_9cams" # code will make this directory if not available on disk
+
+    ################################################################################
+    # old code
     # enter "test" for the url to download form a small, 20MB directory.
     # if starting_url == "test":
     #     starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202203261938/"
@@ -154,12 +168,9 @@ if __name__ == "__main__":
     # the output directory Path('data') will save it to a file called 'data' in the current working directory
     # output_dir = Path('data')
 
-    home_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016_reviewLater/hdf_downloaded"
-    out_dir_label = "july_2016_3cams"
     out_dir_fp = os.path.join(home_dir, out_dir_label)
     output_dir = Path(out_dir_fp)
     print(output_dir)
-
 
     # filter_text = input("File types to download. (Ex: .ict, .h5, blank for all): ")
     filter_text = ".hdf"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=HDF-DL-month1
+#SBATCH --job-name=HDF-DL-month2
 
 ##SBATCH --account=cpu-s6-test-0 
 ##SBATCH --partition=cpu-s6-test-0
@@ -29,7 +29,7 @@ echo "python version:"
 python -V
 
 ## path to python script to run
-python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/download_from_FTP/multi_download_NASA_modified_month1.py
+python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/download_from_FTP/multi_download_NASA_modified_month2.py
 
 echo “MISR job ended ...”
 conda deactivate
