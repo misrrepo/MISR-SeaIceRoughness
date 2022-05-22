@@ -16,8 +16,8 @@
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
 
-#SBATCH --output=log_multi_download.txt   		 # The output file name
-#SBATCH --error=log_multi_download.txt		 	# The error file nam
+#SBATCH --output=log_multi_download_month2.txt   		 # The output file name
+#SBATCH --error=log_multi_download_month2.txt		 	# The error file nam
 
 source /data/gpfs/home/emosadegh/.bashrc
 
