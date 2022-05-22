@@ -1,0 +1,11 @@
+Sat May 21 20:17:25 PDT 2022
+
+Currently Loaded Modules:
+  1) slurm/pronghorn/20.11.7   2) gcc/8.4.0-gcc-4.8.5
+
+ 
+
+“MISR job started ...”
+python version:
+Python 3.6.12 :: Anaconda, Inc.
+slurmstepd: error: *** JOB 3811733 ON cpu-29 CANCELLED AT 2022-05-22T11:41:09 ***
