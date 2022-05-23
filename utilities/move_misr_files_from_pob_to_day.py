@@ -8,7 +8,8 @@ import shutil
 
 '''
 usage: 
-	this program makes directories for a single day of MISR/roughness files and moves files [MISR or roughness] that belong to each date to its folder
+	this program builds folder for a single day of MISR (hdf)/roughness files 
+	and then moves files (hdf or roughness) that belong to each day/date to its folder.
 	useful to use on Pronghorn
 
 steps:
@@ -19,23 +20,23 @@ step-3: select type/file name pattern from the list
 	1st, set the number of days that you have data available for.
 
 note:
-	we use python2.7 + MTK library to do this task. (or a virtual env. that we can run MTK) 
-	MTK lib will find associated day/time from orbit data on file labels
+	we use a python installation that can run MTK library to do this task. (or a virtual env. that we can run MTK) 
+	MTK lib will find associated day/time from orbit data on file labels.
 
 '''
-
+#***************************************************************************
 #-- step-1
-src_dir_fp =  '/Volumes/Ehsan-7757225325/2016/july_2016_old_review_later/ellipsoid_files/elliposid_files_used_for_mapping'
+src_dir_fp =  '/data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams'
 
-
-
+#***************************************************************************
 #-- step-2 
 year = 2016
-month = 7			# april=4, july=7
+month = 7				# april=4, july=7
 num_of_days = 30  		# this is the end-date of processing/ should include the whole time period
 
+#***************************************************************************
 #-- step-3 
-process_mode_num = 1
+process_mode_num = 1  # index from 0
 
 process_mode_list = ['move_roughness_files_to_subdir', \
 					'move_MISR_AM1_GRP_ELLIPSOID_GM_to_sibdir', \
@@ -44,7 +45,7 @@ process_mode_list = ['move_roughness_files_to_subdir', \
 
 process_mode = process_mode_list[process_mode_num]
 
-########################################################################################################################
+############################################################################
 #-- proicessing section --->>> do not change
 
 if (process_mode == 'move_roughness_files_to_subdir'):
