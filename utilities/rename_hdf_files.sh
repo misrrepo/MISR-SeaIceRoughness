@@ -6,7 +6,7 @@
 
 echo "renaming HDF files...!"
 
-hdf_dir=/media/ehsan/6T_part1/2016/april_2016/hdf_files_9cams
+hdf_dir=/data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams
 
 
 echo $hdf_dir
