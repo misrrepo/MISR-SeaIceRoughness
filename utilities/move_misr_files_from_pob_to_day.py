@@ -26,7 +26,7 @@ note:
 '''
 #***************************************************************************
 #-- step-1
-src_dir_fp =  '/data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams'
+src_dir_fp =  '/data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month2_2016_9cams'
 
 #***************************************************************************
 #-- step-2 
