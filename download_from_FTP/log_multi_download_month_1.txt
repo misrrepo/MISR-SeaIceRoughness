@@ -1,0 +1,1948 @@
+Sun May 22 16:09:45 PDT 2022
+
+Currently Loaded Modules:
+  1) slurm/pronghorn/20.11.7   2) gcc/8.4.0-gcc-4.8.5
+
+ 
+
+“MISR job started ...”
+python version:
+Python 3.6.12 :: Anaconda, Inc.
+3.6.12 |Anaconda, Inc.| (default, Sep  8 2020, 23:10:56) 
+[GCC 7.3.0]
+output directory:
+/data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams
+['.hdf']
+Getting download files.
+Checking https://xfr139.larc.nasa.gov/MISR/Subset_Products/202205203702/
+num. of remote files: 2097
+Checking for existing files
+num. of local files: 1138
+excluding exisitng files on local storage from download
+len existing files in local storage: 1138
+num. of remote files we will download w/o overwriting: 959
+remote files: 959
+first file on list:
+https://xfr139.larc.nasa.gov/MISR/Subset_Products/202205203702/MISR_AM1_GRP_ELLIPSOID_GM_P127_O088100_BF_F03_0024.b001-046.f49e0896e.hdf
+***************************************************
+Downloading 959 files.
+Downloading file 1 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P127_O088100_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 2 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P127_O088100_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 3 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P127_O088100_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 4 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P127_O088100_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 5 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P127_O088100_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 6 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P128_O088202_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 7 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P128_O088202_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 8 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P128_O088202_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 9 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P128_O088202_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 10 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P128_O088202_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 11 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P128_O088202_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 12 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P128_O088202_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 13 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P128_O088202_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 14 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P128_O088202_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 15 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P129_O088304_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 16 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P129_O088304_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 17 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P129_O088304_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 18 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P129_O088304_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 19 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P129_O088304_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 20 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P129_O088304_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 21 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P129_O088304_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 22 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P129_O088304_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 23 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P129_O088304_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 24 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P130_O088173_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 25 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P130_O088173_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 26 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P130_O088173_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 27 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P130_O088173_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 28 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P130_O088173_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 29 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P130_O088173_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 30 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P130_O088173_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 31 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P130_O088173_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 32 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P130_O088173_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 33 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P131_O088275_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 34 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P131_O088275_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 35 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P131_O088275_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 36 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P131_O088275_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 37 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P131_O088275_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 38 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P131_O088275_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 39 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P131_O088275_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 40 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P131_O088275_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 41 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P131_O088275_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 42 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P132_O088144_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 43 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P132_O088144_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 44 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P132_O088144_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 45 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P132_O088144_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 46 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P132_O088144_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 47 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P132_O088144_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 48 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P132_O088144_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 49 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P132_O088144_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 50 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P132_O088144_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 51 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P133_O088246_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 52 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P133_O088246_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 53 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P133_O088246_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 54 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P133_O088246_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 55 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P133_O088246_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 56 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P133_O088246_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 57 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P133_O088246_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 58 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P133_O088246_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 59 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P133_O088246_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 60 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P134_O088115_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 61 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P134_O088115_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 62 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P134_O088115_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 63 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P134_O088115_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 64 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P134_O088115_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 65 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P134_O088115_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 66 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P134_O088115_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 67 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P134_O088115_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 68 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P134_O088115_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 69 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P135_O088217_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 70 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P135_O088217_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 71 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P135_O088217_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 72 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P135_O088217_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 73 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P135_O088217_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 74 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P135_O088217_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 75 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P135_O088217_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 76 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P135_O088217_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 77 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P135_O088217_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 78 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P136_O088086_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 79 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P136_O088086_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 80 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P136_O088086_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 81 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P136_O088086_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 82 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P136_O088086_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 83 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P136_O088086_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 84 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P136_O088086_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 85 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P136_O088086_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 86 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P136_O088086_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 87 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P137_O088188_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 88 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P137_O088188_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 89 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P137_O088188_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 90 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P137_O088188_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 91 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P137_O088188_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 92 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P137_O088188_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 93 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P137_O088188_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 94 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P137_O088188_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 95 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P137_O088188_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 96 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P138_O088290_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 97 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P138_O088290_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 98 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P138_O088290_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 99 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P138_O088290_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 100 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P138_O088290_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 101 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P138_O088290_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 102 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P138_O088290_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 103 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P138_O088290_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 104 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P138_O088290_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 105 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P139_O088159_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 106 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P139_O088159_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 107 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P139_O088159_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 108 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P139_O088159_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 109 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P139_O088159_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 110 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P139_O088159_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 111 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P139_O088159_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 112 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P139_O088159_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 113 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P139_O088159_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 114 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P140_O088261_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 115 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P140_O088261_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 116 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P140_O088261_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 117 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P140_O088261_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 118 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P140_O088261_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 119 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P140_O088261_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 120 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P140_O088261_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 121 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P140_O088261_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 122 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P140_O088261_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 123 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P141_O088130_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 124 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P141_O088130_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 125 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P141_O088130_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 126 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P141_O088130_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 127 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P141_O088130_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 128 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P141_O088130_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 129 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P141_O088130_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 130 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P141_O088130_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 131 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P141_O088130_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 132 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P142_O088232_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 133 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P142_O088232_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 134 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P142_O088232_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 135 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P142_O088232_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 136 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P142_O088232_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 137 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P142_O088232_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 138 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P142_O088232_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 139 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P142_O088232_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 140 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P142_O088232_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 141 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P143_O088101_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 142 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P143_O088101_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 143 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P143_O088101_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 144 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P143_O088101_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 145 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P143_O088101_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 146 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P143_O088101_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 147 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P143_O088101_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 148 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P143_O088101_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 149 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P143_O088101_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 150 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P144_O088203_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 151 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P144_O088203_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 152 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P144_O088203_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 153 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P144_O088203_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 154 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P144_O088203_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 155 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P144_O088203_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 156 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P144_O088203_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 157 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P144_O088203_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 158 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P144_O088203_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 159 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P145_O088305_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 160 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P145_O088305_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 161 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P145_O088305_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 162 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P145_O088305_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 163 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P145_O088305_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 164 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P145_O088305_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 165 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P145_O088305_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 166 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P145_O088305_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 167 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P145_O088305_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 168 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P146_O088174_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 169 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P146_O088174_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 170 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P146_O088174_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 171 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P146_O088174_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 172 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P146_O088174_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 173 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P146_O088174_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 174 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P146_O088174_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 175 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P146_O088174_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 176 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P146_O088174_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 177 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P147_O088276_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 178 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P147_O088276_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 179 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P147_O088276_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 180 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P147_O088276_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 181 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P147_O088276_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 182 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P147_O088276_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 183 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P147_O088276_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 184 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P147_O088276_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 185 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P147_O088276_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 186 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P148_O088145_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 187 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P148_O088145_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 188 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P148_O088145_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 189 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P148_O088145_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 190 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P148_O088145_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 191 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P148_O088145_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 192 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P148_O088145_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 193 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P148_O088145_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 194 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P148_O088145_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 195 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P149_O088247_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 196 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P149_O088247_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 197 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P149_O088247_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 198 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P149_O088247_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 199 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P149_O088247_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 200 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P149_O088247_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 201 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P149_O088247_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 202 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P149_O088247_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 203 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P149_O088247_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 204 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P150_O088116_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 205 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P150_O088116_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 206 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P150_O088116_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 207 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P150_O088116_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 208 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P150_O088116_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 209 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P150_O088116_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 210 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P150_O088116_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 211 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P150_O088116_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 212 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P150_O088116_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 213 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P151_O088218_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 214 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P151_O088218_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 215 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P151_O088218_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 216 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P151_O088218_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 217 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P151_O088218_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 218 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P151_O088218_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 219 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P151_O088218_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 220 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P151_O088218_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 221 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P151_O088218_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 222 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P152_O088087_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 223 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P152_O088087_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 224 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P152_O088087_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 225 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P152_O088087_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 226 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P152_O088087_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 227 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P152_O088087_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 228 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P152_O088087_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 229 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P152_O088087_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 230 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P152_O088087_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 231 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P153_O088189_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 232 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P153_O088189_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 233 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P153_O088189_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 234 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P153_O088189_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 235 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P153_O088189_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 236 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P153_O088189_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 237 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P153_O088189_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 238 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P153_O088189_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 239 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P153_O088189_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 240 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P154_O088291_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 241 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P154_O088291_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 242 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P154_O088291_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 243 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P154_O088291_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 244 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P154_O088291_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 245 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P154_O088291_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 246 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P154_O088291_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 247 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P154_O088291_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 248 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P154_O088291_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 249 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P155_O088160_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 250 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P155_O088160_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 251 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P155_O088160_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 252 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P155_O088160_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 253 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P155_O088160_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 254 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P155_O088160_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 255 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P155_O088160_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 256 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P155_O088160_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 257 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P155_O088160_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 258 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P156_O088262_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 259 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P156_O088262_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 260 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P156_O088262_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 261 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P156_O088262_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 262 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P156_O088262_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 263 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P156_O088262_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 264 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P156_O088262_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 265 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P156_O088262_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 266 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P156_O088262_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 267 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P157_O088131_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 268 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P157_O088131_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 269 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P157_O088131_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 270 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P157_O088131_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 271 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P157_O088131_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 272 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P157_O088131_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 273 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P157_O088131_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 274 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P157_O088131_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 275 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P157_O088131_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 276 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P158_O088233_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 277 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P158_O088233_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 278 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P158_O088233_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 279 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P158_O088233_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 280 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P158_O088233_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 281 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P158_O088233_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 282 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P158_O088233_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 283 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P158_O088233_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 284 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P158_O088233_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 285 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P159_O088102_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 286 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P159_O088102_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 287 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P159_O088102_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 288 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P159_O088102_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 289 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P159_O088102_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 290 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P159_O088102_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 291 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P159_O088102_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 292 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P159_O088102_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 293 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P159_O088102_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 294 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P160_O088204_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 295 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P160_O088204_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 296 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P160_O088204_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 297 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P160_O088204_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 298 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P160_O088204_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 299 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P160_O088204_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 300 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P160_O088204_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 301 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P160_O088204_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 302 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P160_O088204_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 303 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P161_O088306_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 304 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P161_O088306_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 305 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P161_O088306_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 306 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P161_O088306_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 307 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P161_O088306_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 308 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P161_O088306_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 309 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P161_O088306_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 310 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P161_O088306_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 311 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P161_O088306_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 312 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P162_O088175_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 313 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P162_O088175_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 314 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P162_O088175_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 315 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P162_O088175_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 316 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P162_O088175_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 317 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P162_O088175_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 318 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P162_O088175_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 319 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P162_O088175_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 320 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P162_O088175_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 321 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P163_O088277_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 322 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P163_O088277_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 323 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P163_O088277_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 324 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P163_O088277_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 325 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P163_O088277_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 326 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P163_O088277_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 327 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P163_O088277_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 328 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P163_O088277_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 329 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P163_O088277_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 330 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P164_O088146_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 331 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P164_O088146_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 332 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P164_O088146_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 333 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P164_O088146_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 334 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P164_O088146_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 335 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P164_O088146_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 336 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P164_O088146_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 337 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P164_O088146_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 338 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P164_O088146_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 339 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P165_O088248_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 340 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P165_O088248_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 341 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P165_O088248_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 342 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P165_O088248_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 343 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P165_O088248_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 344 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P165_O088248_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 345 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P165_O088248_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 346 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P165_O088248_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 347 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P165_O088248_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 348 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P166_O088117_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 349 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P166_O088117_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 350 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P166_O088117_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 351 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P166_O088117_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 352 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P166_O088117_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 353 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P166_O088117_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 354 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P166_O088117_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 355 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P166_O088117_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 356 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P166_O088117_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 357 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P167_O088219_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 358 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P167_O088219_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 359 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P167_O088219_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 360 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P167_O088219_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 361 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P167_O088219_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 362 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P167_O088219_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 363 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P167_O088219_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 364 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P167_O088219_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 365 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P167_O088219_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 366 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P168_O088088_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 367 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P168_O088088_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 368 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P168_O088088_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 369 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P168_O088088_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 370 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P168_O088088_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 371 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P168_O088088_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 372 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P168_O088088_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 373 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P168_O088088_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 374 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P168_O088088_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 375 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P169_O088190_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 376 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P169_O088190_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 377 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P169_O088190_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 378 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P169_O088190_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 379 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P169_O088190_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 380 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P169_O088190_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 381 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P169_O088190_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 382 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P169_O088190_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 383 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P169_O088190_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 384 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P170_O088292_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 385 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P170_O088292_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 386 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P170_O088292_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 387 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P170_O088292_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 388 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P170_O088292_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 389 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P170_O088292_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 390 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P170_O088292_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 391 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P170_O088292_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 392 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P170_O088292_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 393 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P171_O088161_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 394 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P171_O088161_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 395 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P171_O088161_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 396 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P171_O088161_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 397 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P171_O088161_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 398 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P171_O088161_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 399 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P171_O088161_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 400 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P171_O088161_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 401 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P171_O088161_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 402 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P172_O088263_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 403 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P172_O088263_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 404 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P172_O088263_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 405 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P172_O088263_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 406 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P172_O088263_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 407 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P172_O088263_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 408 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P172_O088263_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 409 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P172_O088263_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 410 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P172_O088263_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 411 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P173_O088132_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 412 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P173_O088132_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 413 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P173_O088132_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 414 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P173_O088132_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 415 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P173_O088132_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 416 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P173_O088132_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 417 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P173_O088132_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 418 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P173_O088132_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 419 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P173_O088132_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 420 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P174_O088234_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 421 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P174_O088234_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 422 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P174_O088234_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 423 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P174_O088234_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 424 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P174_O088234_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 425 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P174_O088234_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 426 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P174_O088234_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 427 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P174_O088234_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 428 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P174_O088234_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 429 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P175_O088103_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 430 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P175_O088103_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 431 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P175_O088103_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 432 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P175_O088103_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 433 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P175_O088103_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 434 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P175_O088103_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 435 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P175_O088103_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 436 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P175_O088103_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 437 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P175_O088103_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 438 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P176_O088205_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 439 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P176_O088205_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 440 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P176_O088205_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 441 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P176_O088205_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 442 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P176_O088205_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 443 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P176_O088205_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 444 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P176_O088205_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 445 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P176_O088205_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 446 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P176_O088205_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 447 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P177_O088307_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 448 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P177_O088307_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 449 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P177_O088307_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 450 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P177_O088307_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 451 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P177_O088307_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 452 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P177_O088307_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 453 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P177_O088307_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 454 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P177_O088307_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 455 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P177_O088307_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 456 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P178_O088176_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 457 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P178_O088176_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 458 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P178_O088176_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 459 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P178_O088176_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 460 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P178_O088176_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 461 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P178_O088176_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 462 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P178_O088176_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 463 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P178_O088176_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 464 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P178_O088176_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 465 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P179_O088278_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 466 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P179_O088278_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 467 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P179_O088278_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 468 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P179_O088278_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 469 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P179_O088278_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 470 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P179_O088278_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 471 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P179_O088278_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 472 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P179_O088278_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 473 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P179_O088278_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 474 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P180_O088147_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 475 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P180_O088147_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 476 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P180_O088147_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 477 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P180_O088147_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 478 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P180_O088147_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 479 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P180_O088147_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 480 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P180_O088147_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 481 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P180_O088147_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 482 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P180_O088147_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 483 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P181_O088249_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 484 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P181_O088249_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 485 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P181_O088249_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 486 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P181_O088249_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 487 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P181_O088249_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 488 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P181_O088249_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 489 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P181_O088249_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 490 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P181_O088249_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 491 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P181_O088249_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 492 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P182_O088118_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 493 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P182_O088118_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 494 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P182_O088118_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 495 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P182_O088118_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 496 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P182_O088118_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 497 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P182_O088118_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 498 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P182_O088118_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 499 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P182_O088118_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 500 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P182_O088118_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 501 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P183_O088220_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 502 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P183_O088220_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 503 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P183_O088220_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 504 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P183_O088220_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 505 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P183_O088220_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 506 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P183_O088220_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 507 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P183_O088220_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 508 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P183_O088220_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 509 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P183_O088220_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 510 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P184_O088089_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 511 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P184_O088089_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 512 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P184_O088089_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 513 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P184_O088089_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 514 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P184_O088089_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 515 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P184_O088089_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 516 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P184_O088089_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 517 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P184_O088089_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 518 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P184_O088089_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 519 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P185_O088191_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 520 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P185_O088191_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 521 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P185_O088191_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 522 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P185_O088191_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 523 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P185_O088191_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 524 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P185_O088191_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 525 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P185_O088191_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 526 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P185_O088191_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 527 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P185_O088191_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 528 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P186_O088293_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 529 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P186_O088293_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 530 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P186_O088293_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 531 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P186_O088293_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 532 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P186_O088293_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 533 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P186_O088293_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 534 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P186_O088293_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 535 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P186_O088293_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 536 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P186_O088293_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 537 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P187_O088162_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 538 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P187_O088162_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 539 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P187_O088162_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 540 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P187_O088162_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 541 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P187_O088162_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 542 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P187_O088162_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 543 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P187_O088162_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 544 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P187_O088162_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 545 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P187_O088162_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 546 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P188_O088264_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 547 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P188_O088264_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 548 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P188_O088264_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 549 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P188_O088264_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 550 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P188_O088264_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 551 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P188_O088264_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 552 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P188_O088264_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 553 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P188_O088264_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 554 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P188_O088264_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 555 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P189_O088133_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 556 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P189_O088133_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 557 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P189_O088133_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 558 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P189_O088133_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 559 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P189_O088133_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 560 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P189_O088133_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 561 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P189_O088133_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 562 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P189_O088133_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 563 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P189_O088133_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 564 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P190_O088235_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 565 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P190_O088235_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 566 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P190_O088235_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 567 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P190_O088235_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 568 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P190_O088235_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 569 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P190_O088235_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 570 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P190_O088235_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 571 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P190_O088235_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 572 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P190_O088235_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 573 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P191_O088104_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 574 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P191_O088104_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 575 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P191_O088104_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 576 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P191_O088104_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 577 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P191_O088104_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 578 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P191_O088104_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 579 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P191_O088104_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 580 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P191_O088104_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 581 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P191_O088104_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 582 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P192_O088206_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 583 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P192_O088206_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 584 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P192_O088206_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 585 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P192_O088206_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 586 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P192_O088206_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 587 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P192_O088206_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 588 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P192_O088206_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 589 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P192_O088206_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 590 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P192_O088206_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 591 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P193_O088308_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 592 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P193_O088308_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 593 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P193_O088308_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 594 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P193_O088308_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 595 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P193_O088308_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 596 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P193_O088308_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 597 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P193_O088308_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 598 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P193_O088308_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 599 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P193_O088308_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 600 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P194_O088177_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 601 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P194_O088177_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 602 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P194_O088177_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 603 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P194_O088177_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 604 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P194_O088177_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 605 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P194_O088177_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 606 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P194_O088177_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 607 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P194_O088177_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 608 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P194_O088177_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 609 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P195_O088279_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 610 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P195_O088279_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 611 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P195_O088279_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 612 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P195_O088279_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 613 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P195_O088279_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 614 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P195_O088279_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 615 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P195_O088279_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 616 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P195_O088279_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 617 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P195_O088279_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 618 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P196_O088148_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 619 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P196_O088148_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 620 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P196_O088148_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 621 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P196_O088148_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 622 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P196_O088148_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 623 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P196_O088148_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 624 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P196_O088148_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 625 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P196_O088148_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 626 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P196_O088148_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 627 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P197_O088250_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 628 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P197_O088250_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 629 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P197_O088250_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 630 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P197_O088250_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 631 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P197_O088250_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 632 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P197_O088250_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 633 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P197_O088250_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 634 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P197_O088250_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 635 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P197_O088250_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 636 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P198_O088119_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 637 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P198_O088119_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 638 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P198_O088119_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 639 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P198_O088119_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 640 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P198_O088119_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 641 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P198_O088119_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 642 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P198_O088119_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 643 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P198_O088119_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 644 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P198_O088119_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 645 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P199_O088221_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 646 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P199_O088221_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 647 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P199_O088221_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 648 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P199_O088221_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 649 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P199_O088221_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 650 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P199_O088221_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 651 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P199_O088221_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 652 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P199_O088221_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 653 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P199_O088221_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 654 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P200_O088090_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 655 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P200_O088090_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 656 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P200_O088090_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 657 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P200_O088090_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 658 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P200_O088090_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 659 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P200_O088090_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 660 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P200_O088090_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 661 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P200_O088090_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 662 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P200_O088090_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 663 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P201_O088192_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 664 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P201_O088192_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 665 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P201_O088192_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 666 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P201_O088192_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 667 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P201_O088192_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 668 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P201_O088192_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 669 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P201_O088192_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 670 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P201_O088192_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 671 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P201_O088192_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 672 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P202_O088294_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 673 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P202_O088294_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 674 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P202_O088294_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 675 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P202_O088294_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 676 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P202_O088294_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 677 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P202_O088294_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 678 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P202_O088294_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 679 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P202_O088294_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 680 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P202_O088294_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 681 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P203_O088163_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 682 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P203_O088163_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 683 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P203_O088163_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 684 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P203_O088163_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 685 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P203_O088163_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 686 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P203_O088163_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 687 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P203_O088163_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 688 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P203_O088163_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 689 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P203_O088163_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 690 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P204_O088265_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 691 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P204_O088265_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 692 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P204_O088265_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 693 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P204_O088265_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 694 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P204_O088265_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 695 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P204_O088265_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 696 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P204_O088265_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 697 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P204_O088265_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 698 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P204_O088265_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 699 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P205_O088134_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 700 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P205_O088134_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 701 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P205_O088134_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 702 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P205_O088134_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 703 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P205_O088134_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 704 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P205_O088134_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 705 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P205_O088134_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 706 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P205_O088134_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 707 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P205_O088134_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 708 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P206_O088236_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 709 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P206_O088236_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 710 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P206_O088236_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 711 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P206_O088236_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 712 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P206_O088236_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 713 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P206_O088236_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 714 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P206_O088236_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 715 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P206_O088236_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 716 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P206_O088236_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 717 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P207_O088105_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 718 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P207_O088105_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 719 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P207_O088105_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 720 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P207_O088105_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 721 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P207_O088105_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 722 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P207_O088105_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 723 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P207_O088105_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 724 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P207_O088105_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 725 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P207_O088105_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 726 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P208_O088207_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 727 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P208_O088207_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 728 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P208_O088207_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 729 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P208_O088207_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 730 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P208_O088207_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 731 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P208_O088207_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 732 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P208_O088207_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 733 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P208_O088207_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 734 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P208_O088207_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 735 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P209_O088309_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 736 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P209_O088309_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 737 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P209_O088309_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 738 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P209_O088309_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 739 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P209_O088309_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 740 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P209_O088309_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 741 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P209_O088309_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 742 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P209_O088309_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 743 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P209_O088309_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 744 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P210_O088178_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 745 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P210_O088178_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 746 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P210_O088178_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 747 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P210_O088178_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 748 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P210_O088178_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 749 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P210_O088178_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 750 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P210_O088178_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 751 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P210_O088178_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 752 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P210_O088178_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 753 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P211_O088280_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 754 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P211_O088280_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 755 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P211_O088280_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 756 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P211_O088280_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 757 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P211_O088280_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 758 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P211_O088280_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 759 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P211_O088280_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 760 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P211_O088280_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 761 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P211_O088280_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 762 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P212_O088149_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 763 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P212_O088149_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 764 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P212_O088149_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 765 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P212_O088149_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 766 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P212_O088149_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 767 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P212_O088149_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 768 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P212_O088149_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 769 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P212_O088149_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 770 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P212_O088149_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 771 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P213_O088251_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 772 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P213_O088251_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 773 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P213_O088251_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 774 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P213_O088251_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 775 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P213_O088251_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 776 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P213_O088251_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 777 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P213_O088251_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 778 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P213_O088251_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 779 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P213_O088251_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 780 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P214_O088120_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 781 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P214_O088120_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 782 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P214_O088120_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 783 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P214_O088120_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 784 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P214_O088120_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 785 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P214_O088120_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 786 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P214_O088120_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 787 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P214_O088120_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 788 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P214_O088120_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 789 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P215_O088222_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 790 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P215_O088222_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 791 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P215_O088222_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 792 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P215_O088222_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 793 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P215_O088222_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 794 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P215_O088222_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 795 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P215_O088222_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 796 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P215_O088222_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 797 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P215_O088222_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 798 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P216_O088091_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 799 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P216_O088091_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 800 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P216_O088091_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 801 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P216_O088091_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 802 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P216_O088091_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 803 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P216_O088091_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 804 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P216_O088091_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 805 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P216_O088091_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 806 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P216_O088091_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 807 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P217_O088193_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 808 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P217_O088193_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 809 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P217_O088193_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 810 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P217_O088193_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 811 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P217_O088193_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 812 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P217_O088193_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 813 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P217_O088193_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 814 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P217_O088193_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 815 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P217_O088193_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 816 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P218_O088295_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 817 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P218_O088295_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 818 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P218_O088295_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 819 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P218_O088295_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 820 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P218_O088295_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 821 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P218_O088295_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 822 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P218_O088295_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 823 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P218_O088295_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 824 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P218_O088295_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 825 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P219_O088164_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 826 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P219_O088164_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 827 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P219_O088164_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 828 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P219_O088164_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 829 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P219_O088164_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 830 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P219_O088164_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 831 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P219_O088164_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 832 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P219_O088164_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 833 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P219_O088164_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 834 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P220_O088266_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 835 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P220_O088266_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 836 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P220_O088266_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 837 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P220_O088266_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 838 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P220_O088266_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 839 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P220_O088266_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 840 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P220_O088266_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 841 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P220_O088266_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 842 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P220_O088266_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 843 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P221_O088135_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 844 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P221_O088135_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 845 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P221_O088135_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 846 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P221_O088135_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 847 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P221_O088135_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 848 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P221_O088135_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 849 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P221_O088135_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 850 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P221_O088135_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 851 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P221_O088135_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 852 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P222_O088237_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 853 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P222_O088237_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 854 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P222_O088237_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 855 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P222_O088237_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 856 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P222_O088237_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 857 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P222_O088237_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 858 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P222_O088237_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 859 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P222_O088237_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 860 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P222_O088237_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 861 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P223_O088106_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 862 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P223_O088106_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 863 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P223_O088106_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 864 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P223_O088106_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 865 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P223_O088106_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 866 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P223_O088106_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 867 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P223_O088106_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 868 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P223_O088106_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 869 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P223_O088106_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 870 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P224_O088208_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 871 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P224_O088208_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 872 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P224_O088208_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 873 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P224_O088208_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 874 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P224_O088208_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 875 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P224_O088208_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 876 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P224_O088208_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 877 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P224_O088208_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 878 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P224_O088208_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 879 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P225_O088310_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 880 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P225_O088310_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 881 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P225_O088310_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 882 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P225_O088310_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 883 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P225_O088310_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 884 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P225_O088310_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 885 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P225_O088310_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 886 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P225_O088310_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 887 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P225_O088310_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 888 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P226_O088179_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 889 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P226_O088179_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 890 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P226_O088179_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 891 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P226_O088179_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 892 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P226_O088179_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 893 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P226_O088179_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 894 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P226_O088179_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 895 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P226_O088179_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 896 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P226_O088179_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 897 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P227_O088281_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 898 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P227_O088281_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 899 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P227_O088281_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 900 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P227_O088281_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 901 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P227_O088281_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 902 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P227_O088281_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 903 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P227_O088281_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 904 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P227_O088281_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 905 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P227_O088281_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 906 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P228_O088150_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 907 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P228_O088150_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 908 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P228_O088150_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 909 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P228_O088150_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 910 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P228_O088150_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 911 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P228_O088150_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 912 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P228_O088150_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 913 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P228_O088150_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 914 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P228_O088150_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 915 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P229_O088252_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 916 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P229_O088252_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 917 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P229_O088252_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 918 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P229_O088252_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 919 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P229_O088252_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 920 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P229_O088252_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 921 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P229_O088252_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 922 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P229_O088252_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 923 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P229_O088252_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 924 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P230_O088121_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 925 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P230_O088121_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 926 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P230_O088121_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 927 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P230_O088121_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 928 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P230_O088121_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 929 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P230_O088121_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 930 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P230_O088121_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 931 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P230_O088121_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 932 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P230_O088121_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 933 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P231_O088223_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 934 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P231_O088223_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 935 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P231_O088223_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 936 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P231_O088223_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 937 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P231_O088223_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 938 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P231_O088223_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 939 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P231_O088223_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 940 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P231_O088223_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 941 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P231_O088223_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 942 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P232_O088092_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 943 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P232_O088092_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 944 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P232_O088092_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 945 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P232_O088092_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 946 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P232_O088092_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 947 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P232_O088092_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 948 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P232_O088092_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 949 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P232_O088092_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 950 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P232_O088092_DF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 951 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P233_O088194_AA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 952 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P233_O088194_AF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 953 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P233_O088194_AN_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 954 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P233_O088194_BA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 955 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P233_O088194_BF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 956 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P233_O088194_CA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 957 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P233_O088194_CF_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 958 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P233_O088194_DA_F03_0024.b001-046.f49e0896e.hdf
+Downloading file 959 of 959
+file path: /data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month1_2016_9cams/MISR_AM1_GRP_ELLIPSOID_GM_P233_O088194_DF_F03_0024.b001-046.f49e0896e.hdf
+“MISR job ended ...”
+Sun May 22 22:29:17 PDT 2022
