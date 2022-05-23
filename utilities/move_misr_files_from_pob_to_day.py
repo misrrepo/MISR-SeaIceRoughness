@@ -31,7 +31,7 @@ src_dir_fp =  '/data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams/month2_2
 #***************************************************************************
 #-- step-2 
 year = 2016
-month = 7				# april=4, july=7
+month = 4				# april=4, july=7
 num_of_days = 30  		# this is the end-date of processing/ should include the whole time period
 
 #***************************************************************************
