@@ -39,7 +39,7 @@ input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_files/
 
 
 #-- where toa-refl.dat files go
-output_path = "/data/gpfs/assoc/misr_roughness/2016/april_2016/toa_refl_april2016_9cams_day15_30_p1to233_b1to46"
+output_path = "/data/gpfs/assoc/misr_roughness/2016/april_2016"
 
 
 exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
@@ -54,7 +54,7 @@ block_range = [1,46] 	# [start, stop]; should match with block range in download
 
 #~ output file labling- rename them based on your project
 month_label = "april_2016_9cam4bands"
-num_of_days = 'day1_30'
+num_of_days = 'day15_30'
 num_of_paths = 'p1_233'
 num_of_blocks = 'b1_46'
 
