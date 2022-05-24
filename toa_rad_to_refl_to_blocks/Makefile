@@ -1,7 +1,7 @@
 exe_path=/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
 
-src_name=TOARad2Refl4AllBlocks_3Cameras.c
-exe_name=TOARad2Refl4AllBlocks_3Cameras
+src_name=TOARad2Refl4AllBlocks_allCameras.c
+exe_name=TOARad2Refl4AllBlocks_allCameras
 
 all:
 	gcc -I/data/gpfs/home/emosadegh/Mtk-1.5.1/include	\

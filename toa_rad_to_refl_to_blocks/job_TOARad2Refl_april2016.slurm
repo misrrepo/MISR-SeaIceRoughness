@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=TOA
+#SBATCH --job-name=TOA-april2016
 
 ##SBATCH --account=cpu-s6-test-0 
 ##SBATCH --partition=cpu-s6-test-0
@@ -16,15 +16,15 @@
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
 
-#SBATCH --output=log_toa2rad.txt   		 # The output file name
-#SBATCH --error=log_toa2rad.txt		 	# The error file nam
+#SBATCH --output=log_toa2rad_april2016.txt   		 # The output file name
+#SBATCH --error=log_toa2rad_april2016.txt		 	# The error file nam
 
 date
 module list 
 echo “MISR job started ...”
 
 ## path to python script to run
-python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/toa_rad_to_refl_to_blocks/run_TOARad2Refl4AllBlocks_3cameras_july2016.py
+python ./run_TOARad2Refl4AllBlocks_allCameras_april2016.py
 
 echo “MISR job ended ...”
 date
