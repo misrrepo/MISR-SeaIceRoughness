@@ -35,11 +35,11 @@ import MisrToolkit as MTK
 #===== input directory #=====
 #-- input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
 #-- where MISR ellipsoid/hdf files are
-input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_files/hdf_inrange_15_30_april2016_9cams"
+input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/july_2016/hdf_files/july_inrange_10_25_2016_3cams"
 
 
 #-- where toa-refl.dat files go
-output_path = "/data/gpfs/assoc/misr_roughness/2016/april_2016"
+output_path = "/data/gpfs/assoc/misr_roughness/2016/july_2016"
 
 
 exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
@@ -47,14 +47,14 @@ exe_name = 'TOARad2Refl4AllBlocks_allCameras'
 
 
 year = 2016
-month = 4
+month = 7
 day_range = [1,30]		# this code checks day-range and skips files w/days that are not in this range
 block_range = [1,46] 	# [start, stop]; should match with block range in downloading step
 
 
 #~ output file labling- rename them based on your project
-month_label = "april_2016_9cam4bands"
-num_of_days = 'day15_30'
+month_label = "july_2016_9cam4bands"
+num_of_days = 'day10_25'
 num_of_paths = 'p1_233'
 num_of_blocks = 'b1_46'
 
