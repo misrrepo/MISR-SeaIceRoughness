@@ -34,7 +34,7 @@ atmmodel_csvfile_label = "atmmodel_july_2016_k_zero.csv"
 
 #-- exe dir
 exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
-exe_name = "ATMModel"
+exe_name = "ATMModel_3cams"
 ########################################################################################################################
 def main():
 	'''
