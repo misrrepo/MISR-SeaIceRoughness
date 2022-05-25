@@ -765,7 +765,7 @@ int main(int argc, char *argv[]) {
                     /* we run this because the new ATM xlat/xlon was not found in previous MISR pixels and we will add it as new dataPoint row to training_dataset_dataStruct */
                     if (!previous_atm_in_pixel){ /* if we could not find any MISR pixel associated with ATM point ==  previous_atm_in_pixel=0 */
                         
-                        printf("c: FOUND a new ATM point (row/sample), will add it to training_dataset_dataStruct\n");
+                        printf("c: FOUND a new ATM point (row/sample), will add it to training_dataset_dataStruct now...\n");
                         training_dataset_dataStruct[atm_DS_row].path = path;
                         training_dataset_dataStruct[atm_DS_row].orbit = orbitlist[j];
                         training_dataset_dataStruct[atm_DS_row].img_block = img_block;
@@ -777,22 +777,16 @@ int main(int argc, char *argv[]) {
                         training_dataset_dataStruct[atm_DS_row].cloud = -1; // Q- how to interpret it? is filling value?
 
 
-
-
                         // printf("using AN file: %s\n", toa_an_masked_fullpath);
                         read_data(toa_an_red_masked_fullpath, line, sample, &anr);
                         read_data(toa_an_green_masked_fullpath, line, sample, &ang);
                         read_data(toa_an_blue_masked_fullpath, line, sample, &anb);
                         read_data(toa_an_NIR_masked_fullpath, line, sample, &annir);
-
                         // printf("PROBLEM: an= %f\n" , an); // problem here: why all zero?
-
                         read_data(toa_cf_red_masked_fullpath, line, sample, &cf); // returns value of 1 pixel at a time  // int read_data(char* atm_fname_fullpath, int line, int sample, double* data)
                         // printf("PROBLEM: cf= %f\n" , cf); // problem here: why all zero? cuz all input files were not defined correctly!
-
                         read_data(toa_ca_red_masked_fullpath, line, sample, &ca);
                         // printf("PROBLEM: ca= %f\n" , ca); // problem here: why all zero?
-                        
                         read_data(toa_aa_red_masked_fullpath, line, sample, &aa); // returns value of 1 pixel at a time 
                         read_data(toa_af_red_masked_fullpath, line, sample, &af); // returns value of 1 pixel at a time 
                         read_data(toa_ba_red_masked_fullpath, line, sample, &ba); // returns value of 1 pixel at a time 
@@ -825,12 +819,11 @@ int main(int argc, char *argv[]) {
                             }
                         }
 
-                        // add all 9 cameras here to training dataset
+                        // add all 9 cameras + 4 bands to training dataset here
                         training_dataset_dataStruct[atm_DS_row].anr = anr;
                         training_dataset_dataStruct[atm_DS_row].ang = ang;
                         training_dataset_dataStruct[atm_DS_row].anb = anb;
                         training_dataset_dataStruct[atm_DS_row].annir = annir;
-
                         training_dataset_dataStruct[atm_DS_row].ca = ca;
                         training_dataset_dataStruct[atm_DS_row].cf = cf;
                         training_dataset_dataStruct[atm_DS_row].aa = aa;
@@ -839,8 +832,7 @@ int main(int argc, char *argv[]) {
                         training_dataset_dataStruct[atm_DS_row].bf = bf;
                         training_dataset_dataStruct[atm_DS_row].da = da;
                         training_dataset_dataStruct[atm_DS_row].df = df;
-
-
+                        // rest of data fields here
                         training_dataset_dataStruct[atm_DS_row].npts = weight;
                         training_dataset_dataStruct[atm_DS_row].rms = weight * xrms;
                         training_dataset_dataStruct[atm_DS_row].var = weight * xrms * xrms;
@@ -892,6 +884,8 @@ int main(int argc, char *argv[]) {
     nocloud_x = 0;
     misscloud_x = 0;
     orbit_x = 0;  // what is this?
+
+
 
     // write this line as the header/1st line of output file    
     fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, anr, ang, anb, annir, aa, af, ba, bf, ca, cf, da, df, rms, weight, npts, cloud, var\n"); 
@@ -974,7 +968,7 @@ int main(int argc, char *argv[]) {
                 misscloud_x += 1;
             }
 
-            // ERROR here? 
+
             // (file-print-format) == pointer to atmmodel_csvfile file- writes training_dataset_dataStruct to a file on disc
             fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
                     training_dataset_dataStruct[n].path, 
