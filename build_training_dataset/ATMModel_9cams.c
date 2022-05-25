@@ -584,7 +584,7 @@ int main(int argc, char *argv[]) {
                     sprintf(toa_an_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     // check if file is accessible 
                     if (access(toa_an_masked_fullpath, F_OK) == -1){
-                        printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_masked_fullpath);
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_masked_fullpath);
                         continue; 
                     }
 
@@ -593,7 +593,7 @@ int main(int argc, char *argv[]) {
                     // printf("toa cf: %s\n" , toa_cf_masked_fullpath);
                     // check if file is accessible 
                     if (access(toa_cf_masked_fullpath, F_OK) == -1){
-                        printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_cf_masked_fullpath);
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_cf_masked_fullpath);
                         continue; // check if file is accessiblem
                     }
 
@@ -602,7 +602,7 @@ int main(int argc, char *argv[]) {
                     // printf("toa ca: %s\n" , toa_ca_masked_fullpath);
                     // check if file is accessible 
                     if (access(toa_ca_masked_fullpath, F_OK) == -1){
-                        printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ca_masked_fullpath);
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ca_masked_fullpath);
                         continue; // check if file is accessiblem
                     }
 
@@ -611,42 +611,42 @@ int main(int argc, char *argv[]) {
                     // 4- preparing Af camera
                     sprintf(toa_af_masked_fullpath, "%s/Af/masked_toa_refl_P%03d_O%06d_B%03d_af_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_af_masked_fullpath, F_OK) == -1){
-                        printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_af_masked_fullpath);
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_af_masked_fullpath);
                         continue; 
                     }
 
                     // 5- preparing Aa camera
                     sprintf(toa_aa_masked_fullpath, "%s/Aa/masked_toa_refl_P%03d_O%06d_B%03d_aa_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_aa_masked_fullpath, F_OK) == -1){
-                        printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_aa_masked_fullpath);
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_aa_masked_fullpath);
                         continue; 
                     }
 
                     // 6- preparing Bf camera
                     sprintf(toa_bf_masked_fullpath, "%s/Bf/masked_toa_refl_P%03d_O%06d_B%03d_bf_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_bf_masked_fullpath, F_OK) == -1){
-                        printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_bf_masked_fullpath);
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_bf_masked_fullpath);
                         continue; 
                     }
 
                     // 7- preparing Ba camera
                     sprintf(toa_ba_masked_fullpath, "%s/Ba/masked_toa_refl_P%03d_O%06d_B%03d_ba_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_ba_masked_fullpath, F_OK) == -1){
-                        printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ba_masked_fullpath);
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ba_masked_fullpath);
                         continue; 
                     }
 
                     // 8- preparing Df camera
                     sprintf(toa_df_masked_fullpath, "%s/Df/masked_toa_refl_P%03d_O%06d_B%03d_df_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_df_masked_fullpath, F_OK) == -1){
-                        printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_df_masked_fullpath);
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_df_masked_fullpath);
                         continue; 
                     }
 
                     // 9- preparing Da camera
                     sprintf(toa_da_masked_fullpath, "%s/Da/masked_toa_refl_P%03d_O%06d_B%03d_da_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_da_masked_fullpath, F_OK) == -1){
-                        printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_da_masked_fullpath);
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_da_masked_fullpath);
                         continue; 
                     }
 
@@ -850,7 +850,7 @@ int main(int argc, char *argv[]) {
     orbit_x = 0;  // what is this?
 
     
-    fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, an, ca, cf, rms, weight, npts, cloud, var\n"); // write this line as the header/1st line of output file
+    fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLatinPixel, firstLoninPixel, an, ca, cf, aa, af, ba, bf, da, df, rms, weight, npts, cloud, var\n"); // write this line as the header/1st line of output file
     // printf("check seg fault-4 \n");
 
     for (n = 0; n < atm_DS_row; n++) 
@@ -932,7 +932,7 @@ int main(int argc, char *argv[]) {
 
             // ERROR here? 
             // (file-print-format) == pointer to file atmmodel_csvfile- writes training_dataset_dataStruct to file
-            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
+            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
                     training_dataset_dataStruct[n].path, 
                     training_dataset_dataStruct[n].orbit, 
                     training_dataset_dataStruct[n].img_block, 
