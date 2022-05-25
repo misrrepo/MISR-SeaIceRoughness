@@ -1,7 +1,7 @@
 exe_path=/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
 
-src_name=LandMask_3cams.c
-exe_name=LandMask_3cams
+src_name=LandMask_allCameras.c
+exe_name=LandMask_allCameras
 
 all:
 	gcc -I/data/gpfs/home/emosadegh/Mtk-1.5.1/include	\

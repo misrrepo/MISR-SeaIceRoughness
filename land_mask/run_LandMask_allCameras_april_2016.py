@@ -11,17 +11,20 @@ from platform import python_version
 ########################################################################################################################
 # change the following section
 ########################################################################################################################
-#-- input dir- <toa_refl_P-O-B> NOTE: data should be in 3 [or 9] different directories at this path: (An/Ca/Cf)
-toa_refl_dir_fullpath = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands/toa_refl_april_2016_9cam4bands_day1_30_p1_233_b1_46"     
+#input dir- <toa_refl_P-O-B> NOTE: data should be in 3 or 9 different directories at this path: (An/Ca/Cf)
+toa_refl_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_files/test_atmmodel_with9cams/toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46"
 
-#-- landmask dir # Ehsan: mask file, output from <ArcticTileToGrid.c>
-lsmask_dir_fullpath = "/home/ehsan/misr_lab/landseamask_blocks_1to46"				
 
-exe_dir = "/home/ehsan/misr_lab/MISR-SeaIceRoughness/exe_dir"
+#-- landmask dir with mask files, output from <ArcticTileToGrid.c>
+lsmask_dir_fullpath = "/data/gpfs/assoc/misr_roughness/landseamask_blocks_1to46"
+
+
+exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
 exe_name = "LandMask_allCameras" 		# should be set in $PATH
 
 #-- output dir for masked_toa_refl file; we will create an output dir at this path
-output_path = "/media/ehsan/6T_part1/14528_apr2016/project_april_2016_9cam3bands"  
+output_path = toa_refl_dir_fullpath
+
 
 exe_dir_fullpath = os.path.join(exe_dir, exe_name)
 ########################################################################################################################
