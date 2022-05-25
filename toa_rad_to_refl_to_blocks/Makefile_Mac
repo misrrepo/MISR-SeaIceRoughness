@@ -3,19 +3,22 @@
 # 	hdfeos include dir
 #	
 
-src_name=TOARad2Refl4AllBlocks_3Cameras.c
 exe_path=/Users/ehsanmos/Documents/MISR/MISR-SeaIceRoughness/exe_dir
-exe_name=TOARad2Refl4AllBlocks_3Cameras
+
+src_name=TOARad2Refl4AllBlocks_allCameras.c
+exe_name=TOARad2Refl4AllBlocks_allCameras
 
 
 
 all:
-	gcc -I/Users/ehsanmos/Documents/MISR/mtk_root/Mtk-1.5.0/include 	\
-		-I/Users/ehsanmos/Documents/MISR/mtk_root/hdfeoslibs/include 	\
-		-L/Users/ehsanmos/Documents/MISR/mtk_root/Mtk-1.5.0/lib 		\
-		-L/Users/ehsanmos/Documents/MISR/mtk_root/fftw-3.3.8_install/lib \
-		-I/Users/ehsanmos/Documents/MISR/mtk_root/fftw-3.3.8_install/include \
-		-o ${exe_path}/${exe_name} ${src_name} -lMisrToolkit  -lm -lfftw3 -lpng
+	gcc -I/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/Mtk_install/include	\
+		-L/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/Mtk_install/lib	\
+		-L/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/fftw3_installed/lib \
+		-I/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/fftw3_installed/include \
+		-L/usr/local/Cellar/libpng/1.6.37/lib \
+		-I/usr/local/Cellar/libpng/1.6.37/include \
+		-I/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/hdfeoslibs_installed/include \
+		-o ${exe_path}/${exe_name} ${src_name} -lMisrToolkit  -lm -lfftw3 -lpng -pthread
 	
 clean:
 

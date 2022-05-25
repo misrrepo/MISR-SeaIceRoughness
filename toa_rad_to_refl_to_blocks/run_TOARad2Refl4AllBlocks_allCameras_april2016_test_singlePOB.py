@@ -38,7 +38,6 @@ import MisrToolkit as MTK
 input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_files/test_atmmodel_with9cams"
 
 
-
 #-- where toa-refl.dat files go
 output_path = input_dir_fullpath
 
