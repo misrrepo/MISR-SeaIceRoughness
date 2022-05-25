@@ -1,4 +1,4 @@
-exe_path=/Users/ehsanmos/Documents/MISR/MISR-SeaIceRoughness
+exe_path=/Users/ehsanmos/Documents/MISR/MISR-SeaIceRoughness/exe_dir
 src_name=ATMModel_9cams.c
 exe_name=ATMModel_9cams
 

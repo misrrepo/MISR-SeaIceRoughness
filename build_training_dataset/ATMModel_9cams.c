@@ -29,6 +29,7 @@ usage: labels MISR pixels w/ATM roughness data
 #define LMASKED -999994.0
 #define VERBOSE 0
 
+
 typedef struct {
     int path;
     int orbit;
@@ -42,7 +43,7 @@ typedef struct {
     // double ca;
     // double cf;
     // add all 9 cameras here
-    double an, af, aa, bf, ba, cf, ca, df, da; 
+    double anr, ang, anb, annir, af, aa, bf, ba, cf, ca, df, da; 
     double rms;
     float weight;
     int8_t cloud; // E: maybe change to int8? cuz range={-1,0,1}
@@ -227,15 +228,20 @@ int main(int argc, char *argv[]) {
     char idir[256];
     char an_file[128];
     char atm_fname_fullpath[256];
-    char toa_an_masked_fullpath[256];
-    char toa_af_masked_fullpath[256];
-    char toa_aa_masked_fullpath[256];
-    char toa_bf_masked_fullpath[256];
-    char toa_ba_masked_fullpath[256];
-    char toa_df_masked_fullpath[256];
-    char toa_da_masked_fullpath[256];
-    char toa_ca_masked_fullpath[256];
-    char toa_cf_masked_fullpath[256];
+
+    char toa_an_red_masked_fullpath[256];
+    char toa_an_green_masked_fullpath[256];
+    char toa_an_blue_masked_fullpath[256];
+    char toa_an_NIR_masked_fullpath[256];
+    char toa_af_red_masked_fullpath[256];
+    char toa_aa_red_masked_fullpath[256];
+    char toa_bf_red_masked_fullpath[256];
+    char toa_ba_red_masked_fullpath[256];
+    char toa_df_red_masked_fullpath[256];
+    char toa_da_red_masked_fullpath[256];
+    char toa_ca_red_masked_fullpath[256];
+    char toa_cf_red_masked_fullpath[256];
+
     char cloudmask_fname_fullpath[256];
     //char lsmask_atm_fname_fullpath[256];
     //unsigned char lsmask;
@@ -267,7 +273,7 @@ int main(int argc, char *argv[]) {
     double avg_valid_rms = 0;
     double weight;
     // add all cameras here in program scope
-    double an, af, aa, bf, ba, cf, ca, df, da; // note: cm dtype should be double or uint? inside read_data f(.) it is defined as double and this f(.) is used to read several files
+    double anr, ang, anb, annir, af, aa, bf, ba, cf, ca, df, da; // note: cm dtype should be double or uint? inside read_data f(.) it is defined as double and this f(.) is used to read several files
     // double cm; // = -1;
     uint8_t cm; // dtype= maybe to uint8_t??? cuz cm is either= 0, 1
     double xlat, xlon, xrms; //, xcam;
@@ -581,74 +587,102 @@ int main(int argc, char *argv[]) {
                     // note: here we should consider band names as file name tag (red, green, blue, NIR) that comes from masked.c code- later add g, b , nir
 
                     // 1- preparing An camera
-                    sprintf(toa_an_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_an_red_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     // check if file is accessible 
-                    if (access(toa_an_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_masked_fullpath);
+                    if (access(toa_an_red_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_red_masked_fullpath);
                         continue; 
                     }
 
+                    // 10- preparing An-green camera
+                    sprintf(toa_an_green_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_green.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    // check if file is accessible 
+                    if (access(toa_an_green_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_green_masked_fullpath);
+                        continue; 
+                    }
+
+                    // 11- preparing An-blue camera
+                    sprintf(toa_an_blue_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_blue.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    // check if file is accessible 
+                    if (access(toa_an_blue_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_blue_masked_fullpath);
+                        continue; 
+                    }
+
+                    // 12- preparing An-nir camera
+                    sprintf(toa_an_NIR_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_NIR.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    // check if file is accessible 
+                    if (access(toa_an_NIR_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_NIR_masked_fullpath);
+                        continue; 
+                    }
+
+
                     // 2- preparing Cf camera
-                    sprintf(toa_cf_masked_fullpath, "%s/Cf/masked_toa_refl_P%03d_O%06d_B%03d_cf_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_cf_red_masked_fullpath, "%s/Cf/masked_toa_refl_P%03d_O%06d_B%03d_cf_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     // printf("toa cf: %s\n" , toa_cf_masked_fullpath);
                     // check if file is accessible 
-                    if (access(toa_cf_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_cf_masked_fullpath);
+                    if (access(toa_cf_red_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_cf_red_masked_fullpath);
                         continue; // check if file is accessiblem
                     }
 
                     // 3- preparing Ca camera
-                    sprintf(toa_ca_masked_fullpath, "%s/Ca/masked_toa_refl_P%03d_O%06d_B%03d_ca_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_ca_red_masked_fullpath, "%s/Ca/masked_toa_refl_P%03d_O%06d_B%03d_ca_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     // printf("toa ca: %s\n" , toa_ca_masked_fullpath);
                     // check if file is accessible 
-                    if (access(toa_ca_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ca_masked_fullpath);
+                    if (access(toa_ca_red_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ca_red_masked_fullpath);
                         continue; // check if file is accessiblem
                     }
 
                     // add all other cameras here**********************
 
                     // 4- preparing Af camera
-                    sprintf(toa_af_masked_fullpath, "%s/Af/masked_toa_refl_P%03d_O%06d_B%03d_af_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_af_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_af_masked_fullpath);
+                    sprintf(toa_af_red_masked_fullpath, "%s/Af/masked_toa_refl_P%03d_O%06d_B%03d_af_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    if (access(toa_af_red_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_af_red_masked_fullpath);
                         continue; 
                     }
 
                     // 5- preparing Aa camera
-                    sprintf(toa_aa_masked_fullpath, "%s/Aa/masked_toa_refl_P%03d_O%06d_B%03d_aa_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_aa_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_aa_masked_fullpath);
+                    sprintf(toa_aa_red_masked_fullpath, "%s/Aa/masked_toa_refl_P%03d_O%06d_B%03d_aa_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    if (access(toa_aa_red_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_aa_red_masked_fullpath);
                         continue; 
                     }
 
                     // 6- preparing Bf camera
-                    sprintf(toa_bf_masked_fullpath, "%s/Bf/masked_toa_refl_P%03d_O%06d_B%03d_bf_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_bf_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_bf_masked_fullpath);
+                    sprintf(toa_bf_red_masked_fullpath, "%s/Bf/masked_toa_refl_P%03d_O%06d_B%03d_bf_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    if (access(toa_bf_red_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_bf_red_masked_fullpath);
                         continue; 
                     }
 
                     // 7- preparing Ba camera
-                    sprintf(toa_ba_masked_fullpath, "%s/Ba/masked_toa_refl_P%03d_O%06d_B%03d_ba_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_ba_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ba_masked_fullpath);
+                    sprintf(toa_ba_red_masked_fullpath, "%s/Ba/masked_toa_refl_P%03d_O%06d_B%03d_ba_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    if (access(toa_ba_red_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ba_red_masked_fullpath);
                         continue; 
                     }
 
                     // 8- preparing Df camera
-                    sprintf(toa_df_masked_fullpath, "%s/Df/masked_toa_refl_P%03d_O%06d_B%03d_df_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_df_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_df_masked_fullpath);
+                    sprintf(toa_df_red_masked_fullpath, "%s/Df/masked_toa_refl_P%03d_O%06d_B%03d_df_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    if (access(toa_df_red_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_df_red_masked_fullpath);
                         continue; 
                     }
 
                     // 9- preparing Da camera
-                    sprintf(toa_da_masked_fullpath, "%s/Da/masked_toa_refl_P%03d_O%06d_B%03d_da_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_da_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_da_masked_fullpath);
+                    sprintf(toa_da_red_masked_fullpath, "%s/Da/masked_toa_refl_P%03d_O%06d_B%03d_da_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    if (access(toa_da_red_masked_fullpath, F_OK) == -1){
+                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_da_red_masked_fullpath);
                         continue; 
                     }
+
+
+
 
 
 
@@ -742,23 +776,29 @@ int main(int argc, char *argv[]) {
                         training_dataset_dataStruct[atm_DS_row].weight = weight;
                         training_dataset_dataStruct[atm_DS_row].cloud = -1; // Q- how to interpret it? is filling value?
 
-                        read_data(toa_cf_masked_fullpath, line, sample, &cf); // returns value of 1 pixel at a time  // int read_data(char* atm_fname_fullpath, int line, int sample, double* data)
-                        // printf("PROBLEM: cf= %f\n" , cf); // problem here: why all zero? cuz all input files were not defined correctly!
 
-                        read_data(toa_ca_masked_fullpath, line, sample, &ca);
-                        // printf("PROBLEM: ca= %f\n" , ca); // problem here: why all zero?
+
 
                         // printf("using AN file: %s\n", toa_an_masked_fullpath);
-                        read_data(toa_an_masked_fullpath, line, sample, &an);
+                        read_data(toa_an_red_masked_fullpath, line, sample, &anr);
+                        read_data(toa_an_green_masked_fullpath, line, sample, &ang);
+                        read_data(toa_an_blue_masked_fullpath, line, sample, &anb);
+                        read_data(toa_an_NIR_masked_fullpath, line, sample, &annir);
+
                         // printf("PROBLEM: an= %f\n" , an); // problem here: why all zero?
+
+                        read_data(toa_cf_red_masked_fullpath, line, sample, &cf); // returns value of 1 pixel at a time  // int read_data(char* atm_fname_fullpath, int line, int sample, double* data)
+                        // printf("PROBLEM: cf= %f\n" , cf); // problem here: why all zero? cuz all input files were not defined correctly!
+
+                        read_data(toa_ca_red_masked_fullpath, line, sample, &ca);
+                        // printf("PROBLEM: ca= %f\n" , ca); // problem here: why all zero?
                         
-                        // read all 9 cameras here ....
-                        read_data(toa_aa_masked_fullpath, line, sample, &aa); // returns value of 1 pixel at a time 
-                        read_data(toa_af_masked_fullpath, line, sample, &af); // returns value of 1 pixel at a time 
-                        read_data(toa_ba_masked_fullpath, line, sample, &ba); // returns value of 1 pixel at a time 
-                        read_data(toa_bf_masked_fullpath, line, sample, &bf); // returns value of 1 pixel at a time 
-                        read_data(toa_da_masked_fullpath, line, sample, &da); // returns value of 1 pixel at a time 
-                        read_data(toa_df_masked_fullpath, line, sample, &df); // returns value of 1 pixel at a time 
+                        read_data(toa_aa_red_masked_fullpath, line, sample, &aa); // returns value of 1 pixel at a time 
+                        read_data(toa_af_red_masked_fullpath, line, sample, &af); // returns value of 1 pixel at a time 
+                        read_data(toa_ba_red_masked_fullpath, line, sample, &ba); // returns value of 1 pixel at a time 
+                        read_data(toa_bf_red_masked_fullpath, line, sample, &bf); // returns value of 1 pixel at a time 
+                        read_data(toa_da_red_masked_fullpath, line, sample, &da); // returns value of 1 pixel at a time 
+                        read_data(toa_df_red_masked_fullpath, line, sample, &df); // returns value of 1 pixel at a time 
 
 
                         // printf("CHECK all 9 cameras: ca= %f, an= %f, cf= %f\n\n" , ca, an, cf);
@@ -786,7 +826,11 @@ int main(int argc, char *argv[]) {
                         }
 
                         // add all 9 cameras here to training dataset
-                        training_dataset_dataStruct[atm_DS_row].an = an;
+                        training_dataset_dataStruct[atm_DS_row].anr = anr;
+                        training_dataset_dataStruct[atm_DS_row].ang = ang;
+                        training_dataset_dataStruct[atm_DS_row].anb = anb;
+                        training_dataset_dataStruct[atm_DS_row].annir = annir;
+
                         training_dataset_dataStruct[atm_DS_row].ca = ca;
                         training_dataset_dataStruct[atm_DS_row].cf = cf;
                         training_dataset_dataStruct[atm_DS_row].aa = aa;
@@ -849,8 +893,8 @@ int main(int argc, char *argv[]) {
     misscloud_x = 0;
     orbit_x = 0;  // what is this?
 
-    
-    fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLatinPixel, firstLoninPixel, an, ca, cf, aa, af, ba, bf, da, df, rms, weight, npts, cloud, var\n"); // write this line as the header/1st line of output file
+    // write this line as the header/1st line of output file    
+    fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, anr, ang, anb, annir, aa, af, ba, bf, ca, cf, da, df, rms, weight, npts, cloud, var\n"); 
     // printf("check seg fault-4 \n");
 
     for (n = 0; n < atm_DS_row; n++) 
@@ -859,7 +903,7 @@ int main(int argc, char *argv[]) {
         training_dataset_dataStruct[n].rms /= training_dataset_dataStruct[n].npts; // average weighted roughness // Q- training_dataset_dataStruct is for each what? pixel? or
         training_dataset_dataStruct[n].var = sqrt(training_dataset_dataStruct[n].var / training_dataset_dataStruct[n].npts - training_dataset_dataStruct[n].rms * training_dataset_dataStruct[n].rms);
 
-        if (training_dataset_dataStruct[n].an > 0) // Q- why an camera is checked? can camera be negative? surf refl > 0
+        if (training_dataset_dataStruct[n].anr > 0) // Q- why an camera is checked? can camera be negative? surf refl > 0
         {    
             
             natm_valid++; // increment
@@ -878,7 +922,7 @@ int main(int argc, char *argv[]) {
         /* E: why check this condition? for cloudy? */
         if ((training_dataset_dataStruct[n].cloud == 0) || 
             (training_dataset_dataStruct[n].cloud == 1) || 
-            ((training_dataset_dataStruct[n].cloud == -1) && (training_dataset_dataStruct[n].an > 0) && (training_dataset_dataStruct[n].ca > 0) && (training_dataset_dataStruct[n].cf > 0))) {
+            ((training_dataset_dataStruct[n].cloud == -1) && (training_dataset_dataStruct[n].anr > 0) && (training_dataset_dataStruct[n].ca > 0) && (training_dataset_dataStruct[n].cf > 0))) {
         
             if (orbit_x == 0) 
             { // Q-why zero?
@@ -931,8 +975,8 @@ int main(int argc, char *argv[]) {
             }
 
             // ERROR here? 
-            // (file-print-format) == pointer to file atmmodel_csvfile- writes training_dataset_dataStruct to file
-            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
+            // (file-print-format) == pointer to atmmodel_csvfile file- writes training_dataset_dataStruct to a file on disc
+            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
                     training_dataset_dataStruct[n].path, 
                     training_dataset_dataStruct[n].orbit, 
                     training_dataset_dataStruct[n].img_block, 
@@ -940,24 +984,24 @@ int main(int argc, char *argv[]) {
                     training_dataset_dataStruct[n].sample, 
                     training_dataset_dataStruct[n].lat, 
                     training_dataset_dataStruct[n].lon, 
-
                     // add all 9 cameras here
-                    training_dataset_dataStruct[n].an, 
-                    training_dataset_dataStruct[n].ca, 
-                    training_dataset_dataStruct[n].cf, 
+                    training_dataset_dataStruct[n].anr, 
+                    training_dataset_dataStruct[n].ang, 
+                    training_dataset_dataStruct[n].anb, 
+                    training_dataset_dataStruct[n].annir, 
                     training_dataset_dataStruct[n].aa, 
                     training_dataset_dataStruct[n].af, 
                     training_dataset_dataStruct[n].ba, 
                     training_dataset_dataStruct[n].bf, 
+                    training_dataset_dataStruct[n].ca, 
+                    training_dataset_dataStruct[n].cf, 
                     training_dataset_dataStruct[n].da, 
                     training_dataset_dataStruct[n].df, 
-
-
                     training_dataset_dataStruct[n].rms, 
                     training_dataset_dataStruct[n].weight, 
                     training_dataset_dataStruct[n].npts, 
                     training_dataset_dataStruct[n].cloud, 
-                    training_dataset_dataStruct[n].var); // 14
+                    training_dataset_dataStruct[n].var); // 24 columns 
 
             // printf("check seg fault-2 \n");
 

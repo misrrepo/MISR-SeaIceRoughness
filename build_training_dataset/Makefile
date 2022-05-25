@@ -1,4 +1,3 @@
-
 exe_path=/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
 src_name=ATMModel_9cams.c
 exe_name=ATMModel_9cams
