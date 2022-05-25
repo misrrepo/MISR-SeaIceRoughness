@@ -134,6 +134,7 @@ def main():
 				ret_from_C = run_from_cmd(exe_fullpath, hdf_file_fullpath, block_num, band_num, minnaert, toa_file_fullpath, hdf_counter, total_hdf_files, camera)  # note: to just check runtime setting comment out this line
 				if (ret_from_C==1):
 					print('ERROR FROM C CODE WHEN READING HDF BLOCK, BUT WE CONTINUE TO NEXT BLOCK')
+					print(toa_file_fullpath)
 					print('********************************************************************')
 					continue
 	return 0
