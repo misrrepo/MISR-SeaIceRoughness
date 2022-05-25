@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=atmModel
+#SBATCH --job-name=atmmodel
 ##SBATCH --account=cpu-s6-test-0 			
 ##SBATCH --partition=cpu-s6-test-0
 #SBATCH --account=cpu-s5-misr_roughness-0	# submit to my CPU account
@@ -11,12 +11,12 @@
 #SBATCH --hint=compute_bound				# Allocate all resources on a core (2threaded cpus)
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		# Send mail on all stateChanges
-#SBATCH --output=log_atmmodel.txt   		# The output file name
-#SBATCH --error=log_atmmodel.txt		 	# The error file name
+#SBATCH --output=log_atmmodel_test_singlePOB.txt   		# The output file name
+#SBATCH --error=log_atmmodel_test_singlePOB.txt		 	# The error file name
 date
 module list 
 echo “MISR job started ...”
-python  /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/build_training_dataset/run_ATMModel.py
+python  ./run_ATMModel_9cams.py
 
 echo “MISR job ended ...”
 date
