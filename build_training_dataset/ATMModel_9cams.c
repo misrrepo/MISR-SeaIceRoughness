@@ -576,10 +576,12 @@ int main(int argc, char *argv[]) {
 
 
                     // printf("checking masked-toa-refl.dat for path: %d, orbit: %d, block: %d\n", path, orbitlist[j], img_block);
+                    
 
+                    // note: here we should consider band names as file name tag (red, green, blue, NIR) that comes from masked.c code- later add g, b , nir
 
                     // 1- preparing An camera
-                    sprintf(toa_an_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_an_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     // check if file is accessible 
                     if (access(toa_an_masked_fullpath, F_OK) == -1){
                         printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_masked_fullpath);
@@ -589,7 +591,7 @@ int main(int argc, char *argv[]) {
                     }
 
                     // 2- preparing Cf camera
-                    sprintf(toa_cf_masked_fullpath, "%s/Cf/masked_toa_refl_P%03d_O%06d_B%03d_cf.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_cf_masked_fullpath, "%s/Cf/masked_toa_refl_P%03d_O%06d_B%03d_cf_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     // printf("toa cf: %s\n" , toa_cf_masked_fullpath);
                     // check if file is accessible 
                     if (access(toa_cf_masked_fullpath, F_OK) == -1){
@@ -598,7 +600,7 @@ int main(int argc, char *argv[]) {
                     }
 
                     // 3- preparing Ca camera
-                    sprintf(toa_ca_masked_fullpath, "%s/Ca/masked_toa_refl_P%03d_O%06d_B%03d_ca.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_ca_masked_fullpath, "%s/Ca/masked_toa_refl_P%03d_O%06d_B%03d_ca_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     // printf("toa ca: %s\n" , toa_ca_masked_fullpath);
                     // check if file is accessible 
                     if (access(toa_ca_masked_fullpath, F_OK) == -1){
@@ -609,42 +611,42 @@ int main(int argc, char *argv[]) {
                     // add all other cameras here**********************
 
                     // 4- preparing Af camera
-                    sprintf(toa_af_masked_fullpath, "%s/Af/masked_toa_refl_P%03d_O%06d_B%03d_af.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_af_masked_fullpath, "%s/Af/masked_toa_refl_P%03d_O%06d_B%03d_af_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_af_masked_fullpath, F_OK) == -1){
                         printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_af_masked_fullpath);
                         continue; 
                     }
 
                     // 5- preparing Aa camera
-                    sprintf(toa_aa_masked_fullpath, "%s/Aa/masked_toa_refl_P%03d_O%06d_B%03d_aa.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_aa_masked_fullpath, "%s/Aa/masked_toa_refl_P%03d_O%06d_B%03d_aa_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_aa_masked_fullpath, F_OK) == -1){
                         printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_aa_masked_fullpath);
                         continue; 
                     }
 
                     // 6- preparing Bf camera
-                    sprintf(toa_bf_masked_fullpath, "%s/Bf/masked_toa_refl_P%03d_O%06d_B%03d_bf.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_bf_masked_fullpath, "%s/Bf/masked_toa_refl_P%03d_O%06d_B%03d_bf_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_bf_masked_fullpath, F_OK) == -1){
                         printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_bf_masked_fullpath);
                         continue; 
                     }
 
                     // 7- preparing Ba camera
-                    sprintf(toa_ba_masked_fullpath, "%s/Ba/masked_toa_refl_P%03d_O%06d_B%03d_ba.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_ba_masked_fullpath, "%s/Ba/masked_toa_refl_P%03d_O%06d_B%03d_ba_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_ba_masked_fullpath, F_OK) == -1){
                         printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ba_masked_fullpath);
                         continue; 
                     }
 
                     // 8- preparing Df camera
-                    sprintf(toa_df_masked_fullpath, "%s/Df/masked_toa_refl_P%03d_O%06d_B%03d_df.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_df_masked_fullpath, "%s/Df/masked_toa_refl_P%03d_O%06d_B%03d_df_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_df_masked_fullpath, F_OK) == -1){
                         printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_df_masked_fullpath);
                         continue; 
                     }
 
                     // 9- preparing Da camera
-                    sprintf(toa_da_masked_fullpath, "%sDa/masked_toa_refl_P%03d_O%06d_B%03d_da.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    sprintf(toa_da_masked_fullpath, "%sDa/masked_toa_refl_P%03d_O%06d_B%03d_da_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
                     if (access(toa_da_masked_fullpath, F_OK) == -1){
                         printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_da_masked_fullpath);
                         continue; 

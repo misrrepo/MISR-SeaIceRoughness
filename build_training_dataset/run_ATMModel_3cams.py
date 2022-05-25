@@ -41,6 +41,8 @@ def main():
 	passes a pair of arguments to cmd to run TOA.c program
 	'''
 	input_dir_list = [atm_dir, masked_toa_refl_home, cloud_masked_dir, out_atmmodel_dir, exe_dir]
+
+	# only check if directory exists
 	for in_dir in input_dir_list:
 		ret_check = os.path.isdir(in_dir)
 		if (ret_check==True):
@@ -52,7 +54,7 @@ def main():
 	exe_fullpath = os.path.join(exe_dir, exe_name)
 	out_atmmodel_fullpath = os.path.join(out_atmmodel_dir, atmmodel_csvfile_label)
 
-	#~~ now run exe from UNIX to process hdf ellipsoid data 
+	# now run exe from UNIX to process hdf ellipsoid data 
 	run_from_cmd(exe_fullpath, atm_dir, masked_toa_refl_home, cloud_masked_dir, out_atmmodel_fullpath)
 
 	return 0
