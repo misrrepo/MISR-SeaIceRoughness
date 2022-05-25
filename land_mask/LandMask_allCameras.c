@@ -496,7 +496,7 @@ int main(int argc, char* argv[])
 		for (j=0; j < misr_total_files_found; j++) { // loop over all misr_total_files_found == num of TOA refl in AN dir
 
 			sprintf(misr_file_fullpath, "%s%s", input_home_dir, misr_file_list[j]); // copies surf_file name into misr_file_fullpath
-			printf("processing TOA file (%d/%d/%s) \n" , j+1, misr_total_files_found, cam_name); // E
+			printf("\nprocessing TOA file (%d/%d/%s) \n" , j+1, misr_total_files_found, cam_name); // E
 			printf("%s \n" , misr_file_fullpath);
 
 			if (!read_data(misr_file_fullpath, &data, nlines, nsamples)) 
