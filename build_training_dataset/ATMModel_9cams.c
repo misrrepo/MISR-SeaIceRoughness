@@ -575,7 +575,7 @@ int main(int argc, char *argv[]) {
                     /* NOTE: now that Mtk has returned an associated Bls for ATM lat-lon, it's time to search for input files: MISR masked_toa files & cloudmask files.: MISR toa masked files based on the extracted info from each ATM row; we should look into these files */
 
 
-                    // printf("checking masked-toa-refl.dat for path: %d, orbit: %d, block: %d\n", path, orbitlist[j], img_block);
+                    printf("checking masked-toa-refl.dat for path: %d, orbit: %d, block: %d\n", path, orbitlist[j], img_block);
 
 
                     // 1- preparing An camera
@@ -677,7 +677,7 @@ int main(int argc, char *argv[]) {
 
 
 
-                    // printf("c: preparing input files for: %d, %d, %d, %d, %d, %f, %f, %f\n", path, orbitlist[j], img_block, line, sample, xlat, xlon, xrms); // for each csv row == label info
+                    printf("c: preparing input files for: %d, %d, %d, %d, %d, %f, %f, %f\n", path, orbitlist[j], img_block, line, sample, xlat, xlon, xrms); // for each csv row == label info
 
 
 
