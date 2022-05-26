@@ -296,7 +296,6 @@ int main(int argc, char *argv[]) {
 
 
     /* -------------------------------------------------------------------------------------------------- */
-
     /* Get list of all available ATM.csv files in directory */
 
     printf("\n*********** PROGRAM: ATMRoughness2MISRPixels.c ***********\n\n");
@@ -360,14 +359,11 @@ int main(int argc, char *argv[]) {
     printf("number of ATM.csv (ILATM2) files found= (%d) in direcotry: %s \n" , atm_files_list_index, atm_dir);
     printf("\n");
 
+    /* ---------------------------------------------------------------------------- */
 
-    // print the list of available ATM csv files 
-    //for (i = 0; i < atm_files_list_index; i++) {
-	//printf("%d %s\n", i, atm_file_list[i]);
-    //}
 
     /* ---------------------------------------------------------------------------- */
-    /* start- read all available ATM file from the list we made in the past section */
+    /* start- read each available ATM file from the list we made in the past section */
 
     for (int i = 0; i < atm_files_list_index; i++){ // i = num of available ATM files in the list
 
@@ -488,7 +484,7 @@ int main(int argc, char *argv[]) {
                 //printf("\n______open ATM fileNum(%d), orbit/path(%d), in day_k(%d), WhileLoop each sample/row info from: %s \n\n", i, path, k, atm_fname_fullpath); // the ATM file
                 
                 int atm_row_num = 1;
-                // now associate each ATM row/sample to 3 MISR surf files
+                // now associate each ATM row/sample to 9 MISR surf files
                 
                 // while ((read = getline(&line_in_buff, &slen, fp)) != -1) 
                 while ((line_size = getline(&line_in_buff, &slen, fp)) >= 0 ){  // returns number of characters that was read // read each line of each ATM csv
@@ -899,8 +895,7 @@ int main(int argc, char *argv[]) {
     fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, anr, ang, anb, annir, aa, af, ba, bf, ca, cf, da, df, rms, weight, npts, cloud, var\n"); 
     // printf("check seg fault-4 \n");
 
-    for (n = 0; n < training_DS_row_in_mem; n++) 
-    {  // num of points= the MISR pixels that ATM found for them == size of elements in training_dataset_dataStruct
+    for (n = 0; n < training_DS_row_in_mem; n++){  // num of points= the MISR pixels that ATM found for them == size of elements in training_dataset_dataStruct
         
         training_dataset_dataStruct[n].rms /= training_dataset_dataStruct[n].npts; // average weighted roughness // Q- training_dataset_dataStruct is for each what? pixel? or
         training_dataset_dataStruct[n].var = sqrt(training_dataset_dataStruct[n].var / training_dataset_dataStruct[n].npts - training_dataset_dataStruct[n].rms * training_dataset_dataStruct[n].rms);
@@ -1015,7 +1010,12 @@ int main(int argc, char *argv[]) {
     }
 
     //fclose(fp);
-    fclose(filePtr);
+    fclose(filePtr); // close pointer to atmmodel.csv 
+    
+    // close memory assigned to training dataset
+    free(training_dataset_dataStruct); 
+
+
     avg_rms /= training_DS_row_in_mem; // Q- why?
     avg_valid_rms /= natm_valid;
     printf("********************************************************\n");

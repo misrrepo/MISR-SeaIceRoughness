@@ -20,7 +20,7 @@ atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/A
 
 
 
-# path to directory that includes 9 camera directories: An/Ca/Cf/Ba/Bf/Da/Df
+# path to directory that includes 9 camera sub-directories: An/Ca/Cf/Ba/Bf/Da/Df
 masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46"
 
 
