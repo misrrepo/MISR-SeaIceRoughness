@@ -721,14 +721,11 @@ int main(int argc, char *argv[]) {
                             // printf("c: cloudMask EXIST: %s \n" , cloudmask_fname_fullpath);
                         }
                     }
-                    //--------- cloud mask here ------------------
+                    //--------- cloud mask here [for future?] ------------------
 
 
 
-                    printf("*** C: preparing input files for: %d, %d, %d, %d, %d, %f, %f, %f\n", path, orbitlist[j], img_block, line, sample, xlat, xlon, xrms); // for each csv row == label info
-
-
-
+                    // printf("*** C: preparing input files for: %d, %d, %d, %d, %d, %f, %f, %f\n", path, orbitlist[j], img_block, line, sample, xlat, xlon, xrms); // for each csv row == label info
                     /* --------------------------------------------------------------------------------------------------- */
                     /* now try to find MISR pixels that each ATM point roughness falls into it and then sum all roughness values */
 
