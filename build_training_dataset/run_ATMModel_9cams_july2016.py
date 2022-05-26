@@ -25,7 +25,7 @@ masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/july_2016/masked_to
 
 
 # if not used, turn this option off in C.code
-cloud_masked_dir = atm_dir  #"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"  
+cloud_masked_dir = atm_dir  			#"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"  
 
 
 

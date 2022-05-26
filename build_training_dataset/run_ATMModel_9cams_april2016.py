@@ -19,13 +19,14 @@ from platform import python_version
 atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/ATM_IceBridge_ILATM2_V002"
 
 
+
 # path to directory that includes 9 camera directories: An/Ca/Cf/Ba/Bf/Da/Df
-masked_toa_refl_home = "??????"
+masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46"
 
 
 
 # if not used, turn this option off in C.code
-cloud_masked_dir = atm_dir  #"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"  
+cloud_masked_dir = atm_dir  			#"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"  
 
 
 

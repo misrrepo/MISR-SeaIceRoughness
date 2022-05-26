@@ -8,6 +8,8 @@ usage: labels MISR pixels w/ATM roughness data
 2- finds date from each ATM file, finds k=-+1 day MISR images (yesterday, today, tomorrow), finds the corresponding pixel in each MISR image, updates dataset 
 3- outputs atmmodel
 
+26/May/2022
+note: modified to include any camera even if one was missing, does not continue to next file if on camera was missing 
 */
 
 #include <stdio.h>
@@ -583,103 +585,115 @@ int main(int argc, char *argv[]) {
 
                     // printf("checking masked-toa-refl.dat for path: %d, orbit: %d, block: %d\n", path, orbitlist[j], img_block);
                     
-
+                    //*************************************************
                     // note: here we should consider band names as file name tag (red, green, blue, NIR) that comes from masked.c code- later add g, b , nir
-
+                    // note: do not continue if one cameras was missing
                     // 1- preparing An camera
                     sprintf(toa_an_red_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    
                     // check if file is accessible 
-                    if (access(toa_an_red_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_red_masked_fullpath);
-                        continue; 
-                    }
+                    // if (access(toa_an_red_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_red_masked_fullpath);
+                    //     continue; 
+                    // }
 
                     // 10- preparing An-green camera
                     sprintf(toa_an_green_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_green.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    
                     // check if file is accessible 
-                    if (access(toa_an_green_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_green_masked_fullpath);
-                        continue; 
-                    }
+                    // if (access(toa_an_green_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_green_masked_fullpath);
+                    //     continue; 
+                    // }
 
                     // 11- preparing An-blue camera
                     sprintf(toa_an_blue_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_blue.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    
                     // check if file is accessible 
-                    if (access(toa_an_blue_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_blue_masked_fullpath);
-                        continue; 
-                    }
+                    // if (access(toa_an_blue_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_blue_masked_fullpath);
+                    //     continue; 
+                    // }
 
                     // 12- preparing An-nir camera
                     sprintf(toa_an_NIR_masked_fullpath, "%s/An/masked_toa_refl_P%03d_O%06d_B%03d_an_NIR.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    
                     // check if file is accessible 
-                    if (access(toa_an_NIR_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_NIR_masked_fullpath);
-                        continue; 
-                    }
+                    // if (access(toa_an_NIR_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_an_NIR_masked_fullpath);
+                    //     continue; 
+                    // }
 
 
                     // 2- preparing Cf camera
                     sprintf(toa_cf_red_masked_fullpath, "%s/Cf/masked_toa_refl_P%03d_O%06d_B%03d_cf_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    
                     // printf("toa cf: %s\n" , toa_cf_masked_fullpath);
                     // check if file is accessible 
-                    if (access(toa_cf_red_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_cf_red_masked_fullpath);
-                        continue; // check if file is accessiblem
-                    }
+                    // if (access(toa_cf_red_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_cf_red_masked_fullpath);
+                    //     continue; // check if file is accessiblem
+                    // }
 
                     // 3- preparing Ca camera
                     sprintf(toa_ca_red_masked_fullpath, "%s/Ca/masked_toa_refl_P%03d_O%06d_B%03d_ca_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
+                    
                     // printf("toa ca: %s\n" , toa_ca_masked_fullpath);
                     // check if file is accessible 
-                    if (access(toa_ca_red_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ca_red_masked_fullpath);
-                        continue; // check if file is accessiblem
-                    }
+                    // if (access(toa_ca_red_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ca_red_masked_fullpath);
+                    //     continue; // check if file is accessiblem
+                    // }
 
                     // add all other cameras here**********************
 
                     // 4- preparing Af camera
                     sprintf(toa_af_red_masked_fullpath, "%s/Af/masked_toa_refl_P%03d_O%06d_B%03d_af_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_af_red_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_af_red_masked_fullpath);
-                        continue; 
-                    }
+                    
+                    // if (access(toa_af_red_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_af_red_masked_fullpath);
+                    //     continue; 
+                    // }
 
                     // 5- preparing Aa camera
                     sprintf(toa_aa_red_masked_fullpath, "%s/Aa/masked_toa_refl_P%03d_O%06d_B%03d_aa_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_aa_red_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_aa_red_masked_fullpath);
-                        continue; 
-                    }
+                    
+                    // if (access(toa_aa_red_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_aa_red_masked_fullpath);
+                    //     continue; 
+                    // }
 
                     // 6- preparing Bf camera
                     sprintf(toa_bf_red_masked_fullpath, "%s/Bf/masked_toa_refl_P%03d_O%06d_B%03d_bf_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_bf_red_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_bf_red_masked_fullpath);
-                        continue; 
-                    }
+                    
+                    // if (access(toa_bf_red_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_bf_red_masked_fullpath);
+                    //     continue; 
+                    // }
 
                     // 7- preparing Ba camera
                     sprintf(toa_ba_red_masked_fullpath, "%s/Ba/masked_toa_refl_P%03d_O%06d_B%03d_ba_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_ba_red_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ba_red_masked_fullpath);
-                        continue; 
-                    }
+                    
+                    // if (access(toa_ba_red_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_ba_red_masked_fullpath);
+                    //     continue; 
+                    // }
 
                     // 8- preparing Df camera
                     sprintf(toa_df_red_masked_fullpath, "%s/Df/masked_toa_refl_P%03d_O%06d_B%03d_df_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_df_red_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_df_red_masked_fullpath);
-                        continue; 
-                    }
+                    
+                    // if (access(toa_df_red_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_df_red_masked_fullpath);
+                    //     continue; 
+                    // }
 
                     // 9- preparing Da camera
                     sprintf(toa_da_red_masked_fullpath, "%s/Da/masked_toa_refl_P%03d_O%06d_B%03d_da_red.dat", masked_toa_refl_home, path, orbitlist[j], img_block);
-                    if (access(toa_da_red_masked_fullpath, F_OK) == -1){
-                        // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_da_red_masked_fullpath);
-                        continue; 
-                    }
+                    
+                    // if (access(toa_da_red_masked_fullpath, F_OK) == -1){
+                    //     // printf("WARNING: input NOT exist: continue to next ATM row: toa-an: %s\n" , toa_da_red_masked_fullpath);
+                    //     continue; 
+                    // }
 
 
 
