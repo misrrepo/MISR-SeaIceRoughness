@@ -16,11 +16,11 @@ from platform import python_version
 # inputs
 
 # files in this directory should be all atm files listed there in one single directory 
-atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data/ATM_IceBridge_ILATM2_V002"
+atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016"
 
 
 # path to directory that includes 9 camera directories: An/Ca/Cf/Ba/Bf/Da/Df
-masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_files/test_atmmodel_with9cams/masked_toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46"
+masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_july_2016_9cam4bands_day10_25_p1_233_b1_46"
 
 
 
@@ -30,8 +30,8 @@ cloud_masked_dir = atm_dir  #"/data/gpfs/assoc/misr_roughness/2016/july_2016/clo
 
 
 # output 
-out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/hdf_files/test_atmmodel_with9cams/atmmodel"
-atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_9cams_test_p90_o86889.csv"
+out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel"
+atmmodel_csvfile_label = "atmmodel_july_2016_k_zero_9cams4bands.csv"
 
 
 # exe dir
