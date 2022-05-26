@@ -264,7 +264,7 @@ int main(int argc, char *argv[]) {
     int path;
     int atm_files_list_index = 0;
     int misr_nfiles = 0;
-    int atm_DS_row = 0;
+    int training_DS_row_in_mem = 0;
     int i, j, k_misr_date, ATM_DStruct_row, n, w;
     int img_block;
     int previous_atm_in_pixel;
@@ -525,8 +525,7 @@ int main(int argc, char *argv[]) {
 
               
 
-                    while (token != NULL) 
-                    { // parse line w/o # until we get to the last word in a line
+                    while (token != NULL){ // parse line w/o # until we get to the last word in a line
                         if (w == 1) xlat = atof(token); // ATM lat
                         if (w == 2) xlon = atof(token); // ATM lon
                         if (w == 6) xrms = atof(token); // roughness = target/label (in centemeters)
@@ -537,8 +536,7 @@ int main(int argc, char *argv[]) {
 
                     // printf("xcam= %d \n" , xcam);
 
-                    if (xcam != 0) 
-                    { // if not ATM nadir; because we only use nadier camera from ATM
+                    if (xcam != 0){ // if not ATM nadir; because we only use nadier camera from ATM
                         // printf("xcam (%d) not nadier (!0), skipping this ATM sample/row.\n" , xcam);
                         atm_row_num++;
                         continue; // to read next ATM row
@@ -551,8 +549,7 @@ int main(int argc, char *argv[]) {
                     
                     status = MtkLatLonToBls(path, 275, xlat, xlon, &img_block, &fline, &fsample); // try to find an image pixel for an ATM point
                     
-                    if (status != MTK_SUCCESS) 
-                    {
+                    if (status != MTK_SUCCESS){
                         // printf("WARNING-1: (Mtk-LatLonToBls) could not find a MISR image&pixel for ATM point @ path= %d, xlat= %f, xlon= %f \n", path, xlat, xlon);
 
                         if (img_block == -1) 
@@ -733,14 +730,14 @@ int main(int argc, char *argv[]) {
                         a switch to check if every new ATM point falls inside a previous pixel, reset to zero for every new entry=ATM line */
                     previous_atm_in_pixel = 0; 
 
-                    if (atm_DS_row == 0){
+                    if (training_DS_row_in_mem == 0){
                         // 1st allocate mem- for each row of csv file
                         training_dataset_dataStruct = (atm_dtype*) malloc(sizeof(atm_dtype));
                     }
-                    else{      /* for 2nd atm_DS_row and the rest */
-                        
+                    else{      
+                        /* for 2nd training_DS_row_in_mem and the rest */
                         ATM_DStruct_row = 0; // counter of variables/row in training_dataset_dataStruct 
-                        while ((ATM_DStruct_row < atm_DS_row) && !previous_atm_in_pixel) { // checks new ATM point with previous rows in dataset= all n points inside training_dataset_dataStruct until pixel is found
+                        while ((ATM_DStruct_row < training_DS_row_in_mem) && !previous_atm_in_pixel) { // checks new ATM point with previous rows in dataset= all n points inside training_dataset_dataStruct until pixel is found
 
                             /* first check if there are previous ATM points inside MISR pixel so that we average new value w/ previous values
                                 we compare new MISR path,img_block,line,sample (associated with ATM point/row) with every n point available in fileObj;
@@ -762,7 +759,7 @@ int main(int argc, char *argv[]) {
                             we allocate memory for the new point in training_dataset_dataStruct, basically training_dataset_dataStruct grows a row  */
                         if (!previous_atm_in_pixel){ // here we check !0==1 as a condition
                             // printf("need to add a row in training_dataset_dataStruct for new ATM point! \n");
-                            training_dataset_dataStruct = (atm_dtype*) realloc(training_dataset_dataStruct, (atm_DS_row + 1) * sizeof(atm_dtype));
+                            training_dataset_dataStruct = (atm_dtype*) realloc(training_dataset_dataStruct, (training_DS_row_in_mem + 1) * sizeof(atm_dtype));
                         }
                     }
 
@@ -777,15 +774,15 @@ int main(int argc, char *argv[]) {
                     if (!previous_atm_in_pixel){ /* if we could not find any MISR pixel associated with ATM point ==  previous_atm_in_pixel=0 */
                         
                         printf("c: FOUND a new ATM point (row/sample), will add it to training_dataset_dataStruct now...\n");
-                        training_dataset_dataStruct[atm_DS_row].path = path;
-                        training_dataset_dataStruct[atm_DS_row].orbit = orbitlist[j];
-                        training_dataset_dataStruct[atm_DS_row].img_block = img_block;
-                        training_dataset_dataStruct[atm_DS_row].line = line;
-                        training_dataset_dataStruct[atm_DS_row].sample = sample;
-                        training_dataset_dataStruct[atm_DS_row].lat = xlat;
-                        training_dataset_dataStruct[atm_DS_row].lon = xlon;
-                        training_dataset_dataStruct[atm_DS_row].weight = weight;
-                        training_dataset_dataStruct[atm_DS_row].cloud = -1; // Q- how to interpret it? is filling value?
+                        training_dataset_dataStruct[training_DS_row_in_mem].path = path;
+                        training_dataset_dataStruct[training_DS_row_in_mem].orbit = orbitlist[j];
+                        training_dataset_dataStruct[training_DS_row_in_mem].img_block = img_block;
+                        training_dataset_dataStruct[training_DS_row_in_mem].line = line;
+                        training_dataset_dataStruct[training_DS_row_in_mem].sample = sample;
+                        training_dataset_dataStruct[training_DS_row_in_mem].lat = xlat;
+                        training_dataset_dataStruct[training_DS_row_in_mem].lon = xlon;
+                        training_dataset_dataStruct[training_DS_row_in_mem].weight = weight;
+                        training_dataset_dataStruct[training_DS_row_in_mem].cloud = -1; // Q- how to interpret it? is filling value?
 
 
                         // printf("using AN file: %s\n", toa_an_masked_fullpath);
@@ -816,40 +813,40 @@ int main(int argc, char *argv[]) {
 
                             if (cm == 1){  // E: clear pixel, so we turn off cloud parameter
                                 // printf("c: clear pixel (cm=1) \n");
-                                training_dataset_dataStruct[atm_DS_row].cloud = 0; // we turn off cloud == no cloud
+                                training_dataset_dataStruct[training_DS_row_in_mem].cloud = 0; // we turn off cloud == no cloud
                             }
                             else if (cm == 0){  // cloudy pixel, so we turn on cloud
                             
                                 // printf("c: cloudy pixel (cm=0) \n");
-                                // if (cm == CMASKED) training_dataset_dataStruct[atm_DS_row].cloud = 1; // E: turn on cloud
-                                training_dataset_dataStruct[atm_DS_row].cloud = 1; // E: turn on cloud == there is cloud, what is CMASKED?
+                                // if (cm == CMASKED) training_dataset_dataStruct[training_DS_row_in_mem].cloud = 1; // E: turn on cloud
+                                training_dataset_dataStruct[training_DS_row_in_mem].cloud = 1; // E: turn on cloud == there is cloud, what is CMASKED?
                             }
                             else{ // we have filled value from cloudmask.c code that I set to -9, so we set that pixel as noValue. we do not have any other value expect 0 and 1
                             
-                                training_dataset_dataStruct[atm_DS_row].cloud = -1; // fill value
+                                training_dataset_dataStruct[training_DS_row_in_mem].cloud = -1; // fill value
                             }
                         }
 
                         // add all 9 cameras + 4 bands to training dataset here
-                        training_dataset_dataStruct[atm_DS_row].anr = anr;
-                        training_dataset_dataStruct[atm_DS_row].ang = ang;
-                        training_dataset_dataStruct[atm_DS_row].anb = anb;
-                        training_dataset_dataStruct[atm_DS_row].annir = annir;
-                        training_dataset_dataStruct[atm_DS_row].ca = ca;
-                        training_dataset_dataStruct[atm_DS_row].cf = cf;
-                        training_dataset_dataStruct[atm_DS_row].aa = aa;
-                        training_dataset_dataStruct[atm_DS_row].af = af;
-                        training_dataset_dataStruct[atm_DS_row].ba = ba;
-                        training_dataset_dataStruct[atm_DS_row].bf = bf;
-                        training_dataset_dataStruct[atm_DS_row].da = da;
-                        training_dataset_dataStruct[atm_DS_row].df = df;
+                        training_dataset_dataStruct[training_DS_row_in_mem].anr = anr;
+                        training_dataset_dataStruct[training_DS_row_in_mem].ang = ang;
+                        training_dataset_dataStruct[training_DS_row_in_mem].anb = anb;
+                        training_dataset_dataStruct[training_DS_row_in_mem].annir = annir;
+                        training_dataset_dataStruct[training_DS_row_in_mem].ca = ca;
+                        training_dataset_dataStruct[training_DS_row_in_mem].cf = cf;
+                        training_dataset_dataStruct[training_DS_row_in_mem].aa = aa;
+                        training_dataset_dataStruct[training_DS_row_in_mem].af = af;
+                        training_dataset_dataStruct[training_DS_row_in_mem].ba = ba;
+                        training_dataset_dataStruct[training_DS_row_in_mem].bf = bf;
+                        training_dataset_dataStruct[training_DS_row_in_mem].da = da;
+                        training_dataset_dataStruct[training_DS_row_in_mem].df = df;
                         // rest of data fields here
-                        training_dataset_dataStruct[atm_DS_row].npts = weight;
-                        training_dataset_dataStruct[atm_DS_row].rms = weight * xrms;
-                        training_dataset_dataStruct[atm_DS_row].var = weight * xrms * xrms;
+                        training_dataset_dataStruct[training_DS_row_in_mem].npts = weight;
+                        training_dataset_dataStruct[training_DS_row_in_mem].rms = weight * xrms;
+                        training_dataset_dataStruct[training_DS_row_in_mem].var = weight * xrms * xrms;
 
-                        atm_DS_row++ ; // increment for every fileObj element
-                        //printf("atm_DS_row updates.........................\n");
+                        training_DS_row_in_mem++ ; // increment for every fileObj element
+                        printf("training dataset row in memory updates: %d\n", training_DS_row_in_mem);
                     }
 
                     atm_row_num++; // new while iteration
@@ -886,7 +883,7 @@ int main(int argc, char *argv[]) {
     }
 
     printf("\nwriting data into output file... \n");
-    printf("\nnumber of variables/rows in training_dataset_dataStruct= %d after checking all ATM files, k days, orbits.\n", atm_DS_row);
+    printf("\nnumber of variables/rows in training_dataset_dataStruct= %d after checking all ATM files, k days, orbits.\n", training_DS_row_in_mem);
     
     cloud_pts = 0;
     nocloud_pts = 0;
@@ -902,7 +899,7 @@ int main(int argc, char *argv[]) {
     fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, anr, ang, anb, annir, aa, af, ba, bf, ca, cf, da, df, rms, weight, npts, cloud, var\n"); 
     // printf("check seg fault-4 \n");
 
-    for (n = 0; n < atm_DS_row; n++) 
+    for (n = 0; n < training_DS_row_in_mem; n++) 
     {  // num of points= the MISR pixels that ATM found for them == size of elements in training_dataset_dataStruct
         
         training_dataset_dataStruct[n].rms /= training_dataset_dataStruct[n].npts; // average weighted roughness // Q- training_dataset_dataStruct is for each what? pixel? or
@@ -1019,10 +1016,10 @@ int main(int argc, char *argv[]) {
 
     //fclose(fp);
     fclose(filePtr);
-    avg_rms /= atm_DS_row; // Q- why?
+    avg_rms /= training_DS_row_in_mem; // Q- why?
     avg_valid_rms /= natm_valid;
     printf("********************************************************\n");
-    printf("Number of Total ATM rms points = %d\n", atm_DS_row);
+    printf("Number of Total ATM rms points = %d\n", training_DS_row_in_mem);
     printf("Number of Valid ATM rms points = %d\n", natm_valid);
     printf("Number of Valid ATM rms with weight of 1.0 (ATM overpass today) = %d\n", natm_valid - natm_half_weight);
     printf("Number of Valid ATM rms with weight of 0.5 (ATM overpass yesterday/tomorrow) = %d\n", natm_half_weight);
