@@ -773,7 +773,7 @@ int main(int argc, char *argv[]) {
                     /* we run this because the new ATM xlat/xlon was not found in previous MISR pixels and we will add it as new dataPoint row to training_dataset_dataStruct */
                     if (!previous_atm_in_pixel){ /* if we could not find any MISR pixel associated with ATM point ==  previous_atm_in_pixel=0 */
                         
-                        printf("FOUND a new ATM point (row/sample), will add it to training_dataset_dataStruct now...\n");
+                        // printf("FOUND a new ATM point (row/sample), will add it to training_dataset_dataStruct now...\n");
                         training_dataset_dataStruct[training_DS_row_in_mem].path = path;
                         training_dataset_dataStruct[training_DS_row_in_mem].orbit = orbitlist[j];
                         training_dataset_dataStruct[training_DS_row_in_mem].img_block = img_block;
@@ -846,7 +846,7 @@ int main(int argc, char *argv[]) {
                         training_dataset_dataStruct[training_DS_row_in_mem].var = weight * xrms * xrms;
 
                         training_DS_row_in_mem++ ; // increment for every fileObj element
-                        printf("training dataset row in memory updates: %d\n", training_DS_row_in_mem);
+                        printf("training dataset row in memory updates: %d\n", training_DS_row_in_mem); // similar to: "FOUND a new ATM point (row/sample), will add it to training_dataset_dataStruct now...\n"
                     }
 
                     atm_row_num++; // new while iteration
