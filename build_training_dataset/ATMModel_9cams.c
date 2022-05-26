@@ -709,7 +709,7 @@ int main(int argc, char *argv[]) {
                         // check if file is accessible 
                         if (access(cloudmask_fname_fullpath, F_OK) != 0) 
                         {
-                            printf("C: cloudMask NOT exist: %s\n", cloudmask_fname_fullpath);
+                            printf("cloudMask NOT exist: %s\n", cloudmask_fname_fullpath);
                             // continue; // check if file is accessible
                             // cloudMask_run_stat = 0;
                         }
@@ -773,7 +773,7 @@ int main(int argc, char *argv[]) {
                     /* we run this because the new ATM xlat/xlon was not found in previous MISR pixels and we will add it as new dataPoint row to training_dataset_dataStruct */
                     if (!previous_atm_in_pixel){ /* if we could not find any MISR pixel associated with ATM point ==  previous_atm_in_pixel=0 */
                         
-                        printf("c: FOUND a new ATM point (row/sample), will add it to training_dataset_dataStruct now...\n");
+                        printf("FOUND a new ATM point (row/sample), will add it to training_dataset_dataStruct now...\n");
                         training_dataset_dataStruct[training_DS_row_in_mem].path = path;
                         training_dataset_dataStruct[training_DS_row_in_mem].orbit = orbitlist[j];
                         training_dataset_dataStruct[training_DS_row_in_mem].img_block = img_block;
