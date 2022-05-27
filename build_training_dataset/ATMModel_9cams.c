@@ -877,13 +877,12 @@ int main(int argc, char *argv[]){
        printf("ERROR: Could not open atmmodel_csvfile. Either dirPath or output file has problem. Exiting.\n" );
        exit(1);
     } 
-    else 
-    {
-        printf("\natmmodel_csvfile (output) file opened successfully! \n");
+    else{
+        printf("atmmodel_csvfile (output) file opened successfully! \n");
     }
 
-    printf("\nwriting data into output file... \n");
-    printf("\nnumber of variables/rows in trainingDS_dataStruct= %d after checking all ATM files, k days, orbits.\n", training_DS_row_in_mem);
+    printf("writing data into output file... \n");
+    printf("number of final rows in training dataset (dataStruct)= %d after checking all ATM files, k days, orbits.\n", training_DS_row_in_mem);
     
     cloud_pts = 0;
     nocloud_pts = 0;
