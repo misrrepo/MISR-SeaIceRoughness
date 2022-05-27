@@ -1020,6 +1020,7 @@ int main(int argc, char *argv[]){
     }
 
 
+    fprintf(filePtr, "the end of calculations \n");
 
     // // flush the buffer memory
     // fflush(filePtr);
