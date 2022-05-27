@@ -740,7 +740,7 @@ int main(int argc, char *argv[]){
                     }
                     else{      
                         /* for 2nd training_DS_row_in_mem and the rest */
-                        ATM_DStruct_row = 0; // counter of variables/row in trainingDS_dataStruct 
+                        ATM_DStruct_row = 0; // counter of row in trainingDS_dataStruct 
                         while ((ATM_DStruct_row < training_DS_row_in_mem) && !previous_atm_in_pixel) { // checks new ATM point with previous rows in dataset= all n points inside trainingDS_dataStruct until pixel is found
 
                             /* first check if there are previous ATM points inside MISR pixel so that we average new value w/ previous values
@@ -1020,7 +1020,7 @@ int main(int argc, char *argv[]){
     }
 
 
-    fprintf(filePtr, "the end of calculations \n");
+    // fprintf(filePtr, "the end of calculations \n");
 
     // // flush the buffer memory
     // fflush(filePtr);
