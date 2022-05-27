@@ -978,7 +978,7 @@ int main(int argc, char *argv[]){
             // (file-print-format) == pointer to atmmodel_csvfile file- writes trainingDS_dataStruct to a file on disc
             fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf \n", trainingDS_dataStruct[n].path, trainingDS_dataStruct[n].orbit, trainingDS_dataStruct[n].img_block, trainingDS_dataStruct[n].line, trainingDS_dataStruct[n].sample, trainingDS_dataStruct[n].lat, trainingDS_dataStruct[n].lon, trainingDS_dataStruct[n].anr, trainingDS_dataStruct[n].ang, trainingDS_dataStruct[n].anb, trainingDS_dataStruct[n].annir, trainingDS_dataStruct[n].aa, trainingDS_dataStruct[n].af, trainingDS_dataStruct[n].ba, trainingDS_dataStruct[n].bf, trainingDS_dataStruct[n].ca, trainingDS_dataStruct[n].cf, trainingDS_dataStruct[n].da, trainingDS_dataStruct[n].df, trainingDS_dataStruct[n].rms, trainingDS_dataStruct[n].weight, trainingDS_dataStruct[n].npts, trainingDS_dataStruct[n].cloud, trainingDS_dataStruct[n].var); // 24 columns 
             // flush the memory buffer 
-            printf("flush the memory buffer here\n");
+            // printf("flush the memory buffer here\n");
             fflush(filePtr);
 
             // printf("check seg fault-2 \n");

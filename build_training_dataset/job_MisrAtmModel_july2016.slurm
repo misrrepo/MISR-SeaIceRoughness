@@ -7,7 +7,7 @@
 
 #SBATCH --ntasks=1							# Set one task per node
 #SBATCH --cpus-per-task=1   				# Select one core
-#SBATCH --mem-per-cpu=12000M        			# Allocate 3.5GB of memory per core
+#SBATCH --mem-per-cpu=20000M        			# Allocate 3.5GB of memory per core
 
 #SBATCH --time=14-00:00						# Set max. run time; format: D-HH:MM
 #SBATCH --hint=compute_bound				# Allocate all resources on a core (2threaded cpus)
