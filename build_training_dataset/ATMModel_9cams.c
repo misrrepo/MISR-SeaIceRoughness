@@ -476,8 +476,12 @@ int main(int argc, char *argv[]){
                 // ATM: create full path of each ATM file(i)
                 sprintf(atm_fname_fullpath, "%s/%s", atm_dir, atm_file_list[i]); // i: index of each atm.csv file in list
 
+                //******************************************
+                // OPEN EACH ROW OF ATM.csv FILE
+
                 fp = fopen(atm_fname_fullpath, "r"); // create stream = fp for ATM file == open ATM file
                 if (!fp){
+
                     fprintf(stderr, "main: couldn't open ATM file: %s \n", atm_fname_fullpath);
                     return 1;
                 }
@@ -852,7 +856,7 @@ int main(int argc, char *argv[]){
                     atm_row_num++; // new while iteration
                 }
 
-                fclose(fp); // fp = ATM file closed //printf("*** close csv and go to next orbit\n");
+                fclose(fp); // fp = pointer to each ATM file closed 
 
             }   // for each orbit num
         }
@@ -1004,7 +1008,7 @@ int main(int argc, char *argv[]){
 
             // flush the memory buffer 
             // printf("flush the memory buffer here\n");
-            fflush(filePtr);
+            // fflush(filePtr);
 
             // printf("check seg fault-2 \n");
 
@@ -1017,16 +1021,17 @@ int main(int argc, char *argv[]){
 
 
 
-    // //close memory assigned to training dataset
-    // printf("free memory assigned to training dataset here\n");
-    // free(trainingDS_dataStruct); 
-
     // // flush the buffer memory
     // fflush(filePtr);
 
     //fclose(fp);
     printf("closing the atmmodel file pointer to flush the buffer to disk\n"); 
     fclose(filePtr); // close pointer to atmmodel.csv 
+
+
+    // // //close memory assigned to training dataset
+    // printf("free memory assigned to training dataset here\n");
+    free(trainingDS_dataStruct); 
     
 
     avg_rms /= training_DS_row_in_mem; // Q- why?
