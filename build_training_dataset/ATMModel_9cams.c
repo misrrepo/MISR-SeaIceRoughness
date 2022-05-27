@@ -50,7 +50,9 @@ typedef struct {
     float weight;
     int8_t cloud; // E: maybe change to int8? cuz range={-1,0,1}
     double var;
-} atm_dtype; atm_dtype* training_dataset_dataStruct;
+} atm_dtype; 
+// define instance of struct
+atm_dtype* training_dataset_dataStruct;
 
 
 MTKt_status status;
@@ -972,32 +974,7 @@ int main(int argc, char *argv[]) {
 
 
             // (file-print-format) == pointer to atmmodel_csvfile file- writes training_dataset_dataStruct to a file on disc
-            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf \n", 
-                    training_dataset_dataStruct[n].path, 
-                    training_dataset_dataStruct[n].orbit, 
-                    training_dataset_dataStruct[n].img_block, 
-                    training_dataset_dataStruct[n].line, 
-                    training_dataset_dataStruct[n].sample, 
-                    training_dataset_dataStruct[n].lat, 
-                    training_dataset_dataStruct[n].lon, 
-                    // add all 9 cameras here
-                    training_dataset_dataStruct[n].anr, 
-                    training_dataset_dataStruct[n].ang, 
-                    training_dataset_dataStruct[n].anb, 
-                    training_dataset_dataStruct[n].annir, 
-                    training_dataset_dataStruct[n].aa, 
-                    training_dataset_dataStruct[n].af, 
-                    training_dataset_dataStruct[n].ba, 
-                    training_dataset_dataStruct[n].bf, 
-                    training_dataset_dataStruct[n].ca, 
-                    training_dataset_dataStruct[n].cf, 
-                    training_dataset_dataStruct[n].da, 
-                    training_dataset_dataStruct[n].df, 
-                    training_dataset_dataStruct[n].rms, 
-                    training_dataset_dataStruct[n].weight, 
-                    training_dataset_dataStruct[n].npts, 
-                    training_dataset_dataStruct[n].cloud, 
-                    training_dataset_dataStruct[n].var); // 24 columns 
+            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf \n", training_dataset_dataStruct[n].path, training_dataset_dataStruct[n].orbit, training_dataset_dataStruct[n].img_block, training_dataset_dataStruct[n].line, training_dataset_dataStruct[n].sample, training_dataset_dataStruct[n].lat, training_dataset_dataStruct[n].lon, training_dataset_dataStruct[n].anr, training_dataset_dataStruct[n].ang, training_dataset_dataStruct[n].anb, training_dataset_dataStruct[n].annir, training_dataset_dataStruct[n].aa, training_dataset_dataStruct[n].af, training_dataset_dataStruct[n].ba, training_dataset_dataStruct[n].bf, training_dataset_dataStruct[n].ca, training_dataset_dataStruct[n].cf, training_dataset_dataStruct[n].da, training_dataset_dataStruct[n].df, training_dataset_dataStruct[n].rms, training_dataset_dataStruct[n].weight, training_dataset_dataStruct[n].npts, training_dataset_dataStruct[n].cloud, training_dataset_dataStruct[n].var); // 24 columns 
 
             // printf("check seg fault-2 \n");
 
