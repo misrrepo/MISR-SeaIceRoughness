@@ -972,7 +972,7 @@ int main(int argc, char *argv[]) {
 
 
             // (file-print-format) == pointer to atmmodel_csvfile file- writes training_dataset_dataStruct to a file on disc
-            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
+            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf \n", 
                     training_dataset_dataStruct[n].path, 
                     training_dataset_dataStruct[n].orbit, 
                     training_dataset_dataStruct[n].img_block, 
@@ -1007,6 +1007,7 @@ int main(int argc, char *argv[]) {
             weight_x = training_dataset_dataStruct[n].weight;
         }
     }
+
 
 
     // close memory assigned to training dataset
