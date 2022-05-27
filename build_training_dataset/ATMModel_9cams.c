@@ -995,7 +995,7 @@ int main(int argc, char *argv[]){
 
 
     //fclose(fp);
-    printf("closing pointer to file: atmmodel.csv")
+    printf("closing pointer to file: atmmodel.csv");
     fclose(filePtr); // close pointer to atmmodel.csv 
     
 
