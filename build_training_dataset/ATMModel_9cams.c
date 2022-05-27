@@ -1013,7 +1013,7 @@ int main(int argc, char *argv[]) {
     fclose(filePtr); // close pointer to atmmodel.csv 
     
     // close memory assigned to training dataset
-    printf("free memory assigned to training dataset\n");
+    printf("free memory assigned to training dataset here\n");
     free(training_dataset_dataStruct); 
 
 
