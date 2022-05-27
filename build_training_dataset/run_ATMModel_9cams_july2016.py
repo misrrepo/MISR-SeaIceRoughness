@@ -61,14 +61,14 @@ def main():
 ########################################################################################################################
 def run_from_cmd(exe_fp, atm, maskedTOA, cm, atmmodel):
 
-	#~~ run the C-cmd program
+	# run the C-cmd program
 	print(" ");
 	print('python: "Usage: <exe-name> <ATM-dir> <maskedTOA-dir> <cloudMask-dir> <atmmodelCSV-file>')
 	cmd = (' %s %s %s %s %s' %(exe_fp, atm, maskedTOA, cm, atmmodel));
 	print('to cmd= %s \n' %cmd)	# run the cmd command.
-	#~~ run the cmd command
+	# run the cmd command
 	return_value_of_cmd = call(cmd, shell=True);
-	#~~ print('return value= %s' %return_value_of_cmd)
+	# print('return value= %s' %return_value_of_cmd)
 	print("\n******************************************\n")	# this line represents a signal from python that shows we go to next iteration inside python without any cmd ERROR
 	if (return_value_of_cmd != 0):
 		print('ERROR: either %s program path NOT set in path, or issue from C-code. *** Exiting' %exe_fp)

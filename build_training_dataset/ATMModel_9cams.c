@@ -220,7 +220,7 @@ int main(int argc, char *argv[]) {
     printf("ATM-dir: %s \n", atm_dir);
     printf("maskedTOA-dir: %s \n" , masked_toa_refl_home);
     printf("cloudMask-dir: %s \n" , cloud_masked_dir);
-    printf("atmmodel-csvfilem: %s \n" , atmmodel_csvfile);
+    printf("atmmodel_csvfile_name: %s \n" , atmmodel_csvfile);
 
     //------------------------------------------------------------------------------------------------------------------
     DIR *dirp;
@@ -868,8 +868,7 @@ int main(int argc, char *argv[]) {
     filePtr = fopen(atmmodel_csvfile, "w"); // create and open a csv file to write into it; return the ptr
     // printf("%p" , &filePtr);
     // I added here to check opening of csv file.
-    if (filePtr == NULL) 
-    {
+    if (filePtr == NULL){
        printf("ERROR: Could not open atmmodel_csvfile. Either dirPath or output file has problem. Exiting.\n" );
        exit(1);
     } 
@@ -1009,13 +1008,15 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    //fclose(fp);
-    fclose(filePtr); // close pointer to atmmodel.csv 
-    
+
     // close memory assigned to training dataset
     // printf("free memory assigned to training dataset here\n");
     // free(training_dataset_dataStruct); 
 
+
+    //fclose(fp);
+    fclose(filePtr); // close pointer to atmmodel.csv 
+    
 
     avg_rms /= training_DS_row_in_mem; // Q- why?
     avg_valid_rms /= natm_valid;
