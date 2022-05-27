@@ -846,7 +846,7 @@ int main(int argc, char *argv[]){
                         trainingDS_dataStruct[training_DS_row_in_mem].var = weight * xrms * xrms;
 
                         training_DS_row_in_mem++ ; // increment for every fileObj element
-                        // printf("training dataset row in memory updates: %d\n", training_DS_row_in_mem); // similar to: "FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n"
+                        printf("training dataset row in memory updates: %d\n", training_DS_row_in_mem); // similar to: "FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n"
                     }
 
                     atm_row_num++; // new while iteration
@@ -860,6 +860,7 @@ int main(int argc, char *argv[]){
 
 
     /* end- read all available ATM file from the list we made in the past section */
+
 
 
     // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
