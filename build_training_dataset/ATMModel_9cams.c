@@ -994,7 +994,7 @@ int main(int argc, char *argv[]){
     // free(trainingDS_dataStruct); 
 
     // flush the buffer memory
-    // fflush(filePtr);
+    fflush(filePtr);
 
     //fclose(fp);
     printf("closing the atmmodel file pointer to flush the buffer to disk\n"); 
