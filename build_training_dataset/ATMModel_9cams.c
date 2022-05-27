@@ -1005,7 +1005,7 @@ int main(int argc, char *argv[]){
 
             // flush the memory buffer 
             // printf("flush the memory buffer here\n");
-            // fflush(filePtr);
+            fflush(filePtr);
 
             // printf("check seg fault-2 \n");
 
@@ -1026,8 +1026,8 @@ int main(int argc, char *argv[]){
     // fflush(filePtr);
 
     //fclose(fp);
-    // printf("closing the atmmodel file pointer to flush the buffer to disk\n"); 
-    // fclose(filePtr); // close pointer to atmmodel.csv 
+    printf("closing the atmmodel file pointer to flush the buffer to disk\n"); 
+    fclose(filePtr); // close pointer to atmmodel.csv 
     
 
     avg_rms /= training_DS_row_in_mem; // Q- why?
@@ -1046,8 +1046,6 @@ int main(int argc, char *argv[]){
     printf("Number of nocloud points = %d\n", nocloud_pts);
     printf("Number of missing cloud mask pts = %d\n", misscloud_pts);
 
-    printf("closing the atmmodel file pointer to flush the buffer to disk\n"); 
-    fclose(filePtr); // close pointer to atmmodel.csv 
 
     printf("\n***** FINISHED SUCCESSFULLY!***** \n\n");
 
