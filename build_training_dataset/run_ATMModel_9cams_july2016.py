@@ -16,7 +16,8 @@ from platform import python_version
 # inputs
 
 # files in this directory should be all atm files listed there in one single directory 
-atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016"
+atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016/test_atmmodel"
+
 
 
 # path to directory that includes 9 camera directories: An/Ca/Cf/Ba/Bf/Da/Df
