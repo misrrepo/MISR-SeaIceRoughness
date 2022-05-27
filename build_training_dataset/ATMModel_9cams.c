@@ -739,7 +739,8 @@ int main(int argc, char *argv[]){
                         trainingDS_dataStruct = (atm_dtype*) malloc(sizeof(atm_dtype));
                     }
                     else{      
-                        /* for 2nd total_trainingDS_row_in_mem and the rest */
+                        /* check in existing dataset for similar atm point
+                            for 2nd total_trainingDS_row_in_mem and the rest */
                         available_ds_row_index = 0; // counter of row in trainingDS_dataStruct 
                         while ((available_ds_row_index < total_trainingDS_row_in_mem) && !atm_point_in_pixel_key) { // checks new ATM point with previous rows in dataset= all n points inside trainingDS_dataStruct until pixel is found
 
@@ -872,6 +873,7 @@ int main(int argc, char *argv[]){
 
     // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     printf("\n************************* preparing output file *************************\n\n");
+    // q- what happens here that reduces the rows?
 
     double max_npts = -1e23;
     double max_rms = -1e23;
@@ -885,7 +887,7 @@ int main(int argc, char *argv[]){
        exit(1);
     } 
     else{
-        printf("atmmodel_csvfile (output) file opened successfully! \n");
+        printf("atmmodel_csvfile (our output) file opened successfully! \n");
     }
 
     printf("writing data into output file... \n");
@@ -903,17 +905,17 @@ int main(int argc, char *argv[]){
 
     // write this line as the header/1st line of output file    
     fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, anr, ang, anb, annir, aa, af, ba, bf, ca, cf, da, df, rms, weight, npts, cloud, var\n"); 
-    // printf("check seg fault-4 \n");
 
-    for (n = 0; n < total_trainingDS_row_in_mem; n++){  // num of points= the MISR pixels that ATM found for them == size of elements in trainingDS_dataStruct
+    // q- what happens here that reduces the rows?
+    for (n = 0; n < total_trainingDS_row_in_mem; n++){  // for each row in training dataste- size of rows in trainingDS_dataStruct == num of points= the MISR pixels that ATM found for them 
         
-        trainingDS_dataStruct[n].rms /= trainingDS_dataStruct[n].npts; // average weighted roughness // Q- trainingDS_dataStruct is for each what? pixel? or
+        trainingDS_dataStruct[n].rms /= trainingDS_dataStruct[n].npts; // average weighted roughness // Q- trainingDS_dataStruct is for each MISR pixel? 
         trainingDS_dataStruct[n].var = sqrt(trainingDS_dataStruct[n].var / trainingDS_dataStruct[n].npts - trainingDS_dataStruct[n].rms * trainingDS_dataStruct[n].rms);
 
         if (trainingDS_dataStruct[n].anr > 0){ // Q- why an camera is checked? can camera be negative? surf refl > 0
         
-            natm_valid++; // increment
-            avg_valid_rms += trainingDS_dataStruct[n].rms; // sum roughness of every valid pixel/element; Q- wby we vheck valid refl value?
+            natm_valid++; // increment- valid==number of pixels with anr > 0
+            avg_valid_rms += trainingDS_dataStruct[n].rms; // total roughness of every valid pixel/element; Q- wby we vheck valid refl value?
             if (trainingDS_dataStruct[n].rms > max_rms) max_rms = trainingDS_dataStruct[n].rms; // Q- can roughness be negative? and minus? // set the max roughness value
             if (trainingDS_dataStruct[n].rms < min_rms) min_rms = trainingDS_dataStruct[n].rms; // set min roughness value
             if (trainingDS_dataStruct[n].weight == 0.5) natm_half_weight++;
@@ -926,8 +928,7 @@ int main(int argc, char *argv[]){
         //fprintf(fp, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf\n", trainingDS_dataStruct[n].path, trainingDS_dataStruct[n].orbit, trainingDS_dataStruct[n].img_block, trainingDS_dataStruct[n].line, trainingDS_dataStruct[n].sample, trainingDS_dataStruct[n].lat, trainingDS_dataStruct[n].lon, trainingDS_dataStruct[n].an, trainingDS_dataStruct[n].ca, trainingDS_dataStruct[n].cf, trainingDS_dataStruct[n].rms, trainingDS_dataStruct[n].weight, trainingDS_dataStruct[n].npts);
         
         /* E: why check this condition? for cloudy? */
-        if ((trainingDS_dataStruct[n].cloud == 0) || 
-            (trainingDS_dataStruct[n].cloud == 1) || 
+        if ((trainingDS_dataStruct[n].cloud == 0) || (trainingDS_dataStruct[n].cloud == 1) || 
             ((trainingDS_dataStruct[n].cloud == -1) && (trainingDS_dataStruct[n].anr > 0) && (trainingDS_dataStruct[n].ca > 0) && (trainingDS_dataStruct[n].cf > 0))) {
         
             if (orbit_x == 0){ // Q-why zero?
