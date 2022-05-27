@@ -50,7 +50,8 @@ typedef struct {
     float weight;
     int8_t cloud; // E: maybe change to int8? cuz range={-1,0,1}
     double var;
-} atm_dtype; 
+} atm_dtype;
+
 // define instance of struct
 atm_dtype* training_dataset_dataStruct;
 
@@ -172,7 +173,7 @@ char *strsub(char* s, char *a, char* b)
 
 // int main(char argc, char *argv[]) { // Ehsan: retured error, so changed to int
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]){
 
     // DIR *dirp;
     // FILE *fp, *filePtr;
@@ -987,9 +988,9 @@ int main(int argc, char *argv[]) {
 
 
 
-    // close memory assigned to training dataset
-    // printf("free memory assigned to training dataset here\n");
-    // free(training_dataset_dataStruct); 
+    //close memory assigned to training dataset
+    printf("free memory assigned to training dataset here\n");
+    free(training_dataset_dataStruct); 
 
 
     //fclose(fp);
