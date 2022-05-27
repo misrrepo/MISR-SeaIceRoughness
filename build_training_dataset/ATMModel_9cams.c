@@ -993,9 +993,11 @@ int main(int argc, char *argv[]){
     // printf("free memory assigned to training dataset here\n");
     // free(trainingDS_dataStruct); 
 
+    // flush the buffer memory
+    // fflush(filePtr);
 
     //fclose(fp);
-    printf("closing pointer to file: atmmodel.csv");
+    printf("closing the atmmodel file pointer to flush the buffer to disk\n"); 
     fclose(filePtr); // close pointer to atmmodel.csv 
     
 
