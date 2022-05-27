@@ -268,10 +268,10 @@ int main(int argc, char *argv[]){
     int path;
     int atm_files_list_index = 0;
     int misr_nfiles = 0;
-    int training_DS_row_in_mem = 0;
-    int i, j, k_misr_date, ATM_DStruct_row, n, w;
+    int total_trainingDS_row_in_mem = 0;
+    int i, j, k_misr_date, available_ds_row_index, n, w;
     int img_block;
-    int previous_atm_in_pixel;
+    int atm_point_in_pixel_key;
     int natm_half_weight = 0;
     int natm_valid = 0;
     //int monthday[12][31] = {0};
@@ -732,38 +732,38 @@ int main(int argc, char *argv[]){
 
                     /* we assume there is not any previous ATM points in MISR pixel, 
                         a switch to check if every new ATM point falls inside a previous pixel, reset to zero for every new entry=ATM line */
-                    previous_atm_in_pixel = 0; 
+                    atm_point_in_pixel_key = 0; // to turn on&off
 
-                    if (training_DS_row_in_mem == 0){
+                    if (total_trainingDS_row_in_mem == 0){
                         // 1st allocate mem- for each row of csv file
                         trainingDS_dataStruct = (atm_dtype*) malloc(sizeof(atm_dtype));
                     }
                     else{      
-                        /* for 2nd training_DS_row_in_mem and the rest */
-                        ATM_DStruct_row = 0; // counter of row in trainingDS_dataStruct 
-                        while ((ATM_DStruct_row < training_DS_row_in_mem) && !previous_atm_in_pixel) { // checks new ATM point with previous rows in dataset= all n points inside trainingDS_dataStruct until pixel is found
+                        /* for 2nd total_trainingDS_row_in_mem and the rest */
+                        available_ds_row_index = 0; // counter of row in trainingDS_dataStruct 
+                        while ((available_ds_row_index < total_trainingDS_row_in_mem) && !atm_point_in_pixel_key) { // checks new ATM point with previous rows in dataset= all n points inside trainingDS_dataStruct until pixel is found
 
                             /* first check if there are previous ATM points inside MISR pixel so that we average new value w/ previous values
                                 we compare new MISR path,img_block,line,sample (associated with ATM point/row) with every n point available in fileObj;
                                 if even one similar MISR pixel was found, we will sum & update useful ATM info: rms, npts, and var to previous pixel values in fileObj */
-                            if ((trainingDS_dataStruct[ATM_DStruct_row].path == path) && (trainingDS_dataStruct[ATM_DStruct_row].img_block == img_block) && (trainingDS_dataStruct[ATM_DStruct_row].line == line) && (trainingDS_dataStruct[ATM_DStruct_row].sample == sample) && (trainingDS_dataStruct[ATM_DStruct_row].weight == weight)){   // Q- what is this condition? why check to be the same? in same day in same pixel????
+                            if ((trainingDS_dataStruct[available_ds_row_index].path == path) && (trainingDS_dataStruct[available_ds_row_index].img_block == img_block) && (trainingDS_dataStruct[available_ds_row_index].line == line) && (trainingDS_dataStruct[available_ds_row_index].sample == sample) && (trainingDS_dataStruct[available_ds_row_index].weight == weight)){   // Q- what is this condition? why check to be the same? in same day in same pixel????
                                 
                                 // printf("c: FOUND previous ATM points in a MISR pixel: summing with previous ATM values ...\n");
                                 //printf(">>> FOUND: ATM in MISR pixel >>> day: (%d), path: (%d), img_block: (%d), line: (%d), sample: (%d)\n\n", k, path, img_block, line, sample);
-                                trainingDS_dataStruct[ATM_DStruct_row].rms += weight * xrms; // sum of weighted ATM roughness in the same pixel?
-                                trainingDS_dataStruct[ATM_DStruct_row].npts += weight; // sum of num of points in the same pixel?
-                                trainingDS_dataStruct[ATM_DStruct_row].var += weight * xrms * xrms; // sum of what???? variance?
-                                previous_atm_in_pixel = 1; // when we find the first ATM point in pixel == turns on here == 1 and skip while-loop
+                                trainingDS_dataStruct[available_ds_row_index].rms += weight * xrms; // sum of weighted ATM roughness in the same pixel?
+                                trainingDS_dataStruct[available_ds_row_index].npts += weight; // sum of num of points in the same pixel?
+                                trainingDS_dataStruct[available_ds_row_index].var += weight * xrms * xrms; // sum of what???? variance?
+                                atm_point_in_pixel_key = 1; // turn on the key- when we find the first ATM point in pixel == turns on here == 1 and skip while-loop
                             }
                             
-                            ATM_DStruct_row++ ; // iterate to next point in file Obj
+                            available_ds_row_index++ ; // iterate to next point in file Obj
                         }
 
                         /* if ATM point was the first point in that MISR pixel (not found in previous MISR pixels so far) 
                             we allocate memory for the new point in trainingDS_dataStruct, basically trainingDS_dataStruct grows a row  */
-                        if (!previous_atm_in_pixel){ // here we check !0==1 as a condition
+                        if (!atm_point_in_pixel_key){ // if key is still off- here we check if the key is still off- here we check !0(being off)==1(valid) as a condition
                             // printf("need to add a row in trainingDS_dataStruct for new ATM point! \n");
-                            trainingDS_dataStruct = (atm_dtype*) realloc(trainingDS_dataStruct, (training_DS_row_in_mem + 1) * sizeof(atm_dtype));
+                            trainingDS_dataStruct = (atm_dtype*) realloc(trainingDS_dataStruct, (total_trainingDS_row_in_mem + 1) * sizeof(atm_dtype));
                         }
                     }
 
@@ -774,19 +774,22 @@ int main(int argc, char *argv[]){
                         return 0;
                     }
 
-                    /* we run this because the new ATM xlat/xlon was not found in previous MISR pixels and we will add it as new dataPoint row to trainingDS_dataStruct */
-                    if (!previous_atm_in_pixel){ /* if we could not find any MISR pixel associated with ATM point ==  previous_atm_in_pixel=0 */
+                    /* this code block runs first
+                            we run this because the new ATM location (xlat/xlon) was not found in previous MISR pixels 
+                            and we will add it as a new dataPoint row to trainingDS_dataStruct 
+                            this will be the first row entry to the datastructure in memory */
+                    if (!atm_point_in_pixel_key){ /* if key is still off==we could not find any ATM point in MISR pixel ==  atm_point_in_pixel_key=0 */
                         
                         // printf("FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n");
-                        trainingDS_dataStruct[training_DS_row_in_mem].path = path;
-                        trainingDS_dataStruct[training_DS_row_in_mem].orbit = orbitlist[j];
-                        trainingDS_dataStruct[training_DS_row_in_mem].img_block = img_block;
-                        trainingDS_dataStruct[training_DS_row_in_mem].line = line;
-                        trainingDS_dataStruct[training_DS_row_in_mem].sample = sample;
-                        trainingDS_dataStruct[training_DS_row_in_mem].lat = xlat;
-                        trainingDS_dataStruct[training_DS_row_in_mem].lon = xlon;
-                        trainingDS_dataStruct[training_DS_row_in_mem].weight = weight;
-                        trainingDS_dataStruct[training_DS_row_in_mem].cloud = -1; // Q- how to interpret it? is filling value?
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].path = path;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].orbit = orbitlist[j];
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].img_block = img_block;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].line = line;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].sample = sample;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].lat = xlat;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].lon = xlon;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].weight = weight;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = -1; // Q- how to interpret it? is filling value?
 
 
                         // printf("using AN file: %s\n", toa_an_masked_fullpath);
@@ -817,40 +820,40 @@ int main(int argc, char *argv[]){
 
                             if (cm == 1){  // E: clear pixel, so we turn off cloud parameter
                                 // printf("c: clear pixel (cm=1) \n");
-                                trainingDS_dataStruct[training_DS_row_in_mem].cloud = 0; // we turn off cloud == no cloud
+                                trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = 0; // we turn off cloud == no cloud
                             }
                             else if (cm == 0){  // cloudy pixel, so we turn on cloud
                             
                                 // printf("c: cloudy pixel (cm=0) \n");
-                                // if (cm == CMASKED) trainingDS_dataStruct[training_DS_row_in_mem].cloud = 1; // E: turn on cloud
-                                trainingDS_dataStruct[training_DS_row_in_mem].cloud = 1; // E: turn on cloud == there is cloud, what is CMASKED?
+                                // if (cm == CMASKED) trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = 1; // E: turn on cloud
+                                trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = 1; // E: turn on cloud == there is cloud, what is CMASKED?
                             }
                             else{ // we have filled value from cloudmask.c code that I set to -9, so we set that pixel as noValue. we do not have any other value expect 0 and 1
                             
-                                trainingDS_dataStruct[training_DS_row_in_mem].cloud = -1; // fill value
+                                trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = -1; // fill value
                             }
                         }
 
                         // add all 9 cameras + 4 bands to training dataset here
-                        trainingDS_dataStruct[training_DS_row_in_mem].anr = anr;
-                        trainingDS_dataStruct[training_DS_row_in_mem].ang = ang;
-                        trainingDS_dataStruct[training_DS_row_in_mem].anb = anb;
-                        trainingDS_dataStruct[training_DS_row_in_mem].annir = annir;
-                        trainingDS_dataStruct[training_DS_row_in_mem].ca = ca;
-                        trainingDS_dataStruct[training_DS_row_in_mem].cf = cf;
-                        trainingDS_dataStruct[training_DS_row_in_mem].aa = aa;
-                        trainingDS_dataStruct[training_DS_row_in_mem].af = af;
-                        trainingDS_dataStruct[training_DS_row_in_mem].ba = ba;
-                        trainingDS_dataStruct[training_DS_row_in_mem].bf = bf;
-                        trainingDS_dataStruct[training_DS_row_in_mem].da = da;
-                        trainingDS_dataStruct[training_DS_row_in_mem].df = df;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].anr = anr;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].ang = ang;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].anb = anb;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].annir = annir;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].ca = ca;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].cf = cf;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].aa = aa;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].af = af;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].ba = ba;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].bf = bf;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].da = da;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].df = df;
                         // rest of data fields here
-                        trainingDS_dataStruct[training_DS_row_in_mem].npts = weight;
-                        trainingDS_dataStruct[training_DS_row_in_mem].rms = weight * xrms;
-                        trainingDS_dataStruct[training_DS_row_in_mem].var = weight * xrms * xrms;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].npts = weight;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].rms = weight * xrms;
+                        trainingDS_dataStruct[total_trainingDS_row_in_mem].var = weight * xrms * xrms;
 
-                        training_DS_row_in_mem++ ; // increment for every fileObj element
-                        // printf("training dataset row in memory updates: %d\n", training_DS_row_in_mem); // similar to: "FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n"
+                        total_trainingDS_row_in_mem++ ; // increment for every fileObj element
+                        // printf("training dataset row in memory updates: %d\n", total_trainingDS_row_in_mem); // similar to: "FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n"
                     }
 
                     atm_row_num++; // new while iteration
@@ -886,7 +889,7 @@ int main(int argc, char *argv[]){
     }
 
     printf("writing data into output file... \n");
-    printf("number of final rows in training dataset (dataStruct)= %d after checking all ATM files, k days, orbits.\n", training_DS_row_in_mem);
+    printf("total rows in training dataset (in-mem dataStruct)= %d after checking all ATM files, k days, orbits.\n", total_trainingDS_row_in_mem);
     
     cloud_pts = 0;
     nocloud_pts = 0;
@@ -902,14 +905,13 @@ int main(int argc, char *argv[]){
     fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, anr, ang, anb, annir, aa, af, ba, bf, ca, cf, da, df, rms, weight, npts, cloud, var\n"); 
     // printf("check seg fault-4 \n");
 
-    for (n = 0; n < training_DS_row_in_mem; n++){  // num of points= the MISR pixels that ATM found for them == size of elements in trainingDS_dataStruct
+    for (n = 0; n < total_trainingDS_row_in_mem; n++){  // num of points= the MISR pixels that ATM found for them == size of elements in trainingDS_dataStruct
         
         trainingDS_dataStruct[n].rms /= trainingDS_dataStruct[n].npts; // average weighted roughness // Q- trainingDS_dataStruct is for each what? pixel? or
         trainingDS_dataStruct[n].var = sqrt(trainingDS_dataStruct[n].var / trainingDS_dataStruct[n].npts - trainingDS_dataStruct[n].rms * trainingDS_dataStruct[n].rms);
 
-        if (trainingDS_dataStruct[n].anr > 0) // Q- why an camera is checked? can camera be negative? surf refl > 0
-        {    
-            
+        if (trainingDS_dataStruct[n].anr > 0){ // Q- why an camera is checked? can camera be negative? surf refl > 0
+        
             natm_valid++; // increment
             avg_valid_rms += trainingDS_dataStruct[n].rms; // sum roughness of every valid pixel/element; Q- wby we vheck valid refl value?
             if (trainingDS_dataStruct[n].rms > max_rms) max_rms = trainingDS_dataStruct[n].rms; // Q- can roughness be negative? and minus? // set the max roughness value
@@ -928,8 +930,7 @@ int main(int argc, char *argv[]){
             (trainingDS_dataStruct[n].cloud == 1) || 
             ((trainingDS_dataStruct[n].cloud == -1) && (trainingDS_dataStruct[n].anr > 0) && (trainingDS_dataStruct[n].ca > 0) && (trainingDS_dataStruct[n].cf > 0))) {
         
-            if (orbit_x == 0) 
-            { // Q-why zero?
+            if (orbit_x == 0){ // Q-why zero?
                 // printf("path, orbit, img_block, weight, cloud, nocloud, misscloud, orbit_x= %d\n", orbit_x);
                 // printf("orbit_x= %d\n", orbit_x);
             }
@@ -937,7 +938,7 @@ int main(int argc, char *argv[]){
             int atm_orbit = trainingDS_dataStruct[n].orbit;
             // printf("atm_orbit= %d \n" , atm_orbit);
 
-            if (atm_orbit != orbit_x) { // if atm_orbit not zero, GO
+            if (atm_orbit != orbit_x){ // if atm_orbit not zero, GO
 
                 // printf("atm_orbit= %d, orbit_x= %d \n" , atm_orbit, orbit_x);
 
@@ -962,18 +963,15 @@ int main(int argc, char *argv[]){
 
 
             // setup cloud variable            
-            if (trainingDS_dataStruct[n].cloud == 0) 
-            { // E: no-cloud pixel, cloud var is off==0 based before, count nocloud pixels
+            if (trainingDS_dataStruct[n].cloud == 0){ // E: no-cloud pixel, cloud var is off==0 based before, count nocloud pixels
                 nocloud_pts += 1;
                 nocloud_x += 1;
             }
-            if (trainingDS_dataStruct[n].cloud == 1) 
-            { // E: cloudy pixel, cloud var is on==1, count cloudy pixels
+            if (trainingDS_dataStruct[n].cloud == 1){ // E: cloudy pixel, cloud var is on==1, count cloudy pixels
                 cloud_pts += 1;
                 cloud_x += 1;
             }
-            if (trainingDS_dataStruct[n].cloud == -1) 
-            { // miss-cloud == case with no CloudMask pixels, and also filling values
+            if (trainingDS_dataStruct[n].cloud == -1){ // miss-cloud == case with no CloudMask pixels, and also filling values
                 misscloud_pts += 1;
                 misscloud_x += 1;
             }
@@ -1019,8 +1017,8 @@ int main(int argc, char *argv[]){
         }
     }
 
-
-    // fprintf(filePtr, "the end of calculations \n");
+    // comment at the end of the file
+    fprintf(filePtr, "the end of calculations \n");
 
     // // flush the buffer memory
     // fflush(filePtr);
@@ -1035,11 +1033,11 @@ int main(int argc, char *argv[]){
     free(trainingDS_dataStruct); 
     
 
-    avg_rms /= training_DS_row_in_mem; // Q- why?
+    avg_rms /= total_trainingDS_row_in_mem; // Q- why?
     avg_valid_rms /= natm_valid;
     printf("********************************************************\n");
-    printf("Number of Total ATM rms points = %d\n", training_DS_row_in_mem);
-    printf("Number of Valid ATM rms points = %d\n", natm_valid);
+    printf("Number of Total ATM rms points = %d\n", total_trainingDS_row_in_mem);
+    printf("Number of Valid ATM rms points = %d\n", natm_valid); // valid???
     printf("Number of Valid ATM rms with weight of 1.0 (ATM overpass today) = %d\n", natm_valid - natm_half_weight);
     printf("Number of Valid ATM rms with weight of 0.5 (ATM overpass yesterday/tomorrow) = %d\n", natm_half_weight);
     printf("Total Average rms = %lf from max_npts= %lf\n", avg_rms, max_npts);
