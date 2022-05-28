@@ -881,6 +881,7 @@ int main(int argc, char *argv[]){
     double max_npts = -1e23;
     double max_rms = -1e23;
     double min_rms = 1e23;
+
     //fp = fopen(atmfile, "w");
     filePtr = fopen(atmmodel_csvfile, "w"); // create and open a csv file to write into it; returns the ptr
     // printf("%p" , &filePtr);
@@ -913,7 +914,7 @@ int main(int argc, char *argv[]){
     //***************************************************************************************
     for (n = 0; n < total_trainingDS_row_in_mem; n++){  // for each row in training dataste- size of rows in trainingDS_dataStruct == num of points= the MISR pixels that ATM found for them 
         
-        trainingDS_dataStruct[n].rms /= trainingDS_dataStruct[n].npts; // average weighted roughness // Q- trainingDS_dataStruct is for each MISR pixel? 
+        trainingDS_dataStruct[n].rms /= trainingDS_dataStruct[n].npts; // to calculate averaged weighted roughness from total rms falling inside each MISR pixel
         trainingDS_dataStruct[n].var = sqrt(trainingDS_dataStruct[n].var / trainingDS_dataStruct[n].npts - trainingDS_dataStruct[n].rms * trainingDS_dataStruct[n].rms);
 
         if (trainingDS_dataStruct[n].anr > 0){ // Q- why an camera is checked? can camera be negative? surf refl > 0
@@ -929,134 +930,81 @@ int main(int argc, char *argv[]){
 
         if (trainingDS_dataStruct[n].npts > max_npts) max_npts = trainingDS_dataStruct[n].npts; // collect num of points
 
+        // old:
         //fprintf(fp, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf\n", trainingDS_dataStruct[n].path, trainingDS_dataStruct[n].orbit, trainingDS_dataStruct[n].img_block, trainingDS_dataStruct[n].line, trainingDS_dataStruct[n].sample, trainingDS_dataStruct[n].lat, trainingDS_dataStruct[n].lon, trainingDS_dataStruct[n].an, trainingDS_dataStruct[n].ca, trainingDS_dataStruct[n].cf, trainingDS_dataStruct[n].rms, trainingDS_dataStruct[n].weight, trainingDS_dataStruct[n].npts);
         
-        /* E: why check this condition? for cloudy? */
+        /* E: why check this condition? for cloudy? */ // Ehsan turned off 
         // if ((trainingDS_dataStruct[n].cloud == 0) || (trainingDS_dataStruct[n].cloud == 1) || 
         //     ((trainingDS_dataStruct[n].cloud == -1) && (trainingDS_dataStruct[n].anr > 0) && (trainingDS_dataStruct[n].ca > 0) && (trainingDS_dataStruct[n].cf > 0))) {
-        
-        if ((trainingDS_dataStruct[n].cloud == 0) || (trainingDS_dataStruct[n].cloud == 1) || 
-            ((trainingDS_dataStruct[n].cloud == -1) && (trainingDS_dataStruct[n].anr > 0))){
-        
 
-            if (orbit_x == 0){ // Q-why zero?
-                // printf("path, orbit, img_block, weight, cloud, nocloud, misscloud, orbit_x= %d\n", orbit_x);
-                // printf("orbit_x= %d\n", orbit_x);
-            }
+        //**************************** useless! turned off ****************************
+        // if (orbit_x == 0){ // Q-why zero?
+        //     // printf("path, orbit, img_block, weight, cloud, nocloud, misscloud, orbit_x= %d\n", orbit_x);
+        //     // printf("orbit_x= %d\n", orbit_x);
+        // }
 
-            int atm_orbit = trainingDS_dataStruct[n].orbit;
-            // printf("atm_orbit= %d \n" , atm_orbit);
+        // int misr_orbit = trainingDS_dataStruct[n].orbit;  
+        // printf("misr_orbit= %d \n" , misr_orbit);
 
-            if (atm_orbit != orbit_x){ // if atm_orbit not zero, GO
+        // if (misr_orbit != orbit_x){ // if misr_orbit not zero, GO- Ehsan: useless! turned off
+        //     path_x = trainingDS_dataStruct[n].path;
+        //     // printf("path_x 3: %d \n" , path_x);
 
-                // printf("atm_orbit= %d, orbit_x= %d \n" , atm_orbit, orbit_x);
-
-
-                // printf("path_x 1: %d \n" , path_x);
-                // printf("\n%d, %d, %d, %lf, %d, %d, %d\n", path_x, orbit_x, block_x, weight_x, cloud_x, nocloud_x, misscloud_x); // Q- whats x?
-                // printf("path_x 2: %d \n" , path_x);
-
-
-                path_x = trainingDS_dataStruct[n].path;
-                // printf("path_x 3: %d \n" , path_x);
-
-                orbit_x = trainingDS_dataStruct[n].orbit;
-                block_x = trainingDS_dataStruct[n].img_block;
-                weight_x = trainingDS_dataStruct[n].weight;
-                cloud_x = 0;
-                nocloud_x = 0;
-                misscloud_x = 0;
-            }
-
-            // printf("path_x 4: %d \n" , path_x);
+        //     // orbit_x = trainingDS_dataStruct[n].orbit;
+        //     // block_x = trainingDS_dataStruct[n].img_block;
+        //     // weight_x = trainingDS_dataStruct[n].weight;
+        //     // cloud_x = 0;
+        //     // nocloud_x = 0;
+        //     // misscloud_x = 0;
+        // }
+        //**************************** useless! turned off ****************************
 
 
-            // setup cloud variable            
-            if (trainingDS_dataStruct[n].cloud == 0){ // E: no-cloud pixel, cloud var is off==0 based before, count nocloud pixels
-                nocloud_pts += 1;
-                nocloud_x += 1;
-            }
-            if (trainingDS_dataStruct[n].cloud == 1){ // E: cloudy pixel, cloud var is on==1, count cloudy pixels
-                cloud_pts += 1;
-                cloud_x += 1;
-            }
-            if (trainingDS_dataStruct[n].cloud == -1){ // miss-cloud == case with no CloudMask pixels, and also filling values
-                misscloud_pts += 1;
-                misscloud_x += 1;
-            }
-
-
-            
-            // printf("printtofile: %d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
-            //     trainingDS_dataStruct[n].path, 
-            //     trainingDS_dataStruct[n].orbit, 
-            //     trainingDS_dataStruct[n].img_block, 
-            //     trainingDS_dataStruct[n].line, 
-            //     trainingDS_dataStruct[n].sample, 
-            //     trainingDS_dataStruct[n].lat, 
-            //     trainingDS_dataStruct[n].lon, 
-            //     trainingDS_dataStruct[n].anr, 
-            //     trainingDS_dataStruct[n].ang, 
-            //     trainingDS_dataStruct[n].anb, 
-            //     trainingDS_dataStruct[n].annir, 
-            //     trainingDS_dataStruct[n].aa, 
-            //     trainingDS_dataStruct[n].af, 
-            //     trainingDS_dataStruct[n].ba, 
-            //     trainingDS_dataStruct[n].bf, 
-            //     trainingDS_dataStruct[n].ca, 
-            //     trainingDS_dataStruct[n].cf, 
-            //     trainingDS_dataStruct[n].da, 
-            //     trainingDS_dataStruct[n].df, 
-            //     trainingDS_dataStruct[n].rms, 
-            //     trainingDS_dataStruct[n].weight, 
-            //     trainingDS_dataStruct[n].npts, 
-            //     trainingDS_dataStruct[n].cloud, 
-            //     trainingDS_dataStruct[n].var); // 24 columns
-
-
-
-            // (file-print-format) == pointer to atmmodel_csvfile file- writes trainingDS_dataStruct to a file on disc
-            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
-                trainingDS_dataStruct[n].path, 
-                trainingDS_dataStruct[n].orbit, 
-                trainingDS_dataStruct[n].img_block, 
-                trainingDS_dataStruct[n].line, 
-                trainingDS_dataStruct[n].sample, 
-                trainingDS_dataStruct[n].lat, 
-                trainingDS_dataStruct[n].lon, 
-                trainingDS_dataStruct[n].anr, 
-                trainingDS_dataStruct[n].ang, 
-                trainingDS_dataStruct[n].anb, 
-                trainingDS_dataStruct[n].annir, 
-                trainingDS_dataStruct[n].aa, 
-                trainingDS_dataStruct[n].af, 
-                trainingDS_dataStruct[n].ba, 
-                trainingDS_dataStruct[n].bf, 
-                trainingDS_dataStruct[n].ca, 
-                trainingDS_dataStruct[n].cf, 
-                trainingDS_dataStruct[n].da, 
-                trainingDS_dataStruct[n].df, 
-                trainingDS_dataStruct[n].rms, 
-                trainingDS_dataStruct[n].weight, 
-                trainingDS_dataStruct[n].npts, 
-                trainingDS_dataStruct[n].cloud, 
-                trainingDS_dataStruct[n].var); // 24 columns
-
-            // flush the memory buffer 
-            // printf("flush the memory buffer here\n");
-            // fflush(filePtr);
-
-            // printf("check seg fault-2 \n");
-
-            path_x = trainingDS_dataStruct[n].path;
-            orbit_x = trainingDS_dataStruct[n].orbit;
-            block_x = trainingDS_dataStruct[n].img_block;
-            weight_x = trainingDS_dataStruct[n].weight;
+        // setup cloud variable            
+        if (trainingDS_dataStruct[n].cloud == 0){ // E: no-cloud pixel, cloud var is off==0 based before, count nocloud pixels
+            nocloud_pts += 1;
+            // nocloud_x += 1;
         }
+        if (trainingDS_dataStruct[n].cloud == 1){ // E: cloudy pixel, cloud var is on==1, count cloudy pixels
+            cloud_pts += 1;
+            // cloud_x += 1;
+        }
+        if (trainingDS_dataStruct[n].cloud == -1){ // miss-cloud == case with no CloudMask pixels, and also filling values
+            misscloud_pts += 1;
+            // misscloud_x += 1;
+        }
+
+
+        // (file-print-format) == pointer to atmmodel_csvfile file- writes trainingDS_dataStruct to a file on disc
+        fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
+            trainingDS_dataStruct[n].path, 
+            trainingDS_dataStruct[n].orbit, 
+            trainingDS_dataStruct[n].img_block, 
+            trainingDS_dataStruct[n].line, 
+            trainingDS_dataStruct[n].sample, 
+            trainingDS_dataStruct[n].lat, 
+            trainingDS_dataStruct[n].lon, 
+            trainingDS_dataStruct[n].anr, 
+            trainingDS_dataStruct[n].ang, 
+            trainingDS_dataStruct[n].anb, 
+            trainingDS_dataStruct[n].annir, 
+            trainingDS_dataStruct[n].aa, 
+            trainingDS_dataStruct[n].af, 
+            trainingDS_dataStruct[n].ba, 
+            trainingDS_dataStruct[n].bf, 
+            trainingDS_dataStruct[n].ca, 
+            trainingDS_dataStruct[n].cf, 
+            trainingDS_dataStruct[n].da, 
+            trainingDS_dataStruct[n].df, 
+            trainingDS_dataStruct[n].rms, 
+            trainingDS_dataStruct[n].weight, 
+            trainingDS_dataStruct[n].npts, 
+            trainingDS_dataStruct[n].cloud, 
+            trainingDS_dataStruct[n].var); // 24 columns
     }
 
     // comment at the end of the file
-    fprintf(filePtr, "the end of calculations\n");
+    // fprintf(filePtr, "the end of calculations\n");
 
     // // flush the buffer memory
     // fflush(filePtr);
@@ -1075,7 +1023,7 @@ int main(int argc, char *argv[]){
     avg_valid_rms /= natm_valid;
     printf("********************************************************\n");
     printf("Number of Total ATM rms points = %d\n", total_trainingDS_row_in_mem);
-    printf("Number of Valid ATM rms points = %d\n", natm_valid); // valid???
+    printf("Number of Valid (with AN-red positive) ATM rms points = %d\n", natm_valid); // valid???
     printf("Number of Valid ATM rms with weight of 1.0 (ATM overpass today) = %d\n", natm_valid - natm_half_weight);
     printf("Number of Valid ATM rms with weight of 0.5 (ATM overpass yesterday/tomorrow) = %d\n", natm_half_weight);
     printf("Total Average rms = %lf from max_npts= %lf\n", avg_rms, max_npts);
