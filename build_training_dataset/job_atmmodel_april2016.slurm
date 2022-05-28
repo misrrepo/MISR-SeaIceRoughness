@@ -11,8 +11,8 @@
 #SBATCH --hint=compute_bound				# Allocate all resources on a core (2threaded cpus)
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		# Send mail on all stateChanges
-#SBATCH --output=log_atmmodel_april2016.txt   		# The output file name
-#SBATCH --error=log_atmmodel_april2016.txt		 	# The error file name
+#SBATCH --output=log_atmmodel_april2016_test1.txt   		# The output file name
+#SBATCH --error=log_atmmodel_april2016_test1.txt		 	# The error file name
 date
 module list
 echo “MISR job started ...”
