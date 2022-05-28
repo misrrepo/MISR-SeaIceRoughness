@@ -777,12 +777,13 @@ int main(int argc, char *argv[]){
                     }
 
                     //************************************************************************************************
-                     this code block runs first:
+                    /* this code block runs first:
                             we run this because the new ATM location (xlat/xlon) was not found in previous MISR pixels 
                             and we will add it as a new dataPoint row to trainingDS_dataStruct 
-                            this will be the first row entry to the datastructure in memory 
-                    if (!atm_point_in_pixel_key){ /* if key is still off==we could not find any ATM point in MISR pixel ==  atm_point_in_pixel_key=0 */
-                        
+                            this will be the first row entry to the datastructure in memory */
+                    
+                    if (!atm_point_in_pixel_key){ 
+                        //if key is still off==we could not find any ATM point in MISR pixel ==  atm_point_in_pixel_key=0 
                         // printf("FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n");
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].path = path;
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].orbit = orbitlist[j];
