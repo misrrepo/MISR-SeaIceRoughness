@@ -749,8 +749,8 @@ int main(int argc, char *argv[]){
                                 if even one similar MISR pixel was found, we will sum & update useful ATM info: rms, npts, and var to previous pixel values in fileObj */
                             if ((trainingDS_dataStruct[available_ds_row_index].path == path) && (trainingDS_dataStruct[available_ds_row_index].img_block == img_block) && (trainingDS_dataStruct[available_ds_row_index].line == line) && (trainingDS_dataStruct[available_ds_row_index].sample == sample) && (trainingDS_dataStruct[available_ds_row_index].weight == weight)){   // Q- what is this condition? why check to be the same? in same day in same pixel????
                                 
-                                // printf("c: FOUND previous ATM points in a MISR pixel: summing with previous ATM values ...\n");
-                                //printf(">>> FOUND: ATM in MISR pixel >>> day: (%d), path: (%d), img_block: (%d), line: (%d), sample: (%d)\n\n", k, path, img_block, line, sample);
+                                // printf("FOUND previous ATM points in a MISR pixel: summing with previous ATM values ...\n");
+                                //printf("FOUND: ATM in MISR pixel >>> day: (%d), path: (%d), img_block: (%d), line: (%d), sample: (%d)\n\n", k, path, img_block, line, sample);
                                 trainingDS_dataStruct[available_ds_row_index].rms += weight * xrms; // sum of weighted ATM roughness in the same pixel?
                                 trainingDS_dataStruct[available_ds_row_index].npts += weight; // sum of num of points in the same pixel?
                                 trainingDS_dataStruct[available_ds_row_index].var += weight * xrms * xrms; // sum of what???? variance?
@@ -776,13 +776,14 @@ int main(int argc, char *argv[]){
                         return 0;
                     }
 
-                    /* this code block runs first
+                    //************************************************************************************************
+                    /* this code block runs first:
                             we run this because the new ATM location (xlat/xlon) was not found in previous MISR pixels 
                             and we will add it as a new dataPoint row to trainingDS_dataStruct 
                             this will be the first row entry to the datastructure in memory */
                     if (!atm_point_in_pixel_key){ /* if key is still off==we could not find any ATM point in MISR pixel ==  atm_point_in_pixel_key=0 */
                         
-                        // printf("FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n");
+                        printf("FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n");
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].path = path;
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].orbit = orbitlist[j];
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].img_block = img_block;
