@@ -16,7 +16,8 @@ from platform import python_version
 # inputs
 
 # files in this directory should be all atm files listed there in one single directory 
-atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/ATM_IceBridge_ILATM2_V002"
+# atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/ATM_IceBridge_ILATM2_V002"
+atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/test_single_atm_file"
 
 
 
@@ -32,7 +33,7 @@ cloud_masked_dir = atm_dir  			#"/data/gpfs/assoc/misr_roughness/2016/july_2016/
 
 # output 
 out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atmmodel/atmmodel_k_zero"
-atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_9cams4bands.csv"
+atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_9cams4bands_test_singleAtmFile.csv"
 
 
 
