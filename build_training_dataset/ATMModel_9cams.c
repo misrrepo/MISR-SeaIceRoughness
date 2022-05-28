@@ -907,6 +907,7 @@ int main(int argc, char *argv[]){
     fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, anr, ang, anb, annir, aa, af, ba, bf, ca, cf, da, df, rms, weight, npts, cloud, var\n"); 
 
     // q- what happens here that reduces the rows?
+    //***************************************************************************************
     for (n = 0; n < total_trainingDS_row_in_mem; n++){  // for each row in training dataste- size of rows in trainingDS_dataStruct == num of points= the MISR pixels that ATM found for them 
         
         trainingDS_dataStruct[n].rms /= trainingDS_dataStruct[n].npts; // average weighted roughness // Q- trainingDS_dataStruct is for each MISR pixel? 
