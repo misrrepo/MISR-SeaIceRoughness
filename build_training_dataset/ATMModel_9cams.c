@@ -765,13 +765,14 @@ int main(int argc, char *argv[]){
                         if (!atm_point_in_pixel_key){ // if key is still off- here we check if the key is still off- here we check !0(being off)==1(valid) as a condition
                             // printf("need to add a row in trainingDS_dataStruct for new ATM point! \n");
                             trainingDS_dataStruct = (atm_dtype*) realloc(trainingDS_dataStruct, (total_trainingDS_row_in_mem + 1) * sizeof(atm_dtype));
+                            // note: size of buffer is sizeof ptr (trainingDS_dataStruct) * how many ptrs we allocate == how much memory we allocate
                         }
                     }
 
                     /* check if mem- is allocated */
                     if (!trainingDS_dataStruct){
 
-                        fprintf(stderr,  "main: couldn't malloc/realloc trainingDS_dataStruct\n");
+                        fprintf(stderr,  "ERROR in main: couldn't malloc/realloc trainingDS_dataStruct\n");
                         return 0;
                     }
 
@@ -979,8 +980,37 @@ int main(int argc, char *argv[]){
             }
 
 
+            
+            printf("%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
+                trainingDS_dataStruct[n].path, 
+                trainingDS_dataStruct[n].orbit, 
+                trainingDS_dataStruct[n].img_block, 
+                trainingDS_dataStruct[n].line, 
+                trainingDS_dataStruct[n].sample, 
+                trainingDS_dataStruct[n].lat, 
+                trainingDS_dataStruct[n].lon, 
+                trainingDS_dataStruct[n].anr, 
+                trainingDS_dataStruct[n].ang, 
+                trainingDS_dataStruct[n].anb, 
+                trainingDS_dataStruct[n].annir, 
+                trainingDS_dataStruct[n].aa, 
+                trainingDS_dataStruct[n].af, 
+                trainingDS_dataStruct[n].ba, 
+                trainingDS_dataStruct[n].bf, 
+                trainingDS_dataStruct[n].ca, 
+                trainingDS_dataStruct[n].cf, 
+                trainingDS_dataStruct[n].da, 
+                trainingDS_dataStruct[n].df, 
+                trainingDS_dataStruct[n].rms, 
+                trainingDS_dataStruct[n].weight, 
+                trainingDS_dataStruct[n].npts, 
+                trainingDS_dataStruct[n].cloud, 
+                trainingDS_dataStruct[n].var); // 24 columns
+
+
+
             // (file-print-format) == pointer to atmmodel_csvfile file- writes trainingDS_dataStruct to a file on disc
-            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf \n", 
+            fprintf(filePtr, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
                 trainingDS_dataStruct[n].path, 
                 trainingDS_dataStruct[n].orbit, 
                 trainingDS_dataStruct[n].img_block, 
@@ -1008,7 +1038,7 @@ int main(int argc, char *argv[]){
 
             // flush the memory buffer 
             // printf("flush the memory buffer here\n");
-            fflush(filePtr);
+            // fflush(filePtr);
 
             // printf("check seg fault-2 \n");
 
@@ -1020,14 +1050,14 @@ int main(int argc, char *argv[]){
     }
 
     // comment at the end of the file
-    fprintf(filePtr, "the end of calculations \n");
+    fprintf(filePtr, "the end of calculations\n");
 
     // // flush the buffer memory
     // fflush(filePtr);
 
     //fclose(fp);
     printf("closing the atmmodel file pointer to flush the buffer to disk\n"); 
-    fclose(filePtr); // close pointer to atmmodel.csv 
+    fclose(filePtr); // close pointer to atmmodel.csv & flushes/moves the output from buffer(==temporary storage) to disk
 
 
     // // //close memory assigned to training dataset
