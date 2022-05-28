@@ -1008,7 +1008,7 @@ int main(int argc, char *argv[]){
 
             // flush the memory buffer 
             // printf("flush the memory buffer here\n");
-            // fflush(filePtr);
+            fflush(filePtr);
 
             // printf("check seg fault-2 \n");
 
