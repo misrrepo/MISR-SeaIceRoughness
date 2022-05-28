@@ -981,7 +981,7 @@ int main(int argc, char *argv[]){
 
 
             
-            printf("%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
+            printf("printtofile: %d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %d, %lf\n", 
                 trainingDS_dataStruct[n].path, 
                 trainingDS_dataStruct[n].orbit, 
                 trainingDS_dataStruct[n].img_block, 
