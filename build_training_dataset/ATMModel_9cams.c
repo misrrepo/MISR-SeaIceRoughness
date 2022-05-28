@@ -777,13 +777,13 @@ int main(int argc, char *argv[]){
                     }
 
                     //************************************************************************************************
-                    /* this code block runs first:
+                     this code block runs first:
                             we run this because the new ATM location (xlat/xlon) was not found in previous MISR pixels 
                             and we will add it as a new dataPoint row to trainingDS_dataStruct 
-                            this will be the first row entry to the datastructure in memory */
+                            this will be the first row entry to the datastructure in memory 
                     if (!atm_point_in_pixel_key){ /* if key is still off==we could not find any ATM point in MISR pixel ==  atm_point_in_pixel_key=0 */
                         
-                        printf("FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n");
+                        // printf("FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n");
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].path = path;
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].orbit = orbitlist[j];
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].img_block = img_block;
@@ -931,9 +931,13 @@ int main(int argc, char *argv[]){
         //fprintf(fp, "%d, %d, %d, %d, %d, %lf, %lf, %lf, %lf, %lf, %lf, %lf, %lf\n", trainingDS_dataStruct[n].path, trainingDS_dataStruct[n].orbit, trainingDS_dataStruct[n].img_block, trainingDS_dataStruct[n].line, trainingDS_dataStruct[n].sample, trainingDS_dataStruct[n].lat, trainingDS_dataStruct[n].lon, trainingDS_dataStruct[n].an, trainingDS_dataStruct[n].ca, trainingDS_dataStruct[n].cf, trainingDS_dataStruct[n].rms, trainingDS_dataStruct[n].weight, trainingDS_dataStruct[n].npts);
         
         /* E: why check this condition? for cloudy? */
-        if ((trainingDS_dataStruct[n].cloud == 0) || (trainingDS_dataStruct[n].cloud == 1) || 
-            ((trainingDS_dataStruct[n].cloud == -1) && (trainingDS_dataStruct[n].anr > 0) && (trainingDS_dataStruct[n].ca > 0) && (trainingDS_dataStruct[n].cf > 0))) {
+        // if ((trainingDS_dataStruct[n].cloud == 0) || (trainingDS_dataStruct[n].cloud == 1) || 
+        //     ((trainingDS_dataStruct[n].cloud == -1) && (trainingDS_dataStruct[n].anr > 0) && (trainingDS_dataStruct[n].ca > 0) && (trainingDS_dataStruct[n].cf > 0))) {
         
+        if ((trainingDS_dataStruct[n].cloud == 0) || (trainingDS_dataStruct[n].cloud == 1) || 
+            ((trainingDS_dataStruct[n].cloud == -1) && (trainingDS_dataStruct[n].anr > 0))){
+        
+
             if (orbit_x == 0){ // Q-why zero?
                 // printf("path, orbit, img_block, weight, cloud, nocloud, misscloud, orbit_x= %d\n", orbit_x);
                 // printf("orbit_x= %d\n", orbit_x);
