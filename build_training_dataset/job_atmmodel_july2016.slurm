@@ -1,16 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=atm-july2016
-
+#SBATCH --job-name=atmmodel-july2016
 ##SBATCH --account=cpu-s6-test-0 			
 ##SBATCH --partition=cpu-s6-test-0
-
 #SBATCH --account=cpu-s5-misr_roughness-0	# submit to my CPU account
 #SBATCH --partition=cpu-core-0				# Submit job to CPU partition
-
 #SBATCH --ntasks=1							# Set one task per node
 #SBATCH --cpus-per-task=1   				# Select one core
-#SBATCH --mem-per-cpu=3500M        		# Allocate 3.5GB of memory per core
-
+#SBATCH --mem-per-cpu=3500M        			# Allocate 3.5GB of memory per core
 #SBATCH --time=14-00:00						# Set max. run time; format: D-HH:MM
 #SBATCH --hint=compute_bound				# Allocate all resources on a core (2threaded cpus)
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
@@ -20,7 +16,6 @@
 date
 module list
 echo “MISR job started ...”
-## path to python script to run
 python ./run_ATMModel_9cams_july2016.py
 echo “MISR job ended ...”
 date

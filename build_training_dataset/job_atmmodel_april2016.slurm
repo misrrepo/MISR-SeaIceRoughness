@@ -16,8 +16,6 @@
 date
 module list
 echo “MISR job started ...”
-
 python  ./run_ATMModel_9cams_april2016.py
-
 echo “MISR job ended ...”
 date
