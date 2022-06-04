@@ -907,8 +907,8 @@ int main(int argc, char *argv[]){
 
 
 
-    // write this line as the header/1st line of output file    
-    fprintf(filePtr, "#path, orbit, img_block, line, sample, firstLat, firstLon, anr, ang, anb, annir, aa, af, ba, bf, ca, cf, da, df, rms, weight, npts, cloud, var\n"); 
+    // write this line as the header/1st line of output file- note: no space between commas (,,,) in column labels
+    fprintf(filePtr, "path,orbit,img_block,line,sample,firstLat,firstLon,anr,ang,anb,annir,aa,af,ba,bf,ca,cf,da,df,rms,weight,npts,cloud,var\n"); 
 
     // q- what happens here that reduces the rows?
     //***************************************************************************************
