@@ -475,7 +475,7 @@ int readEllipsoidFile(char* fname) // gets the hdf file
 
 
 	////----------------------------------------------------------------------------------------------------------------------------
-	if 		(band == 0) { strcpy(gridName, "BlueBand"); strcpy(fieldName, "Blue Radiance/RDQI"); }
+	if 			(band == 0) { strcpy(gridName, "BlueBand"); strcpy(fieldName, "Blue Radiance/RDQI"); }
 	else if (band == 1) { strcpy(gridName, "GreenBand"); strcpy(fieldName, "Green Radiance/RDQI"); }
 	else if (band == 2) { strcpy(gridName, "RedBand"); strcpy(fieldName, "Red Radiance/RDQI"); }
 	else if (band == 3) { strcpy(gridName, "NIRBand"); strcpy(fieldName, "NIR Radiance/RDQI"); }
