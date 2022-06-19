@@ -368,7 +368,7 @@ int main(int argc, char *argv[]) {
     // line_size = getline(&sline, &slen, fp);
     // printf("line_size ptr: %p \n" , &line_size);
 
-    /* Loop through each line of file until we are done with the file. */
+    /* Loop through each line of (ATM?) file until we are done with the file. */
     // note: returns number of characters read == line_size = getline(&line_buf, &line_buf_size, fp);
     while (getline(&sline, &slen, fp) >= 0) { // note: use getline inside loop; reads each row of atmmodel_csvfile.csv ==> getline(&line_in_buffer, &line_in_buffer_size, fp=input stream to read each line==stdin)
     
@@ -761,12 +761,12 @@ int main(int argc, char *argv[]) {
                     //      ~ATMModel_DataStruct[n].ascend)) || 
                     //      (ascend && (ATMModel_DataStruct[n].block >= 20) && (ATMModel_DataStruct[n].ascend)))  // && == if all 1 then GO
 
-                   if (descend_mode)  // printf("we do this section, without inverting ca/cf cameras. \n");
+                   if (descend_mode)  
                    {
-
+                        printf("we run this block, without inverting ca/cf cameras. \n");
                         /* check w/ Anne - 
                         is it necessary to compute this here? or can take out of the for-loop? 
-                        why they get subtracted from each other?for example: why for AN: (MISR - ATM?) both are MISR TOA refl values! */
+                        why they get subtracted from each other? e.g. why for AN: (MISR - ATM?) both are MISR TOA refl values! */
                         xan = (an_masked_toa[r * nsamples + c] - ATMModel_DataStruct[n].an);
                         xca = (ca_masked_toa[r * nsamples + c] - ATMModel_DataStruct[n].ca); // difference is: unknown/unseen/new data - trainign data 
                         xcf = (cf_masked_toa[r * nsamples + c] - ATMModel_DataStruct[n].cf);
@@ -784,8 +784,8 @@ int main(int argc, char *argv[]) {
                         // printf("xcf= %f \n" , xcf);
                     }
                     else // maybe turn this section off?
-                    {    // is this the correction swection?
-                        printf("check: we do NOT run this section for inverting cameras. \n");
+                    {    // is this the correction section?
+                        printf("we run this block for inverting cameras. \n");
                         xan = (an_masked_toa[r*nsamples + c] - ATMModel_DataStruct[n].an);
                         xca = (cf_masked_toa[r*nsamples + c] - ATMModel_DataStruct[n].ca);
                         xcf = (ca_masked_toa[r*nsamples + c] - ATMModel_DataStruct[n].cf);

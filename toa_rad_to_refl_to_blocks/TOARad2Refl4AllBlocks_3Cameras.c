@@ -399,7 +399,7 @@ int readEllipsoidFile(char* fname) // gets the hdf file
 		return 0;
 		}
 
-	////----------------------------------------- [12/Oct/2021] Ehsan: turned off because we might not need geo-params& solar Azimuth--------------
+	////----------------------------------------- [12/Oct/2021] Ehsan: turned off because we might not need geo-params& solar Azimuth --------------
 
 	// strcpy(gridName, "GeometricParameters"); 
 	// strcpy(fieldName, "SolarZenith");
