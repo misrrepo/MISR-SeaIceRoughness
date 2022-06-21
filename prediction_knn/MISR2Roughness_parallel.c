@@ -686,6 +686,7 @@ void* multithread_task(void* arg_ptr) { // function definitions, q- what part of
 					/* check w/ Anne - 
 					is it necessary to compute this here? or can take out of the for-loop? 
 					why they get subtracted from each other?for example: why for AN: (MISR - ATM?) both are MISR TOA refl values! */
+                    printf("we run this block, without inverting ca/cf cameras. \n");
 					xan = (an_masked_toa[r * nsamples + c] - ATMModel_struct_ptr[n].an);
 					xca = (ca_masked_toa[r * nsamples + c] - ATMModel_struct_ptr[n].ca); // Anne: difference is: unknown/unseen/new data - trainign data 
 					xcf = (cf_masked_toa[r * nsamples + c] - ATMModel_struct_ptr[n].cf);
@@ -704,7 +705,7 @@ void* multithread_task(void* arg_ptr) { // function definitions, q- what part of
 				}
 				else {  // maybe turn this section off?
 					// is this the correction swection?
-					printf("check: we do NOT run this section for inverting cameras. \n");
+                    printf("we run this block for inverting cameras. \n");
 					xan = (an_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].an);
 					xca = (cf_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].ca);
 					xcf = (ca_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].cf);
