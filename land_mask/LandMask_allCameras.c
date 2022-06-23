@@ -291,7 +291,7 @@ int getFileList(char* dir)
 	DIR* dirPtr = opendir(dir); // returns pointer to directory; creates stream; dtype=DIR
 	if (!dirPtr) 
 	{ // if reverse is correct?
-		printf("getFileList: issue with dirPtr; couldn't open %s\n", dir);
+		printf("c: getFileList: issue with dirPtr; couldn't open %s\n", dir);
 		return 0;
 	}
 		
@@ -310,7 +310,7 @@ int getFileList(char* dir)
 
 			if (!misr_file_list) 
 			{
-				printf("getFileList: couldn't malloc misr_file_list \n");
+				printf("c: getFileList: couldn't malloc misr_file_list \n");
 				return 0;
 			}
 		}
@@ -321,7 +321,7 @@ int getFileList(char* dir)
 				misr_file_list = (char **) realloc(misr_file_list, (misr_total_files_found + 1) * sizeof(char *));
 				if (!misr_file_list) 
 				{
-					printf("getFileList: couldn't realloc misr_file_list\n");
+					printf("c: getFileList: couldn't realloc misr_file_list\n");
 					return 0;
 				}
 		}
@@ -330,7 +330,7 @@ int getFileList(char* dir)
 
 		if (!misr_file_list[misr_total_files_found]) 
 		{
-			printf("getFileList: couldn't malloc misr_file_list[misr_total_files_found]\n");
+			printf("c: getFileList: couldn't malloc misr_file_list[misr_total_files_found]\n");
 			return 0;
 		}
 
@@ -409,56 +409,56 @@ int main(int argc, char* argv[])
 		if (camera_mode == 0) // adds this dir to the end of surf file dir
 		{
 			strcpy(cam_name, "/Da/");
-			printf("processing camera dir: %s \n" , cam_name);
+			printf("c: processing camera dir: %s \n" , cam_name);
 			strcat(input_home_dir, "/Da/");
 		} 
 		if (camera_mode == 1) 
 		{
 			strcpy(cam_name, "/Ca/");
-			printf("processing camera dir: %s \n" , cam_name);
+			printf("c: processing camera dir: %s \n" , cam_name);
 			strcat(input_home_dir, "/Ca/");
 		}
 		if (camera_mode == 2) 
 		{
 			strcpy(cam_name, "/Ba/");
-			printf("processing camera dir: %s \n" , cam_name);
+			printf("c: processing camera dir: %s \n" , cam_name);
 			strcat(input_home_dir, "/Ba/");
 		}
 		if (camera_mode == 3) 
 		{
 			strcpy(cam_name, "/Aa/");
-			printf("processing camera dir: %s \n" , cam_name);
+			printf("c: processing camera dir: %s \n" , cam_name);
 			strcat(input_home_dir, "/Aa/");
 		}
 		if (camera_mode == 4) 
 		{
 			strcpy(cam_name, "/An/");
-			printf("processing camera dir: %s \n" , cam_name);
+			printf("c: processing camera dir: %s \n" , cam_name);
 			strcat(input_home_dir, "/An/");
 		}
 		if (camera_mode == 5) 
 		{
 			strcpy(cam_name, "/Af/");
-			printf("processing camera dir: %s \n" , cam_name);
+			printf("c: processing camera dir: %s \n" , cam_name);
 			strcat(input_home_dir, "/Af/");
 		}
 		if (camera_mode == 6) 
 		{
 			strcpy(cam_name, "/Bf/");
-			printf("processing camera dir: %s \n" , cam_name);
+			printf("c: processing camera dir: %s \n" , cam_name);
 			strcat(input_home_dir, "/Bf/");
 		}
 		if (camera_mode == 7) 
 		{
 			strcpy(cam_name, "/Cf/");
-			printf("processing camera dir: %s \n" , cam_name);
+			printf("c: processing camera dir: %s \n" , cam_name);
 			strcat(input_home_dir, "/Cf/");
 		}
 
 		if (camera_mode == 8) 
 		{
 			strcpy(cam_name, "/Df/");
-			printf("processing camera dir: %s \n" , cam_name);
+			printf("c: processing camera dir: %s \n" , cam_name);
 			strcat(input_home_dir, "/Df/");
 		}
 
@@ -474,7 +474,7 @@ int main(int argc, char* argv[])
 		if (camera_mode == 7) strcat(outputDir, "/Cf/");
 		if (camera_mode == 8) strcat(outputDir, "/Df/");
 
-		printf("input_home_dir (TOA-refl.dat): %s \n" , input_home_dir);
+		printf("c: input_home_dir (TOA-refl.dat): %s \n" , input_home_dir);
 		// printf("total toa.dat found: %d \n" , misr_total_files_found);
 		// printf("max misr_total_files_found = %d \n" , max_nfiles);
 
@@ -488,14 +488,14 @@ int main(int argc, char* argv[])
 			return 1;
 		} // returns misr_file_list
 
-		printf("total TOA.dat files found: %d \n" , misr_total_files_found); // E
+		printf("c: total TOA.dat files found: %d \n" , misr_total_files_found); // E
 		printf("%s \n" , "****************************************************************");
 
 		//misr_total_files_found = 40; //E-i added to test it
 		for (j=0; j < misr_total_files_found; j++) { // loop over all misr_total_files_found == num of TOA refl in AN dir
 
 			sprintf(misr_file_fullpath, "%s%s", input_home_dir, misr_file_list[j]); // copies surf_file name into misr_file_fullpath
-			printf("\nprocessing TOA file (%d/%d/%s) \n" , j+1, misr_total_files_found, cam_name); // E
+			printf("\nc: processing TOA file (%d/%d/%s) \n" , j+1, misr_total_files_found, cam_name); // E
 			printf("%s \n" , misr_file_fullpath);
 
 			if (!read_data(misr_file_fullpath, &data, nlines, nsamples)) 
@@ -508,7 +508,7 @@ int main(int argc, char* argv[])
 			{ // finds path#
 				strncpy(spath, strstr(misr_file_fullpath, "_P") + 2, 3);
 				spath[3] = 0;
-				printf("spath: %s\n" , spath);
+				printf("c: spath: %s\n" , spath);
 			}
 			else 
 			{
@@ -520,7 +520,7 @@ int main(int argc, char* argv[])
 			{ // finds block#
 				strncpy(sblock, strstr(misr_file_fullpath, "_B") + 2, 3); // note: change 2 to 3 if blocks go larger than 99 (100)
 				sblock[3] = 0; // should get blocks with 3 digits
-				printf("sblock= %s \n" , sblock);
+				printf("c: sblock= %s \n" , sblock);
 			}
 			else 
 			{
@@ -534,7 +534,7 @@ int main(int argc, char* argv[])
 			
 			strsub(lsMaskedFile, "PPP", spath);
 			strsub(lsMaskedFile, "BBB", sblock);
-			printf("lsMaskedFile to read_byte func: %s\n", lsMaskedFile);
+			printf("c: lsMaskedFile to read_byte func: %s\n", lsMaskedFile);
 
 
 			if (!read_byte_data(lsMaskedFile, &mask, nlines, nsamples)) 
