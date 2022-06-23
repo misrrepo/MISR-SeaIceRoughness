@@ -206,12 +206,12 @@ int write_data(char* misr_file_fullpath, double* data, int nlines, int nsamples)
 
 	f = fopen(misr_file_fullpath, "wb"); // write data to this file
 	if (!f) {
-		fprintf(stderr, " ERROR1: write_data: couldn't open file; %s\n", misr_file_fullpath);
+		fprintf(stderr, "c: ERROR1: write_data: couldn't open file; %s\n", misr_file_fullpath);
 		return 0;
 		}
 		
 	if (fwrite(data, sizeof(double), (nlines * nsamples), f) != (nlines * nsamples)) {
-		fprintf(stderr, "ERROR2: write_data: total elements returned error, couldn't write data \n");
+		fprintf(stderr, "c: ERROR2: write_data: total elements returned error, couldn't write data \n");
 		return 0;
 		}
 
@@ -230,19 +230,19 @@ int read_data(char* misr_file_fullpath, double** data, int nlines, int nsamples)
 	filePtr = fopen(misr_file_fullpath, "rb");
 
 	if (!filePtr) {
-		fprintf(stderr, "read_data1: couldn't open %s\n", misr_file_fullpath);
+		fprintf(stderr, "c: read_data1: couldn't open %s\n", misr_file_fullpath);
 		return 0;
 	}
 		
 	*data = (double *) malloc(nlines * nsamples * sizeof(double));
 
 	if (!*data) {
-		fprintf(stderr, "read_data2: couldn't malloc data\n");
+		fprintf(stderr, "c: read_data2: couldn't malloc data\n");
 		return 0;
 	}
 		
 	if (fread(*data, sizeof(double), nlines * nsamples, filePtr) != nlines * nsamples) { // reads all pixels inside surf_file into <data>
-		fprintf(stderr, "read_data3: couldn't read TOA data\n");
+		fprintf(stderr, "c: read_data3: couldn't read TOA data\n");
 		return 0;
 	}
 		
@@ -259,20 +259,20 @@ int read_byte_data(char *misr_file_fullpath, unsigned char **data, int nlines, i
 	f = fopen(misr_file_fullpath, "rb");
 	if (!f)
 	{
-		fprintf(stderr, "read_byte_data1: couldn't open %s \n", misr_file_fullpath);
+		fprintf(stderr, "c: read_byte_data1: couldn't open %s \n", misr_file_fullpath);
 		return 0;
 	}
 		
 	*data = (unsigned char *) malloc(nlines * nsamples * sizeof(unsigned char));
 	if (!*data)
 	{
-		fprintf(stderr, "read_byte_data2: couldn't malloc data \n");
+		fprintf(stderr, "c: read_byte_data2: couldn't malloc data \n");
 		return 0;
 	}
 		
 	if (fread(*data, sizeof(unsigned char), nlines * nsamples, f) != nlines * nsamples)
 	{
-		fprintf(stderr, "read_byte_data3: couldn't read data2 \n");
+		fprintf(stderr, "c: read_byte_data3: couldn't read data2 \n");
 		return 0;
 	}
 		
@@ -364,7 +364,6 @@ char *strsub(char *s, char *a, char *b)
 
 int main(int argc, char* argv[]) 
 {
-
 	// input dir
 	char input_toa_home[256] = ""; //  empty string
 	char lsmask_files_fullpath[256] = ""; // empty string
@@ -485,7 +484,7 @@ int main(int argc, char* argv[])
 		
 		if (!getFileList(input_home_dir)) {
 
-			printf("ERROR: from getFileList. \n");
+			printf("c: ERROR: from getFileList. \n");
 			return 1;
 		} // returns misr_file_list
 
@@ -501,7 +500,7 @@ int main(int argc, char* argv[])
 
 			if (!read_data(misr_file_fullpath, &data, nlines, nsamples)) 
 			{
-				printf("ERROR: from read_data\n");
+				printf("c: ERROR: from read_data\n");
 				return 1;
 			} // reads surf_refl and returns mem-add od data
 
@@ -540,18 +539,18 @@ int main(int argc, char* argv[])
 
 			if (!read_byte_data(lsMaskedFile, &mask, nlines, nsamples)) 
 			{
-				printf("ERROR: from read_byte_data. Exiting.\n");
+				printf("c: ERROR: from read_byte_data. Exiting.\n");
 				return 1;
 			}
 			
 			if (!maskData()) 
 			{
-				printf("ERROR: from maskData(). Exiting. \n");
+				printf("c: ERROR: from maskData(). Exiting. \n");
 				return 1;
 			}
 
 			strcat(output_masked_fileLabel, misr_file_list[j]);
-			printf("output file label= %s \n" , output_masked_fileLabel);
+			printf("c: output file label= %s \n" , output_masked_fileLabel);
 
 			// strcpy(ofile1, misr_file_list[j]); //E
 
@@ -569,7 +568,7 @@ int main(int argc, char* argv[])
 			// check if output file exists
 			if (access(final_output_fullpath, F_OK) == 0)   // if file exists, success returns == 0
 			{
-				printf("**** output file EXIST *** we continue to next file. \n");
+				printf("c: **** output file EXIST *** we continue to next file. \n");
 
 				free(data);
 				free((unsigned char *) mask);
@@ -580,14 +579,14 @@ int main(int argc, char* argv[])
 			}
 			else
 			{
-				printf("output file NOT exist, writing output to= %s \n", final_output_fullpath);
+				printf("c: output file NOT exist, writing output to= %s \n", final_output_fullpath);
 
 			}
 
 			if (!write_data(final_output_fullpath, data, nlines, nsamples)) 
 			{  // int write_data(char* outputFileStream, double* data, int nlines, int nsamples) // pass-by-value == copying data
 
-				printf("ERROR: from write_data. Exiting.\n");
+				printf("c: ERROR: from write_data. Exiting.\n");
 				return 1;
 			}
 

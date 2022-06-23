@@ -2,7 +2,15 @@
 '''
 by: Ehsan Mosadegh 26 November 2020
 
-	this script runs MISR2roughness.c parallel code
+note: 	
+	this script runs MISR2roughness.c parallel code on HPC
+
+	masked-toa-ref filename pattern: 
+	code runs based on each masked-toa-refl.dat file that it finds in /An/ folder. It means if you only run for red-band, there should be only *an_red.dat files in /An/. 
+	so for each AN file pattern, it tries to find and match CF and CA in their folders.
+	make sure masked.dat files are available in all folders e.g. CF and CA...
+
+
 
 
 '''

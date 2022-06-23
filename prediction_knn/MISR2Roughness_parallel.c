@@ -580,23 +580,23 @@ void* multithread_task(void* arg_ptr) { // function definitions, q- what part of
 	double xcf, xca, xan, tweight, xdata_distance, xvector_min_len, xrough_nearest, xroughness, lat, lon;;
 	// float xroughness, lat, lon;
 
-	printf("\n********** processing input (%d/%d): %s \n" , inputStruct_ptr->toa_file_count+1, inputStruct_ptr->total_toa_files, inputStruct_ptr->an);
+	printf("\n********** reading input (%d/%d): %s \n" , inputStruct_ptr->toa_file_count+1, inputStruct_ptr->total_toa_files, inputStruct_ptr->an);
 
 	// printf("c: reading each MISR image/block from 3 camera files into memory...\n");
    
 	/* read MISR input files */
 	if (!read_data(inputStruct_ptr->an, nlines, nsamples, &an_masked_toa)) { // we fill an_masked_toa array from: an_fname
-		printf("ERROR: check AN read_data: file name available? \n"); // Q- what happens in main() if here returns 1?
+		printf("c: ERROR: check AN read_data: file name available? \n"); // Q- what happens in main() if here returns 1?
 		return 1; // return 0 or 1? also, how can this return some signal similar to continue that carries the process to next itteration in the multi-thread loop? can we return continue here?
 	}
 
 	if (!read_data(inputStruct_ptr->ca, nlines, nsamples, &ca_masked_toa)) {
-		printf("ERROR: check CA read_data: file name available? \n");
+		printf("c: ERROR: check CA read_data: file name available? \n");
 		return 1;
 	}
 
 	if (!read_data(inputStruct_ptr->cf, nlines, nsamples, &cf_masked_toa)) {
-		printf("ERROR: check CF read_data: file name available? \n");
+		printf("c: ERROR: check CF read_data: file name available? \n");
 		return 1;
 	}
 
