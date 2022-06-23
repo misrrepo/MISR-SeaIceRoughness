@@ -24,7 +24,7 @@ for cam_dir in camera_list:
     # check destination camera directory
     dest_cam_dir = os.path.join(dest_home, cam_dir)
 
-    if (not (os.path.isdir(dest_cam_dir)):
+    if (not (os.path.isdir(dest_cam_dir))):
         print('dest. camera subdir does NOT exist! We will make that directory.')
         os.mkdir(dest_cam_dir)
         print(dest_cam_dir)
