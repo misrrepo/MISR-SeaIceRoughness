@@ -38,10 +38,10 @@ typedef struct // E- why not path??? --> 9 var/elements
     double cf;
     double rms;
     float weight;
-    float tweight; // E-???
+    float atmmodel_var; // E-???
     int ascend; // E- whats up w/ this?
 } atm_type;
-atm_type* ATMModel_DataStruct; // declare an instance/member
+atm_type* atmmodel_inMemory_ds; // declare an instance/member
 
 MTKt_status status;
 
@@ -238,8 +238,8 @@ int main(int argc, char *argv[]) {
     int i, j, k, n, w;
     int r, c, r2, c2;
     double ca, cf, an;
-    double xcf, xca, xan, xroughness, xweight, tweight;
-    double xdata_distance, xvector_min_len, xrough_nearest;
+    double xcf, xca, xan, xroughness, xweight, atmmodel_var;
+    double xdistance_newpoint, xvector_min_len, xrough_nearest;
     double *an_masked_toa, *cf_masked_toa, *ca_masked_toa;
     double* roughness_mem_block_ptr;
     double radius;
@@ -353,7 +353,7 @@ int main(int argc, char *argv[]) {
     /* //////////////////////////// process azimuth file //////////////////////////////////////////////////////////// */
 
     /* //////////////////////////// reads atmmodel_csvfile csv file ///////////////////////////////////////////////////////////// */ // ok
-    /* reads all rows of atmmodel_csvfile csv file and fills the fileObj= ATMModel_DataStruct */
+    /* reads all rows of atmmodel_csvfile csv file and fills the fileObj= atmmodel_inMemory_ds */
     
     fp = fopen(atmmodel_csvfile, "r");
     if (!fp) {
@@ -362,13 +362,13 @@ int main(int argc, char *argv[]) {
     	return 1;
     }
 
-    printf("\nprocessing atmmodel_csvfile: %s \n\n", atmmodel_csvfile);
+    printf("\nreading atmmodel_csvfile: %s \n\n", atmmodel_csvfile);
 
       /* Get the first line of the file. */
     // line_size = getline(&sline, &slen, fp);
     // printf("line_size ptr: %p \n" , &line_size);
 
-    /* Loop through each line of (ATM?) file until we are done with the file. */
+    /* Loop through each line of atmmodel_csvfile file until we read all rows in the file. */
     // note: returns number of characters read == line_size = getline(&line_buf, &line_buf_size, fp);
     while (getline(&sline, &slen, fp) >= 0) { // note: use getline inside loop; reads each row of atmmodel_csvfile.csv ==> getline(&line_in_buffer, &line_in_buffer_size, fp=input stream to read each line==stdin)
     
@@ -396,8 +396,8 @@ int main(int argc, char *argv[]) {
     	    if (column_cnt == 8) xca = atof(token); // misr cam
     	    if (column_cnt == 9) xcf = atof(token); // misr cam
     	    if (column_cnt == 10) xroughness = atof(token);
-    	    if (column_cnt == 13) xweight = atof(token); // w from k_day; is cloud in ATM code ???
-    	    if (column_cnt == 14) tweight = atof(token); // Q- ??? - is it var?
+    	    if (column_cnt == 13) xweight = atof(token); // w from k_day; cloud in ATM code ???
+    	    if (column_cnt == 14) atmmodel_var = atof(token); // from atmmodel.csv= var 
 
     	    if (column_cnt == 15) {
                 // printf("ascend col is: %s \n" , token);
@@ -413,26 +413,26 @@ int main(int argc, char *argv[]) {
 
 
 
-        /* create ATMModel_DataStruct here: fill the fileObj with each row of ATM data extracted from previous step */
-    	if (atmmodel_DS_rows == 0) ATMModel_DataStruct = (atm_type * ) malloc(sizeof(atm_type));
-    	else ATMModel_DataStruct = (atm_type * ) realloc(ATMModel_DataStruct, (atmmodel_DS_rows + 1) * sizeof(atm_type));
+        /* create atmmodel_inMemory_ds here: fill the fileObj with each row of ATM data extracted from previous step */
+    	if (atmmodel_DS_rows == 0) atmmodel_inMemory_ds = (atm_type * ) malloc(sizeof(atm_type));
+    	else atmmodel_inMemory_ds = (atm_type * ) realloc(atmmodel_inMemory_ds, (atmmodel_DS_rows + 1) * sizeof(atm_type));
 
         // printf("final value for ascend= %d \n" , ascend);
 
     	// update elements/variables for a new member
-    	ATMModel_DataStruct[atmmodel_DS_rows].orbit = orbit;
-    	ATMModel_DataStruct[atmmodel_DS_rows].block = block;
-    	ATMModel_DataStruct[atmmodel_DS_rows].an = xan;
-    	ATMModel_DataStruct[atmmodel_DS_rows].ca = xca;
-    	ATMModel_DataStruct[atmmodel_DS_rows].cf = xcf;
-    	ATMModel_DataStruct[atmmodel_DS_rows].rms = xroughness;
-    	ATMModel_DataStruct[atmmodel_DS_rows].weight = xweight;
-    	ATMModel_DataStruct[atmmodel_DS_rows].tweight = tweight;
-    	ATMModel_DataStruct[atmmodel_DS_rows].ascend = ascend; // note: ascned comes from w=column=15 of ATM csv file.
+    	atmmodel_inMemory_ds[atmmodel_DS_rows].orbit = orbit;
+    	atmmodel_inMemory_ds[atmmodel_DS_rows].block = block;
+    	atmmodel_inMemory_ds[atmmodel_DS_rows].an = xan;
+    	atmmodel_inMemory_ds[atmmodel_DS_rows].ca = xca;
+    	atmmodel_inMemory_ds[atmmodel_DS_rows].cf = xcf;
+    	atmmodel_inMemory_ds[atmmodel_DS_rows].rms = xroughness;
+    	atmmodel_inMemory_ds[atmmodel_DS_rows].weight = xweight;
+    	atmmodel_inMemory_ds[atmmodel_DS_rows].atmmodel_var = atmmodel_var;
+    	atmmodel_inMemory_ds[atmmodel_DS_rows].ascend = ascend; // note: ascned comes from w=column=15 of ATM csv file.
     	atmmodel_DS_rows++;// counter - max will be the max num of rows in atmmodel_csvfile.csv
     }
 
-    // printf("ATMModel_DataStruct now is: %d \n", ATMModel_DataStruct->d_name);
+    // printf("atmmodel_inMemory_ds now is: %d \n", atmmodel_inMemory_ds->d_name);
     fclose(fp);
 
     printf("c: total rows of ATMModel-DataStruct: %d \n" , atmmodel_DS_rows);
@@ -665,7 +665,7 @@ int main(int argc, char *argv[]) {
 
 
 
-
+        // radius = radius_ascend;
         radius = 0.025; // check w/ Anne
 
 
@@ -681,7 +681,7 @@ int main(int argc, char *argv[]) {
 
         //////////////////////////////////////////////////////////////////////////////
         /*  */
-        printf("c: now processing 3 MISR toa_block.dat files in memory \n");
+        printf("c: now processing 3 MISR toa_block.dat files in memory- each pixel at a time \n");
 
         for (r = 0; r < nlines; r++) { // r==row
             for (c = 0; c < nsamples; c++) { // c==column
@@ -700,22 +700,25 @@ int main(int argc, char *argv[]) {
                 //roughness_mem_block_ptr[4 * blockElements + r*nsamples + c] = -130.0 + c2/1200.0;
 
 
-
-                if (an_masked_toa[r * nsamples + c] < 0) {  // E: why skip each pixel here?
+                // check negative pixels and copy the same value to rough-array in memory
+                if (an_masked_toa[r * nsamples + c] < 0) 
+                {  // E: why skip each pixel here?
 
                     roughness_mem_block_ptr[r * nsamples + c] = an_masked_toa[r * nsamples + c];
                         //roughness_mem_block_ptr[3*blockElements + r*nsamples + c] = an_masked_toa[r*nsamples + c];;
                     continue;
                 }
 
-                if (ca_masked_toa[r*nsamples + c] < 0) {
+                if (ca_masked_toa[r*nsamples + c] < 0) 
+                {
 
                     roughness_mem_block_ptr[r*nsamples + c] = ca_masked_toa[r * nsamples + c];
                         //roughness_mem_block_ptr[3*blockElements + r*nsamples + c] = ca_masked_toa[r*nsamples + c];;
                     continue;
                 }
 
-                if (cf_masked_toa[r*nsamples + c] < 0) {
+                if (cf_masked_toa[r*nsamples + c] < 0) 
+                {
 
                     roughness_mem_block_ptr[r*nsamples + c] = cf_masked_toa[r * nsamples + c];
                         //roughness_mem_block_ptr[3*blockElements + r*nsamples + c] = cf_masked_toa[r*nsamples + c];;
@@ -735,8 +738,8 @@ int main(int argc, char *argv[]) {
 
                 //////////////////////////////////////////////////////////////////////////////
                 xroughness = 0;
-                tweight = 0;
-                xvector_min_len = 1e23; // 22fold of 10
+                atmmodel_var = 0;
+                xvector_min_len = 1e23; // 23fold of 10
 
                 // use this print to monitor each toa pixel
                 // printf("now sort each ATMModel.csv rows for new MISR pixel data_vector= (%d, %d) \n" , r, c);
@@ -748,18 +751,18 @@ int main(int argc, char *argv[]) {
 
 
 
-                for (n = 0; n < atmmodel_DS_rows; n++) // we compare each MISR pixel with all ATM.csv rows
+                for (n = 0; n < atmmodel_DS_rows; n++) // for each row in atmmodel.csv= we compare each MISR pixel with all ATM.csv rows
                 {
-                    // printf("we set ascend to: %d in ATMModel_DataStruct.\n" , !ATMModel_DataStruct[n].ascend);
+                    // printf("we set ascend to: %d in atmmodel_inMemory_ds.\n" , !atmmodel_inMemory_ds[n].ascend);
 
 
-                    //if (ATMModel_DataStruct[n].ascend != ascend) continue;
-                    //if (~ascend || ((block < 20) && (ATMModel_DataStruct[n].block < 20)) || ((block >= 20) && (ATMModel_DataStruct[n].block >= 20))) {
+                    //if (atmmodel_inMemory_ds[n].ascend != ascend) continue;
+                    //if (~ascend || ((block < 20) && (atmmodel_inMemory_ds[n].block < 20)) || ((block >= 20) && (atmmodel_inMemory_ds[n].block >= 20))) {
 
                     // check w/ Anne: what is this condition?
-                    // if ( (~ascend  && ((ATMModel_DataStruct[n].block < 20) || // || if any == 1 then True...GO
-                    //      ~ATMModel_DataStruct[n].ascend)) || 
-                    //      (ascend && (ATMModel_DataStruct[n].block >= 20) && (ATMModel_DataStruct[n].ascend)))  // && == if all 1 then GO
+                    // if ( (~ascend  && ((atmmodel_inMemory_ds[n].block < 20) || // || if any == 1 then True...GO
+                    //      ~atmmodel_inMemory_ds[n].ascend)) || 
+                    //      (ascend && (atmmodel_inMemory_ds[n].block >= 20) && (atmmodel_inMemory_ds[n].ascend)))  // && == if all 1 then GO
 
                    if (descend_mode)  
                    {
@@ -767,16 +770,16 @@ int main(int argc, char *argv[]) {
                         /* check w/ Anne - 
                         is it necessary to compute this here? or can take out of the for-loop? 
                         why they get subtracted from each other? e.g. why for AN: (MISR - ATM?) both are MISR TOA refl values! */
-                        xan = (an_masked_toa[r * nsamples + c] - ATMModel_DataStruct[n].an);
-                        xca = (ca_masked_toa[r * nsamples + c] - ATMModel_DataStruct[n].ca); // difference is: unknown/unseen/new data - trainign data 
-                        xcf = (cf_masked_toa[r * nsamples + c] - ATMModel_DataStruct[n].cf);
+                        xan = (an_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].an);
+                        xca = (ca_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].ca); // difference is: unknown/unseen/new data - trainign data 
+                        xcf = (cf_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].cf);
 
                         // check w/ Anne - why values are different?
                         // printf("an_masked_toa= %f \n" , an_masked_toa[r * nsamples + c]);
-                        // printf("an_atmmodel= %f \n" , ATMModel_DataStruct[n].an);
+                        // printf("an_atmmodel= %f \n" , atmmodel_inMemory_ds[n].an);
 
-                        // printf("cf_atmmodel= %f \n" , ATMModel_DataStruct[n].cf);
-                        // printf("an_atmmodel= %f \n" , ATMModel_DataStruct[n].an);
+                        // printf("cf_atmmodel= %f \n" , atmmodel_inMemory_ds[n].cf);
+                        // printf("an_atmmodel= %f \n" , atmmodel_inMemory_ds[n].an);
 
 
                         // printf("xan= %f \n" , xan);
@@ -785,50 +788,52 @@ int main(int argc, char *argv[]) {
                     }
                     else // maybe turn this section off?
                     {    // is this the correction section?
-                        printf("we run this block for inverting cameras. \n");
-                        xan = (an_masked_toa[r*nsamples + c] - ATMModel_DataStruct[n].an);
-                        xca = (cf_masked_toa[r*nsamples + c] - ATMModel_DataStruct[n].ca);
-                        xcf = (ca_masked_toa[r*nsamples + c] - ATMModel_DataStruct[n].cf);
+                        printf("inverting cameras. \n");
+                        xan = (an_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].an);
+                        xca = (cf_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].ca);
+                        xcf = (ca_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].cf);
                     }
 
                     /***
-                    xan = (an_masked_toa[r*nsamples + c] - ATMModel_DataStruct[n].an);
-                    xca = (ca_masked_toa[r*nsamples + c] - ATMModel_DataStruct[n].ca);
-                    xcf = (cf_masked_toa[r*nsamples + c] - ATMModel_DataStruct[n].cf);
+                    xan = (an_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].an);
+                    xca = (ca_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].ca);
+                    xcf = (cf_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].cf);
                     ***/
 
                     // distance as similarity, from each 3 pixel
-                    xdata_distance = sqrt(xan * xan + xca * xca + xcf * xcf); // E- distance == lenght of toa-refl vector in MISR 3D feature space
-                    
-                    // check if data_vector is qualified? // compare each pixel_data_vector w/ all ATM.csv rows?
-                    if (xdata_distance < radius) 
+                    xdistance_newpoint = sqrt(xan * xan + xca * xca + xcf * xcf); // E: distance of new datapoint (MISR 3D feature) with every point in atmmodel
+                    printf("xdistance new datapoint: %d \n", xdistance_newpoint);
+
+                    // xdistance == distance of new data point from a single row in atmmodel
+                    if (xdistance_newpoint < radius) // radius for clustering data points- instaead of sorting first k values, we add up every point inside radius=0.025
                     {
 
-                        xroughness += ATMModel_DataStruct[n].tweight * ATMModel_DataStruct[n].rms; // E- label data_vector here; changed xrms == xroughness; check w/ Anne: how about if tweight=0?
-                        tweight += ATMModel_DataStruct[n].tweight;
+                        xroughness += atmmodel_inMemory_ds[n].atmmodel_var * atmmodel_inMemory_ds[n].rms; // we add up all roughness values inside radius here, instaead or ranking based on closest and selecting first K
+                        atmmodel_var += atmmodel_inMemory_ds[n].atmmodel_var;
 
                         // sorting here?
-                        if (xdata_distance < xvector_min_len) {
+                        if (xdistance_newpoint < xvector_min_len) 
+                        {
                             
-                            xvector_min_len = xdata_distance; // E- update min-lengh and lower threshold to closer the range
-                            xrough_nearest = ATMModel_DataStruct[n].rms;
+                            xvector_min_len = xdistance_newpoint; // E- update min-lengh and lower threshold to closer the range
+                            xrough_nearest = atmmodel_inMemory_ds[n].rms; // near pixel?
                         }
                     }
 
                 } // E- end of for-loop to check all ATM.csv rows, // we compare each data_vector with all ATM.csv rows --> will find xrough_nearest
 
 
-                if (xroughness == 0) { // signal that it is inside radius?
-                    // printf("checkP-1 \n");
+                if (xroughness == 0) // meaning no point was inside radius
+                {
                     xroughness = xrough_nearest;
                 }
-                else { // check w/ Anne
-                    // printf("checkP-2 \n");
-                    xroughness /= tweight;
+                else 
+                { // check w/ Anne
+                    xroughness /= atmmodel_var;
                 }
                 
                 roughness_mem_block_ptr[r * nsamples + c] = xroughness; // fill 1st layer of mem-block for each MISR pixel
-                //roughness_mem_block_ptr[3*blockElements + r*nsamples + c] = tweight;
+                //roughness_mem_block_ptr[3*blockElements + r*nsamples + c] = atmmodel_var;
             
             }
         } // end processing 3 MISR block files

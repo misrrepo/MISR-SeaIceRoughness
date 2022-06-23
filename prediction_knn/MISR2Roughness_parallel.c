@@ -606,7 +606,11 @@ void* multithread_task(void* arg_ptr) { // function definitions, q- what part of
 	roughness_mem_block_ptr = (double *) malloc(roughness_mem_block_layers * nlines * nsamples * sizeof(double)); // allocate mem- for 5 layers of data
 	// roughness_mem_block_ptr = (float *) malloc(roughness_mem_block_layers * nlines * nsamples * sizeof(float)); // allocate mem- for 5 layers of data: lat, lon, roughness, what if we change dtype to float?
 
-	double radius = 0.025; // check w/ Anne
+
+
+	double radius = 0.05; // check w/ Anne
+	// double radius = 0.025; // check w/ Anne
+	
 
 	int descend_mode = 1; // Ehsan: check w/ Anne: does it define descending for all blocks?
 
