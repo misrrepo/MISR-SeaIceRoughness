@@ -6,16 +6,16 @@
 
 echo "renaming roughness files...!"
 
-home_dir=/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016/predict_roughness_k_zero_npts_10
+home_dir=/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016/predict_roughness_k_zero_npts_10 # home where files are
 
 
 echo $home_dir
 
 echo "before renaming..."
-for rough_file in $home_dir/roughness_toa_refl_P*.dat
+for rough_file in $home_dir/roughness_toa_refl_P*.dat # pattern of original file
 do
 	echo $rough_file
-	mv "$rough_file"  "${rough_file/_an_red.dat/.dat}"
+	mv "$rough_file"  "${rough_file/_an_red.dat/.dat}" # file/before section/change to section
 done
 
 # check file names here
