@@ -29,8 +29,8 @@
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 
-#SBATCH --output=log_mosaic_apr_2016.txt   		 # The output file name
-#SBATCH --error=log_mosaic_apr_2016.txt		 	# The error file nam
+#SBATCH --output=log_mosaic_test_21apr_2016.txt   		 # The output file name
+#SBATCH --error=log_mosaic_test_21apr_2016.txt		 	# The error file nam
 
 ##---------------------------------------------------------
 
