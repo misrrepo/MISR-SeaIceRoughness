@@ -1,6 +1,6 @@
 #!/bin/bash
 ##---------------------------------------------------------
-#SBATCH --job-name=arr2raster-July2016
+#SBATCH --job-name=arr2raster-april2016
 ##---------------------------------------------------------
 ## --- if to run on test partition for QualityAssurance
 
@@ -33,8 +33,8 @@
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 
-#SBATCH --output=log_arr2raster_july2016_AMline.txt   		 # The output file name
-#SBATCH --error=log_arr2raster_july2016_AMline.txt		 	# The error file nam
+#SBATCH --output=log_arr2raster_test21april2016_AMline.txt   		 # The output file name
+#SBATCH --error=log_arr2raster_test21april2016_AMline.txt		 	# The error file nam
 
 ##---------------------------------------------------------
 ## other settings 
@@ -61,7 +61,7 @@ module list
 echo “array2raster job started here...”
 
 
-python -u ./roughness_array2raster_georefrencing_july2016.py
+python -u ./roughness_array2raster_georefrencing_apr2016.py
 
 
 echo “array2raster job ended here...”
