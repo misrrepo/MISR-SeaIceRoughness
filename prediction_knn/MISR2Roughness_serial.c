@@ -197,13 +197,13 @@ int main(int argc, char *argv[]) {
     
     // inputs
     // path to An dir files, we use An camera to define file labels for Ca Cf cameras
-    char masked_toa_an_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/test_predict_npts_p94_o88229_b30/An" ;
+    char masked_toa_an_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016_p79_b32_transect/masked_toa_refl/An" ;
 
 
 
    // char atmmodel_csvfile[256] = "/home/mare/Projects/MISR/Julienne/IceBridge2016/SeaIce_Jul2016_atmmodel_csvfile2_r025.csv"; // ATM csv file; source from where/
     // // ATM csv file; source from where/
-    char atmmodel_csvfile[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel/atmmodel_july_2016_k_zero_npts_larger10.csv" ;
+    char atmmodel_csvfile[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atmmodel/atmmodel_k_zero/atmmodel_april_2016_k_zero_npts_larger10.csv" ;
 
 
 
@@ -213,7 +213,7 @@ int main(int argc, char *argv[]) {
     
     // outputs 
     // // MISR roughness; rms file; no "/" at the end
-    char predicted_roughness_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/july_2016/test_predict_npts_p94_o88229_b30/npts10" ;
+    char predicted_roughness_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016_p79_b32_transect/" ;
 
 
 
