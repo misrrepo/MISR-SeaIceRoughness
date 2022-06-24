@@ -766,7 +766,7 @@ int main(int argc, char *argv[]) {
 
                    if (descend_mode)  
                    {
-                        printf("we run this block, without inverting ca/cf cameras. \n");
+                        // printf("we run this block, without inverting ca/cf cameras. \n");
                         /* check w/ Anne - 
                         is it necessary to compute this here? or can take out of the for-loop? 
                         why they get subtracted from each other? e.g. why for AN: (MISR - ATM?) both are MISR TOA refl values! */
@@ -788,7 +788,7 @@ int main(int argc, char *argv[]) {
                     }
                     else // maybe turn this section off?
                     {    // is this the correction section?
-                        printf("inverting cameras. \n");
+                        // printf("inverting cameras. \n");
                         xan = (an_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].an);
                         xca = (cf_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].ca);
                         xcf = (ca_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].cf);
@@ -802,7 +802,7 @@ int main(int argc, char *argv[]) {
 
                     // distance as similarity, from each 3 pixel
                     xdistance_newpoint = sqrt(xan * xan + xca * xca + xcf * xcf); // E: distance of new datapoint (MISR 3D feature) with every point in atmmodel
-                    printf("xdistance new datapoint: %d \n", xdistance_newpoint);
+                    // printf("xdistance new datapoint: %d \n", xdistance_newpoint);
 
                     // xdistance == distance of new data point from a single row in atmmodel
                     if (xdistance_newpoint < radius) // radius for clustering data points- instaead of sorting first k values, we add up every point inside radius=0.025
