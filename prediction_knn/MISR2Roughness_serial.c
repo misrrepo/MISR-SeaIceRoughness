@@ -666,7 +666,7 @@ int main(int argc, char *argv[]) {
 
 
         // radius = radius_ascend;
-        radius = 0.025; // check w/ Anne
+        radius = 0.05; // check w/ Anne
 
 
 

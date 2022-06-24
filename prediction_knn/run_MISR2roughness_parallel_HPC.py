@@ -24,7 +24,7 @@ from platform import python_version
 #-- inputs
 
 #-- note: should set to masked/AN/ dir= should have An/ at the end of path
-masked_toa_An_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016/masked_toa_refl/An"
+masked_toa_An_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016_p79_b32_transect/masked_toa_refl/An"
 
 
 
@@ -37,8 +37,7 @@ atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_npts_larger10.csv"
 
 
 #-- output
-predicted_roughness_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016/predict_roughness_k_zero_npts_10"
-
+predicted_roughness_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016_p79_b32_transect/"
 
 
 #-- executable
