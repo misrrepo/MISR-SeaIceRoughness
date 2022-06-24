@@ -33,8 +33,7 @@ import sys # for some debuggings
 ########################################################################################################################
 # input:
 # setup dir w/ roughness files there
-rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016/predict_roughness_k_zero_npts_10"
-
+rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016_p79_b32_transect"
 
 
 # tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
@@ -42,7 +41,7 @@ rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21ap
 
 
 # output:
-output_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016"
+output_dir = rough_dir_fullpath
 
 # output_dir = rough_dir_fullpath
 
