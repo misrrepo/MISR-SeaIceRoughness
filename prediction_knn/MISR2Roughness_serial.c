@@ -352,7 +352,7 @@ int main(int argc, char *argv[]) {
 
     /* //////////////////////////// process azimuth file //////////////////////////////////////////////////////////// */
 
-    /* //////////////////////////// reads atmmodel_csvfile csv file ///////////////////////////////////////////////////////////// */ // ok
+    /* //////////////////////////// read in atmmodel_csvfile csv file to memory ///////////////////////////////////////////////////////////// */ // ok
     /* reads all rows of atmmodel_csvfile csv file and fills the fileObj= atmmodel_inMemory_ds */
     
     fp = fopen(atmmodel_csvfile, "r");
@@ -437,7 +437,7 @@ int main(int argc, char *argv[]) {
 
     printf("c: total rows of ATMModel-DataStruct: %d \n" , atmmodel_DS_rows);
 
-    /* //////////////////////////// reads ATM csv file ///////////////////////////////////////////////////////////// */
+    /* //////////////////////////// read in atmmodel_csvfile csv file to memory  ///////////////////////////////////////////////////////////// */
 
 
     /* //////////////////////////// Get list of MISR Masked files /////////////////////////////////////////////// */ //ok
@@ -666,17 +666,17 @@ int main(int argc, char *argv[]) {
 
 
         // radius = radius_ascend;
-        radius = 0.01; // check w/ Anne
+        radius = 0.025; // check w/ Anne
 
 
 
-        int cameras_in_order = 0; // if turned on == 1, then we cameras are in order, menaing we don't reverse cameras
+        int all_cameras_in_order = 0; // if turned on == 1, then we cameras are in order, menaing we don't reverse cameras; else reverse cameras < 20
 
-        // printf("cameras_in_order now is= %d \n" , cameras_in_order);
+        // printf("all_cameras_in_order now is= %d \n" , all_cameras_in_order);
 
-        // printf("inverse cameras_in_order ~ %d \n" , ~cameras_in_order);
+        // printf("inverse all_cameras_in_order ~ %d \n" , ~all_cameras_in_order);
 
-        // printf("inverse cameras_in_order ! %d \n" , !cameras_in_order);
+        // printf("inverse all_cameras_in_order ! %d \n" , !all_cameras_in_order);
 
 
         //////////////////////////////////////////////////////////////////////////////
@@ -700,9 +700,9 @@ int main(int argc, char *argv[]) {
                 //roughness_mem_block_ptr[4 * blockElements + r*nsamples + c] = -130.0 + c2/1200.0;
 
 
-                // check negative pixels and copy the same value to rough-array in memory
-                if (an_masked_toa[r * nsamples + c] < 0) 
-                {  // E: why skip each pixel here?
+                // check negative pixels and copy the same negative value to rough-array in memory
+                if (an_masked_toa[r * nsamples + c] < 0)  // we check all 3 files here: if zero, we write zero to outpout and will skip that pixel in all files
+                { 
 
                     roughness_mem_block_ptr[r * nsamples + c] = an_masked_toa[r * nsamples + c];
                         //roughness_mem_block_ptr[3*blockElements + r*nsamples + c] = an_masked_toa[r*nsamples + c];;
@@ -751,25 +751,23 @@ int main(int argc, char *argv[]) {
 
 
 
-                for (n = 0; n < atmmodel_DS_rows; n++) // for each row in atmmodel.csv= we compare each MISR pixel with all ATM.csv rows
+                for (n = 0; n < atmmodel_DS_rows; n++) // for each row in atmmodel.csv --> we compare each of 3 MISR pixel with all rows in ATM.csv in a for-loop (n) 
                 {
                     // printf("we set ascend to: %d in atmmodel_inMemory_ds.\n" , !atmmodel_inMemory_ds[n].ascend);
 
 
                     //if (atmmodel_inMemory_ds[n].ascend != ascend) continue;
-                    //if (~ascend || ((block < 20) && (atmmodel_inMemory_ds[n].block < 20)) || ((block >= 20) && (atmmodel_inMemory_ds[n].block >= 20))) {
+                    //if (~ascend || ((block < 20) && (atmmodel_inMemory_ds[n].block < 20)) || ((block >= 20) && (atmmodel_inMemory_ds[n].block >= 20))) { // block comes from atmmodel.csv
 
                     // check w/ Anne: what is this condition?
                     // if ( (~ascend  && ((atmmodel_inMemory_ds[n].block < 20) || // || if any == 1 then True...GO
                     //      ~atmmodel_inMemory_ds[n].ascend)) || 
                     //      (ascend && (atmmodel_inMemory_ds[n].block >= 20) && (atmmodel_inMemory_ds[n].ascend)))  // && == if all 1 then GO
 
-                   if (cameras_in_order) // we do not reverse cameras
+                   if (all_cameras_in_order) // we do not reverse cameras
                    {
                         // printf("we run this block, without inverting ca/cf cameras. \n");
-                        /* check w/ Anne - 
-                        is it necessary to compute this here? or can take out of the for-loop? 
-                        why they get subtracted from each other? e.g. why for AN: (MISR - ATM?) both are MISR TOA refl values! */
+
                         xan = (an_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].an);
                         xca = (ca_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].ca); // difference is: unknown/unseen/new data - trainign data 
                         xcf = (cf_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].cf);
@@ -787,12 +785,20 @@ int main(int argc, char *argv[]) {
                         // printf("xcf= %f \n" , xcf);
                     }
                     else // we reverse cameras
-                    {   
-                        // printf("inverting cameras. \n");
-                        xan = (an_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].an);
-                        xca = (cf_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].ca);
-                        xcf = (ca_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].cf);
-                    }
+                        if (atmmodel_inMemory_ds[n].block >= 20) // process block>=20 in order; this info is in each row of the atmmodel.csv
+                        {
+                            xan = (an_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].an);
+                            xca = (ca_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].ca); // difference is: unknown/unseen/new data - trainign data 
+                            xcf = (cf_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].cf);
+
+                        } 
+                        else  // reverse first 20 block 
+                        {   
+                                // printf("inverting cameras. \n");
+                            xan = (an_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].an);
+                            xca = (cf_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].ca);
+                            xcf = (ca_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].cf);
+                        }
 
                     /***
                     xan = (an_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].an);

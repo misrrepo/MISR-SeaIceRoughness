@@ -612,13 +612,13 @@ void* multithread_task(void* arg_ptr) { // function definitions, q- what part of
 	// double radius = 0.025; // check w/ Anne
 	
 
-	int cameras_in_order = 1; // Ehsan: check w/ Anne: does it define descending for all blocks?
+	int all_cameras_in_order = 0; // Ehsan: check w/ Anne: does it define descending for all blocks?
 
-	// printf("cameras_in_order now is= %d \n" , cameras_in_order);
+	// printf("all_cameras_in_order now is= %d \n" , all_cameras_in_order);
 
-	// printf("inverse cameras_in_order ~ %d \n" , ~cameras_in_order);
+	// printf("inverse all_cameras_in_order ~ %d \n" , ~all_cameras_in_order);
 
-	// printf("inverse cameras_in_order ! %d \n" , !cameras_in_order);
+	// printf("inverse all_cameras_in_order ! %d \n" , !all_cameras_in_order);
 
 
 	//////////////////////////////////////////////////////////////////////////////
@@ -686,34 +686,41 @@ void* multithread_task(void* arg_ptr) { // function definitions, q- what part of
 				//      ~ATMModel_struct_ptr[n].ascend)) || 
 				//      (ascend && (ATMModel_struct_ptr[n].block >= 20) && (ATMModel_struct_ptr[n].ascend)))  // && == if all 1 then GO
 
-				if (cameras_in_order) {  // printf("we do this section, without reversing ca/cf cameras. \n");
-					/* check w/ Anne - 
-					is it necessary to compute this here? or can take out of the for-loop? 
-					why they get subtracted from each other?for example: why for AN: (MISR - ATM?) both are MISR TOA refl values! */
+               if (all_cameras_in_order) // we do not reverse cameras
+               {
                     // printf("we run this block, without inverting ca/cf cameras. \n");
-					xan = (an_masked_toa[r * nsamples + c] - ATMModel_struct_ptr[n].an);
-					xca = (ca_masked_toa[r * nsamples + c] - ATMModel_struct_ptr[n].ca); // Anne: difference is: unknown/unseen/new data - trainign data 
-					xcf = (cf_masked_toa[r * nsamples + c] - ATMModel_struct_ptr[n].cf);
 
-					// check w/ Anne - why values are different?
-					// printf("an_masked_toa= %f \n" , an_masked_toa[r * nsamples + c]);
-					// printf("an_atmmodel= %f \n" , ATMModel_struct_ptr[n].an);
+                    xan = (an_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].an);
+                    xca = (ca_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].ca); // difference is: unknown/unseen/new data - trainign data 
+                    xcf = (cf_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].cf);
 
-					// printf("cf_atmmodel= %f \n" , ATMModel_struct_ptr[n].cf);
-					// printf("an_atmmodel= %f \n" , ATMModel_struct_ptr[n].an);
+                    // check w/ Anne - why values are different?
+                    // printf("an_masked_toa= %f \n" , an_masked_toa[r * nsamples + c]);
+                    // printf("an_atmmodel= %f \n" , atmmodel_inMemory_ds[n].an);
+
+                    // printf("cf_atmmodel= %f \n" , atmmodel_inMemory_ds[n].cf);
+                    // printf("an_atmmodel= %f \n" , atmmodel_inMemory_ds[n].an);
 
 
-					// printf("xan= %f \n" , xan);
-					// printf("xca= %f \n" , xca);
-					// printf("xcf= %f \n" , xcf);
-				}
-				else {  // maybe turn this section off?
-					// is this the correction swection?
-                    // printf("we run this block for inverting cameras. \n");
-					xan = (an_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].an);
-					xca = (cf_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].ca);
-					xcf = (ca_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].cf);
-				}
+                    // printf("xan= %f \n" , xan);
+                    // printf("xca= %f \n" , xca);
+                    // printf("xcf= %f \n" , xcf);
+                }
+                else // we reverse cameras
+                    if (atmmodel_inMemory_ds[n].block >= 20) // process block>=20 in order; this info is in each row of the atmmodel.csv
+                    {
+                        xan = (an_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].an);
+                        xca = (ca_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].ca); // difference is: unknown/unseen/new data - trainign data 
+                        xcf = (cf_masked_toa[r * nsamples + c] - atmmodel_inMemory_ds[n].cf);
+
+                    } 
+                    else  // reverse first 20 block 
+                    {   
+                            // printf("inverting cameras. \n");
+                        xan = (an_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].an);
+                        xca = (cf_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].ca);
+                        xcf = (ca_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].cf);
+                    }
 
 				/***
 				xan = (an_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].an);
