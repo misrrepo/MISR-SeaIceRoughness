@@ -33,7 +33,7 @@ import sys # for some debuggings
 ########################################################################################################################
 # input:
 # setup dir w/ roughness files there
-rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016_p79_b32_transect"
+rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/predict_inOrderCams"
 
 
 # tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
@@ -50,7 +50,7 @@ output_dir = rough_dir_fullpath
 roughness_date = "2016_4"
 # roughness_date = "2016_7"
 
-georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList_AMline'
+georefRaster_dir_name = roughness_date+'_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList_AMlineFixed'
 
 
 ########################################################################################################################
