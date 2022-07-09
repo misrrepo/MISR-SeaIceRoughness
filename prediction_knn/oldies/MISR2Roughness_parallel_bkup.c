@@ -39,10 +39,10 @@ by: Ehsan Mosadegh, 29 August 2020
 
 // global variables
 
-typedef struct {  // q- do elements change w/ thread? if not get rid of "thread_iter"; variables are diff in each toafile_struct, cuz each toafile_struct represents a single different toaFile
+typedef struct {  // q- do elements change w/ thread? if not get rid of "thread_iter"; variabloes are diff in each toaFile_DS, cuz each toaFile_DS represents a single diff toaFile
 	int toa_file_count;
 	int total_toa_files;
-	int atmmodel_total_rows;
+	int amtmodel_total_rows;
 	int path;
 	int orbit;
 	int block;
@@ -52,12 +52,12 @@ typedef struct {  // q- do elements change w/ thread? if not get rid of "thread_
 	char an[256];
 	char outDir[256];
 	// int valid;
-} toafile_struct;
+} toaFile_DS;
 /* define ptr for our dataStruct */
-toafile_struct* masked_toafiles_struct_ptr[total_threads]; // array of ptrs w/ [size]; q- why define size here? why array of ptrs? ptr should be defibed as global var?
+toaFile_DS* toaFile_struct_ptr[total_threads]; // array of ptrs w/ [size]; q- why define size here? why array of ptrs? ptr should be defibed as global var?
 
 
-typedef struct {    // fill this dataStruct with info from atmmodel.csv
+typedef struct {    // E- why not path??? --> 9 var/elements  
 	int block;
 	int orbit;
 	double an;
@@ -66,10 +66,11 @@ typedef struct {    // fill this dataStruct with info from atmmodel.csv
 	double rms;
 	float weight;
 	float tweight; // E-???
-	int ascend; // E- whats up w/ this?
-} atmmodel_struct;
-// define ptr for atmmodel_struct dataStruct
-atmmodel_struct* atmmodel_struct_ptr; // declare an instance/member
+	int ascend; // for x cameras in ascending path
+} atmFile_DS;
+
+// define ptr for atmFile_DS dataStruct
+atmFile_DS* ATMModel_struct_ptr; // declare an instance/member
 
 int nfiles;
 int nlines = 512;
@@ -83,12 +84,6 @@ int write_data(char *fname, double* data, int nlines, int nsamples);
 // int pixel2grid(int path, int block, int line, int sample, double *lat, double*lon, int *r, int *c);
 int misrPixel2LatLon(int path, int block, int line, int sample, double* lat, double* lon, int *r, int *c);
 char *strsub(char *s, char *a, char *b);
-
-
-
-
-
-
 
 //################################################## main() ############################################################
 
@@ -142,7 +137,7 @@ int main(int argc, char* argv[]) {
     //------------------------------------------------------------------------------------------------------------------
 	// hiow define a array of ptrs inside main == local to main()? so that be able to pass the num_threads as arg to main()?
 	// int total_threads = 5;
-	// masked_toafiles_struct_ptr[total_threads];
+	// toaFile_struct_ptr[total_threads];
 
 	// int* num_threads_ptr; 
 	// num_threads_ptr = &total_threads;
@@ -215,7 +210,7 @@ int main(int argc, char* argv[]) {
 
 
 	/* //////////////////////////// reads atmmodel_csvfile csv file //////////////////////////////////////////// */ // ok
-	/* reads all rows of atmmodel_csvfile csv file and fills the fileObj= atmmodel_struct_ptr */
+	/* reads all rows of atmmodel_csvfile csv file and fills the fileObj= ATMModel_struct_ptr */
 	
 	fPtr_csv = fopen(atmmodel_csvfile, "r");
 	if (!fPtr_csv) {
@@ -274,26 +269,26 @@ int main(int argc, char* argv[]) {
 
 
 
-		/* create atmmodel_struct_ptr here: fill the fileObj with each row of ATM data extracted from previous step */
-		if (atmmodel_tot_rows == 0) atmmodel_struct_ptr = (atmmodel_struct * ) malloc(sizeof(atmmodel_struct));
-		else atmmodel_struct_ptr = (atmmodel_struct * ) realloc(atmmodel_struct_ptr, (atmmodel_tot_rows + 1) * sizeof(atmmodel_struct));
+		/* create ATMModel_struct_ptr here: fill the fileObj with each row of ATM data extracted from previous step */
+		if (atmmodel_tot_rows == 0) ATMModel_struct_ptr = (atmFile_DS * ) malloc(sizeof(atmFile_DS));
+		else ATMModel_struct_ptr = (atmFile_DS * ) realloc(ATMModel_struct_ptr, (atmmodel_tot_rows + 1) * sizeof(atmFile_DS));
 
 		// printf("final value for ascend= %d \n" , ascend);
 
 		// update elements/variables for a new member
-		atmmodel_struct_ptr[atmmodel_tot_rows].orbit = orbit;   
-		atmmodel_struct_ptr[atmmodel_tot_rows].block = block;
-		atmmodel_struct_ptr[atmmodel_tot_rows].an = xan;
-		atmmodel_struct_ptr[atmmodel_tot_rows].ca = xca;
-		atmmodel_struct_ptr[atmmodel_tot_rows].cf = xcf;
-		atmmodel_struct_ptr[atmmodel_tot_rows].rms = xroughness;
-		atmmodel_struct_ptr[atmmodel_tot_rows].weight = xweight;
-		atmmodel_struct_ptr[atmmodel_tot_rows].tweight = tweight;
-		atmmodel_struct_ptr[atmmodel_tot_rows].ascend = ascend; // note: ascned comes from w=column=15 of ATM csv file.
+		ATMModel_struct_ptr[atmmodel_tot_rows].orbit = orbit;   
+		ATMModel_struct_ptr[atmmodel_tot_rows].block = block;
+		ATMModel_struct_ptr[atmmodel_tot_rows].an = xan;
+		ATMModel_struct_ptr[atmmodel_tot_rows].ca = xca;
+		ATMModel_struct_ptr[atmmodel_tot_rows].cf = xcf;
+		ATMModel_struct_ptr[atmmodel_tot_rows].rms = xroughness;
+		ATMModel_struct_ptr[atmmodel_tot_rows].weight = xweight;
+		ATMModel_struct_ptr[atmmodel_tot_rows].tweight = tweight;
+		ATMModel_struct_ptr[atmmodel_tot_rows].ascend = ascend; // note: ascned comes from w=column=15 of ATM csv file.
 		atmmodel_tot_rows++;// counter - max will be the max num of rows in atmmodel_csvfile.csv
 	}
 
-	// printf("atmmodel_struct_ptr now is: %d \n", atmmodel_struct_ptr->d_name);
+	// printf("ATMModel_struct_ptr now is: %d \n", ATMModel_struct_ptr->d_name);
 	fclose(fPtr_csv);
 
 	printf("c: total rows of ATMModel-DataStruct: %d \n" , atmmodel_tot_rows);
@@ -354,7 +349,7 @@ int main(int argc, char* argv[]) {
 
 	int total_batches = total_toa_an_files/total_threads; // total batches for toa files
 
-	/* //////////////////////////////////////// Ehsan: process masked-toa files ///////////////////////////////////////////// */
+	/* //////////////////////////////////////// Ehsan: process toa files ///////////////////////////////////////////// */
 	
 	printf("c: total toa (AN) files: %d \n" , total_toa_an_files);
 	printf("\nc: In main: creating threads \n");
@@ -374,7 +369,7 @@ int main(int argc, char* argv[]) {
 		printf("***************************************************************************************************\n");
 		printf("*************************************************************************************************\n\n");
 
-		// we create x threads for a x number of input files == one batch
+		// we create x threads for a batch of input files
 		for (int thread_iter = 0 ; thread_iter < total_threads; thread_iter++){ 
 
 
@@ -478,9 +473,9 @@ int main(int argc, char* argv[]) {
 			// struct contains: path and orbit Num, and 3 file names changes with iterations maybe???
 			printf("c: create struct for thread_iter: %d \n" , thread_iter);
 
-			masked_toafiles_struct_ptr[thread_iter] = (toafile_struct*) malloc(sizeof(toafile_struct));
+			toaFile_struct_ptr[thread_iter] = (toaFile_DS*) malloc(sizeof(toaFile_DS));
 			// check if memory allocated
-			if (masked_toafiles_struct_ptr[thread_iter] == NULL) {
+			if (toaFile_struct_ptr[thread_iter] == NULL) {
 				printf("ERROR: memory not allocated for toa-DS variable \n");
 				return 1;
 			}
@@ -492,31 +487,28 @@ int main(int argc, char* argv[]) {
 
 			/* assing variables to toa dataStruct by dereferencing each by operator: -> */
 			printf("c: add variable/row for thread_iter: %d \n" , thread_iter);
-			masked_toafiles_struct_ptr[thread_iter]->total_toa_files = total_toa_an_files;
-			masked_toafiles_struct_ptr[thread_iter]->toa_file_count = toa_file_iter;
-			masked_toafiles_struct_ptr[thread_iter]->path = path;
-			masked_toafiles_struct_ptr[thread_iter]->orbit = orbit;
-			masked_toafiles_struct_ptr[thread_iter]->block = block;
-			masked_toafiles_struct_ptr[thread_iter]->atmmodel_total_rows = atmmodel_tot_rows; // this is constant
-			strcpy(masked_toafiles_struct_ptr[thread_iter]->outFile_lable, toa_an_files_list_ptr[toa_file_iter]); // its string so we shoud copy it
-			strcpy(masked_toafiles_struct_ptr[thread_iter]->ca, ca_fname);
-			strcpy(masked_toafiles_struct_ptr[thread_iter]->cf, cf_fname);
-			strcpy(masked_toafiles_struct_ptr[thread_iter]->an, an_fname);
-			strcpy(masked_toafiles_struct_ptr[thread_iter]->outDir, predicted_roughness_dir);
-			// strcpy(masked_toafiles_struct_ptr[thread_iter]->valid, 1);
+			toaFile_struct_ptr[thread_iter]->total_toa_files = total_toa_an_files;
+			toaFile_struct_ptr[thread_iter]->toa_file_count = toa_file_iter;
+			toaFile_struct_ptr[thread_iter]->path = path;
+			toaFile_struct_ptr[thread_iter]->orbit = orbit;
+			toaFile_struct_ptr[thread_iter]->block = block;
+			toaFile_struct_ptr[thread_iter]->amtmodel_total_rows = atmmodel_tot_rows;
+			strcpy(toaFile_struct_ptr[thread_iter]->outFile_lable, toa_an_files_list_ptr[toa_file_iter]); // its string so we shoud copy it
+			strcpy(toaFile_struct_ptr[thread_iter]->ca, ca_fname);
+			strcpy(toaFile_struct_ptr[thread_iter]->cf, cf_fname);
+			strcpy(toaFile_struct_ptr[thread_iter]->an, an_fname);
+			strcpy(toaFile_struct_ptr[thread_iter]->outDir, predicted_roughness_dir);
+			// strcpy(toaFile_struct_ptr[thread_iter]->valid, 1);
 
-			// if (masked_toafiles_struct_ptr.valid == 0){
+			// if (toaFile_struct_ptr.valid == 0){
 			// 	continue;
 			// }
 
-
-
-
 			/* ******************* we create threads and pass ptr-to-struct as an arg  **************************** */
 
-			/* create one thread for each struct; each struct is a single and different masked_toafiles (3 in this code) */
+			/* create thread for each struct; each struct is a single diff toaFile */
 			// printf("run pthread... \n");
-			ret1 = pthread_create(&tid[thread_iter], NULL, &multithread_task, (void*) masked_toafiles_struct_ptr[thread_iter]); // called to create threads
+			ret1 = pthread_create(&tid[thread_iter], NULL, &multithread_task, (void*) toaFile_struct_ptr[thread_iter]); // called to create threads
 			// printf("retruned: %d \n" , !ret);
 			if (ret1 != 0) {  // Q- what happens here if multithread_task() returns 1 == error? does this code terminate? or goes to next iteration?
 				/* check not-exist true(success)-signal */
@@ -550,7 +542,7 @@ int main(int argc, char* argv[]) {
 		/* free memory of struct[thread] */
 		for (int thread_iter = 0; thread_iter < total_threads; thread_iter++) {
 			// free allocated memory
-			free(masked_toafiles_struct_ptr[thread_iter]);
+			free(toaFile_struct_ptr[thread_iter]);
 		}
 		printf("c: in main(): out of pThread(), batch iteration ended, and we did free allocated memory to all struct[thread] \n");
 
@@ -562,7 +554,7 @@ int main(int argc, char* argv[]) {
 
 	/* free all allocated memory here*/
 	free(toa_an_files_list_ptr);
-	free(atmmodel_struct_ptr);
+	free(ATMModel_struct_ptr);
 
 	// finish main() with success signal
 	return 0;
@@ -571,7 +563,7 @@ int main(int argc, char* argv[]) {
 
 // ##################################### multithreaded function as a task #############################################
 
-void* multithread_task(void* arg_ptr) { // function definitions & should be a completely independent part for parallel execution. 
+void* multithread_task(void* arg_ptr) { // function definitions, q- what part of code.c should be parallel or is good for parallel exe.? should be a completely independent part for parallel execution. 
 
 	// declare IDfires
 	double *an_masked_toa, *cf_masked_toa, *ca_masked_toa;
@@ -582,7 +574,7 @@ void* multithread_task(void* arg_ptr) { // function definitions & should be a co
 	char roughness_fname[256];
 
 	// define ptr to DStruct
-	toafile_struct* inputStruct_ptr = (toafile_struct*) arg_ptr; // define new ptr to be clear
+	toaFile_DS* inputStruct_ptr = (toaFile_DS*) arg_ptr; // define new ptr to be clear
 
 	// declare IDfiers/variables
 	int r2, c2;
@@ -621,13 +613,13 @@ void* multithread_task(void* arg_ptr) { // function definitions & should be a co
 	// double radius = 0.025; // check w/ Anne
 	
 
-	int all_cameras_in_order = 0; // Ehsan: check w/ Anne: does it define descending for all blocks?
+	int cameras_in_order = 0; // Ehsan: check w/ Anne: does it define descending for all blocks?
 
-	// printf("all_cameras_in_order now is= %d \n" , all_cameras_in_order);
+	// printf("cameras_in_order now is= %d \n" , cameras_in_order);
 
-	// printf("inverse all_cameras_in_order ~ %d \n" , ~all_cameras_in_order);
+	// printf("inverse cameras_in_order ~ %d \n" , ~cameras_in_order);
 
-	// printf("inverse all_cameras_in_order ! %d \n" , !all_cameras_in_order);
+	// printf("inverse cameras_in_order ! %d \n" , !cameras_in_order);
 
 
 	//////////////////////////////////////////////////////////////////////////////
@@ -682,59 +674,52 @@ void* multithread_task(void* arg_ptr) { // function definitions & should be a co
 			// printf("now sort each ATMModel.csv rows for new MISR pixel data_vector= (%d, %d) \n" , r, c);
 
 
-			for (int n = 0; n < inputStruct_ptr->atmmodel_total_rows; n++) { // we compare each MISR pixel with all ATM.csv rows
+			for (int n = 0; n < inputStruct_ptr->amtmodel_total_rows; n++) { // we compare each MISR pixel with all ATM.csv rows
 			
-				// printf("we set ascend to: %d in atmmodel_struct_ptr.\n" , !atmmodel_struct_ptr[n].ascend);
+				// printf("we set ascend to: %d in ATMModel_struct_ptr.\n" , !ATMModel_struct_ptr[n].ascend);
 
 
-				//if (atmmodel_struct_ptr[n].ascend != ascend) continue;
-				//if (~ascend || ((block < 20) && (atmmodel_struct_ptr[n].block < 20)) || ((block >= 20) && (atmmodel_struct_ptr[n].block >= 20))) {
+				//if (ATMModel_struct_ptr[n].ascend != ascend) continue;
+				//if (~ascend || ((block < 20) && (ATMModel_struct_ptr[n].block < 20)) || ((block >= 20) && (ATMModel_struct_ptr[n].block >= 20))) {
 
 				// check w/ Anne: what is this condition?
-				// if ( (~ascend  && ((atmmodel_struct_ptr[n].block < 20) || // || if any == 1 then True...GO
-				//      ~atmmodel_struct_ptr[n].ascend)) || 
-				//      (ascend && (atmmodel_struct_ptr[n].block >= 20) && (atmmodel_struct_ptr[n].ascend)))  // && == if all 1 then GO
+				// if ( (~ascend  && ((ATMModel_struct_ptr[n].block < 20) || // || if any == 1 then True...GO
+				//      ~ATMModel_struct_ptr[n].ascend)) || 
+				//      (ascend && (ATMModel_struct_ptr[n].block >= 20) && (ATMModel_struct_ptr[n].ascend)))  // && == if all 1 then GO
 
-               if (all_cameras_in_order) // we do not reverse cameras
-               {
+				if (cameras_in_order) {  // printf("we do this section, without reversing ca/cf cameras. \n");
+					/* check w/ Anne - 
+					is it necessary to compute this here? or can take out of the for-loop? 
+					why they get subtracted from each other?for example: why for AN: (MISR - ATM?) both are MISR TOA refl values! */
                     // printf("we run this block, without inverting ca/cf cameras. \n");
+					xan = (an_masked_toa[r * nsamples + c] - ATMModel_struct_ptr[n].an);
+					xca = (ca_masked_toa[r * nsamples + c] - ATMModel_struct_ptr[n].ca); // Anne: difference is: unknown/unseen/new data - trainign data 
+					xcf = (cf_masked_toa[r * nsamples + c] - ATMModel_struct_ptr[n].cf);
 
-                    xan = (an_masked_toa[r * nsamples + c] - atmmodel_struct_ptr[n].an);
-                    xca = (ca_masked_toa[r * nsamples + c] - atmmodel_struct_ptr[n].ca); // difference is: unknown/unseen/new data - trainign data 
-                    xcf = (cf_masked_toa[r * nsamples + c] - atmmodel_struct_ptr[n].cf);
+					// check w/ Anne - why values are different?
+					// printf("an_masked_toa= %f \n" , an_masked_toa[r * nsamples + c]);
+					// printf("an_atmmodel= %f \n" , ATMModel_struct_ptr[n].an);
 
-                    // check w/ Anne - why values are different?
-                    // printf("an_masked_toa= %f \n" , an_masked_toa[r * nsamples + c]);
-                    // printf("an_atmmodel= %f \n" , atmmodel_inMemory_ds[n].an);
-
-                    // printf("cf_atmmodel= %f \n" , atmmodel_inMemory_ds[n].cf);
-                    // printf("an_atmmodel= %f \n" , atmmodel_inMemory_ds[n].an);
+					// printf("cf_atmmodel= %f \n" , ATMModel_struct_ptr[n].cf);
+					// printf("an_atmmodel= %f \n" , ATMModel_struct_ptr[n].an);
 
 
-                    // printf("xan= %f \n" , xan);
-                    // printf("xca= %f \n" , xca);
-                    // printf("xcf= %f \n" , xcf);
-                }
-                else // we reverse cameras
-                    if (atmmodel_inMemory_ds[n].block >= 20) // process block>=20 in order; this info is in each row of the atmmodel.csv
-                    {
-                        xan = (an_masked_toa[r * nsamples + c] - atmmodel_struct_ptr[n].an);
-                        xca = (ca_masked_toa[r * nsamples + c] - atmmodel_struct_ptr[n].ca); // difference is: unknown/unseen/new data - trainign data 
-                        xcf = (cf_masked_toa[r * nsamples + c] - atmmodel_struct_ptr[n].cf);
-
-                    } 
-                    else  // reverse first 20 block 
-                    {   
-                            // printf("inverting cameras. \n");
-                        xan = (an_masked_toa[r*nsamples + c] - atmmodel_struct_ptr[n].an);
-                        xca = (cf_masked_toa[r*nsamples + c] - atmmodel_struct_ptr[n].ca);
-                        xcf = (ca_masked_toa[r*nsamples + c] - atmmodel_struct_ptr[n].cf);
-                    }
+					// printf("xan= %f \n" , xan);
+					// printf("xca= %f \n" , xca);
+					// printf("xcf= %f \n" , xcf);
+				}
+				else {  // maybe turn this section off?
+					// is this the correction swection?
+                    // printf("we run this block for inverting cameras. \n");
+					xan = (an_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].an);
+					xca = (cf_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].ca);
+					xcf = (ca_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].cf);
+				}
 
 				/***
-				xan = (an_masked_toa[r*nsamples + c] - atmmodel_struct_ptr[n].an);
-				xca = (ca_masked_toa[r*nsamples + c] - atmmodel_struct_ptr[n].ca);
-				xcf = (cf_masked_toa[r*nsamples + c] - atmmodel_struct_ptr[n].cf);
+				xan = (an_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].an);
+				xca = (ca_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].ca);
+				xcf = (cf_masked_toa[r*nsamples + c] - ATMModel_struct_ptr[n].cf);
 				***/
 
 				// distance as similarity, from each 3 pixel
@@ -743,14 +728,14 @@ void* multithread_task(void* arg_ptr) { // function definitions & should be a co
 				// check if data_vector is qualified? // compare each pixel_data_vector w/ all ATM.csv rows?
 				if (xdata_distance < radius) {
 
-					xroughness += atmmodel_struct_ptr[n].tweight * atmmodel_struct_ptr[n].rms; // E- label data_vector here; changed xrms == xroughness; check w/ Anne: how about if tweight=0?
-					tweight += atmmodel_struct_ptr[n].tweight;
+					xroughness += ATMModel_struct_ptr[n].tweight * ATMModel_struct_ptr[n].rms; // E- label data_vector here; changed xrms == xroughness; check w/ Anne: how about if tweight=0?
+					tweight += ATMModel_struct_ptr[n].tweight;
 
 					// sorting here?
 					if (xdata_distance < xvector_min_len) {
 						
 						xvector_min_len = xdata_distance; // E- update min-lengh and lower threshold to closer the range
-						xrough_nearest = atmmodel_struct_ptr[n].rms;
+						xrough_nearest = ATMModel_struct_ptr[n].rms;
 					}
 				}
 
