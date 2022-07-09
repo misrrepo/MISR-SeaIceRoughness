@@ -716,7 +716,7 @@ void* multithread_task(void* arg_ptr) { // function definitions & should be a co
                     // printf("xcf= %f \n" , xcf);
                 }
                 else // we reverse cameras
-                    if (atmmodel_inMemory_ds[n].block >= 20) // process block>=20 in order; this info is in each row of the atmmodel.csv
+                    if (atmmodel_struct_ptr[n].block >= 20) // process block>=20 in order; this info is in each row of the atmmodel.csv
                     {
                         xan = (an_masked_toa[r * nsamples + c] - atmmodel_struct_ptr[n].an);
                         xca = (ca_masked_toa[r * nsamples + c] - atmmodel_struct_ptr[n].ca); // difference is: unknown/unseen/new data - trainign data 
