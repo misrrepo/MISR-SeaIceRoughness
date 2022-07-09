@@ -612,13 +612,13 @@ void* multithread_task(void* arg_ptr) { // function definitions, q- what part of
 	// double radius = 0.025; // check w/ Anne
 	
 
-	int descend_mode = 1; // Ehsan: check w/ Anne: does it define descending for all blocks?
+	int cameras_in_order = 1; // Ehsan: check w/ Anne: does it define descending for all blocks?
 
-	// printf("descend_mode now is= %d \n" , descend_mode);
+	// printf("cameras_in_order now is= %d \n" , cameras_in_order);
 
-	// printf("inverse descend_mode ~ %d \n" , ~descend_mode);
+	// printf("inverse cameras_in_order ~ %d \n" , ~cameras_in_order);
 
-	// printf("inverse descend_mode ! %d \n" , !descend_mode);
+	// printf("inverse cameras_in_order ! %d \n" , !cameras_in_order);
 
 
 	//////////////////////////////////////////////////////////////////////////////
@@ -686,7 +686,7 @@ void* multithread_task(void* arg_ptr) { // function definitions, q- what part of
 				//      ~ATMModel_struct_ptr[n].ascend)) || 
 				//      (ascend && (ATMModel_struct_ptr[n].block >= 20) && (ATMModel_struct_ptr[n].ascend)))  // && == if all 1 then GO
 
-				if (descend_mode) {  // printf("we do this section, without inverting ca/cf cameras. \n");
+				if (cameras_in_order) {  // printf("we do this section, without reversing ca/cf cameras. \n");
 					/* check w/ Anne - 
 					is it necessary to compute this here? or can take out of the for-loop? 
 					why they get subtracted from each other?for example: why for AN: (MISR - ATM?) both are MISR TOA refl values! */
