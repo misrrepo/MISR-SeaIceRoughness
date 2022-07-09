@@ -670,7 +670,7 @@ int main(int argc, char *argv[]) {
 
 
 
-        int cameras_in_order = 1; // if turned on == 1, then we cameras are in order, menaing we don't reverse cameras
+        int cameras_in_order = 0; // if turned on == 1, then we cameras are in order, menaing we don't reverse cameras
 
         // printf("cameras_in_order now is= %d \n" , cameras_in_order);
 

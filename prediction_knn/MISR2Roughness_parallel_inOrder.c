@@ -608,7 +608,7 @@ void* multithread_task(void* arg_ptr) { // function definitions, q- what part of
 
 
 
-	double radius = 0.05; // check w/ Anne
+	double radius = 0.025; // check w/ Anne
 	// double radius = 0.025; // check w/ Anne
 	
 
