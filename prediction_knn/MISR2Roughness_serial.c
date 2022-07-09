@@ -670,7 +670,7 @@ int main(int argc, char *argv[]) {
 
 
 
-        int descend_mode = 1; // Ehsan: check w/ Anne: does it define descending for all blocks?
+        int descend_mode = 0; // Ehsan: check w/ Anne: does it define descending for all blocks?
 
         // printf("descend_mode now is= %d \n" , descend_mode);
 
