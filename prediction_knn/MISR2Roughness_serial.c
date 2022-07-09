@@ -197,7 +197,7 @@ int main(int argc, char *argv[]) {
     
     // inputs
     // path to An dir files, we use An camera to define file labels for Ca Cf cameras
-    char masked_toa_an_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016_p79_b32_transect/masked_toa_refl/An" ;
+    char masked_toa_an_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/masked_toa_refl/masked_toa_refl_2016_4_21/An" ;
 
 
 
@@ -213,7 +213,7 @@ int main(int argc, char *argv[]) {
     
     // outputs 
     // // MISR roughness; rms file; no "/" at the end
-    char predicted_roughness_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016_p79_b32_transect/" ;
+    char predicted_roughness_dir[256] = "/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/predict_inOrderCams/predicted_roughness" ;
 
 
 
