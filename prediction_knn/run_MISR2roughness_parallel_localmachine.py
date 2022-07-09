@@ -22,6 +22,9 @@ atmmodel_dir = "/home/ehsan/misr_lab/atmmodels/april_2016"
 #-- name of the model
 atmmodel_csvfile_label = "MisrAtmCalibratedModel_april_2016.csv"
 
+
+
+
 #-- output
 predicted_roughness_dir = "/media/ehsan/6T_part1/14528_apr2016/orig_misr_files/predicted_roughness"
 

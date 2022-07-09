@@ -10,12 +10,12 @@
 #SBATCH --mem-per-cpu=3500M
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
-#SBATCH --output=log_misr2rough_parallel_test21april2016_revCams.txt   		 	# The output file name
-#SBATCH --error=log_misr2rough_parallel_test21april2016_revCams.txt		 		# The error file nam
+#SBATCH --output=log_misr2rough_parallel_test21april2016_reversed.txt   		 	# The output file name
+#SBATCH --error=log_misr2rough_parallel_test21april2016_reversed.txt		 		# The error file nam
 #SBATCH --time=14-00:00				 				# Set max. run time; format: D-HH:MM
 date
 module list 
 echo “MISR job started here...”
-python  ./run_MISR2roughness_parallel_HPC_revCams.py
+python  ./run_MISR2roughness_parallel_HPC.py
 echo “MISR job ended here...”
 date

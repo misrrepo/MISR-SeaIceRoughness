@@ -35,12 +35,14 @@ atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_npts_larger10.csv"
 
 
 
+
 #-- output
 predicted_roughness_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/predict_reversedCams"
 
+
 #-- executable
 exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
-exe_name = "MISR2Roughness_parallel_revCams"
+exe_name = "MISR2Roughness_parallel"
 
 ########################################################################################################################
 def main():
