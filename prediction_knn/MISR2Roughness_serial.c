@@ -670,13 +670,13 @@ int main(int argc, char *argv[]) {
 
 
 
-        int descend_mode = 0; // Ehsan: check w/ Anne: does it define descending for all blocks?
+        int cameras_in_order = 1; // if turned on == 1, then we cameras are in order, menaing we don't reverse cameras
 
-        // printf("descend_mode now is= %d \n" , descend_mode);
+        // printf("cameras_in_order now is= %d \n" , cameras_in_order);
 
-        // printf("inverse descend_mode ~ %d \n" , ~descend_mode);
+        // printf("inverse cameras_in_order ~ %d \n" , ~cameras_in_order);
 
-        // printf("inverse descend_mode ! %d \n" , !descend_mode);
+        // printf("inverse cameras_in_order ! %d \n" , !cameras_in_order);
 
 
         //////////////////////////////////////////////////////////////////////////////
@@ -764,7 +764,7 @@ int main(int argc, char *argv[]) {
                     //      ~atmmodel_inMemory_ds[n].ascend)) || 
                     //      (ascend && (atmmodel_inMemory_ds[n].block >= 20) && (atmmodel_inMemory_ds[n].ascend)))  // && == if all 1 then GO
 
-                   if (descend_mode)  
+                   if (cameras_in_order) // we do not reverse cameras
                    {
                         // printf("we run this block, without inverting ca/cf cameras. \n");
                         /* check w/ Anne - 
@@ -786,8 +786,8 @@ int main(int argc, char *argv[]) {
                         // printf("xca= %f \n" , xca);
                         // printf("xcf= %f \n" , xcf);
                     }
-                    else // maybe turn this section off?
-                    {    // is this the correction section?
+                    else // we reverse cameras
+                    {   
                         // printf("inverting cameras. \n");
                         xan = (an_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].an);
                         xca = (cf_masked_toa[r*nsamples + c] - atmmodel_inMemory_ds[n].ca);
