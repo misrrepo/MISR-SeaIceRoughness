@@ -8,7 +8,8 @@ echo "renaming roughness files...!"
 
 
 # home to where roughness files are
-home_dir=/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/predict_inOrderCams
+home_dir=/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/predict_reversedCams
+
 
 
 echo $home_dir
