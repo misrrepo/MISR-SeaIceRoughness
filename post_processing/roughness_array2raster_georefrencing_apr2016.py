@@ -4,13 +4,14 @@
 notes:
 
 	this f() builds georeferenced tif files from roughness arrays. 
-	input: directory path to roughness array (all 16 days can be in one roughness directory?)
+	input: directory path to roughness array 
+			input file shoudl have this file pattern: roughness_toa_refl_P232_O086927_B024.dat
+			
 	output: georeferenced raster <.tif> file in both latlon and polar stereographic projections
 	
 	note: need to be run with python 3.6 if using precompiled MTK library
 	note: on Pronghorn I built and installed MTK and gdal libraries from its source myself, so no need to use virtual environment then!
 			but on Mac, use Conda virtenv
-
 
 '''
 
