@@ -6,7 +6,9 @@
 
 echo "renaming roughness files...!"
 
-home_dir=/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016/predict_roughness_k_zero_npts_10 # home where files are
+
+# home to where roughness files are
+home_dir=/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/predict_inOrderCams
 
 
 echo $home_dir

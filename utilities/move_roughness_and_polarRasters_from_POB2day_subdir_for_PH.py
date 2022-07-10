@@ -29,10 +29,12 @@ day = 21
 home_dir = "/Volumes/Ehsan-7757225325/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_files_for_mosaic"
 
 # where camera dir is- should exist on disk
-src_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/masked_toa_refl/An'
+src_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46/Cf'
+
 
 # general path to home dir where code will create 3 camera subdirectories there- should exist on disk
-dest_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/test_masked_toarefl_home'
+dest_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/masked_toa_refl'
+
 
 #################### do not change anything else bellow ###############
 
@@ -141,7 +143,7 @@ def move_masked_toa_refl_files(orbit_list, dest_cam_dir):
     for orbit in orbit_list:
         print('processing orbit= %d' %orbit)
         # make pattern 
-        file_pattern = 'masked_toa_refl_P*'+'*_O0'+str(orbit)+'*'+'_an_red.dat'  # only red cameras 
+        file_pattern = 'masked_toa_refl_P*'+'*_O0'+str(orbit)+'*'+'_red.dat'  # only red band 
         print(file_pattern)
         print('looking for pattern= %s' %file_pattern)
         # search for file pattern and make a list
