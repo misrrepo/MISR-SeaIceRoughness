@@ -621,7 +621,7 @@ void* multithread_task(void* arg_ptr) { // function definitions & should be a co
 	// double radius = 0.025; // check w/ Anne
 	
 
-	int all_cameras_in_order = 0; // Ehsan: check w/ Anne: does it define descending for all blocks?
+	int all_cameras_in_order = 1; // Ehsan: check w/ Anne: does it define descending for all blocks?
 
 	// printf("all_cameras_in_order now is= %d \n" , all_cameras_in_order);
 

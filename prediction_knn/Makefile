@@ -1,7 +1,7 @@
 exe_path=/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
 
 src_name=MISR2Roughness_parallel.c
-exe_name=MISR2Roughness_parallel
+exe_name=MISR2Roughness_parallel_inorder
 
 all:
 	gcc -I/data/gpfs/home/emosadegh/Mtk-1.5.1/include	\
