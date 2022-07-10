@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=TOA-july2016
+#SBATCH --job-name=TOAJuly2016
 
 ##SBATCH --account=cpu-s6-test-0 
 ##SBATCH --partition=cpu-s6-test-0

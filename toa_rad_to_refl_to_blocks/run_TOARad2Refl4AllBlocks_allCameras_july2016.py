@@ -35,7 +35,7 @@ import MisrToolkit as MTK
 #===== input directory #=====
 #-- input_storage_path: is where we stored hdf data for each project in sub-directories under this directories. subdirectories can be data for each month. hdf radiance files reflectance (GRP_ELLIPSOID) files, where we downloaded files
 #-- where MISR ellipsoid/hdf files are
-input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/july_2016/hdf_files/july_inrange_10_25_2016_3cams"
+input_dir_fullpath = "/data/gpfs/assoc/misr_roughness/2016/july_2016/hdf_files/hdf_inrange_10_25_july2016_9cams"
 
 
 #-- where toa-refl.dat files go
