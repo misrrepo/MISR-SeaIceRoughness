@@ -34,7 +34,7 @@ import sys # for some debuggings
 ########################################################################################################################
 # input:
 # setup dir w/ roughness files there
-rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/predict_inOrderCams"
+rough_dir_fullpath =  "/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/predict_reversedCams"
 
 
 # tiff dir where arr2tiff goes to; for now se build it inside rouhness dir
