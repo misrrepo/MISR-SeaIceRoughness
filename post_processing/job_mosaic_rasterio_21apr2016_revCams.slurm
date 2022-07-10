@@ -1,6 +1,6 @@
 #!/bin/bash
 ##---------------------------------------------------------
-#SBATCH --job-name=MosaicApr2016
+#SBATCH --job-name=MosaicJuly2016
 ##---------------------------------------------------------
 ## --- if to run on test partition for QualityAssurance
 
@@ -29,8 +29,8 @@
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 
-#SBATCH --output=log_mosaic_test_21apr_2016.txt   		 # The output file name
-#SBATCH --error=log_mosaic_test_21apr_2016.txt		 	# The error file nam
+#SBATCH --output=log_mosaic_21apr2016_revCams.txt   		 # The output file name
+#SBATCH --error=log_mosaic_21apr2016_revCams.txt		 	# The error file nam
 
 ##---------------------------------------------------------
 
@@ -47,7 +47,7 @@ module list
 echo "mosaic job started here..."
 
 
-python -u ./mosaic_build_rasterio_forHPC_apr2016.py
+python -u ./mosaic_build_rasterio_forHPC_21apr2016_revCams.py
 
 
 echo "mosaic job ended here..."

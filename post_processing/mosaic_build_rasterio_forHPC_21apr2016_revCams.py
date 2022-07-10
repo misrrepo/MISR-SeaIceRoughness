@@ -17,9 +17,11 @@ import datetime as dt
 dt1 = dt.datetime.now()
 ####################################################################
 # File and folder paths
-dirpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/test_21april2016/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList_AMline"  # where all geolocated rasters are
- 
-output_mosaic_name = "mosaic_rasterio_test_21_april_2016_max_r_05.tif" # this file is written to home dir
+
+dirpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/predict_reversedCams/2016_4_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList_AMlineFixed"
+
+
+output_mosaic_name = "mosaic_rasterio_test_21_april_2016_max_r_025_revCams.tif"
 
 out_fp = os.path.join(dirpath, output_mosaic_name)
 
