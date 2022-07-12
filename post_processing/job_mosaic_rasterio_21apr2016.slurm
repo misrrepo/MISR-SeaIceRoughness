@@ -44,7 +44,7 @@ module list
 echo "mosaic job started here..."
 
 
-python -u ./mosaic_build_rasterio_forHPC_21apr2016_inOrderCams.py
+python -u ./mosaic_build_rasterio_forHPC_21apr2016.py
 
 
 echo "mosaic job ended here..."
