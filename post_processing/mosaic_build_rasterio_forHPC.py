@@ -19,11 +19,11 @@ dt1 = dt.datetime.now()
 # File and folder paths
 
 # where all geolocated rasters are
-dirpath = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters/blocks_20_46"
+dirpath = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files/blocks_20_46"
 
 
 
-output_mosaic_name = "mosaic_rasterio_test_21_april_2016_max_r_025_inOrderCams_block_20_46.tif" # this file is written to home dir
+output_mosaic_name = "mosaic_rasterio_july_2016_max_r_025_inOrderCams_block_20_46.tif" # this file is written to home dir
 
 out_fp = os.path.join(dirpath, output_mosaic_name)
 
