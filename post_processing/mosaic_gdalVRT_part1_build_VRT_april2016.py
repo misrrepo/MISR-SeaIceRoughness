@@ -5,14 +5,13 @@ import os
 import glob, os
 import pandas as pd
 
-
-raster_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters/blocks_20_46/test_afew_rasters'
-
-
-output_VRT_filename = 'vrt_original_mosaic_gdal_test_afew_april_2016.vrt'
+#********************************************************
+raster_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters/blocks_20_46'
 
 
-# will be built later
+output_VRT_filename = 'vrt_original_mosaic_gdal_april_2016.vrt'
+
+#********************************************************
 output_VRT_fp = os.path.join(raster_dir, output_VRT_filename)
 
 
