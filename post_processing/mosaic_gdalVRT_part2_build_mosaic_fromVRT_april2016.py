@@ -12,7 +12,7 @@ raster_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_
 
 input_vrt_filename = 'vrt_average_mosaic_gdal_april_2016.vrt'
 
-output_mosaic_filename = 'mosaic_gdal_april_2016.tif'
+output_mosaic_filename = 'mosaic_gdal_april_2016_int16.tif'
 
 
 output_mosaic_fp = os.path.join(raster_dir, output_mosaic_filename)
