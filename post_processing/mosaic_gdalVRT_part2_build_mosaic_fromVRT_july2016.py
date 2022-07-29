@@ -6,10 +6,10 @@ import glob, os
 import pandas as pd
 
 
-raster_dir = '???'
+raster_dir = '/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files/blocks_20_46'
 
 
-input_vrt_filename = '????.vrt'
+input_vrt_filename = 'vrt_average_mosaic_gdal_july_2016.vrt'
 
 output_mosaic_filename = 'mosaic_gdal_july_2016.tif'
 
@@ -36,7 +36,7 @@ mosaic_ds = gdal.Translate(output_mosaic_fp,
                             format = 'GTiff',
                             noData = -99.0,
                             resampleAlg = resamplingAlg,
-                            outputType = gdal.GDT_Byte) # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte     
+                            outputType = gdal.GDT_Int16) # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte     
 
 
 print('\noutput mosaic: ')

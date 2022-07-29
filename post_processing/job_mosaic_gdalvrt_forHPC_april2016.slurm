@@ -7,7 +7,8 @@
 
 #SBATCH --ntasks=1						# one task per node
 #SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=5000M        		# Allocate 3.5GB of memory per CPU
+##SBATCH --mem-per-cpu=5000M        	# Allocate 3.5GB of memory per CPU
+#SBATCH --mem=0    						# To request all the memory on a node
 #SBATCH --hint=compute_bound			# to allocate all resources on a core (2threaded cpus)
 
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
