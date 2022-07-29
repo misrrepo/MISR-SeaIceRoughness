@@ -1,0 +1,72 @@
+using this ref:
+https://gis.stackexchange.com/questions/324602/averaging-overlapping-rasters-with-gdal
+
+working dir: 
+/Users/ehsanmos/MLP_dataset/21april_all_polar_rasters_inOrder/test_mosaicking/overlaping_blocks
+
+***********************************************************************************
+run this:
+
+step-0:
+create a list.txt of files with code in jupyter-notebook
+
+
+step-1:
+gdalbuildvrt allrasters.vrt -srcnodata -99.0 -input_file_list ./allrasters_fp_list.txt
+
+
+step-1.5:
+add average function to VRT and rename it to oldname-average.vrt
+
+
+step-2:
+gdal_translate --config GDAL_VRT_ENABLE_PYTHON YES allrasters_average.vrt allrasters_average.tif
+
+***********************************************************************************
+
+problem here...
+0ERROR 1: Cannot find python/libpython. You can set the PYTHONSO configuration option to point to the a python .so/.dll/.dylib
+
+
+find / -name "libpython*"
+
+export PYTHONSO=/usr/local/Cellar/python@3.9/3.9.13_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/config-3.9-darwin/libpython3.9.dylib
+
+***********************
+how build GDAL 2.4.1...
+source:
+https://trac.osgeo.org/gdal/wiki/BuildingOnUnix
+
+try to build GDAL from source>>>
+
+download source code from:
+http://download.osgeo.org/gdal/2.4.1/ 
+
+brew install gdal --only-dependencies
+
+% cd gdal
+% ./configure [options]
+% make 		# takes half an hour?
+% su
+Password: ********
+# make install
+# exit
+***********************
+dyld[9655]: Library not loaded: @rpath/libhdf5.103.dylib
+  Referenced from: /usr/local/bin/gdalbuildvrt
+  Reason: tried: '/usr/local/lib/libhdf5.103.dylib' (no such file), '/usr/lib/libhdf5.103.dylib' (no such file)
+zsh: abort      gdalbuildvrt raster.vrt -srcnodata 0 -input_file_list 
+
+update .bash_profile with $LD_LIBRARY_PATH
+
+make install again
+
+now: Ehsans-MBP:~ ehsanmos$ gdalinfo --version
+GDAL 2.4.1, released 2019/03/15
+
+note: the issue of unknown characters was because files inside files_list.txt did not have full path
+		so the above method is good for building any version of GDAL from source code on any machine.
+
+
+
+
