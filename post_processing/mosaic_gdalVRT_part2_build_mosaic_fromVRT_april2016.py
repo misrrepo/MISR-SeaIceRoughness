@@ -37,7 +37,7 @@ mosaic_ds = gdal.Translate(output_mosaic_fp,
                             format = 'GTiff',
                             noData = -99.0,
                             resampleAlg = resamplingAlg,
-                            outputType = gdal.GDT_Float64) # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte     
+                            outputType = gdal.GDT_Byte) # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte     
 
 
 print('\noutput mosaic: ')
