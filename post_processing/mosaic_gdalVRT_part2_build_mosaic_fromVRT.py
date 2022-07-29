@@ -9,7 +9,9 @@ import pandas as pd
 raster_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters/blocks_20_46/test_afew_rasters'
 
 
+
 input_vrt_filename = 'vrt_average_mosaic_gdal_test_afew_april_2016.vrt'
+
 output_mosaic_filename = 'mosaic_gdal_test_afew_april_2016.tif'
 
 
