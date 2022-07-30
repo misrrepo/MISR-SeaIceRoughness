@@ -9,7 +9,7 @@ import shutil
 
 
 '''
-note: this code moves misr roughness files based on POB to its specific day and 
+note:   this code moves misr roughness binary files based on POB to its specific day and 
         creates a folder for it. This way we can run roushness2raster code for 
         each subdir/date at the same time. First, setup dir path and dates here 
         and then run this notebook at a time for each date. Run with python3.6 (MisrToolkit)

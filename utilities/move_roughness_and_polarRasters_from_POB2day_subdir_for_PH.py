@@ -9,28 +9,31 @@ import shutil
 
 
 '''
-note:   this code moves MISR roughness files based on POB to its specific day and 
+note:   this code moves MISR roughness files (binary and polar rasters) based on POB to its specific day and 
         creates a folder for that day. Using this code we can run roushness2raster code for 
         each subdir/date at the same time. 
 
         First, setup dir path and datetime at the top of the code and then run this code at a time for each datetime. 
 
         Run with python3.6 (MisrToolkit) in Conda virtualEnvironment
+
+        functions(.) are at the bottom of this code
 '''
 
-
+day = 16
+month = 7
 year = 2016
-month = 4
-day = 21
 
 
 
-# fullpath to predicted roughness directory
-home_dir = "/Volumes/Ehsan-7757225325/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_files_for_mosaic"
+# for roughness and polar rasters: fullpath to predicted roughness directory
+home_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files/blocks_1_19"
 
+
+
+# the following 2 paths are for moving masked files
 # where camera dir is- should exist on disk
 src_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46/Cf'
-
 
 # general path to home dir where code will create 3 camera subdirectories there- should exist on disk
 dest_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/tests/test_21april2016/masked_toa_refl'
@@ -177,10 +180,10 @@ def move_masked_toa_refl_files_for_date(src_dir, dest_dir, year, month, day):
     return 0
 
 
-####### main #######
+############################### main ###############################
 # use each of the following funcitons based on your need
 
 # move_roughness_files_for_date(home_dir, year, month, day)
-# move_polar_raters_for_date(home_dir, year, month, day)
-move_masked_toa_refl_files_for_date(src_dir, dest_dir, year, month, day)
+move_polar_raters_for_date(home_dir, year, month, day)
+# move_masked_toa_refl_files_for_date(src_dir, dest_dir, year, month, day)
 
