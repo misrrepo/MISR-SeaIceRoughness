@@ -9,7 +9,7 @@ import shutil
 '''
 usage: 
 	this program builds folder for a single day of MISR (hdf)/roughness files 
-	and then moves files (hdf or roughness) that belong to each day/date to its folder.
+	and then moves files (hdf or roughness binary) that belong to each day/date to its folder.
 	useful to use on Pronghorn
 
 steps:
