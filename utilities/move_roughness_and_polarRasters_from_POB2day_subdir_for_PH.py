@@ -27,7 +27,7 @@ year = 2016
 
 
 # for roughness and polar rasters: fullpath to predicted roughness directory
-home_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files/blocks_1_19"
+home_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files/blocks_20_46"
 
 
 
