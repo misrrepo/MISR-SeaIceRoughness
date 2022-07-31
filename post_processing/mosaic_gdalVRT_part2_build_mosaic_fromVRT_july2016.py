@@ -5,18 +5,16 @@ import os
 import glob, os
 import pandas as pd
 
+#*****************************************************
+raster_dir = '/Users/ehsanmos/MLP_dataset/mosaics/16_july_2016_polarRasters_blocks_covering_POI/blocks_covering_my_point'
 
-raster_dir = '/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files/blocks_20_46'
 
+input_vrt_filename = 'vrt_average_mosaic_gdal_16_july_2016.vrt'
 
-input_vrt_filename = 'vrt_average_mosaic_gdal_july_2016.vrt'
-
-output_mosaic_filename = 'mosaic_gdal_july_2016.tif'
+output_mosaic_filename = 'mosaic_gdal_16_july_2016.tif'
 
 
 output_mosaic_fp = os.path.join(raster_dir, output_mosaic_filename)
-
-
 #*****************************************************
 ## remembr to update & rename VRT file 
 input_VRT_fp = os.path.join(raster_dir, input_vrt_filename)

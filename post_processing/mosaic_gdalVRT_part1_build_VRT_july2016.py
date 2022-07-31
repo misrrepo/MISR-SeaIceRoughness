@@ -7,10 +7,11 @@ import pandas as pd
 
 
 #********************************************************
-raster_dir = '/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files/blocks_20_46'
+raster_dir = '/Users/ehsanmos/MLP_dataset/mosaics/16_july_2016_polarRasters_blocks_covering_POI/blocks_covering_my_point'
 
 
-output_VRT_filename = 'vrt_original_mosaic_gdal_july_2016.vrt'
+
+output_VRT_filename = 'vrt_original_mosaic_gdal_16_july_2016.vrt'
 
 #********************************************************
 output_VRT_fp = os.path.join(raster_dir, output_VRT_filename)

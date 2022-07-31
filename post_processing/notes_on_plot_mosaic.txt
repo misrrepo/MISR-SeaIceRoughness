@@ -5,7 +5,7 @@ working dir:
 /Users/ehsanmos/MLP_dataset/21april_all_polar_rasters_inOrder/test_mosaicking/overlaping_blocks
 
 ***********************************************************************************
-run this:
+run this as commandline:
 
 step-0:
 create a list.txt of files with code in jupyter-notebook
