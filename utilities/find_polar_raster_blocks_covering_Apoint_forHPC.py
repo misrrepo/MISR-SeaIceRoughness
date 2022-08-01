@@ -28,7 +28,7 @@ lon = -303799 # Y in QGIS
 
 # where all polar raster blocks are
 
-home_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_7_16/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList"
+home_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/roughness_subdir_2016_7_15/2016_7_rasters_noDataNeg99_TiffFileFloat64_max_geographicalMesh_withLatLonList"
 
 
 
