@@ -98,7 +98,7 @@ def main():
 	mosaic_ds = gdal.Translate(out_mosaic_fullpath,
 								VRT_fullpath,
 								format = 'GTiff',
-								noData = [-99991.0, -99.0],
+								noData = -99991.0 -99.0,
 								resampleAlg = resamplingAlg,
 								outputType = gdal.GDT_Int16) # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte 	
 								

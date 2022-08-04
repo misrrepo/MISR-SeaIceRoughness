@@ -29,9 +29,10 @@ print('building VRT dataset!')
 # vrt_options = gdal.BuildVRTOptions(resampleAlg='average') #, addAlpha=True)
 my_vrt_ptr = gdal.BuildVRT(output_VRT_fp, 
                             files_to_mosaic_list,
-                            srcNodata = -99.0, -99991.0,
-                            VRTNodata = -99.0, -99991.0)
-                        # , options=vrt_options)
+                            srcNodata = -99.0 -99991.0, # don't seperate with comma
+                            VRTNodata = -99.0 -99991.0
+                            )
+                                    # , options=vrt_options)
 
 print('closing VRT dataset!')
 my_vrt_ptr = None 
