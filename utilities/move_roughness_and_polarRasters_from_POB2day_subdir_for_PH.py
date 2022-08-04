@@ -20,8 +20,8 @@ note:   this code moves MISR roughness files (binary.dat & polar-rasters.dat) ba
         functions(.) are at the bottom of this code
 '''
 
-day = 16
-month = 7
+day = 15
+month = 4
 year = 2016
 
 
