@@ -9,8 +9,8 @@
 #SBATCH --cpus-per-task=32
 
 ##SBATCH --mem-per-cpu=5000M        	# Allocate 3.5GB of memory per CPU
-##SBATCH --mem=MaxMemPerNode    			# To request all the memory on a node
-#SBATCH --mem-per-cpu=MaxMemPerCPU
+#SBATCH --mem=MaxMemPerNode    			# To request all the memory on a node
+##SBATCH --mem-per-cpu=MaxMemPerCPU
 
 #SBATCH --hint=compute_bound			# to allocate all resources on a core (2threaded cpus)
 
