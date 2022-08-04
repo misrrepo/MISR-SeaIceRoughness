@@ -6,11 +6,11 @@ import glob, os
 import pandas as pd
 
 #********************************************************
-raster_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters/blocks_20_46/polar_raster_subdir_2016_4_15'
+raster_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters/blocks_20_46'
 
 
 
-output_VRT_filename = 'vrt_original_mosaic_gdal_15_april_2016_blocks_20_46.vrt'
+output_VRT_filename = 'vrt_original_mosaic_gdal_april_2016_blocks_20_46.vrt'
 
 #********************************************************
 output_VRT_fp = os.path.join(raster_dir, output_VRT_filename)
