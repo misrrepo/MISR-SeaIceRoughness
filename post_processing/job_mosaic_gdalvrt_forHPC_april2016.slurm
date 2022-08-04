@@ -14,7 +14,7 @@
 
 #SBATCH --hint=compute_bound			# to allocate all resources on a core (2threaded cpus)
 
-#SBATCH --time=312:00:00   				# total run time limit (HH:MM:SS)
+#SBATCH --time=13-24:00:00   				# total run time limit (HH:MM:SS)
 
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu

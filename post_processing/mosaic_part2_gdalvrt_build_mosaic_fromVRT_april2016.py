@@ -36,7 +36,7 @@ gdal.SetConfigOption('GDAL_VRT_ENABLE_PYTHON', 'YES') # to be able to include py
 mosaic_ds = gdal.Translate(output_mosaic_fp,
                             input_VRT_fp,
                             format = 'GTiff',
-                            noData = -99.0 -99991.0,    # also consider -99991.0 which is 2 black sides of MISR block
+                            noData = -99.0,    # also consider -99991.0 which is 2 black sides of MISR block
                             resampleAlg = resamplingAlg,
                             outputType = gdal.GDT_Int16) # note: input dtype is float_64==double, maybe here change dtype to make it smaller img???? # outputType = gdal.GDT_Byte     
 
