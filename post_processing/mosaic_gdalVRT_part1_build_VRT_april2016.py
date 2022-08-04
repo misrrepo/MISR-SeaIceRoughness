@@ -6,12 +6,11 @@ import glob, os
 import pandas as pd
 
 #********************************************************
-raster_dir = '/Users/ehsanmos/MLP_dataset/21_april_2016_all_polar_rasters_inOrder/blocks_20_to_46'
+raster_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters/blocks_20_46/polar_raster_subdir_2016_4_15'
 
 
 
-
-output_VRT_filename = 'vrt_original_mosaic_gdal_blocks_20_to_46.vrt'
+output_VRT_filename = 'vrt_original_mosaic_gdal_15_april_2016_blocks_20_46.vrt'
 
 #********************************************************
 output_VRT_fp = os.path.join(raster_dir, output_VRT_filename)
@@ -30,8 +29,8 @@ print('building VRT dataset!')
 # vrt_options = gdal.BuildVRTOptions(resampleAlg='average') #, addAlpha=True)
 my_vrt_ptr = gdal.BuildVRT(output_VRT_fp, 
                             files_to_mosaic_list,
-                            srcNodata = -99.0,
-                            VRTNodata = -99.0)
+                            srcNodata = -99.0, -99991.0,
+                            VRTNodata = -99.0, -99991.0)
                         # , options=vrt_options)
 
 print('closing VRT dataset!')
