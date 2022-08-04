@@ -775,7 +775,7 @@ def warp_img(path_label, block_label, total_gcps, image_dir, translated_img_full
 							outputType = gdal.GDT_Float64,
 							resampleAlg = 'max', # ENVI uses nearest neighbor! # resampling method; should correlate w/ img type (tif, jpg, or png)? looks like works better w/jpg (how about .tif?)
 							srcNodata = -99.0,  # define noData values=-99 in input files; igniores x in src dataset			# for .tif: bilinear= bad; cubicspline= bad; nearest= bad; cubic= bad; average= bad; max= is better
-							dstNodata = -99.0  	# in the case of NaN?
+							dstNodata = -99.0  	# also, consider -99991.0 in both which is the black sides in a block
 						)
 	#~~ close datasets in memory
 	warp_ds = None

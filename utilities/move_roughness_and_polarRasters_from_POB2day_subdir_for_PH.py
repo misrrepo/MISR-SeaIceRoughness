@@ -9,9 +9,9 @@ import shutil
 
 
 '''
-note:   this code moves MISR roughness files (binary and polar rasters) based on POB to its specific day and 
+note:   this code moves MISR roughness files (binary.dat & polar-rasters.dat) based on POB to its specific day and 
         creates a folder for that day. Using this code we can run roushness2raster code for 
-        each subdir/date at the same time. 
+        each subdir/date at the same time.
 
         First, setup dir path and datetime at the top of the code and then run this code at a time for each datetime. 
 
@@ -27,7 +27,7 @@ year = 2016
 
 
 # for roughness and polar rasters: fullpath to predicted roughness directory
-home_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files/blocks_20_46"
+home_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters/blocks_20_46"
 
 
 
