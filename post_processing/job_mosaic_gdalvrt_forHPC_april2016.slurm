@@ -1,6 +1,6 @@
 #!/bin/bash
 ##---------------------------------------------------------
-#SBATCH --job-name=MosaicApr2016
+#SBATCH --job-name=Mosaic15Apr2016
 
 #SBATCH --account=cpu-s5-misr_roughness-0
 #SBATCH --partition=cpu-core-0			 			
@@ -16,8 +16,8 @@
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 
-#SBATCH --output=log_mosaic_april2016_gdalvrt.txt   		 # The output file name
-#SBATCH --error=log_mosaic_april2016_gdalvrt.txt		 	# The error file nam
+#SBATCH --output=log_mosaic_15april2016_gdalvrt.txt   		 # The output file name
+#SBATCH --error=log_mosaic_15april2016_gdalvrt.txt		 	# The error file nam
 
 ##---------------------------------------------------------
 
