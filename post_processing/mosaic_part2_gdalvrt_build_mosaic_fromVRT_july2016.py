@@ -10,12 +10,12 @@ import datetime as dt
 t1 = dt.datetime.now()
 
 # vrt directory
-raster_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_k_zero_npts_10/all_polar_rasters/blocks_20_46'
+raster_dir = '/data/gpfs/assoc/misr_roughness/2016/july_2016/predict_roughness_k_zero_npts_10/all_polar_files/blocks_20_46'
 
 
-input_vrt_filename = 'vrt_average_mosaic_gdal_april_2016_blocks_20_46.vrt'
+input_vrt_filename = 'vrt_average_mosaic_gdal_july_2016_blocks_20_46.vrt'
 
-output_mosaic_filename = 'mosaic_gdal_april_2016_blocks_20_46_int16.tif'
+output_mosaic_filename = 'mosaic_gdal_july_2016_blocks_20_46.tif'
 
 #*****************************************************
 ## remembr to update & rename VRT file 

@@ -7,11 +7,16 @@
 
 #SBATCH --ntasks=1						# one task per node
 #SBATCH --cpus-per-task=32
-#SBATCH --mem-per-cpu=5000M        	# Allocate 3.5GB of memory per CPU
-##SBATCH --mem=0    						# To request all the memory on a node
+
+##SBATCH --mem-per-cpu=5000M        	# Allocate 3.5GB of memory per CPU
+##SBATCH --mem=MaxMemPerNode    			# To request all the memory on a node
+##SBATCH --mem-per-cpu=MaxMemPerCPU
+#SBATCH --mem=0
+
+
 #SBATCH --hint=compute_bound			# to allocate all resources on a core (2threaded cpus)
 
-#SBATCH --time=24:00:00
+#SBATCH --time=13-24:00:00   				# total run time limit (HH:MM:SS)
 
 #SBATCH --mail-type=ALL             		 		# Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
@@ -31,7 +36,7 @@ module list
 echo "mosaic job started here..."
 
 
-python -u ./mosaic_gdalVRT_part2_build_mosaic_fromVRT_july2016.py
+python -u ./mosaic_part2_gdalvrt_build_mosaic_fromVRT_july2016.py
 
 
 echo "mosaic job ended here..."
