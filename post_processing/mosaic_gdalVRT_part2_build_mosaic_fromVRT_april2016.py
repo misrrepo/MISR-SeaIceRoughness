@@ -15,7 +15,7 @@ raster_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/predict_roughness_
 
 input_vrt_filename = 'vrt_average_mosaic_gdal_15_april_2016_blocks_20_46.vrt'
 
-output_mosaic_filename = 'mosaic_gdal_15_april_2016_blocks_20_46.tif'
+output_mosaic_filename = 'mosaic_gdal_15_april_2016_blocks_20_46_int16.tif'
 
 #*****************************************************
 ## remembr to update & rename VRT file 
