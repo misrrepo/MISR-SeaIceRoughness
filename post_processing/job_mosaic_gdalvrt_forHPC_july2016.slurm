@@ -7,8 +7,8 @@
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem=0
-##SBATCH --mem-per-cpu=2G         # memory per cpu-core (4G is default)
+#SBATCH --mem=0                  # memory per node (4G per cpu-core is default)
+##SBATCH --mem-per-cpu=2G        # memory per cpu-core (4G is default)
 ##---------------------------------- old script --------------------------
 ##SBATCH --ntasks=1						# one task per node
 ##SBATCH --cpus-per-task=32
