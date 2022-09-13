@@ -178,14 +178,14 @@ def download(session: Session, files: List[str], output_dir: Path) -> None:
 if __name__ == "__main__":
     # This URL is the starting directory
     # starting_url = input("Enter the top level URL: ")
-    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202205203702/"
+    starting_url = " ???"
 
 
     # path to download directory on local machine
-    home_dir = "/data/gpfs/assoc/misr_roughness/2016/new_hdf_files_9cams"
-    # home_dir = "/Users/ehsanmos/MLP_dataset/test_dl_withNasaCode"
+    home_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks"
 
-    out_dir_label = "month1_2016_9cams" # code will make this directory if not available on disk
+
+    out_dir_label = "july_2016_rccm_9cams" # code will make this directory if not available on disk
 
     ################################################################################
     # old code
