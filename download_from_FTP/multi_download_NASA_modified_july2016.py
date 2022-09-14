@@ -178,7 +178,7 @@ def download(session: Session, files: List[str], output_dir: Path) -> None:
 if __name__ == "__main__":
     # This URL is the starting directory
     # starting_url = input("Enter the top level URL: ")
-    starting_url = " ???"
+    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202209138488/"
 
 
     # path to download directory on local machine
