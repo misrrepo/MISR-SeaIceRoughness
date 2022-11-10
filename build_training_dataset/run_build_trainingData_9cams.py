@@ -2,7 +2,13 @@
 '''
 by: Ehsan Mosadegh 26 November 2020
 
-this script runs ATMModel.c 
+this script runs ATMModel.c [later renamed to "build_trainingData_xcams"]
+
+inputs:
+	path to ATM directory
+	path to masked_toa_refl files
+	path to cloud-mask directory
+	path to output directory and traning.csv 
 
 '''
 from subprocess import call
@@ -16,12 +22,13 @@ from platform import python_version
 # inputs
 
 # files in this directory should be all atm files listed there in one single directory 
-atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016/"
+atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/ATM_IceBridge_ILATM2_V002"
+# atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/test_single_atm_file"
 
 
 
-# path to directory that includes 9 camera directories: An/Ca/Cf/Ba/Bf/Da/Df
-masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_july_2016_9cam4bands_day10_25_p1_233_b1_46"
+# path to directory that includes 9 camera sub-directories: An/Ca/Cf/Ba/Bf/Da/Df
+masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46"
 
 
 
@@ -31,14 +38,14 @@ cloud_masked_dir = atm_dir  			#"/data/gpfs/assoc/misr_roughness/2016/july_2016/
 
 
 # output 
-out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel"
-atmmodel_csvfile_label = "atmmodel_july_2016_k_zero_9cams4bands.csv"
+out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atmmodel/atmmodel_k_zero"
+atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_9cams4bands.csv"
+
 
 
 # exe dir
 exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
 exe_name = "ATMModel_9cams"
-
 ########################################################################################################################
 def main():
 	'''
@@ -63,14 +70,14 @@ def main():
 ########################################################################################################################
 def run_from_cmd(exe_fp, atm, maskedTOA, cm, atmmodel):
 
-	# run the C-cmd program
+	#~~ run the C-cmd program
 	print(" ");
 	print('python: "Usage: <exe-name> <ATM-dir> <maskedTOA-dir> <cloudMask-dir> <atmmodelCSV-file>')
 	cmd = (' %s %s %s %s %s' %(exe_fp, atm, maskedTOA, cm, atmmodel));
 	print('to cmd= %s \n' %cmd)	# run the cmd command.
-	# run the cmd command
+	#~~ run the cmd command
 	return_value_of_cmd = call(cmd, shell=True);
-	# print('return value= %s' %return_value_of_cmd)
+	#~~ print('return value= %s' %return_value_of_cmd)
 	print("\n******************************************\n")	# this line represents a signal from python that shows we go to next iteration inside python without any cmd ERROR
 	if (return_value_of_cmd != 0):
 		print('ERROR: either %s program path NOT set in path, or issue from C-code. *** Exiting' %exe_fp)
