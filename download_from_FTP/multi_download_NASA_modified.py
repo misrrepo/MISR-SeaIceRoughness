@@ -2,12 +2,12 @@
 
 '''
 how this code works:  
-setup server path and download path in this code and then run it 
-also set these directory paths: 
 
-starting_url
-home_dir
-out_dir_label
+    setup following directory paths in main() and then run it: 
+
+    starting_url
+    home_dir
+    out_dir_label
 
 '''
 
@@ -177,16 +177,19 @@ def download(session: Session, files: List[str], output_dir: Path) -> None:
 
 ####################################################################################
 if __name__ == "__main__":
+
     # This URL is the starting directory
     # starting_url = input("Enter the top level URL: ")
-    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202209128871/"
+
+    # starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202209128871/"
+    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202211116267/"
 
 
-    # path to download directory on local machine
+    # path to download directory on local machine/HPC
     home_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks"
 
     
-    out_dir_label = "april_2016_rccm_9cams" # code will make this directory if not available on disk
+    out_dir_label = "april_2016_sdcm" # code will make this directory if not available on disk
 
     ################################################################################
     # old code
