@@ -125,8 +125,9 @@ def verify_download(session: Session, files: List[str], output_dir: Path) -> Lis
 
     # print(type(files))
     print('remote files: %s' %len(files))
-    print('first file on list:')
-    print(files[0])
+    if (len(files)!=0):
+        print('first file on list:')
+        print(files[0])
     print('***************************************************')
 
     # calculate total file size so that the user can verify they have enough space
@@ -161,6 +162,9 @@ def verify_download(session: Session, files: List[str], output_dir: Path) -> Lis
 
 
 def download(session: Session, files: List[str], output_dir: Path) -> None:
+    if (len(files)==0):
+        raise SystemExit('no file found on remote server for downloading, exiting...')
+
     # The following code downloads the files
     print(f"Downloading {len(files)} files.")
     for i, file in enumerate(files):
