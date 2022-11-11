@@ -13,7 +13,8 @@ notes:
 
 '''
 
-import sys, os, os.path 
+import sys, os, os.path, os, subprocess
+
 
 # in_dir = "/home/mare/Nolin/2012/MIL2TCCL/MarJun"
 # nodir = "/home/mare/Nolin/2012/MIL2TCCL/JunJul/ASCM"
