@@ -5,7 +5,7 @@ use for:
 
 
 
-original: ReadASCMFile.c
+original: readMISRCloudMask.c
 Sky Coyote 18 Apr 09
 old collments:
 
@@ -46,13 +46,13 @@ double cfpmh_thresh = 0.0; // meters
 
 //######################################################################################################################
 
-int readASCMFile(char *fname);
+int readMISRCloudMask(char *fname, char *cloudmaskname);
 // int write_data(char *fname, uint8 *data, int nlines, int nsamples);
 int write_data(char *fname, uint8_t* data, int nlines, int nsamples);
 
 //######################################################################################################################
 
-int readASCMFile(char *fname) 
+int readMISRCloudMask(char *fname, char *cloudmaskname) 
 {
 
 	MTKt_DataBuffer Mtk_data_buf = MTKT_DATABUFFER_INIT;
@@ -67,28 +67,56 @@ int readASCMFile(char *fname)
 	int masksamples = 2048;
 	uint8_t mask;
 
-	if (VERBOSE) fprintf(stderr, "readASCMFile: fname=%s, block=%d\n", fname, block);
+	if (VERBOSE) fprintf(stderr, "readMISRCloudMask: fname=%s, block=%d\n", fname, block);
 	status = MtkFileType(fname, &filetype);
 	
 	if (status != MTK_SUCCESS) 
 	{
-		fprintf(stderr, "readASCMFile: MtkFileType failed!!!, status = %d (%s)\n", status, errs[status]);
+		fprintf(stderr, "readMISRCloudMask: MtkFileType failed!!!, status = %d (%s)\n", status, errs[status]);
 		return 0;
 	}
 
 
+
 	// for ASCM
-	// if (filetype != MTK_TC_CLASSIFIERS) 
-	// {
-	// 	fprintf(stderr, "readASCMFile: TC_CLASSIFIERS are supported!!!\n");
-	// 	return 0;
-	// }
+	if (cloudmaskname=='ASCM') // check this
+	{
+		if (filetype != MTK_TC_CLASSIFIERS) 
+		{
+			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n");
+			return 0;
+		}
+		// setup ASCM grid and field names
+		strcpy(gridName, "ASCMParams_1.1_km"); 
+		strcpy(fieldName, "AngularSignatureCloudMask");
+	}
+
 
 	// for SDCM
-	if (filetype != MTK_TC_CLOUD)  // we change it for SDCM
+	if (cloudmaskname=='SDCM') // check this
 	{
-		fprintf(stderr, "readASCMFile: TC_CLASSIFIERS are supported!!!\n");
-		return 0;
+		if (filetype != MTK_TC_CLOUD)  // we change it for SDCM
+		{
+			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n"); // fix this readMISRCloudMask
+			return 0;
+		}
+		// setup SDCM grid and field names
+		strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
+		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
+	}
+	
+
+	// for RCCM
+	if (cloudmaskname=='RCCM')
+	{
+		if (filetype != MTK_TC_CLOUD)  // fix this: MTK_TC_CLOUD???
+		{
+			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n"); // fix this readMISRCloudMask
+			return 0;
+		}
+		// setup SDCM grid and field names
+		strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
+		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
 	}
 
 	/***
@@ -97,7 +125,7 @@ int readASCMFile(char *fname)
 	status = MtkGridAttrList(fname, "CloudClassifiers_2.2_km", &num_attrs, &attrlist);
 	if (status != MTK_SUCCESS) 
 		{
-		fprintf(stderr, "readASCMFile: MtkGridAttrList failed!!!, status = %d (%s)\n", status, errs[status]);
+		fprintf(stderr, "readMISRCloudMask: MtkGridAttrList failed!!!, status = %d (%s)\n", status, errs[status]);
 		return 0;
 		}
 	for (i = 0; i < num_attrs; i++)
@@ -111,19 +139,19 @@ int readASCMFile(char *fname)
 
 	// strcpy(gridName, "CloudFractions_17.6_km"); 
 	// strcpy(fieldName, "CombinedFractionCloudBestEstimate");
-	// if (VERBOSE) fprintf(stderr, "readASCMFile: grid=%s, field=%s\n", gridName, fieldName);
+	// if (VERBOSE) fprintf(stderr, "readMISRCloudMask: grid=%s, field=%s\n", gridName, fieldName);
 	// // read hdf file
 	// status = MtkReadBlock(fname, gridName, fieldName, block, &Mtk_data_buf);
 	// if (status != MTK_SUCCESS) {
-	// 	fprintf(stderr, "readASCMFile-1: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
+	// 	fprintf(stderr, "readMISRCloudMask-1: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
 	// 	return 0;}
 
-	// if (VERBOSE) fprintf(stderr, "readASCMFile: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
+	// if (VERBOSE) fprintf(stderr, "readMISRCloudMask: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
 	// 	Mtk_data_buf.nline, Mtk_data_buf.nsample, Mtk_data_buf.datasize, Mtk_data_buf.datatype, types[Mtk_data_buf.datatype]);
 
 	// if (Mtk_data_buf.nline != 8 || Mtk_data_buf.nsample != 32)
 	// 	{
-	// 	fprintf(stderr, "readASCMFile: %s is not 8x32: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
+	// 	fprintf(stderr, "readMISRCloudMask: %s is not 8x32: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
 	// 	return 0;
 	// 	}
 
@@ -131,7 +159,7 @@ int readASCMFile(char *fname)
 
 	// if (!fraction_cloudBestEst_buf)
 	// 	{
-	// 	fprintf(stderr, "readASCMFile: fraction_cloudBestEst_buf malloc failed!!!\n");
+	// 	fprintf(stderr, "readMISRCloudMask: fraction_cloudBestEst_buf malloc failed!!!\n");
 	// 	return 0;
 	// 	}
 
@@ -149,7 +177,7 @@ int readASCMFile(char *fname)
 
 	// if (n != 8*32)
 	// 	{
-	// 	fprintf(stderr, "readASCMFile: cfmask fewer than 256 valid in %s: %d\n", fieldName, n);
+	// 	fprintf(stderr, "readMISRCloudMask: cfmask fewer than 256 valid in %s: %d\n", fieldName, n);
 	// 	return 0;
 	// 	}
 
@@ -158,27 +186,27 @@ int readASCMFile(char *fname)
 
 	// strcpy(gridName, "CloudFractions_17.6_km"); 
 	// strcpy(fieldName, "MedianPrelimCloudHeight"); // E- this field does not exist in file! i turned it off
-	// if (VERBOSE) fprintf(stderr, "readASCMFile: grid=%s, field=%s\n", gridName, fieldName);
+	// if (VERBOSE) fprintf(stderr, "readMISRCloudMask: grid=%s, field=%s\n", gridName, fieldName);
 	// // read data
 	// status = MtkReadBlock(fname, gridName, fieldName, block, &mpch_buf);
 	// if (status != MTK_SUCCESS) 
 	// 	{
-	// 	fprintf(stderr, "readASCMFile-2: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
+	// 	fprintf(stderr, "readMISRCloudMask-2: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
 	// 	return 0;
 	// 	}
 
-	// if (VERBOSE) fprintf(stderr, "readASCMFile: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
+	// if (VERBOSE) fprintf(stderr, "readMISRCloudMask: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
 	// 	mpch_buf.nline, mpch_buf.nsample, mpch_buf.datasize, mpch_buf.datatype, types[mpch_buf.datatype]);
 	// if (mpch_buf.nline != 8 || mpch_buf.nsample != 32)
 	// 	{
-	// 	fprintf(stderr, "readASCMFile: %s is not 8x32: (%d, %d)\n", fieldName, mpch_buf.nline, ascm_buf.nsample);
+	// 	fprintf(stderr, "readMISRCloudMask: %s is not 8x32: (%d, %d)\n", fieldName, mpch_buf.nline, ascm_buf.nsample);
 	// 	return 0;
 	// 	}
 
 	// cfpmh = (int16 *) malloc(8 * 32 * 64 * 64 * sizeof(int16));
 	// if (!cfpmh)
 	// 	{
-	// 	fprintf(stderr, "readASCMFile: cfpmh malloc failed!!!\n");
+	// 	fprintf(stderr, "readMISRCloudMask: cfpmh malloc failed!!!\n");
 	// 	return 0;
 	// 	}
 
@@ -197,7 +225,7 @@ int readASCMFile(char *fname)
 
 	// if (n != 8*32)
 	// 	{
-	// 	fprintf(stderr, "readASCMFile: cfpmh fewer than 256 valid in %s: %d\n", fieldName, n);
+	// 	fprintf(stderr, "readMISRCloudMask: cfpmh fewer than 256 valid in %s: %d\n", fieldName, n);
 	// 	return 0;
 	// 	}
 
@@ -208,22 +236,22 @@ int readASCMFile(char *fname)
 	// strcpy(fieldName, "AngularSignatureCloudMask");
 
 
-	// if (VERBOSE) fprintf(stderr, "readASCMFile: grid=%s, field=%s\n", gridName, fieldName);
+	// if (VERBOSE) fprintf(stderr, "readMISRCloudMask: grid=%s, field=%s\n", gridName, fieldName);
 	// status = MtkReadBlock(fname, gridName, fieldName, block, &Mtk_data_buf);
 
 	
 	// if (status != MTK_SUCCESS) 
-	// {	//fprintf(stderr, "readASCMFile: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
-	// 	fprintf(stderr, "readASCMFile-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
+	// {	//fprintf(stderr, "readMISRCloudMask: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
+	// 	fprintf(stderr, "readMISRCloudMask-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
 	// 	return 0;
 	// }
 
-	// if (VERBOSE) fprintf(stderr, "readASCMFile: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
+	// if (VERBOSE) fprintf(stderr, "readMISRCloudMask: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
 	// 	Mtk_data_buf.nline, Mtk_data_buf.nsample, Mtk_data_buf.datasize, Mtk_data_buf.datatype, types[Mtk_data_buf.datatype]);
 
 	// if (Mtk_data_buf.nline != 128 || Mtk_data_buf.nsample != 512) 
 	// {
-	// 	fprintf(stderr, "readASCMFile: %s is not 128x512: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
+	// 	fprintf(stderr, "readMISRCloudMask: %s is not 128x512: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
 	// 	return 0;
 	// }
 
@@ -232,7 +260,7 @@ int readASCMFile(char *fname)
 
 	// if (!cmask0_ptr) 
 	// { 	// check if ptr is NULL
-	// 	fprintf(stderr, "readASCMFile: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
+	// 	fprintf(stderr, "readMISRCloudMask: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
 	// 	return 0;
 	// }
 		
@@ -289,7 +317,7 @@ int readASCMFile(char *fname)
 
 	// if (n != 128*512) // total pixels available in ascm_buf == (65,536)
 	// {
-	// 	fprintf(stderr, "readASCMFile: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
+	// 	fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 	// 	return 0;
 	// }
 
@@ -297,35 +325,24 @@ int readASCMFile(char *fname)
 
 
 	/*=================================================================*/
-	/* read cloud mask file */
+	/* read any cloud mask file */
 
-	// define cloud mask file name and print it / SDCM - TC_CLOUD
-
-	strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
-	strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
-
-
-	// read ASCM
-	// strcpy(gridName, "ASCMParams_1.1_km"); 
-	// strcpy(fieldName, "AngularSignatureCloudMask");
-
-
-	if (VERBOSE) fprintf(stderr, "readASCMFile-1: grid=%s, field=%s\n", gridName, fieldName);
+	if (VERBOSE) fprintf(stderr, "readMISRCloudMask-1: grid=%s, field=%s\n", gridName, fieldName);
 	status = MtkReadBlock(fname, gridName, fieldName, block, &Mtk_data_buf);
 
 	
 	if (status != MTK_SUCCESS) 
-	{	//fprintf(stderr, "readASCMFile: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
-		fprintf(stderr, "readASCMFile-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
+	{	//fprintf(stderr, "readMISRCloudMask: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
+		fprintf(stderr, "readMISRCloudMask-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
 		return 0;
 	}
 
-	if (VERBOSE) fprintf(stderr, "readASCMFile-4: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
+	if (VERBOSE) fprintf(stderr, "readMISRCloudMask-4: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
 		Mtk_data_buf.nline, Mtk_data_buf.nsample, Mtk_data_buf.datasize, Mtk_data_buf.datatype, types[Mtk_data_buf.datatype]);
 
 	if (Mtk_data_buf.nline != 128 || Mtk_data_buf.nsample != 512) 
 	{
-		fprintf(stderr, "readASCMFile-5: %s is not 128x512: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
+		fprintf(stderr, "readMISRCloudMask-5: %s is not 128x512: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
 		return 0;
 	}
 
@@ -334,7 +351,7 @@ int readASCMFile(char *fname)
 
 	if (!cmask0_ptr) 
 	{ 	// check if ptr is NULL
-		fprintf(stderr, "readASCMFile-6: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
+		fprintf(stderr, "readMISRCloudMask-6: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
 		return 0;
 	}
 		
@@ -402,7 +419,7 @@ int readASCMFile(char *fname)
 
 	if (n != 128*512) // total pixels available in ascm_buf == (65,536)
 	{
-		fprintf(stderr, "readASCMFile: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
+		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 0;
 	}
 
@@ -411,27 +428,27 @@ int readASCMFile(char *fname)
 
 	// strcpy(gridName, "CloudClassifiers_2.2_km"); 
 	// strcpy(fieldName, "ConsensusCloudMaskFineResolution");
-	// if (VERBOSE) fprintf(stderr, "readASCMFile: grid=%s, field=%s\n", gridName, fieldName);
+	// if (VERBOSE) fprintf(stderr, "readMISRCloudMask: grid=%s, field=%s\n", gridName, fieldName);
 	// // read adata
 	// status = MtkReadBlock(fname, gridName, fieldName, block, &Mtk_data_buf);
 	// if (status != MTK_SUCCESS) 
 	// 	{
-	// 	fprintf(stderr, "readASCMFile-4: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
+	// 	fprintf(stderr, "readMISRCloudMask-4: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
 	// 	return 0;
 	// 	}
 
-	// if (VERBOSE) fprintf(stderr, "readASCMFile: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
+	// if (VERBOSE) fprintf(stderr, "readMISRCloudMask: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
 	// 	Mtk_data_buf.nline, Mtk_data_buf.nsample, Mtk_data_buf.datasize, Mtk_data_buf.datatype, types[Mtk_data_buf.datatype]);
 	// if (Mtk_data_buf.nline != 64 || Mtk_data_buf.nsample != 256)
 	// 	{
-	// 	fprintf(stderr, "readASCMFile: %s is not 64x256: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
+	// 	fprintf(stderr, "readMISRCloudMask: %s is not 64x256: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
 	// 	return 0;
 	// 	}
 
 	// cmask1 = (uint8 *) malloc(64 * 256 * 8 * 8 * sizeof(uint8));
 	// if (!cmask1)
 	// 	{
-	// 	fprintf(stderr, "readASCMFile: cmask1 malloc failed!!!\n");
+	// 	fprintf(stderr, "readMISRCloudMask: cmask1 malloc failed!!!\n");
 	// 	return 0;
 	// 	}
 
@@ -451,7 +468,7 @@ int readASCMFile(char *fname)
 
 	// if (n != 64*256)
 	// 	{
-	// 	fprintf(stderr, "readASCMFile: cmask1 fewer than 16384 valid in %s: %d\n", fieldName, n);
+	// 	fprintf(stderr, "readMISRCloudMask: cmask1 fewer than 16384 valid in %s: %d\n", fieldName, n);
 	// 	return 0;
 	// 	}
 
@@ -462,7 +479,6 @@ int readASCMFile(char *fname)
 
 // int write_data(char* fname, uint8* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
 int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
-
 {
 	FILE* f;
 
@@ -486,23 +502,27 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 
 //######################################################################################################################
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) 
+{
 
 	int i, j, i2, j2;
 	char s[256];
-	char * pch;
+	// char* pch;
+	char *cloudmaskname;
 
-	if (argc < 4) {
-		fprintf(stderr, "Usage: readASCMFile input-misr-file block output-data-file\n");
+	if (argc < 5) 
+	{
+		// fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file\n");
+		fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file\n");
 		return 1;
 	}
 		
-
 	strcpy(fname[0], argv[1]);
 	block = atoi(argv[2]);
 	strcpy(fname[1], argv[3]);
+	strcpy(cloudmaskname, argv[4]) // copy argv[4] to cloudmaskname
 
-	if (!readASCMFile(fname[0])) return 1;
+	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1;
 
 	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048)
 

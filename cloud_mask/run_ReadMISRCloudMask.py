@@ -23,15 +23,17 @@ import sys, os, os.path
 
 
 # set the input path
-in_dir = '/data/gpfs/assoc/misr_roughness/2016/cloud_masks/new_files/202211022887' # makes a list of all cloudmask.hdf files in here
-exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir'
+in_dir = '/data/gpfs/assoc/misr_roughness/2016/cloud_masks/new_files/202211022887' 	# makes a list of all cloudmask.hdf files in here
+exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir' 					# where exe file is on HPC
 
+cloudmask_filetype = 'SDCM' # 'ASCM' , 'RCCM' or double quote for C?
 ################################## DO NOT CHANGE ##################################
-#~ other settings
-exe_name = "ReadCloudMask"
+# other settings
+
+exe_name = "ReadMISRCloudMask"
 exe_dir_fullpath = os.path.join(exe_dir, exe_name)
 
-end_block_not_included = 100  # reads up to this number; 47
+end_block_not_included = 47  # reads HDF file up to this number
 # set a label for output dir
 out_dir_label = 'cloudmask_TC_CLASSIFIERS_F07_HC4_only' # we build this dir inside our input dir
 
@@ -80,8 +82,10 @@ for file_count, file in enumerate(files_list):
 	for block in range(1, end_block_not_included, 1):  # define range for blocks
 
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block		
-		cmd = "%s \"%s\" %d \"%s\"" % (exe_dir_fullpath, ifile, block, ofile)
+		cmd = "%s \"%s\" %d \"%s\" %s" % (exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)
+
 		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # why n+1 ?
+		
 		if (os.system(cmd) != 0):
 			sys.exit(1)
 		n += 1
