@@ -1,8 +1,19 @@
-// ReadASCMFile.c
-// Read TERRAIN radiance data, perform terrain correction, convert to TOA BRF, 
-//   save as data and PNG.  Mark and fix terrain dropouts.  Discard files with
-//   sz >= 80.0.
-// Sky Coyote 18 Apr 09
+/*
+Ehsan Mosadegh, 10 Nov 2022
+use for:
+	change cloud shape of cloudmask files from (x,y) to (xxxx,yyyy)
+
+
+
+original: ReadASCMFile.c
+Sky Coyote 18 Apr 09
+old collments:
+
+	Read TERRAIN radiance data, perform terrain correction, convert to TOA BRF, 
+	save as data and PNG.  Mark and fix terrain dropouts.  Discard files with
+	sz >= 80.0.
+
+*/
 
 #include <stdlib.h>
 #include <math.h>
@@ -59,15 +70,18 @@ int readASCMFile(char *fname)
 	if (VERBOSE) fprintf(stderr, "readASCMFile: fname=%s, block=%d\n", fname, block);
 	status = MtkFileType(fname, &filetype);
 	
-	if (status != MTK_SUCCESS) {
+	if (status != MTK_SUCCESS) 
+	{
 		fprintf(stderr, "readASCMFile: MtkFileType failed!!!, status = %d (%s)\n", status, errs[status]);
 		return 0;
 	}
 
-	if (filetype != MTK_TC_CLASSIFIERS) {
+	if (filetype != MTK_TC_CLASSIFIERS) 
+	{
 		fprintf(stderr, "readASCMFile: TC_CLASSIFIERS are supported!!!\n");
 		return 0;
 	}
+
 	/***
 	int num_attrs;
 	char **attrlist;
@@ -82,6 +96,7 @@ int readASCMFile(char *fname)
 		fprintf(stderr, "%d %s\n", num_attrs, attrlist[i]);
 		}
 	***/
+
 	/*=================================================================*/
 	//grid-field-1
 
@@ -177,14 +192,18 @@ int readASCMFile(char *fname)
 	// 	return 0;
 	// 	}
 	/*=================================================================*/
-	//E- grid-field-3: ASCM
+	/* to read ASCM file */
 
 	strcpy(gridName, "ASCMParams_1.1_km"); 
 	strcpy(fieldName, "AngularSignatureCloudMask");
+
+
 	if (VERBOSE) fprintf(stderr, "readASCMFile: grid=%s, field=%s\n", gridName, fieldName);
 	status = MtkReadBlock(fname, gridName, fieldName, block, &Mtk_data_buf);
+
 	
-	if (status != MTK_SUCCESS) {	//fprintf(stderr, "readASCMFile: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
+	if (status != MTK_SUCCESS) 
+	{	//fprintf(stderr, "readASCMFile: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
 		fprintf(stderr, "readASCMFile-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
 		return 0;
 	}
@@ -192,7 +211,8 @@ int readASCMFile(char *fname)
 	if (VERBOSE) fprintf(stderr, "readASCMFile: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
 		Mtk_data_buf.nline, Mtk_data_buf.nsample, Mtk_data_buf.datasize, Mtk_data_buf.datatype, types[Mtk_data_buf.datatype]);
 
-	if (Mtk_data_buf.nline != 128 || Mtk_data_buf.nsample != 512) {
+	if (Mtk_data_buf.nline != 128 || Mtk_data_buf.nsample != 512) 
+	{
 		fprintf(stderr, "readASCMFile: %s is not 128x512: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
 		return 0;
 	}
@@ -200,7 +220,8 @@ int readASCMFile(char *fname)
 	// cmask0_ptr = (uint8 *) malloc(128 * 512 * 4 * 4 * sizeof(uint8)); // allocates mem- and returns a ptr to the 1st byte in the allocated mem- == cmask0_ptr
 	cmask0_ptr = (uint8_t *) malloc(128 * 512 * 4 * 4 * sizeof(uint8_t)); // allocates mem- and returns a ptr to the 1st byte in the allocated mem- == cmask0_ptr
 
-	if (!cmask0_ptr) { 	// check if ptr is NULL
+	if (!cmask0_ptr) 
+	{ 	// check if ptr is NULL
 		fprintf(stderr, "readASCMFile: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
 		return 0;
 	}
@@ -210,11 +231,12 @@ int readASCMFile(char *fname)
 
 	// E: all commnets here are mine
 	n = 0;
-	for (j = 0; j < 128; j ++)
-		for (i = 0; i < 512; i ++) {
+	for (j = 0; j < 128; j ++) // row
+		for (i = 0; i < 512; i ++) // column
+		{
 			n ++;
 
-			/* E: here we map 4 cloudy conditions from [1,2,3,4] conditions (based on dics p.13) to [0-1] space */
+			/* E: here we map 4 cloudy conditions from [1,2,3,4] conditions (based on docs p.13) to [0-1] space */
 			mask = 0; // E- any pixel w/cloud== cloudHC = 0 based on CM docs p.13, we set cm=0 to zero that pixel
 			
 			// if (Mtk_data_buf.data.u8[j][i] == 4) mask = 1; // E- 4 means clear w/HC==sunny sky; 
@@ -235,13 +257,15 @@ int readASCMFile(char *fname)
 						
 					// cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: original; so cmask0_ptr is either 0 or 1, 0==cloudy 1==clear
 					
-					if (Mtk_data_buf.data.u8[j][i] == 4) { // E- 4 means clear w/HC==sunny sky; 
+					if (Mtk_data_buf.data.u8[j][i] == 4) 
+					{ // E- 4 == clear w/HC == sunny sky; 
 						
-						cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = 1 ; // E: mine; so cmask0_ptr is either 0 or 1, 0==cloudy 1==clear ; E: replaced mask w/ 1 to test
+						cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = 1 ; // E: mine; cmask0_ptr is either 0 or 1, 0==cloudy 1==clear ; E: replaced mask w/ 1 to test
 					}
 					
 					// Ehsan: 
-					else {  // fraction_cloudBestEst_buf[(j * 64 + k) * 32*64 + i*64 + l] = Mtk_data_buf.data.d[j][i];
+					else 
+					{  // fraction_cloudBestEst_buf[(j * 64 + k) * 32*64 + i*64 + l] = Mtk_data_buf.data.d[j][i];
 					
 						// printf("what should we do if a fraction_cloudBestEst_buf pixel wasn't in range [0, 0.1]? filled w/NODATA2 \n");
 						// cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = NODATA2 ;
@@ -252,9 +276,9 @@ int readASCMFile(char *fname)
 				}
 		}
 
-	if (n != 128*512) // total pixels available in ascm_buf == 65,536
+	if (n != 128*512) // total pixels available in ascm_buf == (65,536)
 	{
-		fprintf(stderr, "readASCMFile: cmask0_ptr fewer than 65,536 valid in %s: %d\n", fieldName, n);
+		fprintf(stderr, "readASCMFile: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 0;
 	}
 
@@ -356,7 +380,7 @@ int main(int argc, char* argv[]) {
 
 	if (!readASCMFile(fname[0])) return 1;
 
-	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elemenst are checked to be total of 512*2048
+	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048
 
 	free(cmask0_ptr);
 
