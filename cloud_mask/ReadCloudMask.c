@@ -358,7 +358,7 @@ int readASCMFile(char *fname)
 				for (l = 0; l < 4; l++) 
 				{
 
-					printf("cloud mask value: %x \n", Mtk_data_buf.data.u8[j][i]);
+					// printf("cloud mask value: %x \n", Mtk_data_buf.data.u8[j][i]);
 
 					cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = Mtk_data_buf.data.u8[j][i];
 
