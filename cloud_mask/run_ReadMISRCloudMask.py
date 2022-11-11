@@ -81,14 +81,17 @@ for file_count, file in enumerate(files_list):
 	# for block in range(int(items[1][1:4]), int(items[1][5:8]) + 1):  # 
 	for block in range(1, end_block_not_included, 1):  # define range for blocks
 
-		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block		
-		cmd = "%s \"%s\" %d \"%s\" %s" % (exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)
+		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
+
+
+		cmd = "%s %s %d %s %s" % (exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)
+		
 		print("checkpoint-1")
 		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # why n+1 ?
 		print("checkpoint-2")
 
 		if (os.system(cmd) != 0):
-			print("error;exiting...")
+			print("error; exiting...")
 			sys.exit(1)
 		n += 1
 
