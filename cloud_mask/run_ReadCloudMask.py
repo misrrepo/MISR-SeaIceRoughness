@@ -21,16 +21,17 @@ import sys, os, os.path
 # in_dir = "/Volumes/easystore/from_home/Nolin_except_dataFolder/remainder_forExternalHD_3.1TB/2013/MIL2TCSP/Apr"
 # in_dir = "/Volumes/Ehsanm_DRI/research/MISR/cloud_mask/cloudmask_apr2013_day1to16_p1to233/"
 
+
 # set the input path
-in_dir = '/data/gpfs/assoc/misr_roughness/2016/april_2016/cloudmasks'
-exe_dir = '/data/gpfs/home/emosadegh/MISR-roughness/exe_dir'
+in_dir = '/data/gpfs/assoc/misr_roughness/2016/cloud_masks/new_files/202211022887' # makes a list of all cloudmask.hdf files in here
+exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir'
 
 ################################## DO NOT CHANGE ##################################
 #~ other settings
 exe_name = "ReadCloudMask"
 exe_dir_fullpath = os.path.join(exe_dir, exe_name)
 
-end_block_not_included = 47  # reads up to this number
+end_block_not_included = 100  # reads up to this number; 47
 # set a label for output dir
 out_dir_label = 'cloudmask_TC_CLASSIFIERS_F07_HC4_only' # we build this dir inside our input dir
 
