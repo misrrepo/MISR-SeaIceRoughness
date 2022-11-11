@@ -76,7 +76,16 @@ int readASCMFile(char *fname)
 		return 0;
 	}
 
-	if (filetype != MTK_TC_CLASSIFIERS) 
+
+	// for ASCM
+	// if (filetype != MTK_TC_CLASSIFIERS) 
+	// {
+	// 	fprintf(stderr, "readASCMFile: TC_CLASSIFIERS are supported!!!\n");
+	// 	return 0;
+	// }
+
+	// for SDCM
+	if (filetype != MTK_TC_CLOUD)  // we change it for SDCM
 	{
 		fprintf(stderr, "readASCMFile: TC_CLASSIFIERS are supported!!!\n");
 		return 0;
