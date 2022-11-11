@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=HDF-DL-month1
+#SBATCH --job-name=cloudmask-july
 
 ##SBATCH --account=cpu-s6-test-0 
 ##SBATCH --partition=cpu-s6-test-0
@@ -16,8 +16,8 @@
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
 
-#SBATCH --output=log_multi_download.txt   		 # The output file name
-#SBATCH --error=log_multi_download.txt		 	# The error file nam
+#SBATCH --output=log_multi_download_july2016.txt   		 # The output file name
+#SBATCH --error=log_multi_download_july2016.txt		 	# The error file nam
 
 source /data/gpfs/home/emosadegh/.bashrc
 
@@ -29,7 +29,7 @@ echo "python version:"
 python -V
 
 ## path to python script to run
-python /data/gpfs/home/emosadegh/MISR-SeaIceRoughness/download_from_FTP/multi_download_NASA_modified_month1.py
+python ./multi_download_NASA_modified.py
 
 echo “MISR job ended ...”
 conda deactivate

@@ -168,7 +168,7 @@ def download(session: Session, files: List[str], output_dir: Path) -> None:
     # The following code downloads the files
     print(f"Downloading {len(files)} files.")
     for i, file in enumerate(files):
-        print("Downloading file %s of %s" %(i+1,len(files))) #, end="\r")
+        print("Downloading %s of %s" %(i+1,len(files))) #, end="\r")
         file_path = output_dir.joinpath(file.split('/')[-1])
         print('file path: %s' %file_path)
         with session.get(file) as _redirect:
