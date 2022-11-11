@@ -120,11 +120,11 @@ def verify_download(session: Session, files: List[str], output_dir: Path) -> Lis
 
         if (overwrite_existing_files == False):
             files = list(filter(lambda file: file not in existing_files, files))  # remote files that not exist on local storage
-            print('num. of remote files we will download w/o overwriting: %s' %len(files))
+            print('num. of remote files to download w/o overwriting: %s' %len(files))
 
 
     # print(type(files))
-    print('remote files: %s' %len(files))
+    print('remote files to download: %s' %len(files))
     if (len(files)!=0):
         print('first file on list:')
         print(files[0])
@@ -163,7 +163,7 @@ def verify_download(session: Session, files: List[str], output_dir: Path) -> Lis
 
 def download(session: Session, files: List[str], output_dir: Path) -> None:
     if (len(files)==0):
-        raise SystemExit('no file found on remote server for downloading, exiting...')
+        raise SystemExit('no file found on remote server for downloading OR all files are already downloaded, exiting...')
 
     # The following code downloads the files
     print(f"Downloading {len(files)} files.")
