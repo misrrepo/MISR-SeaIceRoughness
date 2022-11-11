@@ -26,7 +26,7 @@ import sys, os, os.path
 in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm" 	# makes a list of all cloudmask.hdf files in here
 exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir' 					# where exe file is on HPC
 
-cloudmask_filetype = 'SDCM' # 'ASCM' , 'RCCM' or double quote for C?
+cloudmask_filetype = "SDCM" # 'ASCM' , 'RCCM' or double quote for C?
 ################################## DO NOT CHANGE ##################################
 # other settings
 
@@ -88,6 +88,7 @@ for file_count, file in enumerate(files_list):
 		print("checkpoint-2")
 
 		if (os.system(cmd) != 0):
+			print("error;exiting...")
 			sys.exit(1)
 		n += 1
 
