@@ -191,14 +191,117 @@ int readASCMFile(char *fname)
 	// 	fprintf(stderr, "readASCMFile: cfpmh fewer than 256 valid in %s: %d\n", fieldName, n);
 	// 	return 0;
 	// 	}
+
+	// /*=================================================================*/
+	// /* to read ASCM file */
+
+	// strcpy(gridName, "ASCMParams_1.1_km"); 
+	// strcpy(fieldName, "AngularSignatureCloudMask");
+
+
+	// if (VERBOSE) fprintf(stderr, "readASCMFile: grid=%s, field=%s\n", gridName, fieldName);
+	// status = MtkReadBlock(fname, gridName, fieldName, block, &Mtk_data_buf);
+
+	
+	// if (status != MTK_SUCCESS) 
+	// {	//fprintf(stderr, "readASCMFile: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
+	// 	fprintf(stderr, "readASCMFile-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
+	// 	return 0;
+	// }
+
+	// if (VERBOSE) fprintf(stderr, "readASCMFile: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
+	// 	Mtk_data_buf.nline, Mtk_data_buf.nsample, Mtk_data_buf.datasize, Mtk_data_buf.datatype, types[Mtk_data_buf.datatype]);
+
+	// if (Mtk_data_buf.nline != 128 || Mtk_data_buf.nsample != 512) 
+	// {
+	// 	fprintf(stderr, "readASCMFile: %s is not 128x512: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
+	// 	return 0;
+	// }
+
+	// // cmask0_ptr = (uint8 *) malloc(128 * 512 * 4 * 4 * sizeof(uint8)); // allocates mem- and returns a ptr to the 1st byte in the allocated mem- == cmask0_ptr
+	// cmask0_ptr = (uint8_t *) malloc(128 * 512 * 4 * 4 * sizeof(uint8_t)); // allocates mem- and returns a ptr to the 1st byte in the allocated mem- == cmask0_ptr
+
+	// if (!cmask0_ptr) 
+	// { 	// check if ptr is NULL
+	// 	fprintf(stderr, "readASCMFile: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
+	// 	return 0;
+	// }
+		
+
+	// // int cmask0_pixel;
+
+	// // E: all commnets here are mine
+	// n = 0;
+	// for (j = 0; j < 128; j ++) // row
+	// 	for (i = 0; i < 512; i ++) // column
+	// 	{
+	// 		n ++;
+
+	// 		/* E: here we map 4 cloudy conditions from [1,2,3,4] conditions (based on docs p.13) to [0-1] space */
+	// 		mask = 0; // E- any pixel w/cloud== cloudHC = 0 based on CM docs p.13, we set cm=0 to zero that pixel
+			
+	// 		// if (Mtk_data_buf.data.u8[j][i] == 4) mask = 1; // E- 4 means clear w/HC==sunny sky; 
+	// 		// if (Mtk_data_buf.data.u8[j][i] == 4) mask = 1; // E- 4 means clear w/HC==sunny sky; 
+
+	// 		for (k = 0; k < 4; k++)
+	// 			for (l = 0; l < 4; l++) {
+	// 				// cmask0_pixel = (j * 4 + k) * 512*4 + i*4 + l;
+	// 				// printf("pixel index shoud reach 512*2048: %d \n" , cmask0_pixel+1); // shoudl be 512*2048
+	// 				// printf("fraction_cloudBestEst_buf pixel value: %f \n" , fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] );
+
+
+	// 				//if ((fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] <= cfcbe_thresh) && (cfpmh[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (cfpmh[(j * 4 + k) * 512*4 + i*4 + l] <= cfpmh_thresh))
+					
+	// 				// we apply this condition if fraction_cloudBestEst_buf pixel value is in range [0.0, cfcbe_thresh == 0.1] meaning less than 10% cloudy
+	// 				// if ((fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] < cfcbe_thresh)) { // E: means if upto 0.1 we can take that as not cloudy?
+	// 					/* we make more pixels cloudy == 0 // E: fraction_cloudBestEst_buf = CombinedFractionCloudBestEstimate */
+						
+	// 				// cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: original; so cmask0_ptr is either 0 or 1, 0==cloudy 1==clear
+					
+	// 				if (Mtk_data_buf.data.u8[j][i] == 4) 
+	// 				{ // E- 4 == clear w/HC == sunny sky; 
+						
+	// 					cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = 1 ; // E: mine; cmask0_ptr is either 0 or 1, 0==cloudy 1==clear ; E: replaced mask w/ 1 to test
+	// 				}
+					
+	// 				// Ehsan: 
+	// 				else 
+	// 				{  // fraction_cloudBestEst_buf[(j * 64 + k) * 32*64 + i*64 + l] = Mtk_data_buf.data.d[j][i];
+					
+	// 					// printf("what should we do if a fraction_cloudBestEst_buf pixel wasn't in range [0, 0.1]? filled w/NODATA2 \n");
+	// 					// cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = NODATA2 ;
+	// 					cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: changed it to test
+	// 				}
+					
+
+	// 			}
+	// 	}
+
+
+	// if (n != 128*512) // total pixels available in ascm_buf == (65,536)
+	// {
+	// 	fprintf(stderr, "readASCMFile: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
+	// 	return 0;
+	// }
+
+
+
+
 	/*=================================================================*/
-	/* to read ASCM file */
+	/* read cloud mask file */
 
-	strcpy(gridName, "ASCMParams_1.1_km"); 
-	strcpy(fieldName, "AngularSignatureCloudMask");
+	// define cloud mask file name and print it / SDCM - TC_CLOUD
+
+	strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
+	strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
 
 
-	if (VERBOSE) fprintf(stderr, "readASCMFile: grid=%s, field=%s\n", gridName, fieldName);
+	// read ASCM
+	// strcpy(gridName, "ASCMParams_1.1_km"); 
+	// strcpy(fieldName, "AngularSignatureCloudMask");
+
+
+	if (VERBOSE) fprintf(stderr, "readASCMFile-1: grid=%s, field=%s\n", gridName, fieldName);
 	status = MtkReadBlock(fname, gridName, fieldName, block, &Mtk_data_buf);
 
 	
@@ -208,12 +311,12 @@ int readASCMFile(char *fname)
 		return 0;
 	}
 
-	if (VERBOSE) fprintf(stderr, "readASCMFile: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
+	if (VERBOSE) fprintf(stderr, "readASCMFile-4: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
 		Mtk_data_buf.nline, Mtk_data_buf.nsample, Mtk_data_buf.datasize, Mtk_data_buf.datatype, types[Mtk_data_buf.datatype]);
 
 	if (Mtk_data_buf.nline != 128 || Mtk_data_buf.nsample != 512) 
 	{
-		fprintf(stderr, "readASCMFile: %s is not 128x512: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
+		fprintf(stderr, "readASCMFile-5: %s is not 128x512: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
 		return 0;
 	}
 
@@ -222,7 +325,7 @@ int readASCMFile(char *fname)
 
 	if (!cmask0_ptr) 
 	{ 	// check if ptr is NULL
-		fprintf(stderr, "readASCMFile: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
+		fprintf(stderr, "readASCMFile-6: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
 		return 0;
 	}
 		
@@ -237,44 +340,56 @@ int readASCMFile(char *fname)
 			n ++;
 
 			/* E: here we map 4 cloudy conditions from [1,2,3,4] conditions (based on docs p.13) to [0-1] space */
-			mask = 0; // E- any pixel w/cloud== cloudHC = 0 based on CM docs p.13, we set cm=0 to zero that pixel
+			// mask = 0; // E- any pixel w/cloud== cloudHC = 0 based on CM docs p.13, we set cm=0 to zero that pixel
 			
 			// if (Mtk_data_buf.data.u8[j][i] == 4) mask = 1; // E- 4 means clear w/HC==sunny sky; 
 			// if (Mtk_data_buf.data.u8[j][i] == 4) mask = 1; // E- 4 means clear w/HC==sunny sky; 
 
 			for (k = 0; k < 4; k++)
-				for (l = 0; l < 4; l++) {
+				for (l = 0; l < 4; l++) 
+				{
+
+					printf("cloud mask value: %x \n", Mtk_data_buf.data.u8[j][i]);
+
+					cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = Mtk_data_buf.data.u8[j][i]
+
+
+
+
+					// the rest is useless- delete it
+
 					// cmask0_pixel = (j * 4 + k) * 512*4 + i*4 + l;
 					// printf("pixel index shoud reach 512*2048: %d \n" , cmask0_pixel+1); // shoudl be 512*2048
 					// printf("fraction_cloudBestEst_buf pixel value: %f \n" , fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] );
 
 
-					//if ((fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] <= cfcbe_thresh) && (cfpmh[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (cfpmh[(j * 4 + k) * 512*4 + i*4 + l] <= cfpmh_thresh))
+					// //if ((fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] <= cfcbe_thresh) && (cfpmh[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (cfpmh[(j * 4 + k) * 512*4 + i*4 + l] <= cfpmh_thresh))
 					
-					// we apply this condition if fraction_cloudBestEst_buf pixel value is in range [0.0, cfcbe_thresh == 0.1] meaning less than 10% cloudy
-					// if ((fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] < cfcbe_thresh)) { // E: means if upto 0.1 we can take that as not cloudy?
-						/* we make more pixels cloudy == 0 // E: fraction_cloudBestEst_buf = CombinedFractionCloudBestEstimate */
+					// // we apply this condition if fraction_cloudBestEst_buf pixel value is in range [0.0, cfcbe_thresh == 0.1] meaning less than 10% cloudy
+					// // if ((fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] < cfcbe_thresh)) { // E: means if upto 0.1 we can take that as not cloudy?
+					// 	/* we make more pixels cloudy == 0 // E: fraction_cloudBestEst_buf = CombinedFractionCloudBestEstimate */
 						
-					// cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: original; so cmask0_ptr is either 0 or 1, 0==cloudy 1==clear
+					// // cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: original; so cmask0_ptr is either 0 or 1, 0==cloudy 1==clear
 					
-					if (Mtk_data_buf.data.u8[j][i] == 4) 
-					{ // E- 4 == clear w/HC == sunny sky; 
+					// if (Mtk_data_buf.data.u8[j][i] == 4) 
+					// { // E- 4 == clear w/HC == sunny sky; 
 						
-						cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = 1 ; // E: mine; cmask0_ptr is either 0 or 1, 0==cloudy 1==clear ; E: replaced mask w/ 1 to test
-					}
+					// 	cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = 1 ; // E: mine; cmask0_ptr is either 0 or 1, 0==cloudy 1==clear ; E: replaced mask w/ 1 to test
+					// }
 					
-					// Ehsan: 
-					else 
-					{  // fraction_cloudBestEst_buf[(j * 64 + k) * 32*64 + i*64 + l] = Mtk_data_buf.data.d[j][i];
+					// // Ehsan: 
+					// else 
+					// {  // fraction_cloudBestEst_buf[(j * 64 + k) * 32*64 + i*64 + l] = Mtk_data_buf.data.d[j][i];
 					
-						// printf("what should we do if a fraction_cloudBestEst_buf pixel wasn't in range [0, 0.1]? filled w/NODATA2 \n");
-						// cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = NODATA2 ;
-						cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: changed it to test
+					// 	// printf("what should we do if a fraction_cloudBestEst_buf pixel wasn't in range [0, 0.1]? filled w/NODATA2 \n");
+					// 	// cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = NODATA2 ;
+					// 	cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: changed it to test
 					}
 					
 
 				}
 		}
+
 
 	if (n != 128*512) // total pixels available in ascm_buf == (65,536)
 	{
@@ -380,7 +495,7 @@ int main(int argc, char* argv[]) {
 
 	if (!readASCMFile(fname[0])) return 1;
 
-	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048
+	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048)
 
 	free(cmask0_ptr);
 

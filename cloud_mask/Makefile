@@ -1,5 +1,6 @@
+# Ehsan Mosadegh, 10 Nov 2022
 
-exe_path=/data/gpfs/home/emosadegh/MISR-roughness/exe_dir
+exe_path=/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
 src_name=ReadCloudMask.c
 # exe_name=ReadASCMCloudMask
 exe_name=ReadCloudMask

@@ -27,7 +27,7 @@ exe_dir = '/data/gpfs/home/emosadegh/MISR-roughness/exe_dir'
 
 ################################## DO NOT CHANGE ##################################
 #~ other settings
-exe_name = "ReadASCMCloudMask"
+exe_name = "ReadCloudMask"
 exe_dir_fullpath = os.path.join(exe_dir, exe_name)
 
 end_block_not_included = 47  # reads up to this number
