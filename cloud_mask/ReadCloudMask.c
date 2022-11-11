@@ -351,7 +351,7 @@ int readASCMFile(char *fname)
 
 					printf("cloud mask value: %x \n", Mtk_data_buf.data.u8[j][i]);
 
-					cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = Mtk_data_buf.data.u8[j][i]
+					cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = Mtk_data_buf.data.u8[j][i];
 
 
 
@@ -384,7 +384,7 @@ int readASCMFile(char *fname)
 					// 	// printf("what should we do if a fraction_cloudBestEst_buf pixel wasn't in range [0, 0.1]? filled w/NODATA2 \n");
 					// 	// cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = NODATA2 ;
 					// 	cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: changed it to test
-					}
+					// }
 					
 
 				}
