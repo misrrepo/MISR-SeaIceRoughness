@@ -90,7 +90,7 @@ def get_files_to_download(session: Session, filter_list: List[str]) -> List[str]
                     urls.append(new_url)
                 elif is_correct_ext(new_url, filter_list) and new_url not in files:
                     files.append(new_url)
-    print('num. of remote files: %s' %len(files))
+    print('remote files: %s' %len(files))
     return files
 
 
@@ -101,7 +101,7 @@ def verify_download(session: Session, files: List[str], output_dir: Path) -> Lis
     # should existing files be overwritten
     print("Checking for existing files")
     local_files = [file.name.lower() for file in output_dir.iterdir()]
-    print('num. of local files: %s' %(len(local_files)))
+    print('local files: %s' %(len(local_files)))
 
     # turn off because of error
     # existing_files = list(filter(lambda file: Path(file).name.lower() in local_files, files))  # file==variable; filter(function/condition that returns true(==where ture, extract from iterable), iterable)
@@ -120,7 +120,7 @@ def verify_download(session: Session, files: List[str], output_dir: Path) -> Lis
 
         if (overwrite_existing_files == False):
             files = list(filter(lambda file: file not in existing_files, files))  # remote files that not exist on local storage
-            print('num. of remote files to download w/o overwriting: %s' %len(files))
+            print('remote files to download w/o overwriting: %s' %len(files))
 
 
     # print(type(files))
@@ -186,14 +186,14 @@ if __name__ == "__main__":
     # starting_url = input("Enter the top level URL: ")
 
     # starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202209128871/"
-    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202211116267/"
+    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202211115720/"
 
 
     # path to download directory on local machine/HPC
     home_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks"
 
     
-    out_dir_label = "april_2016_sdcm" # code will create this directory if not available on disk
+    out_dir_label = "july_2016_sdcm" # code will create this directory if not available on disk
 
     ################################################################################
     # old code
