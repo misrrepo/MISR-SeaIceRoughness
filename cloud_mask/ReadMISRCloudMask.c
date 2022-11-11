@@ -79,7 +79,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 
 
 	// for ASCM
-	if (cloudmaskname=='ASCM') // check this
+	if (cloudmaskname=="ASCM") // check this
 	{
 		if (filetype != MTK_TC_CLASSIFIERS) 
 		{
@@ -93,7 +93,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 
 
 	// for SDCM
-	if (cloudmaskname=='SDCM') // check this
+	if (cloudmaskname=="SDCM") // check this
 	{
 		if (filetype != MTK_TC_CLOUD)  // we change it for SDCM
 		{
@@ -107,7 +107,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	
 
 	// for RCCM
-	if (cloudmaskname=='RCCM')
+	if (cloudmaskname=="RCCM")
 	{
 		if (filetype != MTK_TC_CLOUD)  // fix this: MTK_TC_CLOUD???
 		{
