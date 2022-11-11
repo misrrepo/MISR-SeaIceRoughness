@@ -79,13 +79,15 @@ for file_count, file in enumerate(files_list):
 	# print("items: %s" % items[0])
 
 	ifile = in_dir + '/' + file # define hdf file
+	print(ifile)
+
 	# for block in range(int(items[1][1:4]), int(items[1][5:8]) + 1):  # 
 	for block in range(1, end_block_not_included, 1):  # define range for blocks
 
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
+		print(ofile)
 
-
-		cmd = (' "%s" "%s" %d "%s" "%s" ' %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype))
+		cmd = ("%s %s %s %s %s" %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype))
 		
 		print("checkpoint-1")
 		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # why n+1 ?
@@ -93,7 +95,8 @@ for file_count, file in enumerate(files_list):
 
 		# run the cmd command
 		return_value_of_cmd = subprocess.call(cmd, shell=True)
-
+		print(return_value_of_cmd)
+		
 		# if (os.system(cmd) != 0):
 		if (return_value_of_cmd != 0):
 			print("error; exitting...")
