@@ -23,7 +23,7 @@ import sys, os, os.path
 
 
 # set the input path
-in_dir = '/data/gpfs/assoc/misr_roughness/2016/cloud_masks/new_files/202211022887' 	# makes a list of all cloudmask.hdf files in here
+in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm" 	# makes a list of all cloudmask.hdf files in here
 exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir' 					# where exe file is on HPC
 
 cloudmask_filetype = 'SDCM' # 'ASCM' , 'RCCM' or double quote for C?
