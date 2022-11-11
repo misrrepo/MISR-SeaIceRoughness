@@ -35,7 +35,7 @@ exe_dir_fullpath = os.path.join(exe_dir, exe_name)
 
 end_block_not_included = 47  # reads HDF file up to this number
 # set a label for output dir
-out_dir_label = 'cloudmask_TC_CLASSIFIERS_F07_HC4_only' # we build this dir inside our input dir
+out_dir_label = 'cloudmask_TC_CLOUD_SDCM' # we build this dir inside our input dir
 
 ###################################################################################
 
@@ -62,7 +62,7 @@ files_list = [file for file in os.listdir(in_dir) if (os.path.splitext(file)[1] 
 
 for file_count, file in enumerate(files_list):
 
-	print("\nMISR TC-CLASSIFIER.hdf (%d/%d): %s \n" % (file_count+1, len(files_list), file))
+	print("\nMISR cloudmask.hdf (%d/%d): %s \n" % (file_count+1, len(files_list), file))
 	path = file.split('_')[4]
 	orbit = file.split('_')[5]
 
@@ -83,9 +83,10 @@ for file_count, file in enumerate(files_list):
 
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block		
 		cmd = "%s \"%s\" %d \"%s\" %s" % (exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)
-
+		print("checkpoint-1")
 		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # why n+1 ?
-		
+		print("checkpoint-2")
+
 		if (os.system(cmd) != 0):
 			sys.exit(1)
 		n += 1
