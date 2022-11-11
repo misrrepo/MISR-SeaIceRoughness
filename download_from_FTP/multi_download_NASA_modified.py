@@ -189,7 +189,7 @@ if __name__ == "__main__":
     home_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks"
 
     
-    out_dir_label = "april_2016_sdcm" # code will make this directory if not available on disk
+    out_dir_label = "april_2016_sdcm" # code will create this directory if not available on disk
 
     ################################################################################
     # old code
