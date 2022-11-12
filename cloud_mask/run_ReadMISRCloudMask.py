@@ -99,7 +99,7 @@ for file_count, file in enumerate(files_list):
 		print("checkpoint-2")
 
 		# run the cmd command
-		return_value_of_cmd = subprocess.call(cmd)  # If passing a single string, either shell must be True (shell=True)
+		return_value_of_cmd = subprocess.call(cmd, shell=True)  # If passing a single string, either shell must be True (shell=True)
 
 		print(return_value_of_cmd)
 		
