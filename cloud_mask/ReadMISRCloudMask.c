@@ -508,13 +508,15 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 int main(int argc, char *argv[]) 
 {
 	printf("we are inside C program...\n");
-
+	printf("issue here-1\n");
 	int i, j, i2, j2;
+	printf("issue here-2\n");
+
 	// char s[256];
 	// char* pch;
-	printf("issue here-1");
+	printf("issue here-3\n");
 	char *cloudmaskname; 
-	printf("issue here-2");
+	printf("issue here-4\n");
 
 	if (argc < 4) // should be number of args that come to the code 
 	{
