@@ -87,7 +87,7 @@ for file_count, file in enumerate(files_list):
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
 		# print(type(ofile))
 
-		cmd = (" '%s' '%s' '%s' '%s' '%s' " %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype))
+		cmd = (('%s' '%s' '%s' '%s' '%s') %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype))
 		print(cmd)
 		print(len(cmd))
 
@@ -97,7 +97,7 @@ for file_count, file in enumerate(files_list):
 		print("checkpoint-2")
 
 		# run the cmd command
-		return_value_of_cmd = subprocess.call([cmd], shell=True)
+		return_value_of_cmd = subprocess.call(cmd, shell=True)
 		print(return_value_of_cmd)
 		
 		# if (os.system(cmd) != 0):
