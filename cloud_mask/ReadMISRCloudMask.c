@@ -514,12 +514,12 @@ int main(int argc, char *argv[])
 {
 	printf("\ncmdline args count=%d\n", argc);
 	/* First argument is executable name only */
- 	// printf("\nexe name=%s", argv[0]);
- 	// int e;
-	// for (e=1; e< argc; e++) 
-	// {
-	//      printf("\narg%d=%s", e, argv[e]);
-	// }
+ 	printf("\nexe name=%s", argv[0]);
+ 	int e;
+	for (e=1; e< argc; e++) 
+	{
+	     printf("\narg%d=%s", e, argv[e]);
+	}
 
 
 	int i, j, i2, j2;
@@ -538,7 +538,7 @@ int main(int argc, char *argv[])
 	if (argc != 5) // should be number of args that come to the code 
 	{
 		// fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file\n");
-		fprintf(stderr, "Usage: readMISRCloudMask inputMISRFile block outputDataFile cloudMaskName\n");
+		fprintf(stderr, "Usage: <readMISRCloudMask> inputMISRFile block outputDataFile cloudMaskName\n");
 		return 1;
 	}
 	printf("issue here-5\n");
