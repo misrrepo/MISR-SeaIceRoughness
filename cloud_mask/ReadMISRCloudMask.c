@@ -509,7 +509,7 @@ int main(int argc, char *argv[])
 	int i, j, i2, j2;
 	// char s[256];
 	// char* pch;
-	char cloudmaskname[] = argv[4];
+	char cloudmaskname[];
 
 	if (argc < 4) // should be number of args that come to the code 
 	{
@@ -517,7 +517,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file cloudmaskname\n");
 		return 1;
 	}
-		
+	
+	char cloudmaskname[] = argv[4];
 	strcpy(fname[0], argv[1]);
 	block = atoi(argv[2]);
 	strcpy(fname[1], argv[3]);
