@@ -87,23 +87,19 @@ for file_count, file in enumerate(files_list):
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
 		# print(type(ofile))
 
-		# cmd = ' "%s" "%s" "%s" "%s" "%s" ' %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
-		# cmd =  [exe_dir_fullpath, ifile, str(block), ofile, cloudmask_filetype]  # a sequence of arguments is generally preferred,
-		# print(cmd)
-		# print(type(cmd))
-		# print(len(cmd))
-
+		cmd = ' "%s" "%s" "%s" "%s" "%s" ' %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
+		print(cmd)
+		print(type(cmd))
+		print(len(cmd))
 
 		# print("checkpoint-1")
-		# sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # n+1 to count input files on screen
+		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # n+1 to count input files on screen
 		# print("checkpoint-2")
 
 		# run the cmd command
 		print("run cmd...")
-		# return_value_of_cmd = subprocess.call(cmd, shell=True)  # If passing a single string, either shell must be True (shell=True)
-		return_value_of_cmd = subprocess.call(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # If passing a single string, either shell must be True (shell=True)
-
-
+		return_value_of_cmd = subprocess.call(cmd)  # If passing a single string, either shell must be True (shell=True)
+		# return_value_of_cmd = subprocess.call(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # If passing a single string, either shell must be True (shell=True)
 		print("out of C ...")
 		print(return_value_of_cmd)
 		
