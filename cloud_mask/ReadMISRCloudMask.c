@@ -509,7 +509,7 @@ int main(int argc, char *argv[])
 	int i, j, i2, j2;
 	// char s[256];
 	// char* pch;
-	char *cloudmaskname;
+	// char *cloudmaskname;
 
 	if (argc < 4) // should be number of args that come to the code 
 	{
