@@ -87,7 +87,8 @@ for file_count, file in enumerate(files_list):
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
 		# print(type(ofile))
 
-		cmd = (' "%s" "%s" "%s" "%s" "%s" ' %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype))  # a sequence of arguments is generally preferred,
+		# cmd = (' "%s" "%s" "%s" "%s" "%s" ' %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype))  # a sequence of arguments is generally preferred,
+		cmd = [exe_dir_fullpath, ifile, str(block), ofile, cloudmask_filetype]
 		print(cmd)
 		print(type(cmd))
 		print(len(cmd))
@@ -99,6 +100,7 @@ for file_count, file in enumerate(files_list):
 
 		# run the cmd command
 		return_value_of_cmd = subprocess.call(cmd)  # If passing a single string, either shell must be True (shell=True)
+
 		print(return_value_of_cmd)
 		
 		# if (os.system(cmd) != 0):
