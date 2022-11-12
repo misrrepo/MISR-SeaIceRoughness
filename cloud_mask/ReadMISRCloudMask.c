@@ -520,8 +520,7 @@ int main(int argc, char *argv[])
 	// char s[256];
 	// char* pch;
 	printf("issue here-3\n");
-	char cloudmaskname[5];
-	cloudmaskname = argv[4];
+	char *cloudmaskname;
 	// printf(cloudmaskname);
 
 
@@ -544,6 +543,7 @@ int main(int argc, char *argv[])
 	printf("issue here-6\n");
 
 	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
+	
 	// cloudmaskname = argv[4]; // copy argv[4] to cloudmaskname
 
 	printf("issue here-7\n");
