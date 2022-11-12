@@ -100,6 +100,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	// for SDCM
 	if (cloudmaskname=="SDCM") // check this
 	{
+		printf("inside if SDCM\n");
 		if (filetype != MTK_TC_CLOUD)  // we change it for SDCM
 		{
 			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n"); // fix this readMISRCloudMask
