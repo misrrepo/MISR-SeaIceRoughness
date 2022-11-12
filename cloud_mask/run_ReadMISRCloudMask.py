@@ -102,6 +102,7 @@ for file_count, file in enumerate(files_list):
 		# run the cmd command
 		print("run cmd...")
 		return_value_of_cmd = subprocess.call(cmd, shell=True)  # If passing a single string, either shell must be True (shell=True)
+		print("out of C ...")
 		print(return_value_of_cmd)
 		
 		# if (os.system(cmd) != 0):
