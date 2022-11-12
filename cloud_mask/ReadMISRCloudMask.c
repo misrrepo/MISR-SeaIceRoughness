@@ -91,13 +91,11 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		}
 
 		// setup SDCM grid and field names
-		printf("seting up grid & field for SDCM...\n");
+		// printf("seting up grid & field for SDCM...\n");
 		strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
 		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
-		printf("\n");
-		printf(gridName);
-		printf(fieldName);
-		printf("\n");
+		printf("gridName: %s" , gridName);
+		printf("fieldName: %s" , fieldName);
 	}
 	
 	// for ASCM
@@ -334,16 +332,21 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 
 	/*=================================================================*/
 	/* read any cloud mask file */
+	printf("check here -8 \n");
 
 	if (VERBOSE) fprintf(stderr, "readMISRCloudMask-1: grid=%s, field=%s\n", gridName, fieldName);
 	status = MtkReadBlock(fname, gridName, fieldName, block, &Mtk_data_buf);
-
+	
+	printf("check here -9 \n");
+	printf("status: %d \n" , status);
 	
 	if (status != MTK_SUCCESS) 
 	{	//fprintf(stderr, "readMISRCloudMask: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
 		fprintf(stderr, "readMISRCloudMask-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
 		return 0;
 	}
+
+	printf("check here -10 \n");
 
 	if (VERBOSE) fprintf(stderr, "readMISRCloudMask-4: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
 		Mtk_data_buf.nline, Mtk_data_buf.nsample, Mtk_data_buf.datasize, Mtk_data_buf.datatype, types[Mtk_data_buf.datatype]);
