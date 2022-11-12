@@ -94,8 +94,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		// printf("seting up grid & field for SDCM...\n");
 		strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
 		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
-		printf("gridName: %s" , gridName);
-		printf("fieldName: %s" , fieldName);
+		printf("gridName: %s \n" , gridName);
+		printf("fieldName: %s \n" , fieldName);
 	}
 	
 	// for ASCM
@@ -339,7 +339,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	
 	printf("check here -9 \n");
 	printf("status: %d \n" , status);
-	
+
 	if (status != MTK_SUCCESS) 
 	{	//fprintf(stderr, "readMISRCloudMask: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
 		fprintf(stderr, "readMISRCloudMask-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
@@ -433,7 +433,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 0;
 	}
-
+	printf("check here- 11 \n");
 	/*=================================================================*/
 	//grid-field-4
 
