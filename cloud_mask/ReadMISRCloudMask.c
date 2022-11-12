@@ -80,22 +80,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 
 
 
-	// for ASCM
-	// printf(&cloudmaskname);
-
-	if (cloudmaskname=="ASCM") // check this
-	{
-		if (filetype != MTK_TC_CLASSIFIERS) 
-		{
-			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n");
-			return 0;
-		}
-
-		// setup ASCM grid and field names
-		strcpy(gridName, "ASCMParams_1.1_km"); 
-		strcpy(fieldName, "AngularSignatureCloudMask");
-	}
-
+	printf("cloudmask is: \n");
+	printf(cloudmaskname);
 
 	// for SDCM
 	if (cloudmaskname=="SDCM") // check this
@@ -113,6 +99,19 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
 	}
 	
+	// for ASCM
+	if (cloudmaskname=="ASCM") // check this
+	{
+		if (filetype != MTK_TC_CLASSIFIERS) 
+		{
+			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n");
+			return 0;
+		}
+
+		// setup ASCM grid and field names
+		strcpy(gridName, "ASCMParams_1.1_km"); 
+		strcpy(fieldName, "AngularSignatureCloudMask");
+	}
 
 	// for RCCM
 	if (cloudmaskname=="RCCM")
@@ -529,10 +528,6 @@ int main(int argc, char *argv[])
 	int i, j, i2, j2;
 
 	char *cloudmaskname;
-	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
-	printf("cloudMask is: %s \n", cloudmaskname);
-
-	printf("issue here-4\n");
 
 	if (argc != 5) // should be number of args that come to the code 
 	{
@@ -546,11 +541,8 @@ int main(int argc, char *argv[])
 	strcpy(fname[0], argv[1]);
 	block = atoi(argv[2]);
 	strcpy(fname[1], argv[3]);
-
-	printf("issue here-6\n");
-
-
-	// cloudmaskname = argv[4]; // copy argv[4] to cloudmaskname
+	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
+	printf("cloudMask mode: %s \n", cloudmaskname);
 
 	printf("issue here-7\n");
 
