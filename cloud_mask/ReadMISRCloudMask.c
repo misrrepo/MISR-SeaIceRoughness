@@ -509,7 +509,7 @@ int main(int argc, char *argv[])
 	int i, j, i2, j2;
 	// char s[256];
 	// char* pch;
-	// char *cloudmaskname;
+	char cloudmaskname[] = argv[4];
 
 	if (argc < 4) // should be number of args that come to the code 
 	{
@@ -521,7 +521,7 @@ int main(int argc, char *argv[])
 	strcpy(fname[0], argv[1]);
 	block = atoi(argv[2]);
 	strcpy(fname[1], argv[3]);
-	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
+	// strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
 
 	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1;
 
