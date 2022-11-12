@@ -507,7 +507,7 @@ int main(int argc, char *argv[])
 	printf("we are inside C program...\n");
 
 	int i, j, i2, j2;
-	char s[256];
+	// char s[256];
 	// char* pch;
 	char *cloudmaskname;
 
