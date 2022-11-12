@@ -101,7 +101,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 			return 0;
 		}
 		// setup SDCM grid and field names
-		printf("seting up grid & field for SDCM...\n")
+		printf("seting up grid & field for SDCM...\n");
 		strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
 		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
 	}
