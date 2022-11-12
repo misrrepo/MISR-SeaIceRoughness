@@ -86,6 +86,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n");
 			return 0;
 		}
+
 		// setup ASCM grid and field names
 		strcpy(gridName, "ASCMParams_1.1_km"); 
 		strcpy(fieldName, "AngularSignatureCloudMask");
@@ -100,6 +101,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n"); // fix this readMISRCloudMask
 			return 0;
 		}
+
 		// setup SDCM grid and field names
 		printf("seting up grid & field for SDCM...\n");
 		strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
@@ -510,7 +512,7 @@ int main(int argc, char *argv[])
 	int i, j, i2, j2;
 	// char s[256];
 	// char* pch;
-	char cloudmaskname[5];
+	char *cloudmaskname;
 
 	if (argc < 4) // should be number of args that come to the code 
 	{
@@ -519,11 +521,11 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 	
-	strcpy(cloudmaskname, argv[4]);
+	// strcpy(cloudmaskname, argv[4]);
 	strcpy(fname[0], argv[1]);
 	block = atoi(argv[2]);
 	strcpy(fname[1], argv[3]);
-	// strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
+	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
 
 	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1;
 
