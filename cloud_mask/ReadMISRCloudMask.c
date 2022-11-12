@@ -76,7 +76,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		return 0;
 	}
 
-	printf("inside readMISRCloudMask");
+	printf("inside readMISRCloudMask\n");
 
 
 
