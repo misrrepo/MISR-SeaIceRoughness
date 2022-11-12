@@ -511,7 +511,7 @@ int main(int argc, char *argv[])
 	// char* pch;
 	char *cloudmaskname;
 
-	if (argc < 6) // should be number of args that come to the code 
+	if (argc < 4) // should be number of args that come to the code 
 	{
 		// fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file\n");
 		fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file cloudmaskname\n");

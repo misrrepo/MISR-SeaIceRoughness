@@ -88,7 +88,7 @@ for file_count, file in enumerate(files_list):
 		# print(type(ofile))
 
 		# cmd = ' "%s" "%s" "%s" "%s" "%s" ' %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
-		cmd =  [exe_dir_fullpath, ifile, str(block), ofile, cloudmask_filetype]  # a sequence of arguments is generally preferred,
+		# cmd =  [exe_dir_fullpath, ifile, str(block), ofile, cloudmask_filetype]  # a sequence of arguments is generally preferred,
 
 		print(cmd)
 		print(type(cmd))
@@ -101,7 +101,10 @@ for file_count, file in enumerate(files_list):
 
 		# run the cmd command
 		print("run cmd...")
-		return_value_of_cmd = subprocess.call(cmd, shell=True)  # If passing a single string, either shell must be True (shell=True)
+		# return_value_of_cmd = subprocess.call(cmd, shell=True)  # If passing a single string, either shell must be True (shell=True)
+		return_value_of_cmd = subprocess.call(exe_dir_fullpath ifile block ofile cloudmask_filetype)  # If passing a single string, either shell must be True (shell=True)
+
+
 		print("out of C ...")
 		print(return_value_of_cmd)
 		
