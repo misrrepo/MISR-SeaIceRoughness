@@ -76,12 +76,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		return 0;
 	}
 
-	printf("inside readMISRCloudMask\n");
-
-
-
-	printf("cloudmask is: \n");
-	printf(cloudmaskname);
+	// printf("inside readMISRCloudMask\n");
+	printf("cloudmask is: %s \n" , cloudmaskname);
 
 	// for SDCM
 	if (cloudmaskname=="SDCM") // check this
