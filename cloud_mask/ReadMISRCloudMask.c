@@ -520,7 +520,8 @@ int main(int argc, char *argv[])
 	// char s[256];
 	// char* pch;
 	printf("issue here-3\n");
-	char cloudmaskname[5] = argv[4];
+	char cloudmaskname[5];
+	cloudmaskname = argv[4];
 	// printf(cloudmaskname);
 
 
