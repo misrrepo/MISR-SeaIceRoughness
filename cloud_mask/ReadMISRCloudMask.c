@@ -538,7 +538,7 @@ int main(int argc, char *argv[])
 
 	printf("issue here-7\n");
 
-	if (!readMISRCloudMask(fname[0], *cloudmaskname)) return 1;
+	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1;
 
 	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048)
 
