@@ -533,7 +533,8 @@ int main(int argc, char *argv[])
 
 	printf("issue here-6\n");
 
-	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
+	// strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
+	cloudmaskname = argv[4]; // copy argv[4] to cloudmaskname
 
 	printf("issue here-7\n");
 
