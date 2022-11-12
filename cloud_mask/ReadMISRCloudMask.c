@@ -504,6 +504,7 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 
 int main(int argc, char *argv[]) 
 {
+	printf("we are inside C program...");
 
 	int i, j, i2, j2;
 	char s[256];
@@ -513,7 +514,7 @@ int main(int argc, char *argv[])
 	if (argc < 5) 
 	{
 		// fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file\n");
-		fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file\n");
+		fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file cloudmaskname\n");
 		return 1;
 	}
 		
