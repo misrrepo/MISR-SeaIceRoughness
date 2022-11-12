@@ -76,10 +76,12 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		return 0;
 	}
 
+	printf("inside readMISRCloudMask")
+
 
 
 	// for ASCM
-	printf(&cloudmaskname);
+	// printf(&cloudmaskname);
 
 	if (cloudmaskname=="ASCM") // check this
 	{
