@@ -530,7 +530,7 @@ int main(int argc, char *argv[])
 
 	char *cloudmaskname;
 	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
-	printf("cloudMask is: %s \n" %cloudmaskname);
+	printf("cloudMask is: %s \n", cloudmaskname);
 
 	printf("issue here-4\n");
 
