@@ -517,11 +517,11 @@ int main(int argc, char *argv[])
  	printf("\nexe name=%s", argv[0]);
  	
  	int e;
-	for (e=0; e< argc; e++) 
+	for (e=1; e< argc; e++) 
 	{
-	    printf("\narg%d=%s\n", e, argv[e]);
+	    printf("\narg%d=%s", e, argv[e]);
 	}
-
+	printf("\n");
 
 	int i, j, i2, j2;
 	printf("issue here-2\n");
