@@ -87,10 +87,11 @@ for file_count, file in enumerate(files_list):
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
 		print(ofile)
 
-		cmd = ('"%s" "%s" "%s" "%s" "%s"' %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype))
+		# cmd = ('"%s" "%s" "%s" "%s" "%s"' %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype))
+		cmd = [exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype]
 		
 		print("checkpoint-1")
-		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # why n+1 ?
+		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # n+1 to count input files on screen
 		print("checkpoint-2")
 
 		# run the cmd command
