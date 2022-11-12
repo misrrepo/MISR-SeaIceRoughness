@@ -518,7 +518,7 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 	
-	char cloudmaskname[] = argv[4];
+	cloudmaskname = argv[4];
 	strcpy(fname[0], argv[1]);
 	block = atoi(argv[2]);
 	strcpy(fname[1], argv[3]);
