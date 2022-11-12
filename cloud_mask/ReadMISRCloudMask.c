@@ -555,6 +555,6 @@ int main(int argc, char *argv[])
 	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048)
 
 	free(cmask0_ptr);
-
+	printf("check here- the end \n");
 	return 0;
 }
