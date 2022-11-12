@@ -80,7 +80,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	printf("cloudmask is: %s \n" , cloudmaskname);
 
 	// for SDCM
-	if (cloudmaskname=="SDCM") // check this
+	if (strcmp("SDCM", cloudmaskname)==0)  
+	// if (cloudmaskname=="SDCM") // check this
 	{
 		printf("inside if SDCM\n");
 		if (filetype != MTK_TC_CLOUD)  // we change it for SDCM
