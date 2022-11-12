@@ -515,10 +515,11 @@ int main(int argc, char *argv[])
 	printf("\ncmdline args count=%d\n", argc);
 	/* First argument is executable name only */
  	printf("\nexe name=%s", argv[0]);
+ 	
  	int e;
-	for (e=1; e< argc; e++) 
+	for (e=0; e< argc; e++) 
 	{
-	     printf("\narg%d=%s", e, argv[e]);
+	    printf("\narg%d=%s\n", e, argv[e]);
 	}
 
 
