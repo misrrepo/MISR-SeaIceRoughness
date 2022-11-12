@@ -504,7 +504,7 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 
 int main(int argc, char *argv[]) 
 {
-	printf("we are inside C program...");
+	printf("we are inside C program...\n");
 
 	int i, j, i2, j2;
 	char s[256];
