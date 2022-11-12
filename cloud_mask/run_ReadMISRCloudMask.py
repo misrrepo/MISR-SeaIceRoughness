@@ -88,7 +88,7 @@ for file_count, file in enumerate(files_list):
 		# print(type(ofile))
 
 		# cmd = ' "%s" "%s" "%s" "%s" "%s" ' %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
-		cmd = (' "%s" "%s" %d "%s" "%s" ') %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
+		cmd = (' %s "%s" %d "%s" "%s" ') %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
 
 		print(cmd)
 		print(type(cmd))
