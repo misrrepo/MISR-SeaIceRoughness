@@ -524,7 +524,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file cloudmaskname\n");
 		return 1;
 	}
-	
+	printf("issue here-5\n");
+
 	// strcpy(cloudmaskname, argv[4]);
 	strcpy(fname[0], argv[1]);
 	block = atoi(argv[2]);
