@@ -512,9 +512,9 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 
 int main(int argc, char *argv[]) 
 {
-	printf("\ncmdline args count=%s", argc);
+	printf("\ncmdline args count=%d", argc);
 	/* First argument is executable name only */
- 	printf("\nexe name=%s", argv[0]);
+ 	// printf("\nexe name=%s", argv[0]);
  	// int e;
 	// for (e=1; e< argc; e++) 
 	// {
