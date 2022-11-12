@@ -79,6 +79,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 
 
 	// for ASCM
+	printf(&cloudmaskname);
+
 	if (cloudmaskname=="ASCM") // check this
 	{
 		if (filetype != MTK_TC_CLASSIFIERS) 
