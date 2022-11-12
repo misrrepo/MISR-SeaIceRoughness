@@ -520,7 +520,11 @@ int main(int argc, char *argv[])
 	// char s[256];
 	// char* pch;
 	printf("issue here-3\n");
-	char cloudmaskname[5]; 
+	char cloudmaskname[5] = argv[4];
+	// printf(cloudmaskname);
+
+
+
 	printf("issue here-4\n");
 
 	if (argc != 5) // should be number of args that come to the code 
