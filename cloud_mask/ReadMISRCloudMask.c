@@ -80,10 +80,10 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	printf("cloudmask is: %s \n" , cloudmaskname);
 
 	// for SDCM
-	if (strcmp("SDCM", cloudmaskname)==0)  
+	if (strcmp("SDCM", cloudmaskname)==0) // to compare 2 strings  
 	// if (cloudmaskname=="SDCM") // check this
 	{
-		printf("inside if SDCM\n");
+		// printf("inside if SDCM\n");
 		if (filetype != MTK_TC_CLOUD)  // we change it for SDCM
 		{
 			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n"); // fix this readMISRCloudMask
@@ -94,6 +94,10 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		printf("seting up grid & field for SDCM...\n");
 		strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
 		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
+		printf("\n");
+		printf(gridName);
+		printf(fieldName);
+		printf("\n");
 	}
 	
 	// for ASCM
