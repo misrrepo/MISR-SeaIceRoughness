@@ -512,27 +512,25 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 
 int main(int argc, char *argv[]) 
 {
+	/****************************************/
+	/* check inout args */
 	printf("\ncmdline args count=%d\n", argc);
 	/* First argument is executable name only */
  	printf("\nexe name=%s", argv[0]);
- 	
  	int e;
 	for (e=1; e< argc; e++) 
 	{
 	    printf("\narg%d=%s", e, argv[e]);
 	}
 	printf("\n");
+	/* check inout args */
+	/****************************************/
 
 	int i, j, i2, j2;
-	printf("issue here-2\n");
 
-	// char s[256];
-	// char* pch;
-	printf("issue here-3\n");
 	char *cloudmaskname;
-	// printf(cloudmaskname);
-
-
+	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
+	printf(cloudmaskname);
 
 	printf("issue here-4\n");
 
@@ -551,7 +549,6 @@ int main(int argc, char *argv[])
 
 	printf("issue here-6\n");
 
-	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
 
 	// cloudmaskname = argv[4]; // copy argv[4] to cloudmaskname
 
