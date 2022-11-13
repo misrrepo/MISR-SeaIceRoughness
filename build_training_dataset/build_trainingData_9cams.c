@@ -320,33 +320,42 @@ int main(int argc, char *argv[])
 
     dirp = opendir(atm_dir); // create a stream 
 
-    if (dirp){
-    	while ((FileEntryPtr = readdir(dirp)) != NULL) { // num of iterations == num of ATM files available == atm_files_list_index == FileEntryPtr is ptr to fileObj, we create it for every iteration = ATM csv file available
+    if (dirp)
+    {
+    	while ((FileEntryPtr = readdir(dirp)) != NULL) 
+        { // num of iterations == num of ATM files available == atm_files_list_index == FileEntryPtr is ptr to fileObj, we create it for every iteration = ATM csv file available
 		    // if (strstr(FileEntryPtr->d_name, "combine")) continue; // d_name is string of fileName in fileObj
 		    // if (strstr(FileEntryPtr->d_name, "SeaIce")) continue;
-            if (! strstr(FileEntryPtr->d_name, "ILATM2")) {
+            if (! strstr(FileEntryPtr->d_name, "ILATM2")) 
+            {
                 // printf("dirEntry does not start w/ ILATM2, skipping it ... \n");
                 continue;
             }
-            if (strstr(FileEntryPtr->d_name, ".xml")) {
+            if (strstr(FileEntryPtr->d_name, ".xml")) 
+            {
                 // printf("dirEntry ends w/ .xml , skipping it ... \n");
                 continue;
             }
-            if (! strstr(FileEntryPtr->d_name, ".csv")) {
+            if (! strstr(FileEntryPtr->d_name, ".csv")) 
+            {
                 // printf("dirEntry does not end w/ .csv , skipping it ... \n");
                 continue;
             }
 
-		    if (atm_file_list == 0){
+		    if (atm_file_list == 0)
+            {
                 atm_file_list = (char **) malloc(sizeof(char *));
-                if (!atm_file_list){
+                if (!atm_file_list)
+                {
                     printf("main: couldn't malloc atm_file_list\n");
                     return 0;
                 }
             }
-            else{
+            else
+            {
                 atm_file_list = (char **) realloc(atm_file_list, (atm_files_list_index + 1) * sizeof(char *));
-                if (!atm_file_list){
+                if (!atm_file_list)
+                {
                     printf("getFileList: couldn't realloc atm_file_list\n");
                     return 0;
                 }
@@ -354,7 +363,8 @@ int main(int argc, char *argv[])
 
             atm_file_list[atm_files_list_index] = (char *) malloc(strlen(FileEntryPtr->d_name) + 1);
 
-            if (!atm_file_list[atm_files_list_index]) {
+            if (!atm_file_list[atm_files_list_index]) 
+            {
                 printf("main: couldn't malloc atm_file_list[%d]\n", atm_files_list_index);
                 return 0;
             }
@@ -365,7 +375,8 @@ int main(int argc, char *argv[])
     	closedir (dirp); // close the stream
     }
 
-    else{
+    else
+    {
         strcat(message, "Can't open ATM.csv file\n");
         strcat(message, atm_dir);
         perror (message);
@@ -382,7 +393,8 @@ int main(int argc, char *argv[])
     /* ---------------------------------------------------------------------------- */
     /* start- read each available ATM file from the list we made in the past section */
 
-    for (int i = 0; i < atm_files_list_index; i++){ // i = num of available ATM files in the list
+    for (int i = 0; i < atm_files_list_index; i++)
+    { // i = num of available ATM files in the list
 
         printf("\n############################## process a new ATM nfile ##############################\n");
         printf("ATM file: (%d/%d) --> %s \n\n" , i+1, atm_files_list_index, atm_file_list[i]);
@@ -417,11 +429,13 @@ int main(int argc, char *argv[])
         // printf("date info= yr: %s; mon: %d; day: %s \n", syear, month, sday);
 
         //--------------------------------------------------------------------------------------------------
-        for (k_misr_date  = -1; k_misr_date < 2; k_misr_date++) { // k=days; yesterday (-1) or tmrw (+1) == 0.5 of the ATM overpass; today=o
+        for (k_misr_date  = -1; k_misr_date < 2; k_misr_date++) 
+        { // k=days; yesterday (-1) or tmrw (+1) == 0.5 of the ATM overpass; today=o
 
 
             // test for only k=0 (MISR images from todat)
-            if (k_misr_date == -1 || k_misr_date == 1) {
+            if (k_misr_date == -1 || k_misr_date == 1) 
+            {
                 /* skip the iteration at this step */
                 printf("k= %d, we continue to next k\n", k_misr_date);
                 continue;
@@ -450,7 +464,8 @@ int main(int argc, char *argv[])
             // printf("MtkTimeRangeToOrbitList status: %d \n" , status) ;
             // printf("C -> default MTK_SUCCESS: %d \n"  , MTK_SUCCESS) ;
 
-            if (status != MTK_SUCCESS) {
+            if (status != MTK_SUCCESS) 
+            {
                 printf("ERROR: returned from MtkTimeRangeToOrbitList \n");
                 return 1;
             }
@@ -473,7 +488,8 @@ int main(int argc, char *argv[])
 
             //----------------------------------------------------------------------------------------
 
-            for (j = 0; j < orbit_count; j++){   // what is orbit_count? orbitCount; Q- orbit during each day? --> comes from MTK, orbits in a specific day
+            for (j = 0; j < orbit_count; j++)
+            {   // what is orbit_count? orbitCount; Q- orbit during each day? --> comes from MTK, orbits in a specific day
                 
                 status = MtkOrbitToPath(orbitlist[j], &path); // what is the path for a given orbit == or which path the orbit belong to.
                 // printf("MtkOrbitToPath: orbit %d --> path= %d and day= %d \n" , orbitlist[j], path, day);
@@ -510,7 +526,8 @@ int main(int argc, char *argv[])
                 // now associate each ATM row/sample to 9 MISR surf files
                 
                 // while ((read = getline(&line_in_buff, &slen, fp)) != -1) 
-                while ((line_size = getline(&line_in_buff, &slen, fp)) >= 0 ){  // returns number of characters that was read // read each line of each ATM csv
+                while ((line_size = getline(&line_in_buff, &slen, fp)) >= 0 )
+                {  // returns number of characters that was read // read each line of each ATM csv
 
                     /* check ATM.csv row */
                     // printf("ATM row (%d) in file (%d) \n", atm_row_num, i+1);  // E- counts how many rows are read
@@ -557,7 +574,8 @@ int main(int argc, char *argv[])
 
                     // printf("xcam= %d \n" , xcam);
 
-                    if (xcam != 0){ // if not ATM nadir; because we only use nadier camera from ATM
+                    if (xcam != 0)
+                    { // if not ATM nadir; because we only use nadier camera from ATM
                         // printf("xcam (%d) not nadier (!0), skipping this ATM sample/row.\n" , xcam);
                         atm_row_num++;
                         continue; // to read next ATM row
@@ -763,12 +781,14 @@ int main(int argc, char *argv[])
                         /* check in existing dataset for similar atm point
                             for 2nd total_trainingDS_row_in_mem and the rest */
                         available_ds_row_index = 0; // counter of row in trainingDS_dataStruct 
-                        while ((available_ds_row_index < total_trainingDS_row_in_mem) && !atm_point_in_pixel_key) { // checks new ATM point with previous rows in dataset= all n points inside trainingDS_dataStruct until pixel is found
+                        while ((available_ds_row_index < total_trainingDS_row_in_mem) && !atm_point_in_pixel_key) 
+                        { // checks new ATM point with previous rows in dataset= all n points inside trainingDS_dataStruct until pixel is found
 
                             /* first check if there are previous ATM points inside MISR pixel so that we average new value w/ previous values
                                 we compare new MISR path,img_block,line,sample (associated with ATM point/row) with every n point available in fileObj;
                                 if even one similar MISR pixel was found, we will sum & update useful ATM info: rms, npts, and var to previous pixel values in fileObj */
-                            if ((trainingDS_dataStruct[available_ds_row_index].path == path) && (trainingDS_dataStruct[available_ds_row_index].img_block == img_block) && (trainingDS_dataStruct[available_ds_row_index].line == line) && (trainingDS_dataStruct[available_ds_row_index].sample == sample) && (trainingDS_dataStruct[available_ds_row_index].weight == weight)){   // Q- what is this condition? why check to be the same? in same day in same pixel????
+                            if ((trainingDS_dataStruct[available_ds_row_index].path == path) && (trainingDS_dataStruct[available_ds_row_index].img_block == img_block) && (trainingDS_dataStruct[available_ds_row_index].line == line) && (trainingDS_dataStruct[available_ds_row_index].sample == sample) && (trainingDS_dataStruct[available_ds_row_index].weight == weight))
+                            {   // Q- what is this condition? why check to be the same? in same day in same pixel????
                                 
                                 // printf("FOUND previous ATM points in a MISR pixel: summing with previous ATM values ...\n");
                                 //printf("FOUND: ATM in MISR pixel >>> day: (%d), path: (%d), img_block: (%d), line: (%d), sample: (%d)\n\n", k, path, img_block, line, sample);
@@ -783,7 +803,8 @@ int main(int argc, char *argv[])
 
                         /* if ATM point was the first point in that MISR pixel (not found in previous MISR pixels so far) 
                             we allocate memory for the new point in trainingDS_dataStruct, basically trainingDS_dataStruct grows a row  */
-                        if (!atm_point_in_pixel_key){ // if key is still off- here we check if the key is still off- here we check !0(being off)==1(valid) as a condition
+                        if (!atm_point_in_pixel_key)
+                        { // if key is still off- here we check if the key is still off- here we check !0(being off)==1(valid) as a condition
                             // printf("need to add a row in trainingDS_dataStruct for new ATM point! \n");
                             trainingDS_dataStruct = (atm_dtype*) realloc(trainingDS_dataStruct, (total_trainingDS_row_in_mem + 1) * sizeof(atm_dtype));
                             // note: size of buffer is sizeof ptr (trainingDS_dataStruct) * how many ptrs we allocate == how much memory we allocate
@@ -903,13 +924,13 @@ int main(int argc, char *argv[])
                     }
 
                     atm_row_num++; // new while iteration
-                }
+                } // while reading each ATM line
 
                 fclose(fp); // fp = pointer to each ATM file closed 
 
             }   // for each orbit num
-        }
-    }
+        } // for ach K-day
+    } // for each ATM line number
 
 
     /* end- read all available ATM file from the list we made in the past section */
@@ -928,11 +949,13 @@ int main(int argc, char *argv[])
     filePtr = fopen(atmmodel_csvfile, "w"); // create and open a csv file to write into it; returns the ptr
     // printf("%p" , &filePtr);
     // I added here to check opening of csv file.
-    if (filePtr == NULL){
+    if (filePtr == NULL)
+    {
        printf("ERROR: Could not open atmmodel_csvfile. Either dirPath or output file has problem. Exiting.\n" );
        exit(1);
     } 
-    else{
+    else
+    {
         printf("atmmodel_csvfile (our output) file opened successfully! \n");
     }
 
@@ -955,12 +978,14 @@ int main(int argc, char *argv[])
 
     // q- what happens here that reduces the rows?
     //***************************************************************************************
-    for (n = 0; n < total_trainingDS_row_in_mem; n++){  // for each row in training dataste- size of rows in trainingDS_dataStruct == num of points= the MISR pixels that ATM found for them 
+    for (n = 0; n < total_trainingDS_row_in_mem; n++)
+    {  // for each row in training dataste- size of rows in trainingDS_dataStruct == num of points= the MISR pixels that ATM found for them 
         
         trainingDS_dataStruct[n].rms /= trainingDS_dataStruct[n].npts; // to calculate averaged weighted roughness from total rms falling inside each MISR pixel
         trainingDS_dataStruct[n].var = sqrt(trainingDS_dataStruct[n].var / trainingDS_dataStruct[n].npts - trainingDS_dataStruct[n].rms * trainingDS_dataStruct[n].rms);
 
-        if (trainingDS_dataStruct[n].anr > 0){ // Q- why an camera is checked? can camera be negative? surf refl > 0
+        if (trainingDS_dataStruct[n].anr > 0)
+        { // Q- why an camera is checked? can camera be negative? surf refl > 0
         
             natm_valid++; // increment- valid==number of pixels with anr > 0
             avg_valid_rms += trainingDS_dataStruct[n].rms; // total roughness of every valid pixel/element; Q- wby we vheck valid refl value?
@@ -1021,7 +1046,7 @@ int main(int argc, char *argv[])
         // { // miss-cloud == case with no CloudMask pixels, and also filling values
         //     misscloud_pts += 1;
         //     // misscloud_x += 1;
-        }
+        // }
         //########################################
 
 
