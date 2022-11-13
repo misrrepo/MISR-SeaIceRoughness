@@ -740,7 +740,7 @@ int main(int argc, char *argv[])
                     //--------- cloud mask here ------------------
                     // 4- now check cloudMask file
                     if (!cloudMask_runMode == 1)
-                    { // if cloudMask is off { // go here
+                    { // if cloudMask is off go here
                         printf("c: NOTE: cloudMask is off == we do not use cloud mask anymore! \n");
                     } 
                     else 
@@ -756,10 +756,12 @@ int main(int argc, char *argv[])
                         }
                         else
                         {
-                            printf("c: cloudMask EXIST: %s \n" , cloudmask_fname_fullpath);
+                            printf("c: checking: cloudMask EXIST: %s \n" , cloudmask_fname_fullpath);
                         }
                     }
-                    //--------- cloud mask here [for future?] ------------------
+                    /* --------- cloud mask here [for future?] ------------------
+                        what was coming here??? I don't rememebr */
+
 
 
 
@@ -862,9 +864,9 @@ int main(int argc, char *argv[])
                         //***********************************************************
                         //  to process cloud mask files- should change the fields depending on the cloudmask product
 
-                        if (cloudMask_runMode)
+                        if (cloudMask_runMode) // if it is turned on...
                         {
-                            // printf("c: reading cloud mask file... \n");
+                            printf("c: reading cloud mask file... \n");
                             read_data_cloudmask(cloudmask_fname_fullpath, line, sample, &cm); // cloud mask
                             // printf("c: cm is: %d \n", cm); // cm dtype: double FS is %lf shows zero which is wrong, but better to show with %e == scientific E notation to visually check a very small number.
 
