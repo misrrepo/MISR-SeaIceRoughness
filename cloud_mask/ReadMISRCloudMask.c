@@ -332,21 +332,15 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 
 	/*=================================================================*/
 	/* read any cloud mask file */
-	printf("check here -8 \n");
 
 	if (VERBOSE) fprintf(stderr, "readMISRCloudMask-1: grid=%s, field=%s\n", gridName, fieldName);
 	status = MtkReadBlock(fname, gridName, fieldName, block, &Mtk_data_buf);
 	
-	printf("check here -9 \n");
-	printf("status: %d \n" , status);
-
 	if (status != MTK_SUCCESS) 
 	{	//fprintf(stderr, "readMISRCloudMask: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
 		fprintf(stderr, "readMISRCloudMask-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
 		return 0;
 	}
-
-	printf("check here -10 \n");
 
 	if (VERBOSE) fprintf(stderr, "readMISRCloudMask-4: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
 		Mtk_data_buf.nline, Mtk_data_buf.nsample, Mtk_data_buf.datasize, Mtk_data_buf.datatype, types[Mtk_data_buf.datatype]);
@@ -433,7 +427,6 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 0;
 	}
-	printf("check here- 11 \n");
 	/*=================================================================*/
 	//grid-field-4
 
@@ -539,7 +532,6 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Usage: <readMISRCloudMask> inputMISRFile block outputDataFile cloudMaskName\n");
 		return 1;
 	}
-	printf("issue here-5\n");
 
 	// strcpy(cloudmaskname, argv[4]);
 	strcpy(fname[0], argv[1]);
@@ -555,6 +547,5 @@ int main(int argc, char *argv[])
 	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048)
 
 	free(cmask0_ptr);
-	// printf("check here- the end \n");
 	return 0;
 }
