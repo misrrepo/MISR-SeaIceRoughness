@@ -27,8 +27,8 @@
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 
-#SBATCH --output=log_cloudmask_sdcm.txt   				 # The output file name
-#SBATCH --error=log_cloudmask_sdcm.txt				 	# The error file nam
+#SBATCH --output=log_cloudmask_sdcm_july.txt   				 # The output file name
+#SBATCH --error=log_cloudmask_sdcm_july.txt				 	# The error file nam
 
 
 

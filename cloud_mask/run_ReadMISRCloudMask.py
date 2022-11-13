@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 '''
-
-
+only setup the input directory @ in_dir
 
 old: 
 Generate ASCM cloudmask from MISR MIL2TCCL.
@@ -28,7 +27,7 @@ import sys, os, os.path, os, subprocess
 
 
 # set the input path
-in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm" 	    # makes a list of all cloudmask.hdf files in here
+in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_2016_sdcm"	    # makes a list of all cloudmask.hdf files in here
 exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir' 				 	# where exe file is on HPC
 
 cloudmask_filetype = "SDCM" # 'ASCM' , 'RCCM' or double quote for C?
@@ -94,7 +93,7 @@ for file_count, file in enumerate(files_list):
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
 
 		# cmd = ('%s %s %s %s %s') %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
-		cmd = [exe_dir_fullpath, ifile, str(block), ofile, cloudmask_filetype]
+		cmd = [exe_dir_fullpath, ifile, str(block), ofile, cloudmask_filetype] # make an argv array as list of character strings; al args should be strings
 		
 		### check insude cmd
 		# print(cmd)
