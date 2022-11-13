@@ -222,7 +222,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		return 0;
 	}
 }
-
+printf("checkpoint-1 \n");
 //######################################################################################################################
 
 // int write_data(char* fname, uint8* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
@@ -243,7 +243,7 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 		fprintf(stderr, "write_data: couldn't write all data elements\n");
 		return 0;
 	}
-		
+	printf("checkpoint-2 \n");
 	fclose(f);
 	return 1;
 }
