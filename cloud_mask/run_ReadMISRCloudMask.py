@@ -96,8 +96,8 @@ for file_count, file in enumerate(files_list):
 		print(cmd)
 		print(type(cmd))
 		print(len(cmd))
-		for icmd in cmd:
-			print(type(icmd))
+		# for icmd in cmd:
+		# 	print(type(icmd))
 
 		# print("checkpoint-1")
 		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # n+1 to count input files on screen
@@ -105,7 +105,7 @@ for file_count, file in enumerate(files_list):
 
 		# run the cmd command
 		print("run cmd...")
-		return_value_of_cmd = subprocess.call(cmd, shell=True)  # If passing a single string, either shell must be True (shell=True)
+		return_value_of_cmd = subprocess.call(cmd)  # If passing a single string, either shell must be True (shell=True)
 		print("out of C ...")
 		print(return_value_of_cmd)
 		
