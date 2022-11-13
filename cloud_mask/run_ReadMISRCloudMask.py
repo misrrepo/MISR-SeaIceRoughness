@@ -100,7 +100,7 @@ for file_count, file in enumerate(files_list):
 		# print(type(cmd))
 		# print(len(cmd))
 		# for icmd in cmd:
-		# 	print(type(icmd))
+		# print(type(icmd))
 
 		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # n+1 to count input files on screen
 
@@ -109,7 +109,7 @@ for file_count, file in enumerate(files_list):
 		
 		# if (os.system(cmd) != 0):  # old
 		if (return_value_of_cmd != 0):
-			print("error; exitting...")
+			print("error from cmd; exitting...")
 			sys.exit(1)
 
 		n += 1
