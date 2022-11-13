@@ -35,10 +35,10 @@ note: modified to include any camera even if one was missing, does not continue 
 #define VERBOSE 0
 
 
-// E- set to 1 if we use cloud mask
-int cloudMask_runMode = 1; // 0 == turn off cloud mask
+// // E- set to 1 if we use cloud mask
+// int cloudMask_runMode = 1; // 0 == turn off cloud mask
 
-    
+
 typedef struct {
     int path;
     int orbit;
@@ -308,8 +308,8 @@ int main(int argc, char *argv[])
     int ATMnewLine = 0;
 
 
-    // // E- set to 1 if we use cloud mask
-    // int cloudMask_runMode = 1; // 0 == turn off cloud mask
+    // E- set to 1 if we use cloud mask
+    int cloudMask_runMode = 1; // 0 == turn off cloud mask
 
 
     /* -------------------------------------------------------------------------------------------------- */
@@ -478,7 +478,8 @@ int main(int argc, char *argv[])
                 status = MtkOrbitToPath(orbitlist[j], &path); // what is the path for a given orbit == or which path the orbit belong to.
                 // printf("MtkOrbitToPath: orbit %d --> path= %d and day= %d \n" , orbitlist[j], path, day);
 
-                if (status != MTK_SUCCESS){
+                if (status != MTK_SUCCESS)
+                {
                     printf("status did not match MTK_SUCCESS! \n");
                     return 1;
                 }
@@ -493,7 +494,8 @@ int main(int argc, char *argv[])
                 // OPEN EACH ROW OF ATM.csv FILE
 
                 fp = fopen(atm_fname_fullpath, "r"); // create stream = fp for ATM file == open ATM file
-                if (!fp){
+                if (!fp)
+                {
 
                     fprintf(stderr, "main: couldn't open ATM file: %s \n", atm_fname_fullpath);
                     return 1;
@@ -522,7 +524,8 @@ int main(int argc, char *argv[])
 
                     // printf ("token: %s\n", token);
 
-                    if (strstr(token, "#")){ // Q- how about this one? this works better than previous one --> skip lines with #
+                    if (strstr(token, "#"))
+                    { // Q- how about this one? this works better than previous one --> skip lines with #
                         // printf("found # in csv file; kday= %d, orbit= %d, skipping the row in csv. \n", k, orbitlist[j]);
                         atm_row_num++;
                         continue;
@@ -542,7 +545,8 @@ int main(int argc, char *argv[])
 
               
 
-                    while (token != NULL){ // parse line w/o # until we get to the last word in a line
+                    while (token != NULL)
+                    { // parse line w/o # until we get to the last word in a line
                         if (w == 1) xlat = atof(token); // ATM lat
                         if (w == 2) xlon = atof(token); // ATM lon
                         if (w == 6) xrms = atof(token); // roughness = target/label (in centemeters)
@@ -566,7 +570,8 @@ int main(int argc, char *argv[])
                     
                     status = MtkLatLonToBls(path, 275, xlat, xlon, &img_block, &fline, &fsample); // try to find an image pixel for an ATM point
                     
-                    if (status != MTK_SUCCESS){
+                    if (status != MTK_SUCCESS)
+                    {
                         // printf("WARNING-1: (Mtk-LatLonToBls) could not find a MISR image&pixel for ATM point @ path= %d, xlat= %f, xlon= %f \n", path, xlat, xlon);
 
                         if (img_block == -1) 
@@ -716,7 +721,8 @@ int main(int argc, char *argv[])
 
                     //--------- cloud mask here ------------------
                     // 4- now check cloudMask file
-                    if (!cloudMask_runMode == 1){ // if cloudMask is off { // go here
+                    if (!cloudMask_runMode == 1)
+                    { // if cloudMask is off { // go here
                         printf("c: NOTE: cloudMask is off == we do not use cloud mask anymore! \n");
                     } 
                     else 
@@ -747,11 +753,13 @@ int main(int argc, char *argv[])
                         a switch to check if every new ATM point falls inside a previous pixel, reset to zero for every new entry=ATM line */
                     atm_point_in_pixel_key = 0; // to turn on&off
 
-                    if (total_trainingDS_row_in_mem == 0){
+                    if (total_trainingDS_row_in_mem == 0)
+                    {
                         // 1st allocate mem- for each row of csv file
                         trainingDS_dataStruct = (atm_dtype*) malloc(sizeof(atm_dtype));
                     }
-                    else{      
+                    else
+                    {      
                         /* check in existing dataset for similar atm point
                             for 2nd total_trainingDS_row_in_mem and the rest */
                         available_ds_row_index = 0; // counter of row in trainingDS_dataStruct 
@@ -783,7 +791,8 @@ int main(int argc, char *argv[])
                     }
 
                     /* check if mem- is allocated */
-                    if (!trainingDS_dataStruct){
+                    if (!trainingDS_dataStruct)
+                    {
 
                         fprintf(stderr,  "ERROR in main: couldn't malloc/realloc trainingDS_dataStruct\n");
                         return 0;
@@ -795,7 +804,8 @@ int main(int argc, char *argv[])
                             and we will add it as a new dataPoint row to trainingDS_dataStruct 
                             this will be the first row entry to the datastructure in memory */
                     
-                    if (!atm_point_in_pixel_key){ 
+                    if (!atm_point_in_pixel_key)
+                    { 
                         //if key is still off==we could not find any ATM point in MISR pixel ==  atm_point_in_pixel_key=0 
                         // printf("FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n");
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].path = path;
@@ -1051,7 +1061,7 @@ int main(int argc, char *argv[])
 
     //fclose(fp);
     printf("closing the atmmodel file pointer to flush the buffer to disk\n"); 
-    fclose(filePtr); // close pointer to atmmodel.csv & flushes/moves the output from buffer(==temporary storage) to disk
+    fclose(filePtr);            // close pointer to atmmodel.csv & flushes/moves the output from buffer(==temporary storage) to disk
 
 
     // // //close memory assigned to training dataset
