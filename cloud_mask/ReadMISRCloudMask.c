@@ -95,7 +95,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	}
 	
 	// for ASCM
-	if (strcmp("ASCM", cloudmaskname) // check this
+	if (strcmp("ASCM", cloudmaskname)==0) // check this
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
 		if (filetype != MTK_TC_CLASSIFIERS) 
@@ -110,7 +110,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	}
 
 	// for RCCM
-	if (strcmp("RCCM", cloudmaskname))
+	if (strcmp("RCCM", cloudmaskname)==0)
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
 		if (filetype != MTK_TC_CLOUD)  // fix this: MTK_TC_CLOUD???
