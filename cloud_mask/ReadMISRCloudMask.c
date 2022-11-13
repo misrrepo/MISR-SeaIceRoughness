@@ -221,8 +221,6 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 0;
 	}
-printf("checkpoint-1 \n");
-
 }
 
 //######################################################################################################################
@@ -245,7 +243,6 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 		fprintf(stderr, "write_data: couldn't write all data elements\n");
 		return 0;
 	}
-	printf("checkpoint-2 \n");
 	fclose(f);
 	return 1;
 }
