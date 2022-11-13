@@ -221,6 +221,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 0;
 	}
+}
 
 //######################################################################################################################
 
