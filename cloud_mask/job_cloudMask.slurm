@@ -1,6 +1,6 @@
 #!/bin/bash
 ##---------------------------------------------------------
-#SBATCH --job-name=cloud
+#SBATCH --job-name=cloudmask
 ##---------------------------------------------------------
 ##           select partition
 ##---------------------------------------------------------
@@ -25,10 +25,10 @@
 
 
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
-#SBATCH --mail-user=ehsanmos@icloud.com
+#SBATCH --mail-user=emosadegh@nevada.unr.edu
 
-#SBATCH --output=log2_cm.txt   				 # The output file name
-#SBATCH --error=log2_cm.txt				 	# The error file nam
+#SBATCH --output=log_cloudmask_sdcm.txt   				 # The output file name
+#SBATCH --error=log_cloudmask_sdcm.txt				 	# The error file nam
 
 
 
@@ -55,7 +55,7 @@ module list
 echo “MISR job started ...”
 
 # MISR2Roughness_parallel
-python /data/gpfs/home/emosadegh/MISR-roughness/cloud_mask/run_ReadASCMFile.py 
+python ./run_ReadMISRCloudMask.py 
 
 
 echo “MISR job ended ...”

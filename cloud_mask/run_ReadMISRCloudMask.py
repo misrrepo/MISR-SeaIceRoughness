@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 '''
+
+
+
+old: 
 Generate ASCM cloudmask from MISR MIL2TCCL.
 The MISR ASCM was upsampled from 128 x 512 to 512 x 2048.
 created 18 Aug 2020 by Ehsan Mosadegh
@@ -24,8 +28,8 @@ import sys, os, os.path, os, subprocess
 
 
 # set the input path
-in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm" 	# makes a list of all cloudmask.hdf files in here
-exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir' 					# where exe file is on HPC
+in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm" 	    # makes a list of all cloudmask.hdf files in here
+exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir' 				 	# where exe file is on HPC
 
 cloudmask_filetype = "SDCM" # 'ASCM' , 'RCCM' or double quote for C?
 ################################## DO NOT CHANGE ##################################
@@ -36,7 +40,10 @@ exe_dir_fullpath = os.path.join(exe_dir, exe_name)
 
 end_block_not_included = 47  # reads HDF file up to this number
 # set a label for output dir
-out_dir_label = 'cloudmask_TC_CLOUD_SDCM' # we build this dir inside our input dir
+
+if (cloudmask_filetype == "SDCM"):
+	out_dir_label = 'cloudmask_TC_CLOUD_SDCM'   # we build this dir inside our input dir
+# make for the rest of 2
 
 ###################################################################################
 
@@ -85,11 +92,6 @@ for file_count, file in enumerate(files_list):
 	for block in range(1, end_block_not_included, 1):  # define range for blocks
 
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
-		# print(type(ofile))
-
-
-
-
 
 		# cmd = ('%s %s %s %s %s') %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
 		cmd = [exe_dir_fullpath, ifile, str(block), ofile, cloudmask_filetype]
@@ -101,24 +103,19 @@ for file_count, file in enumerate(files_list):
 		# for icmd in cmd:
 		# 	print(type(icmd))
 
-		# print("checkpoint-1")
 		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # n+1 to count input files on screen
-		# print("checkpoint-2")
 
-		# run the cmd command
-		# print("run cmd...")
 		return_value_of_cmd = subprocess.call(cmd)  # If passing a single string, either shell must be True (shell=True)
-		# print("out of C ...")
-		print(return_value_of_cmd)
+		# print(return_value_of_cmd)
 		
-		# if (os.system(cmd) != 0):
+		# if (os.system(cmd) != 0):  # old
 		if (return_value_of_cmd != 0):
 			print("error; exitting...")
 			sys.exit(1)
 
 		n += 1
 
-	print('cloudMask finished successfully!')
-
 	f.close() # close each hdf file
-	#break;
+
+print('Reading all cloudMask HDF files finished successfully!')
+
