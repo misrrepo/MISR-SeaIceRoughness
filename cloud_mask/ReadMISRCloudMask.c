@@ -76,14 +76,11 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		return 0;
 	}
 
-	// printf("inside readMISRCloudMask\n");
-	printf("cloudmask is: %s \n" , cloudmaskname);
-
 	// for SDCM
 	if (strcmp("SDCM", cloudmaskname)==0) // to compare 2 strings  
 	// if (cloudmaskname=="SDCM") // check this
 	{
-		// printf("inside if SDCM\n");
+		printf("cloudmask mode: %s \n" , cloudmaskname);
 		if (filetype != MTK_TC_CLOUD)  // we change it for SDCM
 		{
 			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n"); // fix this readMISRCloudMask
@@ -101,6 +98,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	// for ASCM
 	if (cloudmaskname=="ASCM") // check this
 	{
+		printf("cloudmask mode: %s \n" , cloudmaskname);
 		if (filetype != MTK_TC_CLASSIFIERS) 
 		{
 			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n");
@@ -115,6 +113,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	// for RCCM
 	if (cloudmaskname=="RCCM")
 	{
+		printf("cloudmask mode: %s \n" , cloudmaskname);
 		if (filetype != MTK_TC_CLOUD)  // fix this: MTK_TC_CLOUD???
 		{
 			fprintf(stderr, "readMISRCloudMask: TC_CLASSIFIERS are supported!!!\n"); // fix this readMISRCloudMask
@@ -538,7 +537,7 @@ int main(int argc, char *argv[])
 	block = atoi(argv[2]);
 	strcpy(fname[1], argv[3]);
 	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
-	printf("cloudMask mode: %s \n", cloudmaskname);
+	// printf("cloudMask mode: %s \n", cloudmaskname);
 
 	// printf("issue here-7\n");
 

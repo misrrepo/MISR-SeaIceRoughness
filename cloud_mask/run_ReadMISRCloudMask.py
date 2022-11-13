@@ -93,9 +93,11 @@ for file_count, file in enumerate(files_list):
 
 		# cmd = ('%s %s %s %s %s') %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
 		cmd = [exe_dir_fullpath, ifile, str(block), ofile, cloudmask_filetype]
-		print(cmd)
-		print(type(cmd))
-		print(len(cmd))
+		
+		### check insude cmd
+		# print(cmd)
+		# print(type(cmd))
+		# print(len(cmd))
 		# for icmd in cmd:
 		# 	print(type(icmd))
 
