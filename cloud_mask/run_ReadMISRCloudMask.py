@@ -41,10 +41,10 @@ out_dir_label = 'cloudmask_TC_CLOUD_SDCM' # we build this dir inside our input d
 ###################################################################################
 
 out_dir_fullpath = os.path.join(in_dir, out_dir_label)
-print("-> out dir full path: %s" % out_dir_fullpath)
+print("out dir full path: %s" % out_dir_fullpath)
 
 if (not os.path.isdir(out_dir_fullpath)):
-	print('-> output directory NOT exist. We make it.')
+	print('output directory NOT exist. We make it.')
 	# raise SystemExit()
 	cmd = "mkdir " + out_dir_fullpath
 	sys.stderr.write('%s\n' % cmd)
@@ -87,7 +87,7 @@ for file_count, file in enumerate(files_list):
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
 		# print(type(ofile))
 
-		cmd = ("%s %s %s %s %s") %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
+		cmd = "%s %s %s %s %s" %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
 		print(cmd)
 		print(type(cmd))
 		print(len(cmd))
