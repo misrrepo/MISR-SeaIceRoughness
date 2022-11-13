@@ -1,6 +1,6 @@
 exe_path=/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
-src_name=ATMModel_9cams.c
-exe_name=ATMModel_9cams
+src_name=build_trainingData_9cams.c
+exe_name=build_trainingData_9cams
 
 all:
 	gcc -I/data/gpfs/home/emosadegh/Mtk-1.5.1/include	\

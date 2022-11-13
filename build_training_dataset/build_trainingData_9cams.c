@@ -4,9 +4,12 @@ originally from dir: /home/mare/Nolin/SeaIce/Code/C (atmmodel.c)
 name: atm_to_misr_pixels.c
 usage: labels MISR pixels w/ATM roughness data
 
+
 1- makes a list of all available ATM.csv files
 2- finds date from each ATM file, finds k=-+1 day MISR images (yesterday, today, tomorrow), finds the corresponding pixel in each MISR image, updates dataset 
-3- outputs atmmodel
+3- finds cloudy pixels if cloudMask_runMode==1
+4- outputs atmmodel
+
 
 26/May/2022
 note: modified to include any camera even if one was missing, does not continue to next file if on camera was missing 
@@ -32,6 +35,10 @@ note: modified to include any camera even if one was missing, does not continue 
 #define VERBOSE 0
 
 
+// E- set to 1 if we use cloud mask
+int cloudMask_runMode = 1; // 0 == turn off cloud mask
+
+    
 typedef struct {
     int path;
     int orbit;
@@ -78,7 +85,7 @@ char *strsub(char *s, char *a, char *b);
 
 // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int read_data_cloudmask(char* fname_fullpath, int line, int sample, uint8_t* data) {
+int read_data_cloudmask(char* fname_fullpath, int line, int sample, uint8_t* data) { // note: cloud-mask file should be in shape: (512 * 2048)
     FILE* in_stream; // input file obj
     int nlines = 512;
     int nsamples = 2048;
@@ -174,7 +181,8 @@ char *strsub(char* s, char *a, char* b)
 
 // int main(char argc, char *argv[]) { // Ehsan: retured error, so changed to int
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
 
     // DIR *dirp;
     // FILE *fp, *filePtr;
@@ -205,11 +213,13 @@ int main(int argc, char *argv[]){
 
     //------------------------------------------------------------------------------------------------------------------
     // check number of inouts to this code from commandLine (from python wrapper)
-    if (argc == 5) {
+    if (argc == 5) 
+    {
         printf("C: OK! received 5 arguments. \n");
     }
 
-    if (argc != 5) { // this might happen later, cos I turnedoff fname[2]
+    if (argc != 5) 
+    { // this might happen later, cos I turnedoff fname[2]
         fprintf(stderr, "Usage: <exe-name> <ATM-dir> <maskedTOA-dir> <cloudMask-dir> <atmmodelCSV-file> \n"); // updated
         // fprintf(stderr, "Usage: TOA3 input-misr-file block band minnaert output-data-file output-image-file-Ehsan--noNeed\n"); old with image
         return 1;
@@ -286,7 +296,9 @@ int main(int argc, char *argv[]){
     int xcam;
     float fline, fsample;
     int line, sample;
-    int nocloud_pts, cloud_pts, misscloud_pts;
+
+    // int nocloud_pts, cloud_pts, misscloud_pts; //it is for report stats-turned it off 10 Nov 22
+    
     int path_x, orbit_x, block_x;
     double weight_x;
     int nocloud_x, cloud_x, misscloud_x;
@@ -295,8 +307,9 @@ int main(int argc, char *argv[]){
     ssize_t line_size;
     int ATMnewLine = 0;
 
-    // E- if we use cloud mask
-    int cloudMask_run_stat = 0; // 0 == turn off cloud mask
+
+    // // E- set to 1 if we use cloud mask
+    // int cloudMask_runMode = 1; // 0 == turn off cloud mask
 
 
     /* -------------------------------------------------------------------------------------------------- */
@@ -703,23 +716,23 @@ int main(int argc, char *argv[]){
 
                     //--------- cloud mask here ------------------
                     // 4- now check cloudMask file
-                    if (!cloudMask_run_stat){ // if cloudMask is off { // go here
-                        // printf("c: NOTE: cloudMask is off == we do not use cloud mask anymore! \n");
+                    if (!cloudMask_runMode == 1){ // if cloudMask is off { // go here
+                        printf("c: NOTE: cloudMask is off == we do not use cloud mask anymore! \n");
                     } 
                     else 
                     {
                         // sprintf(cloudmask_fname_fullpath, "%s/An/sdcm_p%03d_o%06d_b%03d_an.dat", cloud_masked_dir, path, orbitlist[j], img_block); // original=lsdcm =? note: to do a test run, i renamed the filename from lsdcm_p* to sdcm_p* 
                         sprintf(cloudmask_fname_fullpath, "%s/cloudmask_P%03d_O%06d_B%03d.msk", cloud_masked_dir, path, orbitlist[j], img_block); // original=lsdcm =? note: to do a test run, i renamed the filename from lsdcm_p* to sdcm_p* 
                         // check if file is accessible 
-                        if (access(cloudmask_fname_fullpath, F_OK) != 0) 
+                        if (access(cloudmask_fname_fullpath, F_OK) != 0)  // update access f(.)?
                         {
                             printf("cloudMask NOT exist: %s\n", cloudmask_fname_fullpath);
                             // continue; // check if file is accessible
-                            // cloudMask_run_stat = 0;
+                            // cloudMask_runMode = 0;
                         }
                         else
                         {
-                            // printf("c: cloudMask EXIST: %s \n" , cloudmask_fname_fullpath);
+                            printf("c: cloudMask EXIST: %s \n" , cloudmask_fname_fullpath);
                         }
                     }
                     //--------- cloud mask here [for future?] ------------------
@@ -816,26 +829,45 @@ int main(int argc, char *argv[]){
 
                         // printf("CHECK all 9 cameras: ca= %f, an= %f, cf= %f\n\n" , ca, an, cf);
                         //***********************************************************
-                        //  to process cloud mask files
-                        if (cloudMask_run_stat){
+                        //  to process cloud mask files- should change the fields depending on the cloudmask product
+
+                        if (cloudMask_runMode)
+                        {
                             // printf("c: reading cloud mask file... \n");
                             read_data_cloudmask(cloudmask_fname_fullpath, line, sample, &cm); // cloud mask
                             // printf("c: cm is: %d \n", cm); // cm dtype: double FS is %lf shows zero which is wrong, but better to show with %e == scientific E notation to visually check a very small number.
 
-                            if (cm == 1){  // E: clear pixel, so we turn off cloud parameter
-                                // printf("c: clear pixel (cm=1) \n");
-                                trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = 0; // we turn off cloud == no cloud
-                            }
-                            else if (cm == 0){  // cloudy pixel, so we turn on cloud
+
+
+                            /* new algorithm based on Stereo SDCM and RCCM; for both we stract the pixel value of cloudiness from cloudmask product and add it to the cloud field */ 
+
+                            trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = cm; // we turn off cloud == no cloud
+
+
+                            //#########################################################################################
+                            /* this section is only for ASCM*/
+
+                            // if (cm == 1)
+                            // {  // E: clear pixel, so we turn off cloud parameter
+                            //     // printf("c: clear pixel (cm=1) \n");
+                            //     trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = 0; // we turn off cloud == no cloud
+                            // }
+                            // else if (cm == 0)
+                            // {  // cloudy pixel, so we turn on cloud
                             
-                                // printf("c: cloudy pixel (cm=0) \n");
-                                // if (cm == CMASKED) trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = 1; // E: turn on cloud
-                                trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = 1; // E: turn on cloud == there is cloud, what is CMASKED?
-                            }
-                            else{ // we have filled value from cloudmask.c code that I set to -9, so we set that pixel as noValue. we do not have any other value expect 0 and 1
+                            //     // printf("c: cloudy pixel (cm=0) \n");
+                            //     // if (cm == CMASKED) trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = 1; // E: turn on cloud
+                            //     trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = 1; // E: turn on cloud == there is cloud, what is CMASKED?
+                            // }
+                            // else
+                            // { // we have filled value from cloudmask.c code that I set to -9, so we set that pixel as noValue. we do not have any other value expect 0 and 1
                             
-                                trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = -1; // fill value
-                            }
+                            //     trainingDS_dataStruct[total_trainingDS_row_in_mem].cloud = -1; // fill value
+                            // }
+
+                            //#########################################################################################
+
+                          
                         }
 
                         // add all 9 cameras + 4 bands to training dataset here
@@ -897,9 +929,10 @@ int main(int argc, char *argv[]){
     printf("writing data into output file... \n");
     printf("total rows in training dataset (in-mem dataStruct)= %d after checking all ATM files, k days, orbits.\n", total_trainingDS_row_in_mem);
     
-    cloud_pts = 0;
-    nocloud_pts = 0;
-    misscloud_pts = 0;
+    // cloud_pts = 0;
+    // nocloud_pts = 0;
+    // misscloud_pts = 0;
+
     cloud_x = 0;
     nocloud_x = 0;
     misscloud_x = 0;
@@ -960,19 +993,26 @@ int main(int argc, char *argv[]){
         //**************************** useless! turned off ****************************
 
 
-        // setup cloud variable            
-        if (trainingDS_dataStruct[n].cloud == 0){ // E: no-cloud pixel, cloud var is off==0 based before, count nocloud pixels
-            nocloud_pts += 1;
-            // nocloud_x += 1;
+        // setup cloud variable/ for stats/report
+
+        // if (trainingDS_dataStruct[n].cloud == 0)
+        // { // E: no-cloud pixel, cloud var is off==0 based before, count nocloud pixels
+        //     nocloud_pts += 1;
+        //     // nocloud_x += 1;
+        // }
+        
+        // if (trainingDS_dataStruct[n].cloud == 1)
+        // { // E: cloudy pixel, cloud var is on==1, count cloudy pixels
+        //     cloud_pts += 1;
+        //     // cloud_x += 1;
+        // }
+        
+        // if (trainingDS_dataStruct[n].cloud == -1)
+        // { // miss-cloud == case with no CloudMask pixels, and also filling values
+        //     misscloud_pts += 1;
+        //     // misscloud_x += 1;
         }
-        if (trainingDS_dataStruct[n].cloud == 1){ // E: cloudy pixel, cloud var is on==1, count cloudy pixels
-            cloud_pts += 1;
-            // cloud_x += 1;
-        }
-        if (trainingDS_dataStruct[n].cloud == -1){ // miss-cloud == case with no CloudMask pixels, and also filling values
-            misscloud_pts += 1;
-            // misscloud_x += 1;
-        }
+        //########################################
 
 
         // (file-print-format) == pointer to atmmodel_csvfile file- writes trainingDS_dataStruct to a file on disc
@@ -1031,9 +1071,11 @@ int main(int argc, char *argv[]){
     printf("Max valid rms = %lf\n", max_rms);
     printf("Min valid rms = %lf\n", min_rms);
     printf("\n");
-    printf("Number of cloud points = %d\n", cloud_pts);
-    printf("Number of nocloud points = %d\n", nocloud_pts);
-    printf("Number of missing cloud mask pts = %d\n", misscloud_pts);
+
+    // /* this is just for stats/report- turned it off */
+    // printf("Number of cloudy pixels = %d\n", cloud_pts);
+    // printf("Number of nocloud pixels = %d\n", nocloud_pts);
+    // printf("Number of missing cloud mask pixels = %d\n", misscloud_pts);
 
 
     printf("\n***** FINISHED SUCCESSFULLY!***** \n\n");

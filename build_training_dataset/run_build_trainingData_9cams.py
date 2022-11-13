@@ -5,10 +5,10 @@ by: Ehsan Mosadegh 26 November 2020
 this script runs ATMModel.c [later renamed to "build_trainingData_xcams"]
 
 inputs:
-	path to ATM directory
-	path to masked_toa_refl files
-	path to cloud-mask directory
-	path to output directory and traning.csv 
+	1) path to ATM directory
+	2) path to masked_toa_refl files
+	3) path to cloud-mask directory
+	4) path to output directory where we save traningDataSet.csv 
 
 '''
 from subprocess import call
@@ -32,20 +32,20 @@ masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_t
 
 
 
-# if not used, turn this option off in C.code
-cloud_masked_dir = atm_dir  			#"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"  
+# if you do not use cloudMask, turn this option off in C.code [cloudMask_runMode=1]
+cloud_masked_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm/cloudmask_TC_CLOUD_SDCM"  			#"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"  
 
 
 
 # output 
 out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atmmodel/atmmodel_k_zero"
-atmmodel_csvfile_label = "atmmodel_april_2016_k_zero_9cams4bands.csv"
+atmmodel_csvfile_label = "traindataset_april_2016_k_zero_9cams4bands.csv"
 
 
 
 # exe dir
 exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"
-exe_name = "ATMModel_9cams"
+exe_name = "build_trainingData_9cams"
 ########################################################################################################################
 def main():
 	'''
