@@ -87,7 +87,7 @@ for file_count, file in enumerate(files_list):
 		ofile = out_dir_fullpath + '/' + 'cloudmask_' + path + '_' + orbit + '_B%03d.msk' % block
 		# print(type(ofile))
 
-		cmd = " '%s' '%s' '%s' '%s' '%s' " %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
+		cmd = ('%s' '%s' '%s' '%s' '%s') %(exe_dir_fullpath, ifile, block, ofile, cloudmask_filetype)  # a sequence of arguments is generally preferred,
 		print(cmd)
 		print(type(cmd))
 		print(len(cmd))
