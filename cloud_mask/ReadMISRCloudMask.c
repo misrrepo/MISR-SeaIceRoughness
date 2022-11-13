@@ -509,7 +509,8 @@ int main(int argc, char *argv[])
 {
 	/****************************************/
 	/* check inout args */
-	printf("\ncmdline args count=%d\n", argc);
+	// printf("\ncmdline args count=%d\n", argc);
+	
 	/* First argument is executable name only */
  	printf("\nexe name=%s", argv[0]);
  	int e;
