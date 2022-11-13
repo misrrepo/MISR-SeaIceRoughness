@@ -221,8 +221,10 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 0;
 	}
-}
 printf("checkpoint-1 \n");
+
+}
+
 //######################################################################################################################
 
 // int write_data(char* fname, uint8* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
