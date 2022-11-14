@@ -250,7 +250,7 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 		return 0;
 	}
 
-	printf("checkpoint-5 \n");
+	// printf("checkpoint-5 \n");
 	fclose(f);
 	return 1;
 
