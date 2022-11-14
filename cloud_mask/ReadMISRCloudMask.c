@@ -247,6 +247,7 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 
 	fclose(f);
 	return 1;
+	printf("writing finished in C \n");
 }
 
 //######################################################################################################################
@@ -288,6 +289,6 @@ int main(int argc, char *argv[])
 	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1;
 	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048)
 	free(cmask0_ptr);
-	printf("writing finished in C \n");
+	printf("cloudmask finished in C \n");
 	return 0;
 }
