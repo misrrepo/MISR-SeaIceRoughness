@@ -177,7 +177,6 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 1; // error
 	}
-	// printf("checkpoint-3 \n");
 	return 0; // success
 }
 
@@ -185,9 +184,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 
 // int write_data(char* fname, uint8* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
 int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
-{
-	printf("checkpoint-4 \n");
-	
+{	
 	FILE* f;
 
 	f = fopen(fname, "wb");
@@ -204,7 +201,6 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 		return 1; // error
 	}
 
-	// printf("checkpoint-5 \n");
 	fclose(f);
 	return 0; // success
 
@@ -252,6 +248,6 @@ int main(int argc, char *argv[])
 	if (readMISRCloudMask(fname[0], cloudmaskname)) return 1; // error
 	if (write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048); !0 = 1 = error signal from inside f(.)
 	free(cmask0_ptr);
-	printf("cloudmask finished in C \n");
+	// printf("cloudmask finished in C \n");
 	return 0; // success
 }
