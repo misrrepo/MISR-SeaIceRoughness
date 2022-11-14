@@ -105,7 +105,7 @@ for file_count, file in enumerate(files_list):
 		sys.stderr.write('%5d: %s\n' % (n + 1, cmd)) # n+1 to count input files on screen
 
 		return_value_of_cmd = subprocess.call(cmd)  # If passing a single string, either shell must be True (shell=True)
-		print("cmd ret value from C: %d" %return_value_of_cmd)
+		print("cmd ret value from C: %d \n" %return_value_of_cmd)
 		
 		# if (os.system(cmd) != 0):  # old
 		if (return_value_of_cmd != 0): # from C, 0==success & 1==error
