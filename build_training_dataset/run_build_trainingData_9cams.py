@@ -38,7 +38,7 @@ cloud_masked_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_2016_s
 
 # output 
 out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel"
-atmmodel_csvfile_label = "traindataset_april_2016_k_zero_9cams4bands_withclouds.csv"
+atmmodel_csvfile_label = "traindataset_july_2016_k_zero_9cams4bands_withclouds.csv"
 
 
 

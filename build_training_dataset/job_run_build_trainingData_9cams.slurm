@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=trainDSApril2016
+#SBATCH --job-name=trainDSJuly2016
 ##SBATCH --account=cpu-s6-test-0 			
 ##SBATCH --partition=cpu-s6-test-0
 #SBATCH --account=cpu-s5-misr_roughness-0	# submit to my CPU account
@@ -11,8 +11,8 @@
 #SBATCH --hint=compute_bound				# Allocate all resources on a core (2threaded cpus)
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		# Send mail on all stateChanges
-#SBATCH --output=log_trainDS_april2016_withStereo.txt   		# The output file name
-#SBATCH --error=log_trainDS_april2016_withStereo.txt		 	# The error file name
+#SBATCH --output=log_trainDS_julyl2016_withStereo.txt   		# The output file name
+#SBATCH --error=log_trainDS_julyl2016_withStereo.txt		 	# The error file name
 date
 module list
 echo “MISR job started ...”
