@@ -3,6 +3,7 @@ Ehsan Mosadegh, 10 Nov 2022
 use for:
 	change cloud shape of cloudmask files from (x,y) to (xxxx,yyyy)
 
+note: I changed all success return values from 1 to 0 in the old code at the end of each function;
 
 
 original: readMISRCloudMask.c
@@ -73,7 +74,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	if (status != MTK_SUCCESS) 
 	{
 		fprintf(stderr, "readMISRCloudMask: MtkFileType failed!!!, status = %d (%s)\n", status, errs[status]);
-		return 0;
+		return 1; // error
 	}
 
 	// for SDCM
@@ -83,7 +84,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		if (filetype != MTK_TC_CLOUD)  // we change it for SDCM
 		{
 			fprintf(stderr, "readMISRCloudMask: TC_CLOUS STEREO filetype issue!!!\n"); // fix this readMISRCloudMask
-			return 0;
+			return 1; // error
 		}
 
 		// setup SDCM grid and field names
@@ -101,7 +102,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		if (filetype != MTK_TC_CLASSIFIERS) 
 		{
 			fprintf(stderr, "readMISRCloudMask: ASCM filetype not supported!!!\n");
-			return 0;
+			return 1; // eror
 		}
 
 		// setup ASCM grid and field names - check gird and filed bellow
@@ -116,15 +117,12 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		if (filetype != MTK_TC_CLOUD)  // fix this: MTK_TC_CLOUD???
 		{
 			fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
-			return 0;
+			return 1; // error
 		}
 		// setup SDCM grid and field names
 		strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
 		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
 	}
-
-	printf("checkpoint-1 \n");
-
 	/*=================================================================*/
 	/* read any cloud mask file */
 
@@ -134,7 +132,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	if (status != MTK_SUCCESS) 
 	{	//fprintf(stderr, "readMISRCloudMask: MtkReadBlock failed!!!, status = %d (%s)\n", status, errs[status]);
 		fprintf(stderr, "readMISRCloudMask-3: MtkReadBlock failed!!!, gname = %s, fname = %s, status = %d (%s)\n", gridName, fieldName, status, errs[status]);
-		return 0;
+		return 1; // error
 	}
 
 	if (VERBOSE) fprintf(stderr, "readMISRCloudMask-4: nline=%d, nsample=%d, datasize=%d, datatype=%d (%s)\n", 
@@ -143,7 +141,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	if (Mtk_data_buf.nline != 128 || Mtk_data_buf.nsample != 512) 
 	{
 		fprintf(stderr, "readMISRCloudMask-5: %s is not 128x512: (%d, %d)\n", fieldName, Mtk_data_buf.nline, Mtk_data_buf.nsample);
-		return 0;
+		return 1; // error
 	}
 
 	// cmask0_ptr = (uint8 *) malloc(128 * 512 * 4 * 4 * sizeof(uint8)); // allocates mem- and returns a ptr to the 1st byte in the allocated mem- == cmask0_ptr
@@ -152,12 +150,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	if (!cmask0_ptr) 
 	{ 	// check if ptr is NULL
 		fprintf(stderr, "readMISRCloudMask-6: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
-		return 0;
+		return 1; // error
 	}
-	
-	printf("checkpoint-2 \n");
-
-	// int cmask0_pixel;
 
 	// E: all commnets here are mine
 	n = 0;
@@ -221,9 +215,11 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	if (n != 128*512) // total pixels available in ascm_buf == (65,536)
 	{
 		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
-		return 0;
+		return 1; // error
 	}
 	// printf("checkpoint-3 \n");
+	// return 1; // signal that f(.) ended successfully
+	return 0; // success
 }
 
 //######################################################################################################################
@@ -239,19 +235,19 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 	if (!f)
 	{
 		fprintf(stderr, "write_data: couldn't open %s\n", fname);
-		return 0;
+		return 1; // error
 	}
 	// write data
 	// if (fwrite(data, sizeof(uint8), nlines * nsamples, f) != nlines * nsamples)
 	if (fwrite(data, sizeof(uint8_t), (nlines * nsamples), f) != nlines * nsamples) // note: also change data-type here
 	{
 		fprintf(stderr, "write_data: couldn't write all data elements\n");
-		return 0;
+		return 1; // error
 	}
 
 	// printf("checkpoint-5 \n");
 	fclose(f);
-	return 1;
+	return 0; // success
 
 	// printf("writing finished in C \n");
 }
@@ -283,7 +279,7 @@ int main(int argc, char *argv[])
 	{
 		// fprintf(stderr, "Usage: readMISRCloudMask input-misr-file block output-data-file\n");
 		fprintf(stderr, "Usage: <readMISRCloudMask> inputMISRFile block outputDataFile cloudMaskName\n");
-		return 1;
+		return 1; // error
 	}
 
 	// strcpy(cloudmaskname, argv[4]);
@@ -292,9 +288,9 @@ int main(int argc, char *argv[])
 	strcpy(fname[1], argv[3]);
 	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
 	// printf("cloudMask mode: %s \n", cloudmaskname);
-	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1;
+	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1; // error
 	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048); !0 = 1 = error signal from inside f(.)
 	free(cmask0_ptr);
 	printf("cloudmask finished in C \n");
-	return 0;
+	return 0; // success
 }
