@@ -123,6 +123,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
 	}
 
+	printf("checkpoint-1 \n");
 
 	/*=================================================================*/
 	/* read any cloud mask file */
@@ -153,7 +154,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask-6: malloc failed (cmask0_ptr == 1st byte of allocated mem-)!!!\n");
 		return 0;
 	}
-		
+	
+	printf("checkpoint-2 \n");
 
 	// int cmask0_pixel;
 
@@ -221,6 +223,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 0;
 	}
+	printf("checkpoint-3 \n");
 
 }
 
