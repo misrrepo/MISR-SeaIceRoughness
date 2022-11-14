@@ -160,12 +160,6 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		{
 			n ++;
 
-			/* E: here we map 4 cloudy conditions from [1,2,3,4] conditions (based on docs p.13) to [0-1] space */
-			// mask = 0; // E- any pixel w/cloud== cloudHC = 0 based on CM docs p.13, we set cm=0 to zero that pixel
-			
-			// if (Mtk_data_buf.data.u8[j][i] == 4) mask = 1; // E- 4 means clear w/HC==sunny sky; 
-			// if (Mtk_data_buf.data.u8[j][i] == 4) mask = 1; // E- 4 means clear w/HC==sunny sky; 
-
 			for (k = 0; k < 4; k++)
 				for (l = 0; l < 4; l++) 
 				{
@@ -173,40 +167,6 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 					// printf("cloud mask value: %x \n", Mtk_data_buf.data.u8[j][i]);
 
 					cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = Mtk_data_buf.data.u8[j][i];
-
-
-
-
-					// the rest is useless- delete it
-
-					// cmask0_pixel = (j * 4 + k) * 512*4 + i*4 + l;
-					// printf("pixel index shoud reach 512*2048: %d \n" , cmask0_pixel+1); // shoudl be 512*2048
-					// printf("fraction_cloudBestEst_buf pixel value: %f \n" , fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] );
-
-
-					// //if ((fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] <= cfcbe_thresh) && (cfpmh[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (cfpmh[(j * 4 + k) * 512*4 + i*4 + l] <= cfpmh_thresh))
-					
-					// // we apply this condition if fraction_cloudBestEst_buf pixel value is in range [0.0, cfcbe_thresh == 0.1] meaning less than 10% cloudy
-					// // if ((fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] >= 0.0) && (fraction_cloudBestEst_buf[(j * 4 + k) * 512*4 + i*4 + l] < cfcbe_thresh)) { // E: means if upto 0.1 we can take that as not cloudy?
-					// 	/* we make more pixels cloudy == 0 // E: fraction_cloudBestEst_buf = CombinedFractionCloudBestEstimate */
-						
-					// // cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: original; so cmask0_ptr is either 0 or 1, 0==cloudy 1==clear
-					
-					// if (Mtk_data_buf.data.u8[j][i] == 4) 
-					// { // E- 4 == clear w/HC == sunny sky; 
-						
-					// 	cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = 1 ; // E: mine; cmask0_ptr is either 0 or 1, 0==cloudy 1==clear ; E: replaced mask w/ 1 to test
-					// }
-					
-					// // Ehsan: 
-					// else 
-					// {  // fraction_cloudBestEst_buf[(j * 64 + k) * 32*64 + i*64 + l] = Mtk_data_buf.data.d[j][i];
-					
-					// 	// printf("what should we do if a fraction_cloudBestEst_buf pixel wasn't in range [0, 0.1]? filled w/NODATA2 \n");
-					// 	// cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = NODATA2 ;
-					// 	cmask0_ptr[(j * 4 + k) * 512*4 + i*4 + l] = mask ; // E: changed it to test
-					// }
-					
 
 				}
 		}
@@ -218,7 +178,6 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		return 1; // error
 	}
 	// printf("checkpoint-3 \n");
-	// return 1; // signal that f(.) ended successfully
 	return 0; // success
 }
 
@@ -288,8 +247,10 @@ int main(int argc, char *argv[])
 	strcpy(fname[1], argv[3]);
 	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
 	// printf("cloudMask mode: %s \n", cloudmaskname);
-	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1; // error
-	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048); !0 = 1 = error signal from inside f(.)
+
+	// here we check error from a f(.)
+	if (readMISRCloudMask(fname[0], cloudmaskname)) return 1; // error
+	if (write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048); !0 = 1 = error signal from inside f(.)
 	free(cmask0_ptr);
 	printf("cloudmask finished in C \n");
 	return 0; // success
