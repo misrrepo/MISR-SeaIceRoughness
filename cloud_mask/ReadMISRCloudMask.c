@@ -229,6 +229,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 // int write_data(char* fname, uint8* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
 int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
 {
+	printf("writing started in C \n");
+	
 	FILE* f;
 
 	f = fopen(fname, "wb");
