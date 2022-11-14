@@ -232,7 +232,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 // int write_data(char* fname, uint8* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
 int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == ptr to 1st byte of mem-
 {
-	printf("writing started in C \n");
+	printf("checkpoint-4 \n");
 	
 	FILE* f;
 
@@ -250,9 +250,11 @@ int write_data(char* fname, uint8_t* data, int nlines, int nsamples) // data == 
 		return 0;
 	}
 
+	printf("checkpoint-5 \n");
 	fclose(f);
 	return 1;
-	printf("writing finished in C \n");
+
+	// printf("writing finished in C \n");
 }
 
 //######################################################################################################################
@@ -292,7 +294,7 @@ int main(int argc, char *argv[])
 	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
 	// printf("cloudMask mode: %s \n", cloudmaskname);
 	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1;
-	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048)
+	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048); !0 = 1 = error signal from inside f(.)
 	free(cmask0_ptr);
 	printf("cloudmask finished in C \n");
 	return 0;
