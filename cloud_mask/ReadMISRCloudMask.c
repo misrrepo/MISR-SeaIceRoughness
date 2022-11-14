@@ -221,7 +221,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: cmask0_ptr fewer than (65,536) valid in %s: %d\n", fieldName, n);
 		return 0;
 	}
-	
+
 }
 
 //######################################################################################################################
@@ -285,13 +285,9 @@ int main(int argc, char *argv[])
 	strcpy(fname[1], argv[3]);
 	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
 	// printf("cloudMask mode: %s \n", cloudmaskname);
-
-	// printf("issue here-7\n");
-
 	if (!readMISRCloudMask(fname[0], cloudmaskname)) return 1;
-
 	if (!write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048)
-
 	free(cmask0_ptr);
+	printf("writing finished in C \n");
 	return 0;
 }
