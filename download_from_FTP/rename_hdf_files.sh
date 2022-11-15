@@ -12,7 +12,7 @@ hdf_dir=/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016_ascm
 echo $hdf_dir
 
 echo "before renaming..."
-for hdf_file in $hdf_dir/MISR_AM1_GRP_ELLIPSOID_GM*.hdf
+for hdf_file in $hdf_dir/MISR_AM1_TC_CLASSIFIERS_*.hdf  # change this based on the fileName
 do
 	echo $hdf_file
 	mv "$hdf_file"  "${hdf_file/.b*-0*.f*.hdf/.hdf}"
