@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=cloudmask-july
+#SBATCH --job-name=ascm-april2016
 
 ##SBATCH --account=cpu-s6-test-0 
 ##SBATCH --partition=cpu-s6-test-0
@@ -16,8 +16,8 @@
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		 # Send mail on all state changes
 
-#SBATCH --output=log_multi_download_july2016.txt   		 # The output file name
-#SBATCH --error=log_multi_download_july2016.txt		 	# The error file nam
+#SBATCH --output=log_multi_download_april2016ASCM.txt   		 # The output file name
+#SBATCH --error=log_multi_download_april2016ASCM.txt		 	# The error file nam
 
 source /data/gpfs/home/emosadegh/.bashrc
 
@@ -29,7 +29,7 @@ echo "python version:"
 python -V
 
 ## path to python script to run
-python ./multi_download_NASA_modified.py
+python ./multi_download_NASA_modified_april2016ASCM.py
 
 echo “MISR job ended ...”
 conda deactivate

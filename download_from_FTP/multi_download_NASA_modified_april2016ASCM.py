@@ -185,15 +185,14 @@ if __name__ == "__main__":
     # This URL is the starting directory
     # starting_url = input("Enter the top level URL: ")
 
-    # starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202209128871/"
-    starting_url = "https://xfr139.larc.nasa.gov/MISR/Subset_Products/202211115720/"
+    starting_url = " https://xfr139.larc.nasa.gov/MISR/Subset_Products/202211141627/"
 
 
-    # path to download directory on local machine/HPC
+    # path to storage directory on local machine/HPC
     home_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks"
 
     
-    out_dir_label = "july_2016_sdcm" # code will create this directory if not available on disk
+    out_dir_label = "april_15_30_2016_ascm"         # our code will create this directory if not available on disk
 
     ################################################################################
     # old code
