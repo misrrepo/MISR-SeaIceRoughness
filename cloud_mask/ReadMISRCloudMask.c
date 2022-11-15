@@ -77,7 +77,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		return 1; // error
 	}
 
-	// for SDCM
+	/*********************** for SDCM *********************/
 	if (strcmp("SDCM", cloudmaskname)==0) // to compare 2 strings  // if (cloudmaskname=="SDCM")
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
@@ -95,7 +95,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		printf("fieldName: %s \n" , fieldName);
 	}
 	
-	// for ASCM
+	/*********************** for ASCM *********************/
 	if (strcmp("ASCM", cloudmaskname)==0) // check this
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
@@ -110,11 +110,11 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		strcpy(fieldName, "AngularSignatureCloudMask");
 	}
 
-	// for RCCM
+	/*********************** for RCCM *********************/
 	if (strcmp("RCCM", cloudmaskname)==0)
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
-		if (filetype != MTK_TC_CLOUD_somethingHere);  // fix this: MTK_TC_CLOUD???
+		if (filetype != MTK_TC_CLASSIFIERS);  // check this data type again 
 		{
 			fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
 			return 1; // error
