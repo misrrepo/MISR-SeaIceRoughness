@@ -2,7 +2,7 @@
 '''
 only setup the input directory @ in_dir
 
-old: 
+old: ======================================
 Generate ASCM cloudmask from MISR MIL2TCCL.
 The MISR ASCM was upsampled from 128 x 512 to 512 x 2048.
 created 18 Aug 2020 by Ehsan Mosadegh
@@ -27,10 +27,10 @@ import sys, os, os.path, os, subprocess
 
 
 # set the input path
-in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_2016_sdcm"	    # makes a list of all cloudmask.hdf files in here
-exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir' 				 	# where exe file is on HPC
+in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/test_ascm_16apr2016/202211145435"			    # makes a list of all cloudmask.hdf files in here
+exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir' 				 							# where exe file is on HPC
 
-cloudmask_filetype = "SDCM" # 'ASCM' , 'RCCM' or double quote for C?
+cloudmask_filetype = "ASCM" #"SDCM" # 'ASCM' , 'RCCM' or double quote for C?
 ################################## DO NOT CHANGE ##################################
 # other settings
 
@@ -42,7 +42,12 @@ end_block_not_included = 47  # reads HDF file up to this number
 
 if (cloudmask_filetype == "SDCM"):
 	out_dir_label = 'cloudmask_TC_CLOUD_SDCM'   # we build this dir inside our input dir
-# make for the rest of 2
+
+if (cloudmask_filetype == "RCCM"):
+	out_dir_label = 'cloudmask_RCCM'   # we build this dir inside our input dir
+
+if (cloudmask_filetype == "ASCM"):
+	out_dir_label = 'cloudmask_ASCM'   # we build this dir inside our input dir
 
 ###################################################################################
 

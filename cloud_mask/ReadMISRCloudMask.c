@@ -114,7 +114,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	if (strcmp("RCCM", cloudmaskname)==0)
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
-		if (filetype != MTK_TC_CLOUD)  // fix this: MTK_TC_CLOUD???
+		if (filetype != MTK_TC_CLOUD_orSomethingElse)  // fix this: MTK_TC_CLOUD???
 		{
 			fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
 			return 1; // error
