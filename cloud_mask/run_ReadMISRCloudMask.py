@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 '''
-only setup the input directory @ in_dir
+only setup the input directory @ in_dir and the cloudmask_filetype
 
-old: ======================================
+old: 
+======================================
 Generate ASCM cloudmask from MISR MIL2TCCL.
 The MISR ASCM was upsampled from 128 x 512 to 512 x 2048.
 created 18 Aug 2020 by Ehsan Mosadegh
@@ -27,10 +28,11 @@ import sys, os, os.path, os, subprocess
 
 
 # set the input path
-in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/test_ascm_16apr2016/202211145435"			    # makes a list of all cloudmask.hdf files in here
-exe_dir = '/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir' 				 							# where exe file is on HPC
+in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016_ascm"		    # makes a list of all cloudmask.hdf files in here
+exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"			 							# where exe file is on HPC
 
-cloudmask_filetype = "ASCM" #"SDCM" # 'ASCM' , 'RCCM' or double quote for C?
+cloudmask_filetype = "ASCM" # "SDCM" # 'ASCM' , "RCCM"
+
 ################################## DO NOT CHANGE ##################################
 # other settings
 
