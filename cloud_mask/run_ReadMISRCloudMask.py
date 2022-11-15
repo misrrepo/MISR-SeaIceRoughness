@@ -28,7 +28,7 @@ import sys, os, os.path, os, subprocess
 
 
 # set the input path
-in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016_ascm"		    # makes a list of all cloudmask.hdf files in here
+in_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_10_25_2016_ascm"		    # makes a list of all cloudmask.hdf files in here
 exe_dir = "/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir"			 							# where exe file is on HPC
 
 cloudmask_filetype = "ASCM" # "SDCM" # 'ASCM' , "RCCM"
