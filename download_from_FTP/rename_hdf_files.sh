@@ -15,7 +15,7 @@ echo "before renaming..."
 for hdf_file in $hdf_dir/MISR_AM1_TC_CLASSIFIERS_*.hdf  # change this based on the fileName
 do
 	echo $hdf_file
-	mv "$hdf_file"  "${hdf_file/.b*-0*.f*.hdf/.hdf}"
+	mv "$hdf_file"  "${hdf_file/.f*.hdf/.hdf}"
 done
 
 # check file names here
