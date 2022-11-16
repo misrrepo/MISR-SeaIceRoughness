@@ -6,13 +6,14 @@
 
 echo "renaming HDF files...!"
 
-hdf_dir=/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016_ascm
+hdf_dir=/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_10_25_2016_ascm
+
 
 
 echo $hdf_dir
 
 echo "before renaming..."
-for hdf_file in $hdf_dir/MISR_AM1_TC_CLASSIFIERS_*.hdf  # change this based on the fileName
+for hdf_file in $hdf_dir/MISR_AM1_TC_CLASSIFIERS*.hdf  # change this based on the fileName
 do
 	echo $hdf_file
 	mv "$hdf_file"  "${hdf_file/.f*.hdf/.hdf}"
