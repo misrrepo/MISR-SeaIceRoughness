@@ -21,7 +21,7 @@ done
 
 # check file names here
 echo "after renaming..." 
-for hdf_file in $hdf_dir/MISR_AM1_GRP_ELLIPSOID_GM*.hdf
+for hdf_file in $hdf_dir/MISR_AM1_TC_CLASSIFIERS*.hdf  # change this based on the fileName
 do
 	echo $hdf_file
 done
