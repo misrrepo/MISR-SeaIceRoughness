@@ -30,7 +30,7 @@ cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_a
 
 # make a list of files in stereo dir
 stereo_filelist_fp = glob.glob(os.path.join(stereo_dir, "cloudmask_P*.msk"))
-print(len(stereo_filelist_fp))
+# print(len(stereo_filelist_fp))
 
 # make a list just from cloudmask file names to make the comparison easier
 stereo_filelist = []
@@ -45,7 +45,7 @@ print(len(stereo_filelist))
 
 # make a list of files in angular dir
 angular_filelist_fp = glob.glob(os.path.join(angular_dir, "cloudmask_P*.msk"))
-print(len(angular_filelist_fp))
+# print(len(angular_filelist_fp))
 
 # make a list just from cloudmask file names to make the comparison easier
 angular_filelist = []
