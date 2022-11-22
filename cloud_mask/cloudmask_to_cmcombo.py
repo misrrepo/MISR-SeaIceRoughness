@@ -4,12 +4,24 @@
 # In[1]:
 
 
+'''
+Ehsan Mosadegh
+21 Nov 2022
+
+reads cloudmask.msk files and combine pixel values
+
+'''
+
+
+# In[2]:
+
+
 import glob, os
 import numpy as np
 import pandas as pd
 
 
-# In[2]:
+# In[3]:
 
 
 # '''on my Mac'''
@@ -19,7 +31,7 @@ import pandas as pd
 # cmcombo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/cloudmask_combo"
 
 
-# In[3]:
+# In[4]:
 
 
 '''on PH'''
@@ -29,7 +41,7 @@ angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016
 cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular"
 
 
-# In[4]:
+# In[5]:
 
 
 # make a list of files in stereo dir
@@ -44,7 +56,7 @@ for stereo_item in stereo_filelist_fp:
 print(len(stereo_filelist))
 
 
-# In[5]:
+# In[6]:
 
 
 # make a list of files in angular dir
@@ -59,13 +71,13 @@ for angular_item in angular_filelist_fp:
 print(len(angular_filelist))
 
 
-# In[6]:
+# In[7]:
 
 
 type(stereo_filelist[0])
 
 
-# In[7]:
+# In[8]:
 
 
 # check stereo file exists in angular file list?
@@ -135,8 +147,9 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
         # add both to a cmcombo number
         cmcombo = str(stereo_elem)+str(angular_elem)
 #         print('cmcombo: %s' %cmcombo)
+
         # append to cmcombo[] + other info: POB
-        cmPOB = [cm_path, cm_orbit, cm_block, cmcombo]
+        cmPOB = [cm_path, cm_orbit, cm_block, str(cmcombo)]
 #         print(cmPOB)
         cmcombo_lst.append(cmPOB)  # add as string
         
@@ -144,12 +157,16 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
     # add cmcombo+POB info to global_cmcombo? here? for Anne
 #     print('adding cmcombo-list to global list') # makes it slow and not useful; better to write as csv to a single file on disc here
 #     global_cmcombo.append(cmcombo_lst)
-    cmcombo_df = pd.DataFrame(cmcombo_lst, columns=['CMpath','CMorbit','CMblock','CMcombo'])
+    cmcombo_df = pd.DataFrame(cmcombo_lst, columns=['CMpath','CMorbit','CMblock','CMcombo'], dtype=str)
+# #     print(cmcombo_df.dtypes)
+#     cmcombo_df = cmcombo_df.astype(str)
+#     print(cmcombo_df.dtypes)
+        
     print('writing file %s to csv...' %(cm_num+1))
     
 #     csv_fname = 'cmcombo'+'_'+cm_path+'_'+cm_orbit+'_'+cm_block+'.csv'
     csv_fname_fp = os.path.join(cmcombo_dir, csv_fname)
-    cmcombo_df.to_csv(csv_fname_fp, index=False)
+    cmcombo_df.to_csv(csv_fname_fp, index=False) # how write as string?? datatype??? change to string for easy comparison in future
     print(csv_fname_fp)
 
 print('*** successfully processed %s cmfiles ***' %(cm_num+1))
@@ -166,25 +183,25 @@ print('*** successfully processed %s cmfiles ***' %(cm_num+1))
     
 
 
-# In[8]:
+# In[9]:
 
 
 # global_cmcombo_arr = np.array(global_cmcombo) # change to np.aaray
 
 
-# In[9]:
+# In[10]:
 
 
 # global_cmcombo_arr.shape
 
 
-# In[10]:
+# In[11]:
 
 
 # final_df = pd.DataFrame(global_cmcombo, columns=['a','b','c','d'])
 
 
-# In[11]:
+# In[12]:
 
 
 # final_df

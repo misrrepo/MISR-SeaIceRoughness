@@ -13,7 +13,7 @@
 ## (MISR_roughness partition)
 
 #SBATCH --account=cpu-s5-misr_roughness-0
-#SBATCH --partition=cpu-core-0			 			# Submit job to the cpu partition
+#SBATCH --partition=cpu-core-0			 			# Submits your job to the cpu partition
 
 ##---------------------------------------------------------
 ##           set configuration
