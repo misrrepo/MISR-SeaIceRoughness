@@ -40,7 +40,7 @@
 ##SBATCH --nodes=1
 ##SBATCH --mem=1gb                                # Job memory request
 ##SBATCH --mem-per-cpu=4000M        		 	# Allocate 3.5GB of memory per CPU
-##SBATCH --time=14-00:00				 		# sets the max. run time; format: D-HH:MM
+#SBATCH --time=5-00:00				 		# sets the max. run time; format: D-HH:MM
 
 ##---------------------------------------------------------
 ##			set run script

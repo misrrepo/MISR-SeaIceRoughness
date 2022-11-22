@@ -12,20 +12,24 @@ import pandas as pd
 # In[2]:
 
 
+# '''on my Mac'''
+
 # stereo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/stereo"
 # angular_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/angular"
 # cmcombo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/cloudmask_combo"
 
 
-# In[ ]:
+# In[3]:
 
+
+'''on PH'''
 
 stereo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm/cloudmask_TC_CLOUD_SDCM"
 angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016_ascm/cloudmask_ASCM"
 cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular"
 
 
-# In[3]:
+# In[4]:
 
 
 # make a list of files in stereo dir
@@ -40,7 +44,7 @@ for stereo_item in stereo_filelist_fp:
 print(len(stereo_filelist))
 
 
-# In[4]:
+# In[5]:
 
 
 # make a list of files in angular dir
@@ -55,13 +59,13 @@ for angular_item in angular_filelist_fp:
 print(len(angular_filelist))
 
 
-# In[5]:
+# In[6]:
 
 
 type(stereo_filelist[0])
 
 
-# In[6]:
+# In[7]:
 
 
 # check stereo file exists in angular file list?
@@ -72,6 +76,7 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
     if (cm_fname not in angular_filelist): # check if stereo cloudmask is not in angular filelist, continuw to next stereo
         print('cloudmask not found; continue')
         continue;
+        
         
     # open and read stereo cloudmask
     stereo_fp = os.path.join(stereo_dir, cm_fname)
@@ -90,10 +95,12 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
 #     print(type(angular_f))
     angular_shp = angular_f.shape[0]
     
+    
     # check len(both files) if not similar then error msg
     if (stereo_shp != angular_shp):
         print('shape of cm-files not equal; continue');
         continue;
+    
     
     cmcombo_lst = [] # for each cloudmaskcombo
     # extract POB from filelabel
@@ -105,6 +112,16 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
     cm_block = cm_fname.split("_")[3].split(".")[0]
 #     print(type(cm_block))
     
+    
+    # check if cmcombo.csv is on disc, continue
+    csv_fname = 'cmcombo'+'_'+cm_path+'_'+cm_orbit+'_'+cm_block+'.csv'
+    if (os.path.isfile(os.path.join(cmcombo_dir, csv_fname))):
+        print('csv file is available on disc, continue to the next cloudmask.msk');
+        continue;
+
+        
+        
+    # extract each pixel value from cloudmask.msk files
     for i in range(stereo_shp):  # make a combofile
 #         print('i is:%d'%i)
         # extract each single element from both files
@@ -123,13 +140,14 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
 #         print(cmPOB)
         cmcombo_lst.append(cmPOB)  # add as string
         
+        
     # add cmcombo+POB info to global_cmcombo? here? for Anne
 #     print('adding cmcombo-list to global list') # makes it slow and not useful; better to write as csv to a single file on disc here
 #     global_cmcombo.append(cmcombo_lst)
     cmcombo_df = pd.DataFrame(cmcombo_lst, columns=['CMpath','CMorbit','CMblock','CMcombo'])
     print('writing file %s to csv...' %(cm_num+1))
     
-    csv_fname = 'cmcombo'+'_'+cm_path+'_'+cm_orbit+'_'+cm_block+'.csv'
+#     csv_fname = 'cmcombo'+'_'+cm_path+'_'+cm_orbit+'_'+cm_block+'.csv'
     csv_fname_fp = os.path.join(cmcombo_dir, csv_fname)
     cmcombo_df.to_csv(csv_fname_fp, index=False)
     print(csv_fname_fp)
@@ -148,25 +166,25 @@ print('*** successfully processed %s cmfiles ***' %(cm_num+1))
     
 
 
-# In[7]:
+# In[8]:
 
 
 # global_cmcombo_arr = np.array(global_cmcombo) # change to np.aaray
 
 
-# In[8]:
+# In[9]:
 
 
 # global_cmcombo_arr.shape
 
 
-# In[9]:
+# In[10]:
 
 
 # final_df = pd.DataFrame(global_cmcombo, columns=['a','b','c','d'])
 
 
-# In[10]:
+# In[11]:
 
 
 # final_df
