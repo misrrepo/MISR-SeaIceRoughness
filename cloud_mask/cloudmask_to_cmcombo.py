@@ -49,13 +49,15 @@ run_cmcombo_binaryFile = 1
 '''on PH'''
 
 '''April-2016'''
-stereo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm/cloudmask_TC_CLOUD_SDCM"
-angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016_ascm/cloudmask_ASCM"
-cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_april2016"
+# stereo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm/cloudmask_TC_CLOUD_SDCM"
+# angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016_ascm/cloudmask_ASCM"
+# cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_april2016"
 
 
 '''July-2016'''
-
+stereo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_2016_sdcm/cloudmask_TC_CLOUD_SDCM"
+angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_10_25_2016_ascm/cloudmask_ASCM"
+cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_july2016"
 
 # In[6]:
 
