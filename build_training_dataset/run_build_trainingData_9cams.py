@@ -3,6 +3,14 @@
 by: Ehsan Mosadegh 26 November 2020
 
 this script runs ATMModel.c [later renamed to "build_trainingData_xcams"]
+check values for these parameters inside main(.):
+
+    int cloudMask_runMode = 1; // 0 == turn off cloud mask
+
+
+    // set to 1 for either of the following
+    int misr_cloudmask = 0;
+    int cmcombo_cloudmask = 1;
 
 inputs:
 	1) path to ATM directory
@@ -22,23 +30,24 @@ from platform import python_version
 # inputs
 
 # files in this directory should be all atm files listed there in one single directory 
-atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016"
-# atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/test_single_atm_file"
+# atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016"
+atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/ATM_IceBridge_ILATM2_V002"
 
 
 
 # path to directory that includes 9 camera sub-directories: An/Ca/Cf/Ba/Bf/Da/Df
-masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_july_2016_9cam4bands_day10_25_p1_233_b1_46"
+masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46"
 
 
-# if you do not use cloudMask, turn this option off in C.code [cloudMask_runMode=1]
-cloud_masked_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_2016_sdcm/cloudmask_TC_CLOUD_SDCM"      #"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"  
+# if you do not use cloudMask, turn its option off in C.code (cloudMask_runMode=1)
+# e.g.: #"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"
+cloud_masked_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_april2016"    
 
 
 
 # output 
-out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel"
-atmmodel_csvfile_label = "traindataset_july_2016_k_zero_9cams4bands_withclouds.csv"
+out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atmmodel/atmmodel_k_zero"
+atmmodel_csvfile_label = "traindataset_april_2016_k_zero_9cams4bands_withcmcombo.csv"
 
 
 
