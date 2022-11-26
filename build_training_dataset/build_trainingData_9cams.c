@@ -85,7 +85,7 @@ char *strsub(char *s, char *a, char *b);
 
 // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int read_data_cloudmask(char* fname_fullpath, int line, int sample, uint8_t* data) { // note: cloud-mask file should be in shape: (512 * 2048)
+int read_data_cloudmask(char* fname_fullpath, int line, int sample, uint8_t* data) { // note: cloud-mask file should be in size (512 * 2048), but because it is in binary the shape should be (1048576,); dtype: 8-bit unsigned char
     FILE* in_stream; // input file obj
     int nlines = 512;
     int nsamples = 2048;
@@ -307,10 +307,14 @@ int main(int argc, char *argv[])
     ssize_t line_size;
     int ATMnewLine = 0;
 
-
+    //**********************************************************************************
     // E- set to 1 if we use cloud mask
     int cloudMask_runMode = 1; // 0 == turn off cloud mask
 
+
+    // set to 1 for either of the following
+    int misr_cloudmask = 0;
+    int cmcombo_cloudmask = 1;
 
     /* -------------------------------------------------------------------------------------------------- */
     /* Get list of all available ATM.csv files in directory */
@@ -745,8 +749,20 @@ int main(int argc, char *argv[])
                     } 
                     else 
                     {
-                        // sprintf(cloudmask_fname_fullpath, "%s/An/sdcm_p%03d_o%06d_b%03d_an.dat", cloud_masked_dir, path, orbitlist[j], img_block); // original=lsdcm =? note: to do a test run, i renamed the filename from lsdcm_p* to sdcm_p* 
-                        sprintf(cloudmask_fname_fullpath, "%s/cloudmask_P%03d_O%06d_B%03d.msk", cloud_masked_dir, path, orbitlist[j], img_block); // original=lsdcm =? note: to do a test run, i renamed the filename from lsdcm_p* to sdcm_p* 
+
+                        if (misr_cloudmask)
+                        {
+                            // sprintf(cloudmask_fname_fullpath, "%s/An/sdcm_p%03d_o%06d_b%03d_an.dat", cloud_masked_dir, path, orbitlist[j], img_block); // original=lsdcm =? note: to do a test run, i renamed the filename from lsdcm_p* to sdcm_p* 
+                            sprintf(cloudmask_fname_fullpath, "%s/cloudmask_P%03d_O%06d_B%03d.msk", cloud_masked_dir, path, orbitlist[j], img_block); // original=lsdcm =? note: to do a test run, i renamed the filename from lsdcm_p* to sdcm_p* 
+                        }
+
+                        if (cmcombo_cloudmask)
+                        {
+                           sprintf(cloudmask_fname_fullpath, "%s/cmcombo_P%03d_O%06d_B%03d.msk", cloud_masked_dir, path, orbitlist[j], img_block); // original=lsdcm =? note: to do a test run, i renamed the filename from lsdcm_p* to sdcm_p* 
+
+                        }
+
+
                         // check if file is accessible 
                         if (access(cloudmask_fname_fullpath, F_OK) != 0)  // update access f(.)?
                         {

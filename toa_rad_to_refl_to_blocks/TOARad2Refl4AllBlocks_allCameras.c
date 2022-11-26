@@ -1338,7 +1338,8 @@ return data2;
 
 //############################################### main ######################################################
 
-int main(int argc, char* argv[]) { // return 0= success, return 1= error
+int main(int argc, char* argv[]) 
+{ // return 0= success, return 1= error
 
 	// printf("date/time is ...\n");
 	system(command);
