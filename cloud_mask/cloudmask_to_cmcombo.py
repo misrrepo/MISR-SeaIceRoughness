@@ -28,7 +28,7 @@ import sys
 
 '''select run mode'''
 
-run_cmcombo_csvstats = 0
+run_cmcombo_csvstats = 1
 
 run_cmcombo_binaryFile = 1
 
@@ -36,11 +36,14 @@ run_cmcombo_binaryFile = 1
 # In[4]:
 
 
-# '''on my Mac'''
+'''on my Mac'''
 
-# stereo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/stereo"
-# angular_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/angular"
-# cmcombo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/cloudmask_combo"
+stereo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/stereo"
+angular_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/angular"
+radiometric_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/radiometric_dummy"
+
+
+cmcombo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consensus/cloudmask_combo"
 
 
 # In[5]:
@@ -48,16 +51,22 @@ run_cmcombo_binaryFile = 1
 
 '''on PH'''
 
-'''April-2016'''
+# '''April-2016'''
+
 # stereo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_sdcm/cloudmask_TC_CLOUD_SDCM"
 # angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016_ascm/cloudmask_ASCM"
-# cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_april2016"
+# radiometric_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_rccm_9cams/rccm_df/cloudmask_RCCM" # check this path before running
+
+# cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_radio_april2016"
 
 
 '''July-2016'''
-stereo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_2016_sdcm/cloudmask_TC_CLOUD_SDCM"
-angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_10_25_2016_ascm/cloudmask_ASCM"
-cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_july2016"
+# stereo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_2016_sdcm/cloudmask_TC_CLOUD_SDCM"
+# angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_10_25_2016_ascm/cloudmask_ASCM"
+# radiometric_dir = "???"
+
+# cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_radio_july2016"
+
 
 # In[6]:
 
@@ -98,8 +107,10 @@ type(stereo_filelist[0])
 # In[9]:
 
 
-def write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, angular_f):
+def write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, angular_f, radio_f):
+    
     '''for each block of cloudmask.msk'''
+    
     # check if cmcombo.csv is on disc, continue
     bin_fname = 'cmcombo'+'_'+cm_path+'_'+cm_orbit+'_'+cm_block+'.msk'
     
@@ -113,14 +124,15 @@ def write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, 
 
         # extract each pixel value from cloudmask.msk files
         for i in range(stereo_shp):  # make a combofile
-            # extract each single element from both files
+            # extract each single element from all cloudmask arrays
             stereo_elem = stereo_f[i]
             angular_elem = angular_f[i]
+            radio_elem = radio_f[i]
     
             #**** what is data type inside atmmodel.c ????
     
             # add both to a cmcombo number
-            cmcombo = str(stereo_elem)+str(angular_elem)
+            cmcombo = str(stereo_elem)+str(angular_elem)+str(radio_elem)
             
             cmcombo = int(cmcombo)
             #print(type(cmcombo))
@@ -155,9 +167,10 @@ def write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, 
 # In[10]:
 
 
-def write_cmcombo_stats_csvFile(cm_path, cm_orbit, cm_block, cmcombo_dir, stereo_shp, stereo_f, angular_f):
+def write_cmcombo_stats_csvFile(cm_path, cm_orbit, cm_block, cmcombo_dir, stereo_shp, stereo_f, angular_f, radio_f):
     
     '''for each block of cloudmask.msk'''
+    
     # check if cmcombo.csv is on disc, continue
     csv_fname = 'cmcombo'+'_'+cm_path+'_'+cm_orbit+'_'+cm_block+'.csv'
     if (os.path.isfile(os.path.join(cmcombo_dir, csv_fname))):
@@ -170,38 +183,23 @@ def write_cmcombo_stats_csvFile(cm_path, cm_orbit, cm_block, cmcombo_dir, stereo
 
         # extract each pixel value from cloudmask.msk files
         for i in range(stereo_shp):  # make a combofile
-    #         print('i is:%d'%i)
-            # extract each single element from both files
+            # extract each single element from all cloudmask arrays
             stereo_elem = stereo_f[i]
-    #         print(type(stereo_elem))
-            # same for angular
             angular_elem = angular_f[i]
-            # check dtype
-    #         print(type(angular_elem))
+            radio_elem = radio_f[i]
 
             # add both to a cmcombo number
-            cmcombo = str(stereo_elem)+str(angular_elem)
-    #         print('cmcombo: %s' %cmcombo)
+            cmcombo = str(stereo_elem)+str(angular_elem)+str(radio_elem)
 
             # append to cmcombo[] + other info: POB
             cmPOB = [cm_path, cm_orbit, cm_block, str(cmcombo)]
     #         print(cmPOB)
             cmcombo_lst.append(cmPOB)  # add as string
-
-        # for later: write the cmcombo to an array and write as binary cmcombo; we will writ a single binary cmcombo for each pair of cloudmasks; we need these files for building future trainign dataset by Atmmodel.c; writefile can be a function for future use
-    #     write_cloudmask_binary()
-
-        # add cmcombo+POB info to global_cmcombo? here? for Anne
-    #     print('adding cmcombo-list to global list') # makes it slow and not useful; better to write as csv to a single file on disc here
-    #     global_cmcombo.append(cmcombo_lst)
+        
         cmcombo_df = pd.DataFrame(cmcombo_lst, columns=['CMpath','CMorbit','CMblock','CMcombo'], dtype=str)
-    # #     print(cmcombo_df.dtypes)
-    #     cmcombo_df = cmcombo_df.astype(str)
-    #     print(cmcombo_df.dtypes)
 
         print('writing stats file %s to csv...' %(cm_num+1))
 
-    #     csv_fname = 'cmcombo'+'_'+cm_path+'_'+cm_orbit+'_'+cm_block+'.csv'
         csv_fname_fp = os.path.join(cmcombo_dir, csv_fname)
         cmcombo_df.to_csv(csv_fname_fp, index=False) # how write as string?? datatype??? change to string for easy comparison in future
         print(csv_fname_fp)
@@ -223,7 +221,7 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
         continue;
         
         
-    # open and read stereo cloudmask
+    '''open and read stereo cloudmask'''
     stereo_fp = os.path.join(stereo_dir, cm_fname)
 #     print(stereo_fp)
     stereo_f = np.fromfile(stereo_fp, dtype=np.ubyte) # this should be siilr to dtype from C
@@ -232,13 +230,22 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
 #     print(type(stereo_shp))
     
     
-    # open and read angular cloudmask
+    '''open and read angular cloudmask'''
 #     print('anguler files')
     angular_fp = os.path.join(angular_dir, cm_fname)
 #     print(angular_fp)
     angular_f = np.fromfile(angular_fp, dtype=np.ubyte) # this should be siilr to dtype from C
 #     print(type(angular_f))
     angular_shp = angular_f.shape[0]
+    
+    
+    '''open and read radiometric cloudmask'''
+#     print('anguler files')
+    radio_fp = os.path.join(radiometric_dir, cm_fname)
+#     print(angular_fp)
+    radio_f = np.fromfile(radio_fp, dtype=np.ubyte) # this should be siilr to dtype from C
+#     print(type(angular_f))
+    radio_shp = radio_f.shape[0]
     
     
     # check len(both files) if not similar then error msg
@@ -258,10 +265,10 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
 #     print(type(cm_block))
     
     if (run_cmcombo_csvstats):
-        write_cmcombo_stats_csvFile(cm_path, cm_orbit, cm_block, cmcombo_dir, stereo_shp, stereo_f, angular_f)
+        write_cmcombo_stats_csvFile(cm_path, cm_orbit, cm_block, cmcombo_dir, stereo_shp, stereo_f, angular_f, radio_f)
 
     if (run_cmcombo_binaryFile):
-        write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, angular_f)
+        write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, angular_f, radio_f)
     
     
 print('*** successfully processed %s cmfiles ***' %(cm_num+1))
@@ -275,28 +282,4 @@ print('*** successfully processed %s cmfiles ***' %(cm_num+1))
     
     
     
-
-
-# In[12]:
-
-
-# global_cmcombo_arr = np.array(global_cmcombo) # change to np.aaray
-
-
-# In[13]:
-
-
-# global_cmcombo_arr.shape
-
-
-# In[14]:
-
-
-# final_df = pd.DataFrame(global_cmcombo, columns=['a','b','c','d'])
-
-
-# In[15]:
-
-
-# final_df
 

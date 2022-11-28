@@ -8,9 +8,9 @@ check values for these parameters inside main(.):
     int cloudMask_runMode = 1; // 0 == turn off cloud mask
 
 
-    // set to 1 for either of the following
-    int misr_cloudmask = 0;
-    int cmcombo_cloudmask = 1;
+    // set to 1 for either of the following options:
+	    int misr_cloudmask = 0;
+	    int cmcombo_cloudmask = 1;
 
 inputs:
 	1) path to ATM directory
