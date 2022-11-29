@@ -124,11 +124,11 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
 
-		if (filetype != MTK_GRP_RCCM);  // check this data type again 
-		{
-			fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
-			return 1; // error
-		}
+		// if (filetype != MTK_GRP_RCCM);  // check this data type again 
+		// {
+		// 	fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
+		// 	return 1; // error
+		// }
 
 
 		// setup SDCM grid and field names
