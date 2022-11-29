@@ -68,6 +68,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	int masksamples = 2048;
 	uint8_t mask;
 
+	printf("chk-3 \n");
+
 	if (VERBOSE) fprintf(stderr, "readMISRCloudMask: fname=%s, block=%d\n", fname, block);
 	status = MtkFileType(fname, &filetype);
 	
@@ -76,8 +78,11 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: MtkFileType failed!!!, status = %d (%s)\n", status, errs[status]);
 		return 1; // error
 	}
+	printf("chk-4 \n");
 
 	printf("filetype: %s \n" , filetype);
+
+	printf("chk-5 \n");
 
 	/*********************** for SDCM *********************/
 	if (strcmp("SDCM", cloudmaskname)==0) // to compare 2 strings  // if (cloudmaskname=="SDCM")
