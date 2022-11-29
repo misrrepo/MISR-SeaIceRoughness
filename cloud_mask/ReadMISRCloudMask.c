@@ -68,7 +68,6 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	int masksamples = 2048;
 	uint8_t mask;
 
-	printf("chk-3 \n");
 
 	if (VERBOSE) fprintf(stderr, "readMISRCloudMask: fname=%s, block=%d\n", fname, block);
 	status = MtkFileType(fname, &filetype);
@@ -78,12 +77,10 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		fprintf(stderr, "readMISRCloudMask: MtkFileType failed!!!, status = %d (%s)\n", status, errs[status]);
 		return 1; // error
 	}
-	printf("chk-4 \n");
 
 	// printf("filetype: %s \n" , filetype);
-	// printf(filetype);
+	printf(&filetype);
 
-	printf("chk-5 \n");
 
 	/*********************** for SDCM *********************/
 	if (strcmp("SDCM", cloudmaskname)==0) // to compare 2 strings  // if (cloudmaskname=="SDCM")
@@ -126,14 +123,13 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	if (strcmp("RCCM", cloudmaskname)==0)
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
-		
-		// if (filetype != MTK_GRP_RCCM);  // check this data type again 
-		// {
-		// 	fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
-		// 	return 1; // error
-		// }
 
-		printf("chk-6 \n");
+		if (filetype != MTK_GRP_RCCM);  // check this data type again 
+		{
+			fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
+			return 1; // error
+		}
+
 
 		// setup SDCM grid and field names
 		strcpy(gridName, "RCCM"); 
