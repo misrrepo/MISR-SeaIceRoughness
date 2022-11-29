@@ -113,6 +113,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 			return 1; // eror
 		}
 
+
 		// setup ASCM grid and field names - check gird and filed bellow
 		strcpy(gridName, "ASCMParams_1.1_km");   
 		strcpy(fieldName, "AngularSignatureCloudMask");
@@ -125,11 +126,14 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	if (strcmp("RCCM", cloudmaskname)==0)
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
-		if (filetype != GRP_RCCM);  // check this data type again 
+		if (filetype != MTK_GRP_RCCM);  // check this data type again 
 		{
 			fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
 			return 1; // error
 		}
+
+		printf("chk-6 \n");
+
 		// setup SDCM grid and field names
 		strcpy(gridName, "RCCM"); 
 		strcpy(fieldName, "Cloud");
