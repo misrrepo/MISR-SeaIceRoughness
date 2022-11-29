@@ -80,7 +80,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	}
 	printf("chk-4 \n");
 
-	printf("filetype: %s \n" , filetype);
+	// printf("filetype: %s \n" , filetype);
+	printf(filetype);
 
 	printf("chk-5 \n");
 
