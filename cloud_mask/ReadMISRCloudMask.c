@@ -120,8 +120,8 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 			return 1; // error
 		}
 		// setup SDCM grid and field names
-		strcpy(gridName, "Stereo_WithoutWindCorrection_1.1_km"); 
-		strcpy(fieldName, "StereoDerivedCloudMask_WithoutWindCorrection");
+		strcpy(gridName, "RCCM"); 
+		strcpy(fieldName, "Cloud");
 	}
 	/*=================================================================*/
 	/* read any cloud mask file */
