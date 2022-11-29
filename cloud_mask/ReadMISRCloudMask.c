@@ -77,7 +77,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		return 1; // error
 	}
 
-	pritnf("filetype: %s \n" , filetype);
+	printf("filetype: %s \n" , filetype);
 
 	/*********************** for SDCM *********************/
 	if (strcmp("SDCM", cloudmaskname)==0) // to compare 2 strings  // if (cloudmaskname=="SDCM")
