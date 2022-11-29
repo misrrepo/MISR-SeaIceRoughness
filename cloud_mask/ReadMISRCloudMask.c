@@ -79,7 +79,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	}
 
 	// printf("filetype: %s \n" , filetype);
-	printf(&filetype);
+	printf(filetype);
 
 
 	/*********************** for SDCM *********************/
