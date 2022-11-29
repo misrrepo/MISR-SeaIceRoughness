@@ -79,7 +79,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	}
 
 	// printf("filetype: %s \n" , filetype);
-	printf(filetype);
+	// printf(filetype);
 
 
 	/*********************** for SDCM *********************/
@@ -252,7 +252,6 @@ int main(int argc, char *argv[])
 		return 1; // error
 	}
 
-	printf("check-1 \n");
 
 	// strcpy(cloudmaskname, argv[4]);
 	strcpy(fname[0], argv[1]);
@@ -261,7 +260,6 @@ int main(int argc, char *argv[])
 	strcpy(cloudmaskname, argv[4]); // copy argv[4] to cloudmaskname
 	// printf("cloudMask mode: %s \n", cloudmaskname);
 
-	printf("check-2 \n");
 	// here we check error from a f(.)
 	if (readMISRCloudMask(fname[0], cloudmaskname)) return 1; // error
 	if (write_data(fname[1], cmask0_ptr, 512, 2048)) return 1; // E- we only write cmask0_ptr data as output! all elements are checked to be total of (512*2048); !0 = 1 = error signal from inside f(.)
