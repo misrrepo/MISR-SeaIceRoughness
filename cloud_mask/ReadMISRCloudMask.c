@@ -81,7 +81,7 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	printf("chk-4 \n");
 
 	// printf("filetype: %s \n" , filetype);
-	printf(filetype);
+	// printf(filetype);
 
 	printf("chk-5 \n");
 
@@ -118,11 +118,14 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		strcpy(fieldName, "AngularSignatureCloudMask");
 	}
 
+
+
+
 	/*********************** for RCCM *********************/
 	if (strcmp("RCCM", cloudmaskname)==0)
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
-		if (filetype != MTK_GRP_RCCM);  // check this data type again 
+		if (filetype != GRP_RCCM);  // check this data type again 
 		{
 			fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
 			return 1; // error
@@ -131,6 +134,9 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 		strcpy(gridName, "RCCM"); 
 		strcpy(fieldName, "Cloud");
 	}
+
+
+
 	/*=================================================================*/
 	/* read any cloud mask file */
 
