@@ -126,11 +126,12 @@ int readMISRCloudMask(char *fname, char *cloudmaskname)
 	if (strcmp("RCCM", cloudmaskname)==0)
 	{
 		printf("cloudmask mode: %s \n" , cloudmaskname);
-		if (filetype != MTK_GRP_RCCM);  // check this data type again 
-		{
-			fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
-			return 1; // error
-		}
+		
+		// if (filetype != MTK_GRP_RCCM);  // check this data type again 
+		// {
+		// 	fprintf(stderr, "readMISRCloudMask: RCCM filetype not supported!!!\n"); // fix this readMISRCloudMask
+		// 	return 1; // error
+		// }
 
 		printf("chk-6 \n");
 
