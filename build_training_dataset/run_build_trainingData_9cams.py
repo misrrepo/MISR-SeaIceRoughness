@@ -27,27 +27,30 @@ from platform import python_version
 ########################################################################################################################
 #-- setup paths
 
-# inputs
+#> inputs
 
-# files in this directory should be all atm files listed there in one single directory 
-# atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016"
-atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/ATM_IceBridge_ILATM2_V002"
-
-
-
-# path to directory that includes 9 camera sub-directories: An/Ca/Cf/Ba/Bf/Da/Df
-masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46"
+#> files in this directory should be all atm files listed there in one single directory 
+atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016"
+# atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/ATM_IceBridge_ILATM2_V002"
 
 
-# if you do not use cloudMask, turn its option off in C.code (cloudMask_runMode=1)
+
+#> path to directory that includes 9 camera sub-directories: An/Ca/Cf/Ba/Bf/Da/Df
+# masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/april_2016/masked_toa_refl_april_2016_9cam4bands_day15_30_p1_233_b1_46"
+masked_toa_refl_home = "/data/gpfs/assoc/misr_roughness/2016/july_2016/masked_toa_refl_july_2016_9cam4bands_day10_25_p1_233_b1_46"
+
+
+
+#> if you do not use cloudMask, turn its option off in C.code (cloudMask_runMode=1)
 # e.g.: #"/data/gpfs/assoc/misr_roughness/2016/july_2016/cloudmask_TC_CLASSIFIERS_F07_HC4_only"
-cloud_masked_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_april2016"    
+# cloud_masked_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_april2016"    
+cloud_masked_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_july2016"
 
 
 
 # output 
-out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atmmodel/atmmodel_k_zero"
-atmmodel_csvfile_label = "traindataset_april_2016_k_zero_9cams4bands_withcmcombo.csv"
+out_atmmodel_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atmmodel"
+atmmodel_csvfile_label = "traindataset_july_2016_k_zero_9cams3ANbands_withcmcombo.csv"
 
 
 

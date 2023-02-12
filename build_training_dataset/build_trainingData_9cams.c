@@ -1,4 +1,4 @@
-/* 
+cd/* 
 Ehsan Jan 15, 2020
 originally from dir: /home/mare/Nolin/SeaIce/Code/C (atmmodel.c)
 name: atm_to_misr_pixels.c
@@ -395,7 +395,7 @@ int main(int argc, char *argv[])
 
 
     /* ---------------------------------------------------------------------------- */
-    /* start- read each available ATM file from the list we made in the past section */
+    /* start- read each available ATM-file.csv from the list we made in the past section */
 
     for (int i = 0; i < atm_files_list_index; i++)
     { // i = num of available ATM files in the list
@@ -442,7 +442,7 @@ int main(int argc, char *argv[])
             {
                 /* skip the iteration at this step */
                 printf("k= %d, we continue to next k\n", k_misr_date);
-                continue;
+                continue; // we skip k= -+1
             } 
 
             printf("k= %d\n", k_misr_date);
@@ -460,7 +460,7 @@ int main(int argc, char *argv[])
             // printf("ATM period= %s -- to -- %s\n", misr_start_time, misr_end_time);
 
 
-            if (k_misr_date == 0) weight = 1.0; // for today k=0; w=1 of the ATM overpass;
+            if (k_misr_date == 0) weight = 1.0; // for today k=0; w=1 of the ATM overpass in MISR pixel?; test for only k=0 (MISR images from todat)
             else weight = 0.5; // yesterday or tmrw; weight=0.5 of the ATM overpass
             
             //if (monthday[month][day] == 0) {
@@ -781,12 +781,13 @@ int main(int argc, char *argv[])
 
 
 
+                    /*############################################################################################################*/
+
                     // printf("*** C: preparing input files for: %d, %d, %d, %d, %d, %f, %f, %f\n", path, orbitlist[j], img_block, line, sample, xlat, xlon, xrms); // for each csv row == label info
                     /* --------------------------------------------------------------------------------------------------- */
-                    /* now try to find MISR pixels that each ATM point roughness falls into it and then sum all roughness values */
+                    /* now try to find MISR pixels that each ATM point roughness falls into it and then/in what step? sum all roughness values */
 
-                    /* we assume there is not any previous ATM points in MISR pixel, 
-                        a switch to check if every new ATM point falls inside a previous pixel, reset to zero for every new entry=ATM line */
+                    /* we assume there was not any previous ATM points in MISR pixel, it's a switch to check if every new ATM point falls inside a previous pixel, reset to zero for every new entry=ATM line */
                     atm_point_in_pixel_key = 0; // to turn on&off
 
                     if (total_trainingDS_row_in_mem == 0)
@@ -802,16 +803,16 @@ int main(int argc, char *argv[])
                         while ((available_ds_row_index < total_trainingDS_row_in_mem) && !atm_point_in_pixel_key) 
                         { // checks new ATM point with previous rows in dataset= all n points inside trainingDS_dataStruct until pixel is found
 
-                            /* first check if there are previous ATM points inside MISR pixel so that we average new value w/ previous values
+                            /* first check if there are previous ATM points inside MISR pixel so that we average new [roughness?] value w/ previous values
                                 we compare new MISR path,img_block,line,sample (associated with ATM point/row) with every n point available in fileObj;
-                                if even one similar MISR pixel was found, we will sum & update useful ATM info: rms, npts, and var to previous pixel values in fileObj */
-                            if ((trainingDS_dataStruct[available_ds_row_index].path == path) && (trainingDS_dataStruct[available_ds_row_index].img_block == img_block) && (trainingDS_dataStruct[available_ds_row_index].line == line) && (trainingDS_dataStruct[available_ds_row_index].sample == sample) && (trainingDS_dataStruct[available_ds_row_index].weight == weight))
+                                if even one similar MISR pixel is found in dataset, we will sum & update trainingDS_dataStruct with ATM info [rms, npts, var] to previous MISR pixel values in fileObj */
+                            if ((trainingDS_dataStruct[available_ds_row_index].path == path) && (trainingDS_dataStruct[available_ds_row_index].img_block == img_block) && (trainingDS_dataStruct[available_ds_row_index].line == line) && (trainingDS_dataStruct[available_ds_row_index].sample == sample) && (trainingDS_dataStruct[available_ds_row_index].weight == weight)) // weight reprsents same day
                             {   // Q- what is this condition? why check to be the same? in same day in same pixel????
                                 
                                 // printf("FOUND previous ATM points in a MISR pixel: summing with previous ATM values ...\n");
                                 //printf("FOUND: ATM in MISR pixel >>> day: (%d), path: (%d), img_block: (%d), line: (%d), sample: (%d)\n\n", k, path, img_block, line, sample);
                                 trainingDS_dataStruct[available_ds_row_index].rms += weight * xrms; // sum of weighted ATM roughness in the same pixel?
-                                trainingDS_dataStruct[available_ds_row_index].npts += weight; // sum of num of points in the same pixel?
+                                trainingDS_dataStruct[available_ds_row_index].npts += weight; // number of ATM points in the same MISR pixel?
                                 trainingDS_dataStruct[available_ds_row_index].var += weight * xrms * xrms; // sum of what???? variance?
                                 atm_point_in_pixel_key = 1; // turn on the key- when we find the first ATM point in pixel == turns on here == 1 and skip while-loop
                             }
@@ -838,15 +839,15 @@ int main(int argc, char *argv[])
                     }
 
                     //************************************************************************************************
-                    /* this code block runs first:
+                    /* this block runs first:
                             we run this because the new ATM location (xlat/xlon) was not found in previous MISR pixels 
                             and we will add it as a new dataPoint row to trainingDS_dataStruct 
                             this will be the first row entry to the datastructure in memory */
                     
                     if (!atm_point_in_pixel_key)
                     { 
-                        //if key is still off==we could not find any ATM point in MISR pixel ==  atm_point_in_pixel_key=0 
-                        // printf("FOUND a new ATM point (row/sample), will add it to trainingDS_dataStruct now...\n");
+                        //if key is still off == we could not find any ATM point in MISR pixel ==  atm_point_in_pixel_key=0 
+                        // printf("FOUND a new/first? ATM point (row/sample), will add it to trainingDS_dataStruct now...\n");
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].path = path;
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].orbit = orbitlist[j];
                         trainingDS_dataStruct[total_trainingDS_row_in_mem].img_block = img_block;
