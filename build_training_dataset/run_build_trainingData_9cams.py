@@ -2,15 +2,16 @@
 '''
 by: Ehsan Mosadegh 26 November 2020
 
-this script runs ATMModel.c [later renamed to "build_trainingData_xcams"]
-check values for these parameters inside main(.):
+this script runs ATMModel.c [later renamed to "build_trainingData_Xcams"]
+check values for the following parameters inside main(.) C code:
 
     int cloudMask_runMode = 1; // 0 == turn off cloud mask
 
 
-    // set to 1 for either of the following options:
-	    int misr_cloudmask = 0;
-	    int cmcombo_cloudmask = 1;
+    // this codes runs either of the following, not both at the same time
+    int misr_cloudmask = 0;    // to run with MISR cloudmask data products
+    int cmcombo_cloudmask = 1; // to run cmcombo mode
+
 
 inputs:
 	1) path to ATM directory
@@ -30,8 +31,8 @@ from platform import python_version
 #> inputs
 
 #> files in this directory should be all atm files listed there in one single directory 
-atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016"
 # atm_dir = "/data/gpfs/assoc/misr_roughness/2016/april_2016/atm_data_april_2016/ATM_IceBridge_ILATM2_V002"
+atm_dir = "/data/gpfs/assoc/misr_roughness/2016/july_2016/atm_data_july_2016"
 
 
 

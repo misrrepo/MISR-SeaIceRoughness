@@ -1,4 +1,4 @@
-cd/* 
+/* 
 Ehsan Jan 15, 2020
 originally from dir: /home/mare/Nolin/SeaIce/Code/C (atmmodel.c)
 name: atm_to_misr_pixels.c
@@ -312,9 +312,9 @@ int main(int argc, char *argv[])
     int cloudMask_runMode = 1; // 0 == turn off cloud mask
 
 
-    // set to 1 for either of the following
-    int misr_cloudmask = 0;
-    int cmcombo_cloudmask = 1;
+    // this codes runs either of the following, not both at the same time
+    int misr_cloudmask = 0;    // to run with MISR cloudmask data products
+    int cmcombo_cloudmask = 1; // to run cmcombo mode
 
     /* -------------------------------------------------------------------------------------------------- */
     /* Get list of all available ATM.csv files in directory */

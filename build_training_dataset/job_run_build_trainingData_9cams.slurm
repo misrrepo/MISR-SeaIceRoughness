@@ -1,7 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=trainDS-april2016
-##SBATCH --account=cpu-s6-test-0 			
-##SBATCH --partition=cpu-s6-test-0
+#SBATCH --job-name=trainDS-july-2016
 #SBATCH --account=cpu-s5-misr_roughness-0	# submit to my CPU account
 #SBATCH --partition=cpu-core-0				# Submit job to CPU partition
 #SBATCH --ntasks=1							# Set one task per node
@@ -12,8 +10,8 @@
 #SBATCH --mail-user=emosadegh@nevada.unr.edu
 #SBATCH --mail-type=ALL             		# Send mail on all stateChanges
 ##---------------------------------------------------------------------
-#SBATCH --output=log_trainDS_aprill2016_cmcombo.txt   		# The output file name
-#SBATCH --error=log_trainDS_aprill2016_cmcombo.txt		 	# The error file name
+#SBATCH --output=log_trainDS_july_2016_cmcombo.txt   		# The output file name
+#SBATCH --error=log_trainDS_july_2016_cmcombo.txt		 	# The error file name
 ##---------------------------------------------------------------------
 date
 module list
