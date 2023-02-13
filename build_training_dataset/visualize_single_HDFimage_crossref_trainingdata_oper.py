@@ -76,7 +76,7 @@ def visualize_drawline_save(in_arr, img_dir, out_img, row_num, col_num):
     # img_format = ".jpg"
     # get_ipython().run_line_magic('matplotlib', 'inline')
 
-    plt.gray() # This will show the images in grayscale as default
+    # plt.gray() # This will show the images in grayscale as default
 
     plt.figure(figsize=(20,20))  # set the figure size
 
