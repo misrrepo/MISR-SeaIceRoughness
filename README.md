@@ -35,7 +35,7 @@ Installation instructions and steps:
 
 
 Step 1) Download HDF files
---------------------------
+------------------------------------
 This library uses the following MISR data product: MISR Level 1B2 Ellipsoid Data- MI1B2E
 
 You can order HDF files from the Langley Research Center repository at the following link: 
@@ -91,12 +91,21 @@ Produce NNCM cloud mask (using the angular signature from 9 cameras)
 
 
 
+
+
+
+
+
+
+
+
+
 Step 5) Build the training dataset
 -------------------------------------------
 This module builds a training dataset for building data models. The input features/samples are TOA reflectance values. To label each data sample, we used the lidar data from Airborne Topographic Mapper (ATM) with the following ATM file version from IceBridge Data Portal: IceBridge ATM L2 Icessn Elevation, Slope, and Roughness V002.
 You can download ATM files from https://nsidc.org/icebridge/portal/map
 
-This step uses masked-toa-refl files that are produced from the previous step, and ATM files to label each feature sample and cloud-mask files. The output of this step is a training dataset for the next step (SIR model). In this step, we have the option of using cloud-mask files. Read instructions in the Python run script and especially look for cloudMask_runMode flag in source code. 
+This step uses masked-toa-refl files that are produced from the previous step, and ATM files to label each feature sample and cloud-mask files. The output of this step is a training dataset for the next step (sea ice roughness model). In this step, we have the option of using cloud-mask files. Read instructions in the Python run script and especially look for cloudMask_runMode flag in source code. 
 
 MISR-SeaIceRoughness/build_training_dataset/build_trainingData_3cams.c
 MISR-SeaIceRoughness/build_training_dataset/build_trainingData_9cams.c
@@ -122,12 +131,12 @@ Note: Set up paths in the Python run script, build the executable from the C sou
 
 Step 7) Post-processing roughness data
 ---------------------------------------------------
-This module post-processes binary sea ice roughness files from the previous step, produces georeferenced raster files in TIF format from those binary files, builds a mosaic from SIR raster TIF files to build a map. This module is written in Python. This python scripts uses the GDAL library.
+This module post-processes binary sea ice roughness files from the previous step, produces georeferenced raster files in TIF format from those binary files, builds a mosaic from sea ice roughness raster TIF files to build a map. This module is written in Python. This Python script uses the GDAL library.
 
-The following are the order of programs to run in this module:
+The following is the order of programs to run in this module:
 
 MISR-SeaIceRoughness/post_processing/roughness_array2raster_georefrencing.py
-This python script reads each SIR binary (DAT) file, georeferences it, and outputs a SIR raster file.
+This Python script reads each sea ice roughness binary (DAT) file, georeferences it, and outputs a sea ice roughness raster file.
 
 MISR-SeaIceRoughness/post_processing/mosaic_part1_gdalvrt_build_VRT.py
 This Python script reads all raster files to memory and builds a virtual VRT file in memory. 
@@ -136,11 +145,4 @@ MISR-SeaIceRoughness/post_processing/mosaic_part2_gdalvrt_build_mosaic_fromVRT.p
 This Python script builds a mosaic from VRT file format and outputs the mosaic file to the local machine.
 
 Then, you can plot the final mosaic.tif in QGIS.
-
-
-
-
-
-
-
 
