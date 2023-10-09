@@ -1,14 +1,23 @@
-exe_path=/data/gpfs/home/emosadegh/MISR-SeaIceRoughness/exe_dir
+# include libraries:
+# 	Mtk include and lib directories
+# 	hdfeos include dir
+#	
+
+exe_path=/Users/ehsanmos/MLP_dataset/cloudmask_lab/prediction_test_cloudmask_p149_o88247_b10_july_forPaper/tutorial_sampleFile/exe_dir
 
 src_name=TOARad2Refl4AllBlocks_allCameras.c
 exe_name=TOARad2Refl4AllBlocks_allCameras
 
+
+
 all:
-	gcc -I/data/gpfs/home/emosadegh/Mtk-1.5.1/include	\
-		-I/data/gpfs/home/emosadegh/hdfeoslibs/include	\
-		-L/data/gpfs/home/emosadegh/Mtk-1.5.1/lib	\
-		-I/data/gpfs/home/emosadegh/fftw/fftw-3.3.8_install/include 	\
-		-L/data/gpfs/home/emosadegh/fftw/fftw-3.3.8_install/lib 	\
+	gcc -I/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/Mtk_install/include	\
+		-L/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/Mtk_install/lib	\
+		-L/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/fftw3_installed/lib \
+		-I/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/fftw3_installed/include \
+		-L/usr/local/Cellar/libpng/1.6.37/lib \
+		-I/usr/local/Cellar/libpng/1.6.37/include \
+		-I/Users/ehsanmos/Documents/RnD/MISR_lab/mtk.nosync/hdfeoslibs_installed/include \
 		-o ${exe_path}/${exe_name} ${src_name} -lMisrToolkit  -lm -lfftw3 -lpng -pthread
 	
 clean:

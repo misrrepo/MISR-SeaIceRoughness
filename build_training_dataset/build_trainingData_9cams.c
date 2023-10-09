@@ -291,7 +291,7 @@ int main(int argc, char *argv[])
     // add all cameras here in program scope
     double anr, ang, anb, annir, af, aa, bf, ba, cf, ca, df, da; // note: cm dtype should be double or uint? inside read_data f(.) it is defined as double and this f(.) is used to read several files
     // double cm; // = -1;
-    uint8_t cm; // dtype= maybe to uint8_t??? cuz cm is either= 0, 1
+    uint8_t cm; // dtype= maybe to uint8_t??? cause cm is either= 0, 1
     double xlat, xlon, xrms; //, xcam;
     int xcam;
     float fline, fsample;

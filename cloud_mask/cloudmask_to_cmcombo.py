@@ -9,7 +9,7 @@ Ehsan Mosadegh
 21 Nov 2022
 
 reads cloudmask.msk files and combine pixel values;
-this code writes both csv(stats) file and binary file into a same directory (cmcombo_dir)
+this code writes both csv(stats) file and binary (cmcombo) file into a same directory (cmcombo_dir)
 
 '''
 
@@ -48,7 +48,7 @@ cmcombo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consen
 
 # In[5]:
 
-
+#####################################################################################################
 '''on PH'''
 
 # '''April-2016'''
@@ -57,7 +57,7 @@ cmcombo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consen
 # angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_15_30_2016_ascm/cloudmask_ASCM"
 # radiometric_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/april_2016_rccm_9cams/rccm_df/cloudmask_RCCM" # check this path before running
 
-# cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_radio_april2016"
+# cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_april2016"
 
 
 '''July-2016'''
@@ -65,47 +65,9 @@ cmcombo_dir = "/Users/ehsanmos/MLP_dataset/cloud_mask_data/test_cloudmask_consen
 # angular_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/july_10_25_2016_ascm/cloudmask_ASCM"
 # radiometric_dir = "???"
 
-# cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_radio_july2016"
+# cmcombo_dir = "/data/gpfs/assoc/misr_roughness/2016/cloud_masks/cmcombo_stereo_angular_july2016"
 
-
-# In[6]:
-
-
-# make a list of files in stereo dir
-stereo_filelist_fp = glob.glob(os.path.join(stereo_dir, "cloudmask_P*.msk"))
-# print(len(stereo_filelist_fp))
-
-# make a list just from cloudmask file names to make the comparison easier
-stereo_filelist = []
-for stereo_item in stereo_filelist_fp:
-    stereo_filelist.append(stereo_item.split("/")[-1])
-    
-print(len(stereo_filelist))
-
-
-# In[7]:
-
-
-# make a list of files in angular dir
-angular_filelist_fp = glob.glob(os.path.join(angular_dir, "cloudmask_P*.msk"))
-# print(len(angular_filelist_fp))
-
-# make a list just from cloudmask file names to make the comparison easier
-angular_filelist = []
-for angular_item in angular_filelist_fp:
-    angular_filelist.append(angular_item.split("/")[-1])
-    
-print(len(angular_filelist))
-
-
-# In[8]:
-
-
-type(stereo_filelist[0])
-
-
-# In[9]:
-
+#####################################################################################################
 
 def write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, angular_f, radio_f):
     
@@ -120,7 +82,7 @@ def write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, 
         
     
     else:
-        cmcombo_lst = [] # for each cloudmaskcombo
+        cmcombo_lst = [] # for each cloudmask combo
 
         # extract each pixel value from cloudmask.msk files
         for i in range(stereo_shp):  # make a combofile
@@ -132,7 +94,7 @@ def write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, 
             #**** what is data type inside atmmodel.c ????
     
             # add both to a cmcombo number
-            cmcombo = str(stereo_elem)+str(angular_elem)+str(radio_elem)
+            cmcombo = str(stereo_elem)+str(angular_elem)+str(radio_elem) # what about radio files? are they included?
             
             cmcombo = int(cmcombo)
             #print(type(cmcombo))
@@ -162,9 +124,6 @@ def write_cmcombo_binaryFile(cm_path, cm_orbit, cm_block, stereo_shp, stereo_f, 
     '''
         
     return 0
-
-
-# In[10]:
 
 
 def write_cmcombo_stats_csvFile(cm_path, cm_orbit, cm_block, cmcombo_dir, stereo_shp, stereo_f, angular_f, radio_f):
@@ -205,11 +164,36 @@ def write_cmcombo_stats_csvFile(cm_path, cm_orbit, cm_block, cmcombo_dir, stereo
         print(csv_fname_fp)
 
     return 0
+
+#####################################################################################################
+# make a list of files in stereo directory
+
+stereo_filelist_fp = glob.glob(os.path.join(stereo_dir, "cloudmask_P*.msk"))
+# print(len(stereo_filelist_fp))
+
+# make a list just from cloudmask file names to make the comparison easier
+stereo_filelist = []
+for stereo_item in stereo_filelist_fp:
+    stereo_filelist.append(stereo_item.split("/")[-1])
     
+print(len(stereo_filelist))
 
 
-# In[11]:
 
+# make a list of files in angular directory
+
+angular_filelist_fp = glob.glob(os.path.join(angular_dir, "cloudmask_P*.msk"))
+# print(len(angular_filelist_fp))
+
+# make a list just from cloudmask file names to make the comparison easier
+angular_filelist = []
+for angular_item in angular_filelist_fp:
+    angular_filelist.append(angular_item.split("/")[-1])
+    
+print(len(angular_filelist))
+
+
+type(stereo_filelist[0])
 
 # check stereo file exists in angular file list?
 # global_cmcombo = []
@@ -224,7 +208,7 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
     '''open and read stereo cloudmask'''
     stereo_fp = os.path.join(stereo_dir, cm_fname)
 #     print(stereo_fp)
-    stereo_f = np.fromfile(stereo_fp, dtype=np.ubyte) # this should be siilr to dtype from C
+    stereo_f = np.fromfile(stereo_fp, dtype=np.ubyte) # this should be similar to dtype from C
 #     print(type(stereo_f))
     stereo_shp = stereo_f.shape[0]
 #     print(type(stereo_shp))
@@ -234,7 +218,7 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
 #     print('anguler files')
     angular_fp = os.path.join(angular_dir, cm_fname)
 #     print(angular_fp)
-    angular_f = np.fromfile(angular_fp, dtype=np.ubyte) # this should be siilr to dtype from C
+    angular_f = np.fromfile(angular_fp, dtype=np.ubyte) # this should be similar to dtype from C
 #     print(type(angular_f))
     angular_shp = angular_f.shape[0]
     
@@ -243,7 +227,7 @@ for cm_num, cm_fname in enumerate(stereo_filelist):
 #     print('anguler files')
     radio_fp = os.path.join(radiometric_dir, cm_fname)
 #     print(angular_fp)
-    radio_f = np.fromfile(radio_fp, dtype=np.ubyte) # this should be siilr to dtype from C
+    radio_f = np.fromfile(radio_fp, dtype=np.ubyte) # this should be similar to dtype from C
 #     print(type(angular_f))
     radio_shp = radio_f.shape[0]
     
