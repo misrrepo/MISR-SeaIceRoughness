@@ -1,3 +1,4 @@
+
 README
 
 
@@ -28,9 +29,13 @@ For the post-processing steps, you need to install the GDAL library on your mach
 
 Note: you can proceed to the next steps after you have successfully installed MISR-toolkit and GDAL libraries on your machine.
 
-installation instructions and steps:
+
+Installation instructions and steps:
 --------------------------------------------
+
+
 Step 1) Download HDF files
+--------------------------
 This library uses the following MISR data product: MISR Level 1B2 Ellipsoid Data- MI1B2E
 
 You can order HDF files from the Langley Research Center repository at the following link: 
@@ -81,6 +86,9 @@ Note 2: set up paths in the Python run script, build the executable from the C s
 
 Produce NNCM cloud mask (using the angular signature from 9 cameras)
 -----------------------------------------------------------------------------------------------
+
+
+
 
 
 Step 5) Build the training dataset
