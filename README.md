@@ -50,8 +50,11 @@ Step 2) Convert TOA radiance to reflectance for each MISR block
 This module processes each MI1B2E HDF file and converts Top of Atmosphere (TOA) radiance to reflectance for each MISR block. The source codes are written in C and the run scripts are written in Python:
 
 MISR-SeaIceRoughness/toa_rad_to_refl_to_blocks/TOARad2Refl4AllBlocks_allCameras.c
+
 MISR-SeaIceRoughness/toa_rad_to_refl_to_blocks/TOARad2Refl4AllBlocks_3Cameras.c
+
 MISR-SeaIceRoughness/toa_rad_to_refl_to_blocks/run_TOARad2Refl4AllBlocks_allCameras.py
+
 MISR-SeaIceRoughness/toa_rad_to_refl_to_blocks/un_ TOARad2Refl4AllBlocks_3Cameras.py
 
 Note 1: Copy a Makefile based on the type of your machine (Linux or MacOS). Then, set up paths to libraries in the Makefile. The Makefile requires the following libraries to be installed on your machine: MTK, fftw, libpng, hdfeos, and math. You should also set up paths to a directory where executables will be written to.
