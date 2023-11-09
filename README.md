@@ -32,6 +32,10 @@ Note: you can proceed to the next steps after you have successfully installed MI
 
 Installation instructions and steps:
 --------------------------------------------
+Main steps are the following:
+ 
+![plot](./plots/steps_sir.png)
+
 
 
 Step 1) Download HDF files
@@ -89,6 +93,8 @@ Note 2: set up paths in the Python run script, build the executable from the C s
 
 Produce NNCM cloud mask (using the angular signature from 9 cameras)
 -----------------------------------------------------------------------------------------------
+Main steps are the following:
+ 
 
 
 
@@ -147,5 +153,4 @@ This Python script reads all raster files to memory and builds a virtual VRT fil
 MISR-SeaIceRoughness/post_processing/mosaic_part2_gdalvrt_build_mosaic_fromVRT.py
 This Python script builds a mosaic from VRT file format and outputs the mosaic file to the local machine.
 
-Then, you can plot the final mosaic.tif in QGIS.
-
+Then, you can plot the final mosaic.tif in GIS software.
