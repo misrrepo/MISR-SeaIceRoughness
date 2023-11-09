@@ -94,7 +94,9 @@ Note 2: set up paths in the Python run script, build the executable from the C s
 Produce NNCM cloud mask (using the angular signature from 9 cameras)
 -----------------------------------------------------------------------------------------------
 Main steps are the following:
- 
+
+![plot](./plots/steps_cloudmask.png)
+
 
 
 
